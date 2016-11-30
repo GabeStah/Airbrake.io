@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <iframe id="myframe" src="http://www1.w3c-test.org/common/blank.html"></iframe>
+    <script>
+      onload = function() {
+          function printError(error, explicit) {
+          	console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+          }
+
+          try {
+              console.log(frames[0].document);
+          } catch (e) {
+              if (e instanceof Error) {
+                  printError(e, true);
+              } else {
+                  printError(e, false);
+              }
+          }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
