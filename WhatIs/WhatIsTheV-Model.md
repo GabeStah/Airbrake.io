@@ -9,6 +9,7 @@ Much like the traditional `waterfall model`, the V-Model specifies a series of l
 To begin, it's best to visualize the rough stages of the V-Model, as seen in the diagram below.
 
 ![v-model graphic](https://upload.wikimedia.org/wikipedia/commons/e/e8/Systems_Engineering_Process_II.svg)
+
 _Image courtesy of [Wikipedia.org](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Systems_Engineering_Process_II.svg/440px-Systems_Engineering_Process_II.svg.png)_
 
 The V-shape of the V-Model method represents the various stages that will be passed through during the software development life cycle.  Beginning at the top-left stage and working, over time, toward the top-right tip, the stages represent a linear progression of development similar to the `waterfall model`.
