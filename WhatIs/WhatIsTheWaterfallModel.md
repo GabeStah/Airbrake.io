@@ -1,0 +1,40 @@
+First introduced by Dr. Winston W. Royce in a paper [published in 1970](http://www.cs.umd.edu/class/spring2003/cmsc838p/Process/waterfall.pdf), the `waterfall model` is a software development process.  The waterfall model emphasizes that a logical progression of steps be taken throughout the software development life cycle (SDLC), much like the cascading steps down an incremental waterfall.  While the popularity of the waterfall model has waned over recent years in favor of more `agile` methodologies, the logical nature of the sequential process used in the waterfall method cannot be denied, and it remains a common design process in the industry.
+
+Throughout this article we'll examine what specific stages make up the core of the waterfall model, when and where it is best implemented, and scenarios where it might be avoided in favor of other design philosophies.
+
+## The Six Stages of Falling Water
+
+Actually implementing a waterfall model within a new software project is a rather straightforward process, thanks in large part due to the step-by-step nature of the method itself.  There are minor differences in the numbers and descriptions of the steps involved in a waterfall method, depending on the developer you ask (and even the year during which you ask him or her).  Regardless, the concepts are all the same and encompass the broad scope of what it takes to start with an idea and develop a full-scale, live application.
+
+- __Requirements__: During this initial phase, the potential requirements of the application are methodically analyzed and written down in a specification document that serves as the basis for all future development.  The result is typically a `requirements document` that defines _what_ the application should do, but not _how_ it should do it.
+- __Analysis__: During this second stage, the system is analyzed in order to properly generate the models and business logic that will be used in the application.
+- __Design__: This stage largely covers technical design requirements, such as programming language, data layers, services, etc.  A design specification will typically be created that outlines how exactly the business logic covered in `analysis` will be technically implemented.
+- __Coding__: The actual source code is finally written in this fourth stage, implementing all models, business logic, and service integrations that were specified in the prior stages.
+- __Testing__: During this stage, `QA`, beta testers, and all other testers systematically discover and report issues within the application that need to be resolved.  It is not uncommon for this phase to cause a "necessary repeat" of the previous `coding` phase, in order for revealed bugs to be properly squashed.
+- __Operations__: Finally, the application is ready for deployment to a live environment.  The `operations` stage entails not just the deployment of the application, but also subsequent support and maintenance that may be required to keep it functional and up-to-date.
+
+## The Advantages of the Waterfall Model
+
+While the waterfall model has seen a slow phasing out in recent years in favor of more `agile` methods, it can still provide a number of benefits, particularly for larger projects and organizations that require the stringent stages and deadlines available within these cool, cascading waters.
+
+- __Adapts to Shifting Teams__: While not necessarily specific to the waterfall model only, using a waterfall method does allow the project as a whole to maintain a more detailed, robust scope and design structure due to all the upfront planning and documentation stages.  This is particularly well suited to large teams that may see members come and go throughout the life cycle of the project, allowing the burden of design to be placed on the core documentation and less on any individual team member.
+- __Forces Structured Organization__: While some may argue this is a burden rather than a benefit, the fact remains that the waterfall model _forces_ the project, and even the organization building said project, to be extraordinarily disciplined in its design and structure.  Most sizable projects will, by necessity, include detailed procedures to manage every aspect of the project, from design and development to testing and implementation.
+- __Allows for Early Design Changes__: While it can be difficult to make design changes later in the process, the waterfall approach lends itself well to alterations early in the life cycle.  This is great when fleshing out the specification documents in the first couple stages with the development team and clients, as alterations can be made immediately and with minimal effort, since no coding or implementation has actually taken place up to that point.
+- __Suited for Milestone-Focused Development__: Due to the inherent linear structure of a waterfall project, such applications are always well-suited for organizations or teams that work well under a milestone- and date-focused paradigm.  With clear, concrete, and well understood stages that everyone on the team can understand and prepare for, it is relatively simple to develop a time line for the entire process and assign particular markers and milestones for each stage and even completion.  This isn't to suggest software development isn't often rife with delays (since it is), but waterfall is befitting the kind of project that needs deadlines.
+
+## The Disadvantages of the Waterfall Model
+
+While some things in software development never really change, many others often fall by the wayside.  While Dr. Royce's initial proposal of what is now known as the waterfall model was groundbreaking when first published back in 1970, over four decades later, a number of cracks are showing in the armor of this once heralded model.
+
+- __Nonadaptive Design Constraints__: While arguably a whole book could be written on this topic alone, the most damning aspect of the waterfall model is its inherent lack of adaptability across all stages of the development life cycle.  When a test in stage five reveals a fundamental flaw in the design of the system, it not only requires a dramatic leap backward in stages of the process, but in some cases, can be often lead to a devastating realization regarding the legitimacy of the entire system.  While most experienced teams and developers would (rightfully) argue that such revelations shouldn't occur if the system was properly designed in the first place, not every possibility can be accounted for, especially when stages are so often delayed until the end of the process.
+- __Ignores Mid-Process User/Client Feedback__: Due to the strict step-by-step process that the waterfall model enforces, another particularly difficult issue to get around is that user or client feedback that is provided late into the development cycle can often be too little, too late.  While project managers can obviously enforce a process to step back to a previous stage due to an unforeseen requirement or change coming from a client, it will be both costly and time-consuming, for both the development team and the client.
+- __Delayed Testing Period__: While most of the more modern `SDLC` models attempt to integrate testing as a fundamental and always-present process throughout development, the waterfall model largely shies away from testing until quite late into the life cycle.  This not only means that most bugs or even design issues won't be discovered until very late into the process, but it also encourages lackadaisical coding practices since testing is only an afterthought.
+
+
+---
+
+__SOURCES__
+
+- http://queue.acm.org/detail.cfm?id=971573
+- http://www.oxagile.com/company/blog/the-waterfall-model/
+- https://en.wikipedia.org/wiki/Waterfall_model
