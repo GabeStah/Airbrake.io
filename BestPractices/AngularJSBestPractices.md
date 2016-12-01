@@ -2,17 +2,22 @@ AngularJS has rapidly become one of the hotest new trends in development for cre
 
 To help alleviate any potential vertigo as you gaze down from the mountain of potential that is AngularJS, we've put together a handful of best practices to keep your code clean and your mind (somewhat) sane.
 
-## Maintain a Logical Project Structure
+## Cultivate a Tidy Project Architecture
 
-Perhaps the best place to begin with any development project, but even more so with AngularJS, is in the creation of a properly structured project.  The layout of your project files and directories plants the seeds of the entire life cycle of the project.  Improperly dispersed files or directories that are illogically embedded will make for a miserable development experience as new components must be added or code must be altered.
+Perhaps the best place to begin with any development project, but even more so with AngularJS, is in the creation of a properly structured project.  The configuration of project files, directories, and components plants the seeds of the entire life cycle of the project.  Components that are illogically structured will make for a miserable development experience as new components must be added or code must be altered.
 
-The challenge is that the sheer scope of potential files and directories involved in even the most rudimentary AngularJS project can be overwhelming, to say the least.  Therefore, it's strongly recommended that you relieve yourself of a modicum of this burden and instead use some form of boilerplate project structure, particularly when your project is just taking off.
+The challenge is that the sheer scope of the code base for even the most rudimentary AngularJS project can be overwhelming, to say the least.  Therefore, it's strongly recommended that you relieve yourself of a modicum of this burden by establishing and maintaining proper project architecture, particularly when your venture is just taking off.
 
-A highly regarded choice to bootstrap any new AngularJS project is the [`ngBoilerplate`](https://github.com/ngbp/ngbp) package.  As the documentation describes, `ngBoilerplate` includes a best-practice directory structure already established, so your project maintains maximum ease-of-use and scalability.
+A great place to start is to consider how the business logic of your project will be configured utilizing the primary [building blocks](https://angular.io/docs/ts/latest/guide/architecture.html) of Angular.  While some of these are designed specifically for Angular 2, they can be implemented within Angular 1 even, and generally represent the community-accepted method for structuring your project.
 
-Moreover, `ngBoilerplate` also includes a few highly beneficial frameworks (which we'll discuss more in detail below), such as [`Bootstrap`](http://getbootstrap.com/), [`AngularUI`](http://angular-ui.github.io/), and [`Font Awesome`](http://fortawesome.github.com/Font-Awesome).
-
-[Look here for more information on the recommended project structure](https://github.com/ngbp/ngbp#overall-directory-structure).
+- __Modules__: At the basic level, Angular `modules` are simply `classes` that use the `@NgModule` decorator and allow you to disperse your application into logical blocks of functionality.
+- __Components__: Similar to `controllers` in other popular `MVC` frameworks, `components` are used to create the user interface (i.e. `views`) within your application.
+- __Templates__: As with `views` in other `MVCs`, `templates` in Angular are altered forms of HTML that describe how the application renders the interface.
+- __Metadata__: Typically a short and sweet collection of data that precedes a class, which is used to _explicitly_ inform Angular that the class definition which follows is a particular type of class, such as a `component`.
+- __Data Binding__: Angular allows for simple binding of data between the `DOM` and the underlying `components`.  Depending on the syntax used within the `templates`, this binding can be one way from `DOM` to `component`, `component` to `DOM`, or simultaneously in both directions.
+- __Directives__: Markers attached to particular `DOM` elements which apply a specific behavior or transformation to the element.
+- __Services__: Perhaps the most generic part of an Angular application, a `service` is typically a class with well-defined, logical functionality, such as configuration, logging, or data management.
+- __Dependency Injection__: Finally, with a number of `services` powering your application, you can utilize an `injector` to inform a particular `component` about which `services` it requires to be functional.
 
 ## Exploit a Task Runner
 
@@ -69,3 +74,4 @@ __SOURCES__
 - https://ui-router.github.io/
 - https://github.com/mgonto/restangular
 - https://artandlogic.com/2013/05/angularjs-best-practices-ive-been-doing-it-wrong-part-3-of-3/
+- https://angular.io/docs/ts/latest/guide/architecture.html
