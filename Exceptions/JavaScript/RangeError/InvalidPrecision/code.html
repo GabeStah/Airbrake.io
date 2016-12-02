@@ -8,8 +8,9 @@
               console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
           }
           try {
-              var items = Array(-1);
-              console.log(`Length is: ${items.length}`);
+              var num = 12.3456
+              num.toExponential(101);
+              console.log(`Num is: ${num}`)
           } catch (e) {
               if (e instanceof RangeError) {
                   printError(e, true);
@@ -23,30 +24,12 @@
               console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
           }
           try {
-              var items = Array(Math.pow(2, 32));
-              console.log(`Length is: ${items.length}`);
+              var num = 12.3456
+              num.toFixed(101);
+              console.log(`Num is: ${num}`)
           } catch (e) {
               if (e instanceof RangeError) {
                   printError(e, true);
-              } else {
-                  printError(e, false);
-              }
-          }
-
-          // 3
-          var printError = function(error, explicit) {
-              console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
-          }
-          try {
-              var items = Array(-1);
-              console.log(`Length is: ${items.length}`);
-          } catch (e) {
-              if (e instanceof RangeError) {
-                  if (e.message.toLowerCase().indexOf('invalid array') !== -1) {
-                      printError(e, true);
-                  } else {
-                      printError(e, false);
-                  }
               } else {
                   printError(e, false);
               }
