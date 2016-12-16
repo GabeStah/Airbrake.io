@@ -14,8 +14,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] RangeError: radix must be an integer
     - [ ] RangeError: repeat count must be less than infinity
     - [ ] RangeError: repeat count must be non-negative
-    - [ ] ReferenceError: "x" is not defined
-- [ ] ReferenceError: assignment to undeclared variable "x"
+- [ ] ReferenceError: "x" is not defined
+    - [ ] ReferenceError: assignment to undeclared variable "x"
     - [ ] ReferenceError: deprecated caller or arguments usage
     - [ ] ReferenceError: invalid assignment left-hand side
     - [ ] ReferenceError: reference to undefined property "x"
