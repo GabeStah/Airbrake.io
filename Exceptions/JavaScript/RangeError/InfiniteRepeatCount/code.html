@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      onload = function() {
+          // 1
+          var printError = function(error, explicit) {
+              console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+          }
+
+          try {
+              var count = Infinity;
+              var name = 'Bob';
+              name.repeat(count);
+          } catch (e) {
+              if (e instanceof RangeError) {
+                  printError(e, true);
+              } else {
+                  printError(e, false);
+              }
+          }
+
+          // 2
+          var printError = function(error, explicit) {
+              console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+          }
+
+          try {
+              var count = Math.pow(2, 28);
+              var name = 'B';
+              name.repeat(count);
+              console.log(`Count of ${count} is OK!`);
+          } catch (e) {
+              if (e instanceof RangeError) {
+                  printError(e, true);
+                  console.log(`Count of ${count} is too much!`);
+              } else {
+                  printError(e, false);
+              }
+          }
+
+          // 3
+          var printError = function(error, explicit) {
+              console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+          }
+
+          try {
+              var count = Math.pow(2, 28) - 1;
+              var name = 'B';
+              name.repeat(count);
+              console.log(`Count of ${count} is OK!`);
+          } catch (e) {
+              if (e instanceof RangeError) {
+                  printError(e, true);
+                  console.log(`Count of ${count} is too much!`);
+              } else {
+                  printError(e, false);
+              }
+          }
+
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

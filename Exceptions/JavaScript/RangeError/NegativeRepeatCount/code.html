@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      onload = function() {
+          // 1
+          var printError = function(error, explicit) {
+              console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+          }
+
+          try {
+              var count = -5;
+              var name = 'Bob';
+              name.repeat(count);
+          } catch (e) {
+              if (e instanceof RangeError) {
+                  printError(e, true);
+              } else {
+                  printError(e, false);
+              }
+          }
+
+          // 2
+          var printError = function(error, explicit) {
+              console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+          }
+
+          try {
+              var count = '-99';
+              var name = 'Bob';
+              name.repeat(count);
+          } catch (e) {
+              if (e instanceof RangeError) {
+                  printError(e, true);
+              } else {
+                  printError(e, false);
+              }
+          }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -8,18 +8,21 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
 
 - [x] Error: Permission denied to access property "x"
 - [x] InternalError: too much recursion
-- [x] RangeError: argument is not a valid code point
+- RangeError
+    - [x] RangeError: argument is not a valid code point
     - [x] RangeError: invalid array length
     - [x] RangeError: precision is out of range
     - [x] RangeError: radix must be an integer
-    - [ ] RangeError: repeat count must be less than infinity
-    - [ ] RangeError: repeat count must be non-negative
-- [ ] ReferenceError: "x" is not defined
+    - [x] RangeError: repeat count must be less than infinity
+    - [x] RangeError: repeat count must be non-negative
+- ReferenceError
+    - [ ] ReferenceError: "x" is not defined
     - [ ] ReferenceError: assignment to undeclared variable "x"
     - [ ] ReferenceError: deprecated caller or arguments usage
     - [ ] ReferenceError: invalid assignment left-hand side
     - [ ] ReferenceError: reference to undefined property "x"
-- [ ] SyntaxError: "use strict" not allowed in function with non-simple parameters
+- SyntaxError
+    - [ ] SyntaxError: "use strict" not allowed in function with non-simple parameters
     - [ ] SyntaxError: "x" is not a legal ECMA-262 octal constant
     - [ ] SyntaxError: JSON.parse: bad parsing
     - [ ] SyntaxError: Malformed formal parameter
@@ -33,7 +36,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [ ] SyntaxError: return not in function
     - [ ] SyntaxError: test for equality (==) mistyped as assignment (=)?
     - [ ] SyntaxError: unterminated string literal
-- [ ] TypeError: "x" has no properties
+- [ ] TypeError
+    - [ ] TypeError: "x" has no properties
     - [ ] TypeError: "x" is (not) "y"
     - [ ] TypeError: "x" is not a constructor
     - [ ] TypeError: "x" is not a function
@@ -42,7 +46,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [ ] TypeError: invalid Array.prototype.sort argument
     - [ ] TypeError: property "x" is non-configurable and can't be deleted
     - [ ] TypeError: variable "x" redeclares argument
-- [ ] Warning: -file- is being assigned a //# sourceMappingURL, but already has one
+- Warning
+    - [ ] Warning: -file- is being assigned a //# sourceMappingURL, but already has one
     - [ ] Warning: JavaScript 1.6's for-each-in loops are deprecated
     - [ ] Warning: unreachable code after return statement
 
