@@ -16,8 +16,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] RangeError: repeat count must be less than infinity
     - [x] RangeError: repeat count must be non-negative
 - ReferenceError
-    - [ ] ReferenceError: "x" is not defined
-    - [ ] ReferenceError: assignment to undeclared variable "x"
+    - [x] ReferenceError: "x" is not defined
+    - [x] ReferenceError: assignment to undeclared variable "x"
     - [ ] ReferenceError: deprecated caller or arguments usage
     - [ ] ReferenceError: invalid assignment left-hand side
     - [ ] ReferenceError: reference to undefined property "x"
@@ -59,10 +59,10 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] NotImplementedError
   - [x] SyntaxError
 - [x] SecurityError
-- [ ] SignalException
-  - [ ] Interrupt
-- [ ] StandardError -- default for rescue
-  - [ ] ArgumentError
+- [x] SignalException
+  - [x] Interrupt
+- [x] StandardError -- default for rescue
+  - [x] ArgumentError
     - [ ] UncaughtThrowError
   - [ ] EncodingError
   - [ ] FiberError
