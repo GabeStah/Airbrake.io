@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        //
+        names = "Bob Smith".split(' ');
+        console.log(`First name is ${names[0]}.`)
+
+      // 2
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      var getFirstName = function(full_name) {
+          // Setting strict mode
+          'use strict';
+          // Assigning to `names`, which is undefined
+          names = full_name.split(' ');
+          return names[0];
+      }
+
+      try {
+          var first_name = getFirstName("Bob Smith");
+          console.log(`First name is ${first_name}.`)
+      } catch (e) {
+          if (e instanceof ReferenceError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+
+
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      var getFirstName = function(full_name) {
+          // Setting strict mode
+          'use strict';
+          // Assigning to `names`, which is now defined
+          var names = full_name.split(' ');
+          return names[0];
+      }
+
+      try {
+          var first_name = getFirstName("Bob Smith");
+          console.log(`First name is ${first_name}.`)
+      } catch (e) {
+          if (e instanceof ReferenceError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
