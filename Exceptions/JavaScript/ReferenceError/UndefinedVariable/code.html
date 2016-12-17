@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // 1
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      try {
+          // Calling an undefined `item` variable
+          var length = item.length;
+          console.log(`Length is ${length}.`)
+      } catch (e) {
+          if (e instanceof ReferenceError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+
+      // 2
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      try {
+          // Defining `item` first
+          var item = "Bob";
+          var length = item.length;
+          console.log(`Length is ${length}.`)
+      } catch (e) {
+          if (e instanceof ReferenceError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+
+      // 3
+      var getFullName = function() {
+          var firstName = "Bob";
+          var lastName = "Smith";
+          return `${firstName} ${lastName}`;
+      }
+
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      try {
+          // Accessing `firstName` from outside its scope
+          var length = firstName.length;
+          console.log(`Length is ${length}.`)
+      } catch (e) {
+          if (e instanceof ReferenceError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+
+      // 4
+      // Declaring the variables outside our function
+      var firstName = "Bob";
+      var lastName = "Smith";
+      var getFullName = function() {
+          return `${firstName} ${lastName}`;
+      }
+
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      try {
+          // Accessing `firstName` is now allowed
+          var length = firstName.length;
+          console.log(`Length is ${length}.`)
+      } catch (e) {
+          if (e instanceof ReferenceError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

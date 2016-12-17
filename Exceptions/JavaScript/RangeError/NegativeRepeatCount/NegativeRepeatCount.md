@@ -1,6 +1,6 @@
 As we stroll our way down the winding path of our __JavaScript Error Handling__ series, today we're stopping to smell the aroma of the `Negative Repeat Count` error.  The `Negative Repeat Count` error, similar to the `Infinite Repeat Count` error, occurs when using the [`repeat()`] method of a `String` object in JavaScript, but in this case when the `count` parameter passed to that method is a __negative__ value.
 
-In this article we'll take a look at a few specific code examples that might produce a `Negative Repeat Count` error, and how to handle this catch and handle this error when it appears.  Here we go!
+In this article we'll take a look at a few specific code examples that might produce a `Negative Repeat Count` error, and how to catch and handle this error when it appears.  Here we go!
 
 ## The Technical Rundown
 
