@@ -8,7 +8,7 @@ In this article we'll take a look at a few specific code examples that might pro
 - The [`RangeError`] object is inherited from the [`Error`] object.
 - The `Negative Repeat Count` error is a specific type of [`RangeError`] object.
 
-To dive even deeper into understanding how your applications deal with [`JavaScript Errors`], check out the revolutionary [`Airbrake JavaScript`] error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
+To dive even deeper into understanding how your applications deal with JavaScript Errors, check out the revolutionary [`Airbrake JavaScript`] error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
 
 ## When Should You Use It?
 
@@ -75,7 +75,7 @@ Both browsers first convert this value to a number, then produce the same expect
 ```
 
 [`Airbrake JavaScript`]: https://airbrake.io/languages/javascript_exception_handler
-[`Error`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[`Error`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`JavaScript Errors`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`RangeError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError
 [`repeat()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat

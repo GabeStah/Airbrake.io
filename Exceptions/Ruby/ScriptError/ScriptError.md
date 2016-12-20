@@ -122,7 +122,7 @@ scripterror4.rb:7:in `eval': (eval):1: syntax error, unexpected '=', expecting e
 
 Our `print_exception` function is __not even called__, and the reason is because the actual exception class that was raised (`SyntaxError`) is not a descendant of `StandardError`, so the non-explicit `rescue => e` clause fails to trigger.
 
-[`Exception`]: https://ruby-doc.org/core-2.3.3/Exception.html
+[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 
 ---
 

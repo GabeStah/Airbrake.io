@@ -8,7 +8,7 @@ Below we'll take a look at a few specific examples seen in the wild which can ra
 - The [`RangeError`] object is inherited from the [`Error`] object.
 - The `Infinite Repeat Count` error is a specific type of [`RangeError`] object.
 
-To dive even deeper into understanding how your applications deal with [`JavaScript Errors`], check out the revolutionary [`Airbrake JavaScript`] error tracking tool for real-time alerts and instantaneous insight into what went wrong with your code.
+To dive even deeper into understanding how your applications deal with JavaScript Errors, check out the revolutionary [`Airbrake JavaScript`] error tracking tool for real-time alerts and instantaneous insight into what went wrong with your code.
 
 ## When Should You Use It?
 
@@ -91,7 +91,7 @@ var count = Math.pow(2, 27);
 ```
 
 [`Airbrake JavaScript`]: https://airbrake.io/languages/javascript_exception_handler
-[`Error`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[`Error`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`JavaScript Errors`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`RangeError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError
 [`repeat()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat

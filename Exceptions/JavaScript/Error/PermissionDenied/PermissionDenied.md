@@ -123,7 +123,7 @@ The output is as expected:
 [EXPLICIT] Error: Permission denied to access property "document"
 ```
 
-[`Error`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[`Error`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`same-origin policy`]: https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
 
 ---

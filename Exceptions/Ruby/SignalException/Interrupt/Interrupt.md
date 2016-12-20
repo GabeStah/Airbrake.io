@@ -8,7 +8,7 @@ In this article we'll examine the `Interrupt` class in a bit more detail, lookin
 - `SignalException` is a direct descendant of the [`Exception`] class.
 - `Interrupt` is a direct descendant of the `SignalException` class.
 
-To get the most out of your own applications and to fully manage any and all [`Ruby Exceptions`], check out the blazing fast [`Airbrake Ruby`] exception handling tool, offering real-time alerts and instantaneous insight into what went wrong with your Ruby code, including integrated support for a variety of popular Ruby gems and frameworks.
+To get the most out of your own applications and to fully manage any and all Ruby Exceptions, check out the blazing fast [`Airbrake Ruby`] exception handling tool, offering real-time alerts and instantaneous insight into what went wrong with your Ruby code, including integrated support for a variety of popular Ruby gems and frameworks.
 
 # When Should You Use It?
 
@@ -134,7 +134,7 @@ code.rb:57:in `kill'
 code.rb:57:in `<main>'
 ```
 
-[`Exception`]: https://ruby-doc.org/core-2.3.3/Exception.html
+[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`Ruby Exceptions`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`Airbrake Ruby`]: https://airbrake.io/languages/ruby_exception_handling
 [`signal`]: https://ruby-doc.org/core-2.3.3/Signal.html

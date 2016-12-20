@@ -8,7 +8,7 @@ Below we'll go over a few code examples that will illustrate reproduction of a t
 - The [`ReferenceError`] object is inherited from the [`Error`] object.
 - The `Assignment to Undeclared Variable` error is a specific type of [`ReferenceError`] object.
 
-To dive even deeper into understanding how your applications deal with [`JavaScript Errors`], check out the revolutionary [`Airbrake JavaScript`] error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
+To dive even deeper into understanding how your applications deal with JavaScript Errors, check out the revolutionary [`Airbrake JavaScript`] error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
 
 ## When Should You Use It?
 
@@ -102,7 +102,7 @@ First name is Bob.
 ```
 
 [`Airbrake JavaScript`]: https://airbrake.io/languages/javascript_exception_handler
-[`Error`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[`Error`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`JavaScript Errors`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`ReferenceError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError
 [`Strict Mode`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode

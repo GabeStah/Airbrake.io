@@ -88,7 +88,7 @@ Sure enough, while Chrome acknowledges specifically which method we're utilizing
 
 This difference in error `message` formatting between browsers presents a small challenge when trying to correctly catch and identify an `Invalid Precision` error by properly differentiating it from other errors with the same parent `RangeError` object type.  While we won't go into the specifics of how to identify a user's browser in JavaScript in this little guide, the best method will likely be to verify the browser via [feature detection](http://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser/9851769#9851769), then proceed to parse the appropriate error `message` based on the formatting for that browser engine.
 
-[`Error`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[`Error`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`RangeError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError
 [`toExponential()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential
 [`toFixed()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed

@@ -103,7 +103,7 @@ Sure enough, this generates our expected output:
 [EXPLICIT] SecurityError: Insecure operation - eval
 ```
 
-[`Exception`]: https://ruby-doc.org/core-2.3.3/Exception.html
+[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`gets`]: https://ruby-doc.org/core-2.3.3/Kernel.html#method-i-gets
 
 ---

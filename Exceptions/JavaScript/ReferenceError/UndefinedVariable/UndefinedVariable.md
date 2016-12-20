@@ -8,7 +8,7 @@ Below we'll take a look at a couple of specific examples that will commonly prod
 - The [`ReferenceError`] object is inherited from the [`Error`] object.
 - The `Undefined Variable` error is a specific type of [`ReferenceError`] object.
 
-To dive even deeper into understanding how your applications deal with [`JavaScript Errors`], check out the revolutionary [`Airbrake JavaScript`] error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
+To dive even deeper into understanding how your applications deal with JavaScript Errors, check out the revolutionary [`Airbrake JavaScript`] error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
 
 ## When Should You Use It?
 
@@ -142,7 +142,7 @@ Length is 3.
 ```
 
 [`Airbrake JavaScript`]: https://airbrake.io/languages/javascript_exception_handler
-[`Error`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[`Error`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`JavaScript Errors`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`ReferenceError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError
 

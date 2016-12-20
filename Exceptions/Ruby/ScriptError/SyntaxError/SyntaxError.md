@@ -115,7 +115,7 @@ code.rb:44:in `eval': (eval):1: syntax error, unexpected '=', expecting end-of-i
         from code.rb:44:in `<main>'
 ```
 
-[`Exception`]: https://ruby-doc.org/core-2.3.3/Exception.html
+[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`ScriptError`]: https://ruby-doc.org/core-2.3.3/ScriptError.html
 
 --------------------------------------------------------------------------------

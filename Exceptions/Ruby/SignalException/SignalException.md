@@ -7,7 +7,7 @@ In this post we'll explore the `SignalException` class, examining where it lands
 - All Ruby exceptions are descendants of the [`Exception`] class, or a subclass therein.
 - `SignalException` is a direct descendant of the [`Exception`] class.
 
-To get the most out of your own applications and to fully manage any and all [`Ruby Exceptions`], check out the blazing fast [`Airbrake Ruby`] exception handling tool, offering real-time alerts and instantaneous insight into what went wrong with your Ruby code, including integrated support for a variety of popular Ruby gems and frameworks.
+To get the most out of your own applications and to fully manage any and all Ruby Exceptions, check out the blazing fast [`Airbrake Ruby`] exception handling tool, offering real-time alerts and instantaneous insight into what went wrong with your Ruby code, including integrated support for a variety of popular Ruby gems and frameworks.
 
 # When Should You Use It?
 
@@ -85,7 +85,7 @@ end
 
 As expected, executing the code this time with the `KILL` signal sent simply terminates our process immediately, without any further processing or without raising a `SignalException`.
 
-[`Exception`]: https://ruby-doc.org/core-2.3.3/Exception.html
+[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`Ruby Exceptions`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`Airbrake Ruby`]: https://airbrake.io/languages/ruby_exception_handling
 [`signal`]: https://ruby-doc.org/core-2.3.3/Signal.html

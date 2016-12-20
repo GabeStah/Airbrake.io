@@ -8,7 +8,7 @@ In this article we'll dive deeper into our examination of the `ArgumentError` cl
 - [`StandardError`] is a direct descendant of the [`Exception`] class, and is also a superclass with many descendants of its own.
 - `ArgumentError` is a direct descendant of the [`StandardError`] class, and is also a small superclass of its own.
 
-To get the most out of your own applications and to fully manage any and all [`Ruby Exceptions`], check out the blazing fast [`Airbrake Ruby`] exception handling tool, offering real-time alerts and instantaneous insight into what went wrong with your Ruby code, including integrated support for a variety of popular Ruby gems and frameworks.
+To get the most out of your own applications and to fully manage any and all Ruby Exceptions, check out the blazing fast [`Airbrake Ruby`] exception handling tool, offering real-time alerts and instantaneous insight into what went wrong with your Ruby code, including integrated support for a variety of popular Ruby gems and frameworks.
 
 # When Should You Use It?
 
@@ -98,7 +98,7 @@ code.rb:45:in `sample'
 code.rb:45:in `<main>'
 ```
 
-[`Exception`]: https://ruby-doc.org/core-2.3.3/Exception.html
+[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`Ruby Exceptions`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`Airbrake Ruby`]: https://airbrake.io/languages/ruby_exception_handling
 [`StandardError`]: https://ruby-doc.org/core-2.3.3/StandardError.html

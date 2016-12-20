@@ -85,7 +85,7 @@ On the other hand, `Chrome 54` handles it just fine.  With a bit of testing, we 
 
 The bottom line when planning around and dealing with potential `Recursion` errors is to limit the potential iterations to a manageable number that never approaches these limits.  Generally speaking, as we look back in time at older generations of browsers, [these limits are smaller and smaller](https://www.nczonline.net/blog/2009/05/19/javascript-stack-overflow-error/), so a developer creating a site for all users and platforms should plan for the worst case scenario.
 
-[`Error`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[`Error`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`InternalError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError
 [`Recursion`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Too_much_recursion
 

@@ -72,7 +72,7 @@ Depending on where you are executing this code, you may or may not see the inter
 
 Whether or not the actual output works on your system, the key takeaway here is that `NoMemoryErrors` can be captured within Ruby code when memory allocation gets too overzealous, but the best practice always remains to try to eliminate potential memory leaks before they ever occur.
 
-[`Exception`]: https://ruby-doc.org/core-2.3.3/Exception.html
+[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 [`File.open`]: https://ruby-doc.org/core-2.3.3/File.html#method-c-open
 [`String`]: http://ruby-doc.org/core-2.3.3/String.html
 

@@ -115,7 +115,7 @@ loaderror4.rb:7:in `load': cannot load such file -- invalid/file/path (LoadError
 ```
 
 
-[`Exception`]: https://ruby-doc.org/core-2.3.3/Exception.html
+[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
 
 ---
 

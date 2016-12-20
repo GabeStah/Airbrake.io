@@ -90,7 +90,7 @@ try {
 
 We've now thrown in a simple check within the error `.message` property to ensure it contains the phrase `'invalid array'` somewhere in the message text.  If so, that is our expected `Invalid Array Length` error.  This means that when a _different_ `RangeError` is produced, there's no need to worry that we're responding to the wrong type.
 
-[`Error`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+[`Error`]: https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy
 [`RangeError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError
 [`Invalid Code Point`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_codepoint
 [`code point`]: https://en.wikipedia.org/wiki/Code_point
