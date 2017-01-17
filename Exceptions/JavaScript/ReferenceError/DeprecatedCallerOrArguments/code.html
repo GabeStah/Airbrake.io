@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // 1
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      function increment(x)
+      {
+          return add(x, 1);
+      }
+
+      function add(x, y)
+      {
+          console.log(`add.caller is ${add.caller}.`)
+          console.log(`add.caller.name is ${add.caller.name}.`)
+          return x + y;
+      }
+
+      try {
+          var value = increment(1);
+      } catch (e) {
+          if (e instanceof TypeError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+
+      // 2
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      function increment(x)
+      {
+          return add(x, 1);
+      }
+
+      function add(x, y)
+      {
+          'use strict';
+          console.log(`add.caller is ${add.caller}`)
+          console.log(`add.caller.name is ${add.caller.name}.`)
+          return x + y;
+      }
+
+      try {
+          var value = increment(1);
+      } catch (e) {
+          if (e instanceof TypeError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+
+      // 3
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      function increment(x)
+      {
+          return add(x, 1);
+      }
+
+      function add(x, y)
+      {
+          'use strict';
+          console.log(`arguments[0] is ${arguments[0]}`)
+          console.log(`arguments[1] is ${arguments[1]}`)
+          return x + y;
+      }
+
+      try {
+          var value = increment(5);
+      } catch (e) {
+          if (e instanceof TypeError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
