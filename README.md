@@ -18,7 +18,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
 - ReferenceError
     - [x] ReferenceError: "x" is not defined
     - [x] ReferenceError: assignment to undeclared variable "x"
-    - [ ] ReferenceError: deprecated caller or arguments usage
+    - [x] ReferenceError: deprecated caller or arguments usage
     - [ ] ReferenceError: invalid assignment left-hand side
     - [ ] ReferenceError: reference to undefined property "x"
 - SyntaxError
