@@ -19,8 +19,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] ReferenceError: "x" is not defined
     - [x] ReferenceError: assignment to undeclared variable "x"
     - [x] ReferenceError: deprecated caller or arguments usage
-    - [ ] ReferenceError: invalid assignment left-hand side
-    - [ ] ReferenceError: reference to undefined property "x"
+    - [x] ReferenceError: invalid assignment left-hand side
+    - [x] ReferenceError: reference to undefined property "x"
 - SyntaxError
     - [ ] SyntaxError: "use strict" not allowed in function with non-simple parameters
     - [ ] SyntaxError: "x" is not a legal ECMA-262 octal constant

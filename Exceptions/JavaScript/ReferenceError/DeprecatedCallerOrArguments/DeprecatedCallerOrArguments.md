@@ -10,7 +10,7 @@ Below we'll go over a few code examples that will illustrate normal reproduction
 
 ## When Should You Use It?
 
-As mentioned in the introduction, an `Deprecated Caller/Deprecated Arguments` error will occur only when `strict mode` is enabled, which is a method to programatically opt into a restricted variation of JavaScript that uses a number of different behaviors and semantics from the baseline JavaScript environment.  For our purposes of analyzing the behavior of the `Deprecated Caller/Deprecated Arguments` error, we simply need to know that one behavior in particular of `strict mode` is to prevent the dangerous calling of deprecated properties, such as the aforementioned `Function.caller` or `Function.arguments`.
+As mentioned in the introduction, an `Deprecated Caller/Deprecated Arguments` error will occur only when `strict mode` is enabled, which is a method to programmatically opt into a restricted variation of JavaScript that uses a number of different behaviors and semantics from the baseline JavaScript environment.  For our purposes of analyzing the behavior of the `Deprecated Caller/Deprecated Arguments` error, we simply need to know that one behavior in particular of `strict mode` is to prevent the dangerous calling of deprecated properties, such as the aforementioned `Function.caller` or `Function.arguments`.
 
 In normal, `non-strict` JavaScript, the `Function.caller` property returns the function that `invoked` the specified function on which the property is being called.  For example, here we've created two simple functions, `add` and `increment`.  Our `add` function simply adds the two arguments together and returns the result.  To make use of this, within `increment`, we pass the `x` parameter and the value `1`:
 

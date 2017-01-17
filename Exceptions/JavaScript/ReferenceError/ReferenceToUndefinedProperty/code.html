@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // 1
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      try {
+          'use strict';
+
+          var greeting = {
+              text: 'Hello there!',
+          };
+          console.log(greeting.text);
+          console.log(`Language is ${greeting.language}`);
+      } catch (e) {
+          if (e instanceof ReferenceError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+
+      // 2
+      var printError = function(error, explicit) {
+          console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+      }
+
+      try {
+          'use strict';
+
+          var greeting = {
+              text: 'Hello there!',
+          };
+          console.log(greeting.text);
+          if (greeting.hasOwnProperty('language')) {
+              console.log(`Language is ${greeting.language}`);
+          }
+      } catch (e) {
+          if (e instanceof ReferenceError) {
+              printError(e, true);
+          } else {
+              printError(e, false);
+          }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
