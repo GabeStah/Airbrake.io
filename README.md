@@ -64,7 +64,11 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
 - [x] StandardError -- default for rescue
   - [x] ArgumentError
     - [x] UncaughtThrowError
-  - [ ] EncodingError
+  - [x] EncodingError
+    - [x] CompatibilityError
+    - [ ] ConverterNotFoundError
+    - [ ] InvalidByteSequenceError
+    - [ ] UndefinedConversionError
   - [ ] FiberError
   - [ ] IOError
     - [ ] EOFError
