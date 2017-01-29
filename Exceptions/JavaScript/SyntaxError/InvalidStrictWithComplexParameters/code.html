@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        function addUser(name, age = 99) {
+            console.log(`Name is: ${name}, aged: ${age}`);
+        }
+
+        addUser('Alice');
+
+        // 2
+        function addUsers(...names) {
+            names.forEach(function(element) {
+                console.log(`Name is: ${element}`);
+            })
+        }
+        addUsers('Alice', 'Bob', 'Chris', 'David');
+
+        // 3
+        function addUsers(...names) {
+            var [first, second] = names;
+            console.log(`First name is: ${first}`);
+            console.log(`Second name is: ${second}`);
+        }
+        addUsers('Alice', 'Bob', 'Chris', 'David');
+
+        // 4
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+
+        try {
+            function addUser(name, age = 99) {
+                "use strict";
+                console.log(`Name is: ${name}, aged: ${age}`);
+            }
+
+            addUser('Alice');
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+
+        // 5
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+
+        try {
+            function addUsers(...names) {
+                "use strict";
+                names.forEach(function(element) {
+                    console.log(`Name is: ${element}`);
+                })
+            }
+
+            addUsers('Alice', 'Bob', 'Chris', 'David');
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -22,7 +22,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] ReferenceError: invalid assignment left-hand side
     - [x] ReferenceError: reference to undefined property "x"
 - SyntaxError
-    - [ ] SyntaxError: "use strict" not allowed in function with non-simple parameters
+    - [x] SyntaxError: "use strict" not allowed in function with non-simple parameters
     - [ ] SyntaxError: "x" is not a legal ECMA-262 octal constant
     - [ ] SyntaxError: JSON.parse: bad parsing
     - [ ] SyntaxError: Malformed formal parameter
@@ -63,7 +63,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] Interrupt
 - [x] StandardError -- default for rescue
   - [x] ArgumentError
-    - [ ] UncaughtThrowError
+    - [x] UncaughtThrowError
   - [ ] EncodingError
   - [ ] FiberError
   - [ ] IOError
