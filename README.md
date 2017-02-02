@@ -23,7 +23,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] ReferenceError: reference to undefined property "x"
 - SyntaxError
     - [x] SyntaxError: "use strict" not allowed in function with non-simple parameters
-    - [ ] SyntaxError: "x" is not a legal ECMA-262 octal constant
+    - [x] SyntaxError: "x" is not a legal ECMA-262 octal constant
     - [ ] SyntaxError: JSON.parse: bad parsing
     - [ ] SyntaxError: Malformed formal parameter
     - [ ] SyntaxError: Unexpected token
@@ -66,7 +66,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] UncaughtThrowError
   - [x] EncodingError
     - [x] CompatibilityError
-    - [ ] ConverterNotFoundError
+    - [x] ConverterNotFoundError
     - [ ] InvalidByteSequenceError
     - [ ] UndefinedConversionError
   - [ ] FiberError
