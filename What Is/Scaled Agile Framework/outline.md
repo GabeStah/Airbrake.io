@@ -62,13 +62,3 @@
 > - https://en.wikipedia.org/wiki/Scaled_Agile_Framework#Criticism
 > - https://dzone.com/articles/method-wars-scrum-vs-safe
 > - http://www.cio.com/article/2974436/agile-development/comparing-scaling-agile-frameworks.html
-
----
-
----
-
-**SOURCES**
-
-- http://www.scaledagileframework.com/
-- https://en.wikipedia.org/wiki/Scaled_Agile_Framework
-
