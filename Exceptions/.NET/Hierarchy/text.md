@@ -108,6 +108,12 @@ Since an `SEHException` requires an exception from `unmanaged` code that has not
 
 ---
 
+__META DESCRIPTION__
+
+A broad overview of the .NET Exception Class Hierarchy.
+
+---
+
 __SOURCES__
 
 - https://msdn.microsoft.com/en-us/library/z4c5tckx(v=vs.110).aspx
