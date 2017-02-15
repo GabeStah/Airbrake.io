@@ -68,7 +68,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] CompatibilityError
     - [x] ConverterNotFoundError
     - [x] InvalidByteSequenceError
-    - [ ] UndefinedConversionError
+    - [x] UndefinedConversionError
   - [ ] FiberError
   - [ ] IOError
     - [ ] EOFError
