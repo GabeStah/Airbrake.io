@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            var json = `
+                {
+                    "first": "Jane",
+                    "last": "Doe",
+                }
+            `
+            console.log(JSON.parse(json));
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+
+        // 2
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            var json = `
+                {
+                    "first": "Jane",
+                    last: "Doe",
+                }
+            `
+            console.log(JSON.parse(json));
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }        
+    </script>
+  </head>
+  <body></body>
+</html>
