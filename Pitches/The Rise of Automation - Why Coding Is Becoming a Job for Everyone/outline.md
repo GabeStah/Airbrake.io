@@ -5,6 +5,8 @@
 - When dealing with any form of skilled labor, the emphasis is on that **skilled** characteristic.  No matter the particular _form_ of labor a skilled laborer performs, he or she is still highly trained and skillful.  In many ways, a factory worker or plumber is no different from an database administrator or programmer: In each case, the individual focused on and learned a different set of skills applicable to the job at hand.
 - Emphasize that, due to increase in automation, a loss in many "traditional" occupations opens opportunities for jobs in other fields, namely coding.
 
+> http://www.nytimes.com/roomfordebate/2016/10/04/easing-the-pain-of-automation
+
 ## The Trajectory of Automation
 
 - Discuss how computerization is beginning to work its way into more creative occupations, where subtle judgment is often required (finances, hospital ICUs, etc).
