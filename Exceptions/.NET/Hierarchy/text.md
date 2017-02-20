@@ -106,11 +106,15 @@ Also inherited from `ExternalException`, an `SEHException` acts as a sort of "ca
 
 Since an `SEHException` requires an exception from `unmanaged` code that has not already been mapped to an existing exception type which might better suit it, throwing of an `SEHException` is rather rare.  
 
+To get the most out of your own applications and to fully manage any and all .NET Exceptions, check out the [`Airbrake .NET Bug Handler`], offering real-time alerts and instantaneous insight into what went wrong with your .NET code, along with built-in support for a variety of popular development integrations including: JIRA, GitHub, Bitbucket, and much more.
+
 ---
+
+[`Airbrake .NET Bug Handler`]: https://airbrake.io/languages/net_bug_tracker
 
 __META DESCRIPTION__
 
-A broad overview of the .NET Exception Class Hierarchy.
+A broad overview of the .NET Exception Class Hierarchy, including namespaces, exception inheritance, and legacy exception techniques like COM and HResult.
 
 ---
 
