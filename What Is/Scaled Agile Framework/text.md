@@ -52,29 +52,11 @@ Given the sheer size and scope of `safe`, proper implementation can be rather da
 3. **Train Teams**: Individuals should initially be organized into `Agile Teams`, who can then all be trained on the various `Lean`, `Agile`, and `safe` principles.
 4. **Launch `Agile Release Trains`**: Finally, once the organization has been properly trained, it's time to group `Agile Teams` together into `ARTs`, and then generate models for objective planning, program execution, program increment planning, and all the other components required for a successful `Agile Release Train`.
 
-
-
-- Discuss the common steps/[roadmap](http://www.scaledagileframework.com/implementation-roadmap-2/) toward implementation of a `SAFe` model for existing teams:
-  - Train Implementors
-  - Train Executives/Managers/Leaders
-  - Train Teams and Launch Agile Release Trains
-- Outline the two types of `SAFe` 4.0 implementations: `3-Level` and `4-Level`.
-
 `safe` defines three levels within the organization:
 
 - [`Portfolio Level`](http://www.scaledagileframework.com/portfolio-level/): Focuses on the `Portfolio Vision`, creating `Investment Themes` with assigned funding, and makes use of `Kanban`.  [`Epics`](http://www.scaledagileframework.com/epic/) are also devised at this level, which contain significant initiatives to help guide value streams toward the larger portfolio goals.
 - [`Program Level`](http://www.scaledagileframework.com/program-level/): As we discussed earlier, `Program Level` focuses on specific business value streams.  One key aspect of `Program Level` is the process of breaking down `Epics` into smaller features that form the [`Program Backlog`](http://www.scaledagileframework.com/program-and-value-stream-backlogs/).
 - [`Team Level`](http://www.scaledagileframework.com/team-level/): At the `Team Level`, features from the `Program Level` are broken down further into `Stories`, forming the `Team Backlog`.  `Scrum` is then utilized, over the course of typical iteration lengths (2 weeks), to complete the features of `Stories`.
-
-- Explain the sub-levels in both types of implementations:
-  - Team
-  - Program
-  - Portfolio
-  - Value Stream (`4-Level` only)
-
-> - http://www.scaledagileframework.com/introduction-to-safe/
-> - http://www.scaledagileframework.com/safe-lean-agile-principles/
-> - http://www.slideshare.net/RodneyBodamer1/scaled-agile-framework-and-disciplined-agile-delivery-comparisons
 
 ## Advantages of SAFe
 
