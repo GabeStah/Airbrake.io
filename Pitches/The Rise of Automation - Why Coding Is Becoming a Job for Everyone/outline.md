@@ -1,5 +1,7 @@
 # The Rise of Automation: Why Coding Is Becoming a Job for Everyone [OUTLINE v1]
 
+> https://medium.freecodecamp.com/bill-gates-and-elon-musk-just-warned-us-about-the-one-thing-politicians-are-too-scared-to-talk-8db9815fd398#.9p17vip10
+
 - Discuss, in introduction, the basic premise of automation and computerization in modern society.
 - Detail why particular occupations and industries have seen the most severe decline in employment from automation: occupations, like manufacturing, in which core job tasks follow well-defined repetitive procedures, they can easily be codified in computer software and thus performed by computers.
 - When dealing with any form of skilled labor, the emphasis is on that **skilled** characteristic.  No matter the particular _form_ of labor a skilled laborer performs, he or she is still highly trained and skillful.  In many ways, a factory worker or plumber is no different from an database administrator or programmer: In each case, the individual focused on and learned a different set of skills applicable to the job at hand.
