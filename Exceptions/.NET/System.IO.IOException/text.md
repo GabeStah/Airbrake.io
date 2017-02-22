@@ -4,9 +4,9 @@ In this article, we'll dig deeper into where `System.IO.IOException` resides wit
 
 ## The Technical Rundown
 
-- All .NET exceptions are derived classes of the [`System.Exception`] base class, or derived from another inherited class therein.
-- The [`System.SystemException`] class is inherited from the [`System.Exception`] class.
-- `System.IO.IOException` is a inherited from the [`System.SystemException`] class, and is a parent class to a number of `IO` exceptions as well.
+- All .NET exceptions are derived classes of the [`System.Exception`](https://airbrake.io/blog/net-exception-handling/net-exception-hierarchy) base class, or derived from another inherited class therein.
+- The [`System.SystemException`](https://msdn.microsoft.com/en-us/library/system.systemexception(v=vs.110).aspx) class is inherited from the [`System.Exception`](https://airbrake.io/blog/net-exception-handling/net-exception-hierarchy) class.
+- `System.IO.IOException` is a inherited from the [`System.SystemException`](https://msdn.microsoft.com/en-us/library/system.systemexception(v=vs.110).aspx) class, and is a parent class to a number of `IO` exceptions as well.
 
 ## When Should You Use It?
 
@@ -100,9 +100,6 @@ As expected, now our caught exception class is, in fact, `System.IO.IOException`
 ```
 
 To get the most out of your own applications and to fully manage any and all .NET Exceptions, check out the <a class="js-cta-utm" href="https://airbrake.io/languages/net_bug_tracker?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-net">Airbrake .NET Bug Handler</a>, offering real-time alerts and instantaneous insight into what went wrong with your .NET code, along with built-in support for a variety of popular development integrations including: JIRA, GitHub, Bitbucket, and much more.
-
-[`System.Exception`]: https://airbrake.io/blog/net-exception-handling/net-exception-hierarchy
-[`System.SystemException`]: https://msdn.microsoft.com/en-us/library/system.systemexception(v=vs.110).aspx
 
 ---
 
