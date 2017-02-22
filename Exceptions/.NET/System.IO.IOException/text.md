@@ -99,7 +99,7 @@ As expected, now our caught exception class is, in fact, `System.IO.IOException`
    at ConsoleApplication.Program.Main(String[] args) in g:\dev\work\Airbrake.io\Exceptions\.NET\System.IO.IOException\Program.cs:line 13: Uh oh, something broke!
 ```
 
-To get the most out of your own applications and to fully manage any and all .NET Exceptions, check out the <a class="js-cta-utm" href="https://airbrake.io/languages/net_bug_tracker">Airbrake .NET Bug Handler</a>, offering real-time alerts and instantaneous insight into what went wrong with your .NET code, along with built-in support for a variety of popular development integrations including: JIRA, GitHub, Bitbucket, and much more.
+To get the most out of your own applications and to fully manage any and all .NET Exceptions, check out the <a class="js-cta-utm" href="https://airbrake.io/languages/net_bug_tracker?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-net">Airbrake .NET Bug Handler</a>, offering real-time alerts and instantaneous insight into what went wrong with your .NET code, along with built-in support for a variety of popular development integrations including: JIRA, GitHub, Bitbucket, and much more.
 
 [`System.Exception`]: https://airbrake.io/blog/net-exception-handling/net-exception-hierarchy
 [`System.SystemException`]: https://msdn.microsoft.com/en-us/library/system.systemexception(v=vs.110).aspx
