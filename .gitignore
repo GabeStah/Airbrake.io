@@ -1,2 +1,12 @@
+# PDF
 *.pdf
+
+# Personal notes
 *NOTES.md
+
+# .NET Project Files
+.vscode/
+bin/
+obj/
+project.json
+project.lock.json
