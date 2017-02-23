@@ -25,7 +25,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] SyntaxError: "use strict" not allowed in function with non-simple parameters
     - [x] SyntaxError: "x" is not a legal ECMA-262 octal constant
     - [x] SyntaxError: JSON.parse: bad parsing
-    - [ ] SyntaxError: Malformed formal parameter
+    - [x] SyntaxError: Malformed formal parameter
     - [ ] SyntaxError: Unexpected token
     - [ ] SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
     - [ ] SyntaxError: missing ) after argument list
