@@ -4,14 +4,14 @@ In this article, we'll examine the `UndefinedConversionError` class, explores wh
 
 # The Technical Rundown
 
-- All Ruby exceptions are descendants of the [`Exception`] class, or a subclass therein.
-- [`StandardError`] is a direct descendant of the [`Exception`] class, and is also a superclass with many descendants of its own.
-- [`EncodingError`] is a direct descendant of the [`StandardError`] class, and is also a superclass with a handful of descendants of its own.
-- `UndefinedConversionError` is a direct descendant of the [`EncodingError`] class.
+- All Ruby exceptions are descendants of the [`Exception`](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes) class, or a subclass therein.
+- [`StandardError`](https://ruby-doc.org/core-2.3.3/StandardError.html) is a direct descendant of the [`Exception`](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes) class, and is also a superclass with many descendants of its own.
+- [`EncodingError`](https://ruby-doc.org/core-2.3.3/EncodingError.html) is a direct descendant of the [`StandardError`](https://ruby-doc.org/core-2.3.3/StandardError.html) class, and is also a superclass with a handful of descendants of its own.
+- `UndefinedConversionError` is a direct descendant of the [`EncodingError`](https://ruby-doc.org/core-2.3.3/EncodingError.html) class.
 
 # When Should You Use It?
 
-As we saw in our `ConverterNotFoundError` article, Ruby's [`Encoding`] namespace defines all the encoding and transcoding functionality within Ruby, which allows simply conversion from one encoding to another.  However, in the case of the `UndefinedConversionError`, an attempt to convert a character from one encoding to the other fails, typically because that character is not compatible with the target encoding in question.  
+As we saw in our `ConverterNotFoundError` article, Ruby's [`Encoding`](https://ruby-doc.org/core-2.4.0/Encoding.html) namespace defines all the encoding and transcoding functionality within Ruby, which allows simply conversion from one encoding to another.  However, in the case of the `UndefinedConversionError`, an attempt to convert a character from one encoding to the other fails, typically because that character is not compatible with the target encoding in question.  
 
 For example, here we're attempting to take a single character (the trademark symbol, `™`) and to convert it from `UTF-8` encoding to `IBM437`:
 
@@ -96,14 +96,7 @@ Trademark Symbol: ?
 
 As developers and database administrators can attest, it's somewhat common to see random `�` characters popping up in database text fields from time to time.  In most cases, it's due to these sorts of conversion issues, forcing the developer or database engine to gracefully skip over a potential error like `UndefinedConversionError` by converting unknown characters to `�` instead.
 
-To get the most out of your own applications and to fully manage any and all Ruby Exceptions, check out the [`Airbrake Ruby`] exception handling tool, offering real-time alerts and instantaneous insight into what went wrong with your Ruby code, including integrated support for a variety of popular Ruby gems and frameworks.
-
-[`Airbrake Ruby`]: https://airbrake.io/languages/ruby_exception_handling
-[`Exception`]: https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes
-[`StandardError`]: https://ruby-doc.org/core-2.3.3/StandardError.html
-[`EncodingError`]: https://ruby-doc.org/core-2.3.3/EncodingError.html
-[`Encoding`]: https://ruby-doc.org/core-2.4.0/Encoding.html
-[`overlong encodings`]: https://en.wikipedia.org/wiki/UTF-8#Codepage_layout
+To get the most out of your own applications and to fully manage any and all Ruby Exceptions, check out the <a class="js-cta-utm" href="https://airbrake.io/languages/ruby_exception_handling?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-ruby">Airbrake Ruby</a> exception handling tool, offering real-time alerts and instantaneous insight into what went wrong with your Ruby code, including integrated support for a variety of popular Ruby gems and frameworks.
 
 ---
 
