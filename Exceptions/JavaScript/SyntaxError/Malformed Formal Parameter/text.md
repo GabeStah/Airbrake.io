@@ -106,7 +106,7 @@ CHROME:
 [EXPLICIT] SyntaxError: Unexpected token var
 ```
 
-To dive even deeper into understanding how your applications deal with JavaScript Errors, check out the revolutionary [`Airbrake JavaScript`](https://airbrake.io/languages/javascript_exception_handler) error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
+To dive even deeper into understanding how your applications deal with JavaScript Errors, check out the revolutionary <a class="js-cta-utm" href="https://airbrake.io/languages/javascript_exception_handler?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-js">Airbrake JavaScript</a> error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
 
 ---
 
