@@ -4,8 +4,8 @@ In this article, we'll dig deeper into where `System.IO.IOException` resides wit
 
 ## The Technical Rundown
 
-- All .NET exceptions are derived classes of the [`System.Exception`](https://airbrake.io/blog/net-exception-handling/net-exception-hierarchy) base class, or derived from another inherited class therein.
-- The [`System.SystemException`](https://msdn.microsoft.com/en-us/library/system.systemexception(v=vs.110).aspx) class is inherited from the [`System.Exception`](https://airbrake.io/blog/net-exception-handling/net-exception-hierarchy) class.
+- All .NET exceptions are derived classes of the [`System.Exception`](https://airbrake.io/blog/dotnet-exception-handling/exception-class-hierarchy) base class, or derived from another inherited class therein.
+- The [`System.SystemException`](https://msdn.microsoft.com/en-us/library/system.systemexception(v=vs.110).aspx) class is inherited from the [`System.Exception`](https://airbrake.io/blog/dotnet-exception-handling/exception-class-hierarchy) class.
 - `System.IO.IOException` is a inherited from the [`System.SystemException`](https://msdn.microsoft.com/en-us/library/system.systemexception(v=vs.110).aspx) class, and is a parent class to a number of `IO` exceptions as well.
 
 ## When Should You Use It?
