@@ -70,8 +70,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] InvalidByteSequenceError
     - [x] UndefinedConversionError
   - [x] FiberError
-  - [ ] IOError
-    - [ ] EOFError
+  - [x] IOError
+    - [x] EOFError
   - [ ] IndexError
     - [ ] KeyError
     - [ ] StopIteration
