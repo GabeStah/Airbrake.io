@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ConsoleApplication
 {
-    public class Program
+    public class IOExceptionExample
     {
 
         public static void Main(string[] args)
