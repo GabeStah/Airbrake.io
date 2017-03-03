@@ -1,0 +1,1 @@
+function c(a,b){console.log("["+(b?"EXPLICIT":"INEXPLICIT")+"] "+a.name+": "+a.message)}function d(a,b){console.log("add.caller is "+d.caller+".");console.log("add.caller.name is "+d.caller.name+".");return a+b}try{d(1,1)}catch(a){a instanceof TypeError?c(a,!0):c(a,!1)};

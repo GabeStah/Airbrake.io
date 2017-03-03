@@ -10,3 +10,6 @@ bin/
 obj/
 project.json
 project.lock.json
+
+# Java
+*.jar
