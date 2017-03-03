@@ -26,8 +26,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] SyntaxError: "x" is not a legal ECMA-262 octal constant
     - [x] SyntaxError: JSON.parse: bad parsing
     - [x] SyntaxError: Malformed formal parameter
-    - [ ] SyntaxError: Unexpected token
-    - [ ] SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+    - [x] SyntaxError: Unexpected token
+    - [x] SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
     - [ ] SyntaxError: missing ) after argument list
     - [ ] SyntaxError: missing ; before statement
     - [ ] SyntaxError: missing ] after element list
