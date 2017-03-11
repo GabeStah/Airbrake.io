@@ -230,7 +230,7 @@ While the full specification can be found in the [official documentation](https:
 
 There are many valid `tags` that can be used within the syntax, but we'll just give an example using a handful of common tags:
 
-- `summary`: The base tag that contains all other tags, and should, at the least, contain a basic summary of the element.
+- `summary`: The most basic tag, which should contain a summary of the element.
 - `example`: Contains example code that illustrates the proper use of the element.  Often includes the `code` tag.
 - `code`: Valid C# code, typically used to show a snippet example of the element in question.
 - `see`: Used by the `documentation generator` to create an automatic link to other documented elements.
@@ -241,6 +241,7 @@ Given all that, our example comment is quite extensive for what amounts to a ver
 
 ```cs
 /// <summary>Concatenates the First and Last names into a Full Name value.
+/// </summary>
 /// <example>For example:
 /// <code>
 ///	string full = GetFullName("Jane", "Doe");
@@ -251,7 +252,6 @@ Given all that, our example comment is quite extensive for what amounts to a ver
 /// <param name="first">First name</param>
 /// <param name="last">Last name</param>
 /// <returns>The concatenated Full Name.</returns>
-/// </summary>
 public string GetFullName(string first, string last)
 {
 	return $"{first} {last}";
