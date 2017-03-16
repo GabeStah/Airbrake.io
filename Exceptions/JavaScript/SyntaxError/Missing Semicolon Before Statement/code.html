@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        var name = "John Smith"
+        console.log("Hello", name);
+
+        // 2
+        var
+        name
+        =
+        "John Smith"
+        console.log("Hello", name)
+
+        // 3
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            var getFullName;
+            getFullName(first, last) {
+                return `${first} ${last}`;
+            };
+            console.log(getFullName("John", "Smith"))
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+
+        // 4
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            var getFullName = function(first, last) {
+                return `${first} ${last}`;
+            };
+            console.log(getFullName("John", "Smith"))
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }          
+    </script>
+  </head>
+  <body></body>
+</html>
