@@ -72,7 +72,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] FiberError
   - [x] IOError
     - [x] EOFError
-  - [ ] IndexError
+  - [x] IndexError
     - [ ] KeyError
     - [ ] StopIteration
   - [ ] LocalJumpError
