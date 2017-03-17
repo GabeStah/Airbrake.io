@@ -66,8 +66,6 @@ Perhaps unsurprisingly, this raises an explicit `IndexError`, indicating that th
 
 ```
 [EXPLICIT] IndexError: index 5 outside of array bounds: -4...4
-D:/work/Airbrake.io/Exceptions/Ruby/StandardError/IndexError/code.rb:10:in `fetch'
-D:/work/Airbrake.io/Exceptions/Ruby/StandardError/IndexError/code.rb:10:in `<main>'
 ```
 
 There are a couple ways to solve this and prevent `IndexError` from occurring.  The first, and most obvious, is to improve our code logic so that we don't try to retrieve any indices that don't exist with the `Array.fetch` method.
@@ -133,9 +131,3 @@ To get the most out of your own applications and to fully manage any and all Rub
 __META DESCRIPTION__
 
 A closer look at the IndexError in Ruby, a direct descendant of the StandardError class, along with a brief examination of working with Ruby Arrays.
-
----
-
-__SOURCES__
-
-- https://ruby-doc.org/core-2.4.0/Exception.html

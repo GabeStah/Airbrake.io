@@ -73,7 +73,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] IOError
     - [x] EOFError
   - [x] IndexError
-    - [ ] KeyError
+    - [x] KeyError
     - [ ] StopIteration
   - [ ] LocalJumpError
   - [ ] NameError
