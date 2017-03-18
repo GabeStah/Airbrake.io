@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using SharpBrake;
+using System.Configuration;
+using Sharpbrake.Client;
 
 namespace Integration
 {
@@ -18,6 +16,9 @@ namespace Integration
         static void ParseExample()
         {
             string[] values = { "123", "-123", "123.0", "01AD" };
+
+            var integration = new AirbrakeIntegration();
+            var notifier = integration.Notifier;
 
             foreach (var value in values)
             {
@@ -34,7 +35,7 @@ namespace Integration
             catch (System.FormatException e)
             {
                 Log(e);
-                e.SendToAirbrake();
+                notifier.Notify(e);
             }
         }
 
