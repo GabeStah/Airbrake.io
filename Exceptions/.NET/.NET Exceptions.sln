@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Data.SqlClient.SqlException", "System.Data.SqlClient.SqlException\Airbrake.Data.SqlClient.SqlException.csproj", "{CE878BB3-2ADB-4D00-9F51-93719844017D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{81C1FCCF-3D63-4D0B-9924-C579A426A18E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE878BB3-2ADB-4D00-9F51-93719844017D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE878BB3-2ADB-4D00-9F51-93719844017D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE878BB3-2ADB-4D00-9F51-93719844017D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE878BB3-2ADB-4D00-9F51-93719844017D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C1FCCF-3D63-4D0B-9924-C579A426A18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C1FCCF-3D63-4D0B-9924-C579A426A18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C1FCCF-3D63-4D0B-9924-C579A426A18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C1FCCF-3D63-4D0B-9924-C579A426A18E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

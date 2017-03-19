@@ -8,8 +8,10 @@
 .vscode/
 bin/
 obj/
+Properties/
 project.json
 project.lock.json
+App.config
 
 # Java
 *.jar
