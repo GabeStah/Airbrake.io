@@ -23,6 +23,68 @@ namespace Utility
         }
 
         /// <summary>
+        /// Uses format string to insert arg into output.
+        /// </summary>
+        /// <param name="format">Format string.</param>
+        /// <param name="arg0">Argument to insert into format string.</param>
+        public static void Log(string format, object arg0)
+        {
+            #if DEBUG
+                Debug.WriteLine(format, arg0);
+            #else
+                Console.WriteLine(format, arg0);
+            #endif
+        }
+
+        /// <summary>
+        /// Uses format string to insert args into output.
+        /// </summary>
+        /// <param name="format">Format string.</param>
+        /// <param name="arg0">Argument to insert into format string.</param>
+        /// <param name="arg1">Argument to insert into format string.</param>
+        public static void Log(string format, object arg0, object arg1)
+        {
+            #if DEBUG
+                Debug.WriteLine(format, arg0, arg1);
+            #else
+                Console.WriteLine(format, arg0, arg1);
+            #endif
+        }
+
+        /// <summary>
+        /// Uses format string to insert args into output.
+        /// </summary>
+        /// <param name="format">Format string.</param>
+        /// <param name="arg0">Argument to insert into format string.</param>
+        /// <param name="arg1">Argument to insert into format string.</param>
+        /// <param name="arg2">Argument to insert into format string.</param>
+        public static void Log(string format, object arg0, object arg1, object arg2)
+        {
+            #if DEBUG
+                Debug.WriteLine(format, arg0, arg1, arg2);
+            #else
+                Console.WriteLine(format, arg0, arg1, arg2);
+            #endif
+        }
+
+        /// <summary>
+        /// Uses format string to insert arg(s) into output.
+        /// </summary>
+        /// <param name="format">Format string.</param>
+        /// <param name="arg0">Argument to insert into format string.</param>
+        /// <param name="arg1">Argument to insert into format string.</param>
+        /// <param name="arg2">Argument to insert into format string.</param>
+        /// <param name="arg3">Argument to insert into format string.</param>
+        public static void Log(string format, object arg0, object arg1, object arg2, object arg3)
+        {
+            #if DEBUG
+                Debug.WriteLine(format, arg0, arg1, arg2, arg3);
+            #else
+                Console.WriteLine(format, arg0, arg1, arg2, arg3);
+            #endif
+        }
+
+        /// <summary>
         /// When <see cref="Exception"/> parameter is passed, modifies the output to indicate
         /// if <see cref="Exception"/> was expected, based on passed in `expected` parameter.
         /// <para>Outputs the full <see cref="Exception"/> type and message.</para>
