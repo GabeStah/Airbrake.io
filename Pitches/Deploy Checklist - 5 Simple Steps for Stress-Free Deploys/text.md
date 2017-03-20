@@ -1,6 +1,6 @@
 # Deploy Checklist: 5 Simple Steps for Stress-Free Deploys
 
-After months (or sometimes years) of sweat and toil, it can be an exciting moment when you can finally launch your application and see how it fares in the real world.  Yet, that level of exciting can also bring about a good deal of stress, as unforeseen issues may arise, delaying the official launch, or worse, causing problems and crashes for your actual users.
+After months (or sometimes years) of sweat and toil, it can be an exciting moment when you can finally launch your application and see how it fares in the real world.  Yet, that level of excitement can also bring about a good deal of stress, as unforeseen issues may arise, delaying the official launch, or worse, causing problems and crashes for your actual users.
 
 Proper deployment techniques can be detailed and are largely platform-dependent, so rather than focus on one particular language or tool or method, in this article we'll aim to provide you with a few simple steps, in order to ease your application into a live, production environment.
 
