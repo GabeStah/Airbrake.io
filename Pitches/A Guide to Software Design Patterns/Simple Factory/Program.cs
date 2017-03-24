@@ -1,7 +1,7 @@
 ﻿using System;
 using Utility;
 
-namespace SimpleFactory
+namespace Airbrake.DesignPatterns.SimpleFactory
 {
     class Program
     {
