@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        var name = "Alice";
+
+        (function immediateExecutionFunction(){
+            var name = "Bob";
+            console.log(`Name is ${name}.`);
+        })();
+
+        console.log(`Name is ${name}.`);
+
+        // 2
+        var name = "Alice";
+
+        {
+            var name = "Bob";
+            console.log(`Name is ${name}.`);
+        }
+
+        console.log(`Name is ${name}.`);
+
+        // 3
+        var name = "Alice";
+
+        {
+            let name = "Bob";
+            console.log(`Name is ${name}.`);
+        }
+
+        console.log(`Name is ${name}.`);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        function getFullName(first, last = "the Unknown") {
+            return `${first} ${last}`;
+        }
+
+        console.log(getFullName("Alice"));
+        console.log(getFullName("Alice", undefined));
+        console.log(getFullName("Alice", "Jones"));        
+    </script>
+  </head>
+  <body></body>
+</html>

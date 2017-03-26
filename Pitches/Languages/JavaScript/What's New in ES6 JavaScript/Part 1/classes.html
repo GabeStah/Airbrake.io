@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        class Book {
+            constructor(title, author, pageCount, wordCount) {
+                this.title = title;
+                this.author = author;
+                this.pageCount = pageCount;
+                this.wordCount = wordCount;                
+            }
+
+            get wordsPerPage() {
+                return this.wordCount / this.pageCount;
+            }
+
+            static wordsPerPage(pageCount, wordCount) {
+                return wordCount / pageCount;
+            }
+        }
+
+        class PaperbackBook extends Book {
+            constructor(...args) {
+                super(...args);
+                this.coverType = "paperback";
+            }
+        }
+
+        var book = new Book("The Shining", "Stephen King", 512, 158720);
+        console.log(book);
+        console.log(`Words per page: ${book.wordsPerPage}`);
+        console.log(`Cover type: ${book.coverType}`);
+
+        var paperback = new PaperbackBook("The Name of the Wind", "Patrick Rothfuss", 722, 223820)
+        console.log(paperback);
+        console.log(`Words per page: ${paperback.wordsPerPage}`);
+        console.log(`Cover type: ${paperback.coverType}`);
+
+        // Testing static method.
+        console.log(`Static method words per page: ${Book.wordsPerPage(500, 50000)}`);
+    </script>
+  </head>
+  <body></body>
+</html>
