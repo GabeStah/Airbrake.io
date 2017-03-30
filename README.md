@@ -30,7 +30,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
     - [x] SyntaxError: missing ) after argument list
     - [x] SyntaxError: missing ; before statement
-    - [ ] SyntaxError: missing ] after element list
+    - [x] SyntaxError: missing ] after element list
     - [ ] SyntaxError: missing } after property list
     - [ ] SyntaxError: redeclaration of formal parameter "x"
     - [ ] SyntaxError: return not in function

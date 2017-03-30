@@ -208,4 +208,4 @@ To get the most out of your own applications and to fully manage any and all .NE
 
 __META DESCRIPTION__
 
-A exploration of the System.InvalidOperationException in .NET, and a dive into handling changing collections during loops.
+A close look at the System.BadImageFormatException in .NET and assorted scenarios in which it might occur, including C# code examples.
