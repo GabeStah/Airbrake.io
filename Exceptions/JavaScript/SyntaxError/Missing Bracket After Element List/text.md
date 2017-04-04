@@ -1,4 +1,4 @@
-# SyntaxError: missing ] after element list
+# JavaScript Errors - SyntaxError: missing ] after element list
 
 Next up in our adventure through the [__JavaScript Error Handling__](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) series we'll be going over the `Missing Bracket After Element List` JavaScript error.  As directly implied by the name itself, the `Missing Bracket After Element List` error is thrown when an array is initialized with incorrect syntax, such as a missing closing bracket (`]`) or comma (`,`).
 
