@@ -12,7 +12,7 @@ Throughout this article we'll see exactly where `System.BadImageFormatException`
 
 ## When Should You Use It?
 
-As previously mentioned, a `System.BadImageFormatException` occurs in very specific circumstances: When .NET attempts to make use of a `.dll` or `.exe` that is, in someway, incompatible with the current common language runtime.  What qualifies as an "incompatible common language runtime" can vary somewhat, but typically this means either the .NET version (`1.1`, `2.0`, etc) __OR__ the CPU type (`32-bit` vs `64-bit`) of the various compiled assemblies do not match.
+As previously mentioned, a `System.BadImageFormatException` occurs in very specific circumstances: When .NET attempts to make use of a `.dll` or `.exe` that is, in some way, incompatible with the current common language runtime.  What qualifies as an "incompatible common language runtime" can vary somewhat, but typically this means either the .NET version (`1.1`, `2.0`, etc) __OR__ the CPU type (`32-bit` vs `64-bit`) of the various compiled assemblies do not match.
 
 Ultimately, `System.BadImageFormatExceptions` are an indication of incompatible versioning.  For many modern software applications, major versions of often include breaking compatibility issues, preventing backward compatibility with some aspects of previous versions.  .NET assemblies (`.dlls` or `.exes`) are much the same, and attempting to make use of two different types of assemblies that contain incompatibilities will often generate a `System.BadImageFormatException`.
 
