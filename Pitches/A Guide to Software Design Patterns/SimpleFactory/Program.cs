@@ -15,7 +15,7 @@ namespace Airbrake.DesignPatterns.SimpleFactory
             Logging.Log("Object Class: " + book.ToString());
         }
     }
-    
+
     public enum CoverType
     {
         Digital,
