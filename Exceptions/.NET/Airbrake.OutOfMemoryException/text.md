@@ -150,4 +150,4 @@ To get the most out of your own applications and to fully manage any and all .NE
 
 __META DESCRIPTION__
 
-A detailed examination of the System.OutOfMemoryException in .NET, along with a handful of potential causes that include C# code examples.
+A detailed examination of the System.OutOfMemoryException in .NET, along with a handful of potential causes, which include C# code examples.
