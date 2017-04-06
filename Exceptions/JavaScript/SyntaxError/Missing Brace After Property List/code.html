@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        // Inline, without properties.
+        var bookA = {};
+        bookA.author = 'Patrick Rothfuss';
+        bookA.title = 'The Name of the Wind';
+        console.log(bookA);
+
+        // Inline, with properties.
+        var bookB = {
+            author: 'Patrick Rothfuss',
+            title: 'The Name of the Wind'
+        };
+        console.log(bookB);
+
+        // Using new keyword constructor.
+        var bookC = new Object(bookB);
+        console.log(bookC);
+
+        // Failed equivalence test.
+        console.log(bookA === bookB);
+
+        // 2
+        var book = {
+          author: 'Patrick Rothfuss'
+          title: 'The Name of the Wind'
+        };
+        console.log(book);
+    </script>
+  </head>
+  <body></body>
+</html>
