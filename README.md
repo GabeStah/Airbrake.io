@@ -74,8 +74,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] EOFError
   - [x] IndexError
     - [x] KeyError
-    - [ ] StopIteration
-  - [ ] LocalJumpError
+    - [x] StopIteration
+  - [x] LocalJumpError
   - [ ] NameError
     - [ ] NoMethodError
   - [ ] RangeError
