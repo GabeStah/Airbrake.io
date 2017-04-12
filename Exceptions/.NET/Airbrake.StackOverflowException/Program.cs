@@ -9,7 +9,8 @@ namespace Airbrake.StackOverflowException
 {
     class Program
     {
-        private const int COUNTER_MAX = 1000;
+        private const int COUNTER_MAX = 10000;
+        private const int OUTPUT_FREQUENCY = 1000;
         static int counter = 0;
 
         static void Main(string[] args)
@@ -19,7 +20,6 @@ namespace Airbrake.StackOverflowException
             // Reset counter.
             counter = 0;
             PreventativeExample();
-
         }
 
         private static void StackOverflowExample()
@@ -30,7 +30,7 @@ namespace Airbrake.StackOverflowException
                 counter++;
 
                 // Output counter value every so often.
-                if (counter % 50 == 0)
+                if (counter % OUTPUT_FREQUENCY == 0)
                 {
                     Logging.Log($"Current counter: {counter}.");
                 }
@@ -52,7 +52,7 @@ namespace Airbrake.StackOverflowException
                 counter++;
 
                 // Output counter value every so often.
-                if (counter % 50 == 0)
+                if (counter % OUTPUT_FREQUENCY == 0)
                 {
                     Logging.Log($"Current counter: {counter}.");
                 }
@@ -62,6 +62,10 @@ namespace Airbrake.StackOverflowException
                 {
                     // Recursively call self method.
                     PreventativeExample();
+                }
+                else
+                {
+                    Logging.Log("Recursion halted.");
                 }
             }
             catch (System.StackOverflowException exception)
