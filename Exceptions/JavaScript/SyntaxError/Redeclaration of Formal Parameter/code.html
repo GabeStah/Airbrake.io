@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        function varExample() {
+          var title = 'The Stand';
+          if (true) {
+            var title = 'The Shining';
+            console.log(`Inner: ${title}`);
+          }
+          console.log(`Outer: ${title}`);
+        }
+        varExample();
+
+        function letExample() {
+          let title = 'The Stand';
+          if (true) {
+            let title = 'The Shining';
+            console.log(`Inner: ${title}`);
+          }
+          console.log(`Outer: ${title}`);
+        }
+        letExample();
+
+        // Typical function.
+        function fullName(first, last) {
+          return `${first} ${last}`;
+        }
+        console.log(fullName('Jane', 'Doe'));
+
+        // Redeclaring first parameter using var.
+        function fullName(first, last) {
+          var first = 'John';
+          return `${first} ${last}`;
+        }
+        console.log(fullName('Jane', 'Doe'));
+
+
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+          // Redeclaring first parameter using let.
+          function fullName(first, last) {
+            let first = 'John';
+            return `${first} ${last}`;
+          }
+          console.log(fullName('Jane', 'Doe'));
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+  </head>
+  <body></body>
+</html>
