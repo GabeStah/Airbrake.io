@@ -32,7 +32,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] SyntaxError: missing ; before statement
     - [x] SyntaxError: missing ] after element list
     - [x] SyntaxError: missing } after property list
-    - [ ] SyntaxError: redeclaration of formal parameter "x"
+    - [x] SyntaxError: redeclaration of formal parameter "x"
     - [ ] SyntaxError: return not in function
     - [ ] SyntaxError: test for equality (==) mistyped as assignment (=)?
     - [ ] SyntaxError: unterminated string literal
@@ -76,7 +76,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] KeyError
     - [x] StopIteration
   - [x] LocalJumpError
-  - [ ] NameError
+  - [x] NameError
     - [ ] NoMethodError
   - [ ] RangeError
     - [ ] FloatDomainError
