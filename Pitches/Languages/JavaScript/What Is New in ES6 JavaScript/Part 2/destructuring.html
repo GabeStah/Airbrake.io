@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        function getBookArray() {
+            return [
+                'The Hobbit', 
+                'J. R. R. Tolkien', 
+                320
+            ];
+        }
+        var tempBookArray = getBookArray(), title = tempBookArray[0], author = tempBookArray[1], page_count = tempBookArray[2];
+        console.log(`${title} by ${author} [${page_count} pages]`);
+
+        // 2
+        function getBookObject() {
+            return {
+                title: 'The Hobbit', 
+                author: 'J. R. R. Tolkien', 
+                page_count: 320
+            };
+        }
+        var tempBookObject = getBookObject(), title = tempBookObject.title, author = tempBookObject.author, page_count = tempBookObject.page_count;
+        console.log(`${title} by ${author} [${page_count} pages]`);
+
+        // 3
+        function getBookArray() {
+            return [
+                'The Hobbit', 
+                'J. R. R. Tolkien', 
+                320
+            ];
+        }  
+              
+        var [ title, author, page_count ] = getBookArray();
+        console.log(`${title} by ${author} [${page_count} pages]`);
+
+        // 4
+        function getBookObject() {
+            return {
+                title: 'The Hobbit', 
+                author: 'J. R. R. Tolkien', 
+                page_count: 320
+            };
+        }
+
+        var { title, author, page_count } = getBookObject();
+        console.log(`${title} by ${author} [${page_count} pages]`);
+
+        // 5
+        function getBookObject() {
+            return {
+                title: 'The Hobbit', 
+                author: 'J. R. R. Tolkien', 
+                page_count: 320
+            };
+        }
+
+        var { title: book_title, author: book_author, page_count: book_page_count} = getBookObject();
+        console.log(`${book_title} by ${book_author} [${book_page_count} pages]`);
+
+        // 6
+        function getBookObject() {
+            return {
+                title: 'The Hobbit', 
+                author: 'J. R. R. Tolkien', 
+                page_count: 320
+            };
+        }
+
+        var { title, author, page_count, language = 'English' } = getBookObject();
+        console.log(`${title} by ${author} in ${language} [${page_count} pages]`);
+    </script>
+  </head>
+  <body></body>
+</html>

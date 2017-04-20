@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        var title = 'The Hobbit', author = 'J.R.R. Tolkien'
+        var book = {
+            title: title,
+            author: author
+        };
+        console.log(book);
+
+        // 2
+        var book = {
+            title,
+            author
+        };
+
+        // 3
+        var book = {
+            getTitle: function() {
+                return 'The Hobbit';
+            },
+            getAuthor: function() {
+                return 'J.R.R. Tolkien';
+            }
+        };
+        console.log(`${book.getTitle()} by ${book.getAuthor()}`);
+
+        // 4
+        var book = {
+            getTitle() {
+                return 'The Hobbit';
+            },
+            getAuthor() {
+                return 'J.R.R. Tolkien';
+            }
+        };
+        console.log(`${book.getTitle()} by ${book.getAuthor()}`);
+    </script>
+  </head>
+  <body></body>
+</html>

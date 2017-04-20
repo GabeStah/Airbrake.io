@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Define constant for Euler's number.
+            const e = 2.7182818284;
+            console.log(e);
+            // Attempt reassignment.
+            e = 2.7
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+
+        // 2
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Define constant array.
+            const names = ['Alice', 'Bob', 'Cindy'];
+            console.log(names);
+            // Change first array value.
+            names[0] = 'Andrew';
+            console.log(names);
+            // Attempt reassignment of constant.
+            names = ['Dave', 'Elizabeth', 'Fred'];
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }        
+    </script>
+  </head>
+  <body></body>
+</html>
