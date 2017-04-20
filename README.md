@@ -78,7 +78,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] LocalJumpError
   - [x] NameError
     - [x] NoMethodError
-  - [ ] RangeError
+  - [x] RangeError
     - [ ] FloatDomainError
   - [ ] RegexpError
   - [ ] RuntimeError -- default for raise
