@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.StackOverflowExcep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Net.Sockets.SocketException", "Airbrake.Net.Sockets.SocketException\Airbrake.Net.Sockets.SocketException.csproj", "{B2C79584-DC05-45FC-9B4D-6FC08714722F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.ArgumentException", "Airbrake.ArgumentException\Airbrake.ArgumentException.csproj", "{4A81A6ED-7393-4A52-9D2E-EB9D21846588}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,14 @@ Global
 		{B2C79584-DC05-45FC-9B4D-6FC08714722F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B2C79584-DC05-45FC-9B4D-6FC08714722F}.Release|x86.ActiveCfg = Release|Any CPU
 		{B2C79584-DC05-45FC-9B4D-6FC08714722F}.Release|x86.Build.0 = Release|Any CPU
+		{4A81A6ED-7393-4A52-9D2E-EB9D21846588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A81A6ED-7393-4A52-9D2E-EB9D21846588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A81A6ED-7393-4A52-9D2E-EB9D21846588}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4A81A6ED-7393-4A52-9D2E-EB9D21846588}.Debug|x86.Build.0 = Debug|Any CPU
+		{4A81A6ED-7393-4A52-9D2E-EB9D21846588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A81A6ED-7393-4A52-9D2E-EB9D21846588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A81A6ED-7393-4A52-9D2E-EB9D21846588}.Release|x86.ActiveCfg = Release|Any CPU
+		{4A81A6ED-7393-4A52-9D2E-EB9D21846588}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
