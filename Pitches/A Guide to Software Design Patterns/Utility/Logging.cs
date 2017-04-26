@@ -121,7 +121,7 @@ namespace Utility
     }
 
     /// <summary>
-    /// Houses all logging methods for various debug outputs.
+    /// Generates a human-readable output of passed object data.
     /// </summary>
     /// <author>http://stackoverflow.com/a/10478008/3881247</author>
     public class ObjectDumper
