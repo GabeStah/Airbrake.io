@@ -131,7 +131,7 @@ To dive even deeper into understanding how your applications deal with JavaScrip
 
 __META DESCRIPTION__
 
-A detailed examination of the redeclaration of formal parameter "x" SyntaxError error in JavaScript, including a brief overview of variable declaration techniques.
+A detailed examination of the redeclaration of formal parameter "x" SyntaxError in JavaScript, including a brief overview of variable declaration techniques.
 
 ---
 

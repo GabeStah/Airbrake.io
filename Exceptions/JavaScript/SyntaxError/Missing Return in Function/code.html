@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Loose return statement.
+      return 'Jon Snow';
+      
+      var name = "You know nothing";
+      // Loose yield statement.
+      yield name;
+      
+
+
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+          var fullName = function(first, last) {
+            if (first == 'John') {
+              return `Jonathan ${last}`;
+            };
+            return `${first} ${last}`;
+          }
+          console.log(fullName('Jane', 'Doe'));
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+  </head>
+  <body></body>
+</html>

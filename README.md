@@ -33,7 +33,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] SyntaxError: missing ] after element list
     - [x] SyntaxError: missing } after property list
     - [x] SyntaxError: redeclaration of formal parameter "x"
-    - [ ] SyntaxError: return not in function
+    - [x] SyntaxError: return not in function
     - [ ] SyntaxError: test for equality (==) mistyped as assignment (=)?
     - [ ] SyntaxError: unterminated string literal
 - TypeError
