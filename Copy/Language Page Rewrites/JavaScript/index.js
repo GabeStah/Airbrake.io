@@ -5,10 +5,10 @@ var airbrake = new airbrakeJs.Client({
 })
 
 airbrake.addFilter(function(notice) {
-  if (notice.environment.server == 'development') {
-    // Ignore errors from the development server.
-    return null;
-  }
+  // if (notice.environment.server == 'development') {
+  //   // Ignore errors from the development server.
+  //   return null;
+  // }
   return notice;
 });
 

@@ -18,9 +18,9 @@ While `Airbrake-Ruby` will report all the critical, basic exception information 
 rescue IOError => ex
   # Notify by passing a direct Exception, with a custom parameter Hash.
   Airbrake.notify(ex, {
-      user: 'foo@bar.com',
-      context: 'lib',
-      environment: 'production'
+    user: 'foo@bar.com',
+    context: 'lib',
+    environment: 'production'
   })
 end
 ```
@@ -68,7 +68,7 @@ To install `Airbrake-Ruby` through `Bundler`, first create a `Gemfile`, if neces
 
 ```bash
 $ bundle init
-Writing new Gemfile to /home/dev/apps/Airbrake.io
+Writing new Gemfile to /home/dev/apps/Airbrake-Ruby
 ```
 
 Then add `Airbrake-Ruby` to your `Gemfile`:

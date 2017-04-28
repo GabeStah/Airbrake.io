@@ -1,0 +1,24 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    airbrake (6.0.0)
+      airbrake-ruby (~> 2.0)
+    airbrake-ruby (2.1.0)
+    daemons (1.2.4)
+    eventmachine (1.2.3)
+    rack (2.0.1)
+    thin (1.7.0)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  airbrake (~> 6.0)
+  rack
+  thin
+
+BUNDLED WITH
+   1.11.2

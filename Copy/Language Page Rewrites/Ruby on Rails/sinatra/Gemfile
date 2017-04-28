@@ -1,0 +1,6 @@
+# A sample Gemfile
+source 'https://rubygems.org'
+
+gem 'airbrake', '~> 6.0'
+gem 'sinatra'
+gem 'thin'
