@@ -4,11 +4,11 @@ Airbrake's `Ruby` exception handling tool easily integrates into all your new or
 
 ## Features
 
-`Airbrake-Ruby` comes equipped with a plethora of features suited to your specific Ruby project and workflow.  Check out some of the top features below, or take a look at the [official documentation](https://github.com/airbrake/airbrake-ruby) to see everything that `Airbrake-Ruby` can do for your next project!
+`Airbrake-Ruby` comes equipped with a plethora of features suited to your specific Ruby project and workflow.  Check out some of the top features below, or take a look at the [documentation](https://github.com/airbrake/airbrake-ruby) to see everything that `Airbrake-Ruby` can do for your next project!
 
 ### Powerful, Easy-to-Use API
 
-The [`Airbrake-Ruby API`](https://github.com/airbrake/airbrake-ruby#api) offers a great deal of functionality, including custom `notifiers` and `notices`, detailed exception filters, custom parameters, promises, and more.  We've detailed the use of a few of these features below, but feel free to check out the [official documentation](https://github.com/airbrake/airbrake-ruby#api) for full details on using the `Airbrake-Ruby API`.
+The [`Airbrake-Ruby API`](https://github.com/airbrake/airbrake-ruby#api) offers a great deal of functionality, including custom `notifiers` and `notices`, detailed exception filters, custom parameters, promises, and more.  We've detailed the use of a few of these features below, but feel free to check out the [documentation](https://github.com/airbrake/airbrake-ruby#api) for full details on using the `Airbrake-Ruby API`.
 
 ### Unlimited Custom Parameters
 
@@ -40,7 +40,7 @@ Airbrake.add_filter do |notice|
 end
 ```
 
-Head over to the [official documentation](https://github.com/airbrake/airbrake-ruby#airbrakeadd_filter) for more details on filtering.
+Head over to the [documentation](https://github.com/airbrake/airbrake-ruby#airbrakeadd_filter) for more details on filtering.
 
 ### Dynamic Promise Callbacks
 
@@ -58,7 +58,7 @@ Conversely, to create a callback for promises that fail (in which the `Airbrake.
 Airbrake.notify("I'm sorry Dave, I'm afraid I can't do that.").rescue { |error| puts error }
 ```
 
-Further details can be found in the [official documentation](https://github.com/airbrake/airbrake-ruby#promise).
+Further details can be found in the [documentation](https://github.com/airbrake/airbrake-ruby#promise).
 
 ## Installation
 

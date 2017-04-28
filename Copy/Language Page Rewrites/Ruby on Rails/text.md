@@ -6,7 +6,7 @@ Airbrake's Rails exception handling gem simplifies the error-reporting process f
 
 `Airbrake` is loaded with features designed with the Ruby framework developer in mind.  Whether you're using the tried-and-true `Rails`, `Sinatra`, or even a `Rack` application, `Airbrake` will seamlessly integrate and provide your team with instant, beautiful error reports available at the `Airbrake.io` dashboard.  Plus, if you need additional integrations to suit your workflow, `Airbrake` seamlessly integrates with all the most popular job processing libraries.  From there, you can even expand that integration into outside services such as `GitHub`, `Trello`, `Slack`, `JIRA`, and many more, giving you and your team the most up-to-date alerts when something goes wrong inside your application.
 
-Check out just a few of the amazing features below, or take a look at the full [official documentation](https://github.com/airbrake/airbrake#key-features) to find out everything `Airbrake` brings to the table for you and your team!
+Check out just a few of the amazing features below, or take a look at the full [documentation](https://github.com/airbrake/airbrake#key-features) to find out everything `Airbrake` brings to the table for you and your team!
 
 ### Broad Framework Support
 
@@ -64,7 +64,7 @@ namespace :deploy do
 end
 ```
 
-Of course, you're not limited to only Capistrano for deployment tracking, so feel free to check out the [official documentation](https://github.com/airbrake/airbrake#deploy-tracking) to see just how `Airbrake` easily integrates into your project deploys.
+Of course, you're not limited to only Capistrano for deployment tracking, so feel free to check out the [documentation](https://github.com/airbrake/airbrake#deploy-tracking) to see just how `Airbrake` easily integrates into your project deploys.
 
 ### Plus Unlimited Custom Parameters, Exception Filtering, Promise Callbacks, and More!
 
@@ -120,7 +120,7 @@ Running via Spring preloader in process 10796
       create  config/initializers/airbrake.rb
 ```
 
-This will automatically generate a configuration file at `config/initializers/airbrake.rb`.  Feel free to take a look at this file as it is well documented and allows you to modify the settings of your `Airbrake` integration, if needed.  The [official documentation](https://github.com/airbrake/airbrake-ruby#config-options) includes a full list of configuration values and options.
+This will automatically generate a configuration file at `config/initializers/airbrake.rb`.  Feel free to take a look at this file as it is well documented and allows you to modify the settings of your `Airbrake` integration, if needed.  The [documentation](https://github.com/airbrake/airbrake-ruby#config-options) includes a full list of configuration values and options.
 
 Lastly, you can test the Rails `Airbrake` integration by invoking the `rake airbrake:test` command (or `rails airbrake:test` for newer version of Rails) from your terminal:
 

@@ -4,7 +4,7 @@ Airbrake's `Airbrake-JS` error tracking tool can quickly and easily integrate in
 
 ## Features
 
-`Airbrake-JS` includes a range of JavaScript-specific features designed to improve your workflow and ease error reporting throughout your project's development life cycle.  Have a glance at a handful of those features below, or take a look at the [official documentation](https://github.com/airbrake/airbrake-js) for more information.
+`Airbrake-JS` includes a range of JavaScript-specific features designed to improve your workflow and ease error reporting throughout your project's development life cycle.  Have a glance at a handful of those features below, or take a look at the [documentation](https://github.com/airbrake/airbrake-js) for more information.
 
 ### Robust Module and Framework Integration
 
