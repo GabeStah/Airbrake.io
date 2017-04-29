@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            (function() {
+                // Enable strict mode.
+                "use strict";
+                // Create new name var.
+                var name = 'John';
+                // Assign name to new value, which should be disallowed in strict mode.
+                if (name = 'Jane') {
+                    // Output name.
+                    console.log(name);
+                }  
+            })(); 
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }   
+    </script>
+  </head>
+  <body></body>
+</html>
