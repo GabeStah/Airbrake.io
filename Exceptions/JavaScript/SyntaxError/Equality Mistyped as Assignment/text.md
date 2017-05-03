@@ -24,7 +24,7 @@ As discussed in the [official documentation](https://developer.mozilla.org/en-US
 1       == '1'       // true
 0       == false     // true
 0       == null      // false
-var object1 = {'value': 'key'}, object2 = {'value': 'key'}; 
+var object1 = {'key': 'value'}, object2 = {'key': 'value'}; 
 object1 == object2   // false
 0       == undefined // false
 null    == undefined // true
