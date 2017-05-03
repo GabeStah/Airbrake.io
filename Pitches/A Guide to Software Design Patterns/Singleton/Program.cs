@@ -9,7 +9,7 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
-            var deck = new Deck();
+            var deck = Deck.Instance;
             Logging.Log($"Card count: {deck.Cards.Count()}");
             Logging.Log(deck);
         }
@@ -64,11 +64,16 @@ namespace Singleton
         int CardCount { get; set; }
     }
 
-    public class Deck
+    public sealed class Deck
     {
+        private static readonly Deck instance = new Deck();
         public List<Card> Cards { get; set; }
         
-        public Deck()
+        static Deck()
+        {
+        }
+
+        private Deck()
         {
             // Query all possible card combinations and create list of Card class instances.
             var cardList = from suit in Enum.GetValues(typeof(Suit)).Cast<Suit>().ToList()
@@ -76,6 +81,14 @@ namespace Singleton
                            select new Card(suit, rank);
             // Assign list to Cards property.
             Cards = cardList.ToList<Card>();
+        }
+
+        public static Deck Instance
+        {
+            get
+            {
+                return instance;
+            }
         }
     }
 }
