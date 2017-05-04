@@ -35,7 +35,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] SyntaxError: redeclaration of formal parameter "x"
     - [x] SyntaxError: return not in function
     - [x] SyntaxError: test for equality (==) mistyped as assignment (=)?
-    - [ ] SyntaxError: unterminated string literal
+    - [x] SyntaxError: unterminated string literal
 - TypeError
     - [ ] TypeError: "x" has no properties
     - [ ] TypeError: "x" is (not) "y"
