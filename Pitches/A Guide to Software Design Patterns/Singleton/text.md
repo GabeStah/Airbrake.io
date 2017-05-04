@@ -211,7 +211,7 @@ namespace Singleton
 }
 ```
 
-_Note: To keep this a bit shorter we've left out the `Utility` namespace and `Logging` class code.  Those snippets have been included in other [Design Pattern](https://airbrake.io/blog/category/software-design) articles, so feel free to check those out if you're curious._
+_Note: To keep this a bit shorter we've left out the `Utility` namespace and `Logging` class code.  Those snippets have been included in other [Design Pattern](https://airbrake.io/blog/category/design-patterns) articles, so feel free to check those out if you're curious._
 
 For this example we have a basic `Deck` class and we want to ensure that it is a `singleton`, such that only one instance of the class can ever be created or used in code.  However, when dealing with `singleton` patterns, another important factor must be taken into consideration: `thread safety`.  We won't get into too many of the details but, like many programming languages/frameworks, .NET allows for the creation and execution of multiple threads.  In practice, this usually means that one thread might be handling UI and visual functionality, while another thread could be handling background logic and processing.
 
