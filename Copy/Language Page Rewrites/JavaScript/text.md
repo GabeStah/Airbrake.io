@@ -181,8 +181,8 @@ var AirbrakeClient = require('airbrake-js');
 var makeErrorHandler = require('airbrake-js/dist/instrumentation/express');
 
 var airbrake = new AirbrakeClient({
-  projectId: 141379, 
-  projectKey: '52e0659442daa64cd52d8fd9110f66c1'
+  projectId: YOUR_PROJECT_ID, 
+  projectKey: 'YOUR_PROJECT_API_KEY'
 });
 
 app.get('/', function hello (req, res) {
