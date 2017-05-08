@@ -79,7 +79,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] NameError
     - [x] NoMethodError
   - [x] RangeError
-    - [ ] FloatDomainError
+    - [x] FloatDomainError
   - [ ] RegexpError
   - [ ] RuntimeError -- default for raise
   - [ ] SystemCallError
