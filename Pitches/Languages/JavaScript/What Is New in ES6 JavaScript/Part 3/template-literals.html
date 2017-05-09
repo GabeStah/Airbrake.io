@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // Basic String Interpolation
+        var title = 'Robinson Crusoe';
+        var author = 'Daniel Defoe';
+
+        var output = 'Check out ' + title + ', written by ' + author + '.';
+        console.log(output); // Check out Robinson Crusoe, written by Daniel Defoe.
+
+        // ES6 String Interpolation
+        var title = 'Robinson Crusoe';
+        var author = 'Daniel Defoe';
+
+        var output = `Check out ${title}, written by ${author}.`;
+        console.log(output); // Check out Robinson Crusoe, written by Daniel Defoe.
+
+        // Traditional Expression Interpolation
+        var name = 'Alice';
+        var birthdate = new Date(1985, 1, 20);
+        var age = new Date() - birthdate;
+        var a_year = 1000 * 60 * 60 * 24 * 365;
+        
+        var output = name + ' is ' + Math.round(age / a_year) + ' years old.';
+        console.log(output); // Alice is 32 years old.
+
+        // ES6 Expression Interpolation
+        var name = 'Alice';
+        var birthdate = new Date(1985, 1, 20);
+        var age = new Date() - birthdate;
+        var a_year = 1000 * 60 * 60 * 24 * 365;
+        
+        var output = `${name} is ${Math.round(age / a_year)} years old.`;
+        console.log(output); // Alice is 32 years old.
+
+        // Traditional Function Interpolation
+        function getYearsBetweenDates(a, b) {
+            var milliseconds;
+            // If no second parameter use current date.
+            if (!b) b = new Date();
+            // Make sure to subtract largest from smallest.
+            a >= b ? milliseconds = a - b : milliseconds = b - a;
+            // Reduce milliseconds to years and round.
+            return Math.round(milliseconds / (1000 * 60 * 60 * 24 * 365));
+        }
+
+        var name = 'Alice';
+        var output = name + ' is ' + getYearsBetweenDates(new Date(1985, 1, 20)) + ' years old.';
+        console.log(output); // Alice is 32 years old.
+
+        // ES6 Function Interpolation
+        var name = 'Alice';
+        var output = `${name} is ${getYearsBetweenDates(new Date(1985, 1, 20))} years old.`;
+        console.log(output); // Alice is 32 years old.
+
+        // Traditional Mathematical Expression Interpolation
+        var output = 'One plus two is ' + (1 + 2) + ', while three plus four, which is ' + (3 + 4) + '.';
+        console.log(output); // One plus two is 3, while three plus four, which is 7.
+
+        // ES6 Mathematical Expression Interpolation
+        var output = `One plus two is ${1 + 2}, while three plus four, which is ${3 + 4}.`;
+        console.log(output); // One plus two is 3, while three plus four, which is 7.
+
+        // Traditional String Interpolation Within Expression Interpolation 
+        function upper(a) {
+            return a.toUpperCase();
+        }
+        var name = 'Alice';
+        var output = upper(name) + ' sells seashells down by the seashore.  ' + upper( name + "'s" ) + ' special seashells are seagreen.';
+        console.log(output); // ALICE sells seashells down by the seashore.  ALICE'S special seashells are seagreen.
+
+        // ES6 String Interpolation Within Expression Interpolation 
+        var name = 'Alice';
+        var output = `${upper(name)} sells seashells down by the seashore.  ${upper( `${name}'s` )} special seashells are seagreen.`;
+        console.log(output); // ALICE sells seashells down by the seashore.  ALICE'S special seashells are seagreen.
+        
+        // ES6 Tagged Template Literals
+        function tag(strings, a, diff, b) {
+            // Output the strings array.
+            console.log(strings); // ["The number ", " is ", " than the number ", ".", raw: Array(4)]
+
+            // Adjust difference verbiage if necessary.
+            diff = 'greater';
+            if (a < b) diff = 'less';
+
+            // Return recompiled string.
+            return `${strings[0]}${a}${strings[1]}${diff}${strings[2]}${b}${strings[3]}`;
+        }
+
+        var a = 1234;
+        var b = 5678;
+        
+        var output = tag`The number ${a} is ${ true } than the number ${b}.`
+        console.log(output);
+
+        var a = 99999;
+        var b = 1;
+        
+        var output = tag`The number ${a} is ${ true } than the number ${b}.`
+        console.log(output);
+
+        // ES6 Raw Strings in Tagged Template Literals
+        function tag(strings, ...values) {
+            console.log(strings[0]); // These	words	are	separated	by	tabs	.
+            console.log(strings.raw[0]); // These\twords\tare\tseparated\tby\ttabs\t.
+        }
+
+        tag`These\twords\tare\tseparated\tby\ttabs\t.`
+    </script>
+  </head>
+  <body></body>
+</html>
