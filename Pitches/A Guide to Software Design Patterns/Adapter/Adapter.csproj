@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD67C56E-91F6-45B1-BFC8-434359595B3A}</ProjectGuid>
+    <ProjectGuid>{BB1644B3-E09D-41E5-B290-BDBBB6C31C7F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Airbrake.OutOfMemoryException</RootNamespace>
-    <AssemblyName>Airbrake.OutOfMemoryException</AssemblyName>
+    <RootNamespace>Adapter</RootNamespace>
+    <AssemblyName>Adapter</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -40,8 +40,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Utility">
       <HintPath>..\..\..\..\..\dev\csharp\projects\Utility\Utility\bin\Debug\Utility.dll</HintPath>
     </Reference>
   </ItemGroup>
