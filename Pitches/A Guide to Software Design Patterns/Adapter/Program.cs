@@ -57,7 +57,6 @@ namespace Adapter
 
     interface IConsole
     {
-        Controller Controller { get; set; }
         void Play();
     }
 
@@ -68,7 +67,7 @@ namespace Adapter
         /// <summary>
         /// Controller field with custom set method to output controller being activated.
         /// </summary>
-        public Controller Controller
+        protected Controller Controller
         {
             get { return _Controller; }
             set
