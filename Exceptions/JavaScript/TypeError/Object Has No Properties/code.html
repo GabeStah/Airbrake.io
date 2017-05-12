@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // Check equality.
+        console.log(null == undefined); // true
+        // Check identity.
+        console.log(null === undefined); // false
+
+        console.log(null == null); // true
+        console.log(null === null); // true
+
+        console.log(undefined == undefined); // true
+        console.log(undefined === undefined); // true
+
+        // 1
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            console.log(null.name);
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+
+        // 2
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            console.log(undefined.name);
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }  
+
+    </script>
+  </head>
+  <body></body>
+</html>

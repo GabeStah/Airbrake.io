@@ -37,7 +37,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] SyntaxError: test for equality (==) mistyped as assignment (=)?
     - [x] SyntaxError: unterminated string literal
 - TypeError
-    - [ ] TypeError: "x" has no properties
+    - [x] TypeError: "x" has no properties
     - [ ] TypeError: "x" is (not) "y"
     - [ ] TypeError: "x" is not a constructor
     - [ ] TypeError: "x" is not a function
