@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.ArgumentException"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.NotImplementedException", "Airbrake.NotImplementedException\Airbrake.NotImplementedException.csproj", "{C4805D01-8284-490C-9361-BBA629B3D130}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.InvalidCastException", "Airbrake.InvalidCastException\Airbrake.InvalidCastException.csproj", "{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,14 @@ Global
 		{C4805D01-8284-490C-9361-BBA629B3D130}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C4805D01-8284-490C-9361-BBA629B3D130}.Release|x86.ActiveCfg = Release|Any CPU
 		{C4805D01-8284-490C-9361-BBA629B3D130}.Release|x86.Build.0 = Release|Any CPU
+		{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}.Debug|x86.Build.0 = Debug|Any CPU
+		{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}.Release|x86.ActiveCfg = Release|Any CPU
+		{D61CBDBB-6D6A-4B97-ACF4-80C6697563CA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

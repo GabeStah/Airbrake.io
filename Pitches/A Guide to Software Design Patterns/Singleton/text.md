@@ -4,7 +4,7 @@ Today we're continuing our journey through our [`Guide to Software Design Patter
 
 We'll spend some time in this article examining the `singleton` pattern in more detail, using both real world examples and some functional `C#` code.  We'll also briefly touch on the differences between thread safe vs non-thread safe methods of implementation, and why consideration of those two dynamics may be important.  Let's get going!
 
-## In the Real World
+## Singleton In the Real World
 
 There are certainly many instances in the real world where a particular object could be considered a `singleton`.  Individual human beings are the most relatable, since each of us is extraordinarily unique through the structure of our cells, our minds, our experiences, our behaviors, and so forth (#UniqueSnowflakes).  However, it's important to differentiate between `singularity` and `uniqueness`.  While it would be correct for us to state that there is no other individual person that is exactly like _you_, and therefore you are unique in that regard, of course there are billions of other human beings.  In a programming sense, if you were creating a `class` to represent a `singleton` instance of yourself, you might call the class `Me`:
 
@@ -22,7 +22,7 @@ However, we couldn't simply create a `Person` class, since we would likely have 
 
 To that end, another real world example of a `singleton` object is a simple **deck of cards**.  When most of us sit down to play a few games of poker with our buddies, we often play using a single entity known as the `deck`.  This typically consists of 52 cards in total, made up of thirteen ranks of four suits each.  When a hand is dealt around the table, all cards are obtained from that single shuffled instance of the `deck`.  Once the hand is over and you've (hopefully) taken your friends for all they're worth, all 52 cards are gathered up and shuffled back into that same single instance of the `deck`, then a new hand is dealt from it.  Repeat ad nauseam until all money is lost and/or drunkenness overtakes you.
 
-## How It Works In Code
+## How Singleton Works In Code
 
 Now, as mentioned in the introduction, the basic purpose of the `singleton` pattern is when there is a class which you want to ensure can only ever have a maximum of one `instance` in existence at any given moment.  While not an very common pattern, there are some cases where it's helpful to have a `singleton` class, such as when performing heavy I/O functions on a data set where you must be assured that multiple duplicate requests don't occur simultaneously.  In that case, a `singleton` pattern could be used as part of a queue or job system.
 
