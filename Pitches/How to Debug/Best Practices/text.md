@@ -145,14 +145,12 @@ A few important things to note here.  While not the case with all languages, for
 
 However, as you may have noticed we can add not only variables but full, executable code statements to our `watch` list.  `(DateTime.Today - birthday).Days` is just such a statement.  It is executed and evaluated every time we break at a new line of code (that is, every time we execute a code statement).  Therefore, while the value is currently showing as some `736,451` days (since it's counting from year 1), once we `Step Over` to the second line of code, all our `watches` update automatically:
 
-```
 Name | Value | Type
 --- | --- | ---
 birthday | {1/1/2000 12:00:00 AM} | System.DateTime
 DateTime.Today | {5/3/2017 12:00:00 AM} | System.DateTime
 (DateTime.Today - birthday).Days  | 6332 | int
 daysOld | 0 | int
-```
 
 Now that the first line has executed, `birthday` was changed to our intended date of `January 1st, 2000` and, therefore, our third `watch` statement also updated to a new value of `6332`.
 
