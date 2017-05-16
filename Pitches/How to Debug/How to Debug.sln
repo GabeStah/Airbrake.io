@@ -10,7 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Performance1.psess = Performance1.psess
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudio", "VisualStudio\VisualStudio.csproj", "{741DD375-16CD-46E4-A02E-B316BB6B96CA}"
+EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -20,6 +25,10 @@ Global
 		{CB5352AE-237B-4607-BA3A-C69DF3E020E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB5352AE-237B-4607-BA3A-C69DF3E020E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB5352AE-237B-4607-BA3A-C69DF3E020E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{741DD375-16CD-46E4-A02E-B316BB6B96CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741DD375-16CD-46E4-A02E-B316BB6B96CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741DD375-16CD-46E4-A02E-B316BB6B96CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741DD375-16CD-46E4-A02E-B316BB6B96CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
