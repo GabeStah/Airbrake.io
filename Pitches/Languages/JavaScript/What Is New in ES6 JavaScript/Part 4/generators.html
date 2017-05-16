@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        function *myGenerator() {
+            console.log("Pre-yield!");
+            yield 50;
+            console.log("Post-yield!");
+        }
+
+        var myGenerator = myGenerator();
+
+        console.log(myGenerator.next().value);
+        console.log("Doing other, out of scope stuff...");
+        myGenerator.next().value;
+
+        // ES6 Generator
+        function *doubler() {
+            var value = 1;
+            while (true) {
+                value *= 2
+                yield value;
+            }
+        }
+        
+        // var doubler = doubler();
+
+        // console.log(doubler.next().value);
+        // console.log(doubler.next().value);
+        // console.log(doubler.next().value);
+        // console.log(doubler.next().value);
+        // console.log(doubler.next().value);
+        // console.log(doubler.next().value);
+
+        // ES6 Generator
+        function *generator() {
+            yield *doubler();
+        }
+        
+        var gen = generator();
+
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+        console.log(gen.next().value);
+    </script>
+  </head>
+  <body></body>
+</html>
