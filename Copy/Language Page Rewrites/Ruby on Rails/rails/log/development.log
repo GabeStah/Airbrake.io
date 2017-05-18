@@ -1,0 +1,601 @@
+Started GET "/" for 127.0.0.1 at 2017-04-26 17:19:08 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/gabe/.rvm/gems/ruby-2.4.0@Ruby_on_Rails/gems/railties-5.1.0.rc2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gabe/.rvm/gems/ruby-2.4.0@Ruby_on_Rails/gems/railties-5.1.0.rc2/lib/rails/templates/rails/welcome/index.html.erb (6.2ms)
+Completed 200 OK in 1668ms (Views: 21.8ms)
+
+
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+Started GET "/" for 127.0.0.1 at 2017-04-26 17:26:29 -0700
+Processing by ApplicationController#index as HTML
+Completed 406 Not Acceptable in 785ms
+
+
+  
+ActionController::UnknownFormat (ApplicationController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.0.rc2) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.0.rc2) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.0.rc2) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.0.rc2) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.0.rc2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.0.rc2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.0.rc2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.0.rc2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.0.rc2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.0.rc2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.0.rc2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.0.rc2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.0.rc2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.0.rc2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.0.rc2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.0.rc2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.0.rc2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.0.rc2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.0.rc2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.0.rc2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.0.rc2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.0.rc2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.0.rc2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+airbrake (6.0.0) lib/airbrake/rack/middleware.rb:52:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+**Airbrake: {"id"=>"00054e1b-027e-ce0a-045b-000080780000", "url"=>"https://airbrake.io/locate/00054e1b-027e-ce0a-045b-000080780000"}
+**Airbrake: {"id"=>"00054e1b-5288-186b-045b-806900000000", "url"=>"https://airbrake.io/locate/00054e1b-5288-186b-045b-806900000000"}
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+Started GET "/" for 127.0.0.1 at 2017-04-26 18:07:58 -0700
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1385ms (Views: 1368.4ms)
+
+
+**Airbrake: closed
+Started GET "/" for 127.0.0.1 at 2017-04-26 18:08:39 -0700
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (4.2ms)
+**Airbrake: {"id"=>"00054e1b-992f-4336-745b-000042f5e2a2", "url"=>"https://airbrake.io/locate/00054e1b-992f-4336-745b-000042f5e2a2"}
+Completed 200 OK in 846ms (Views: 402.5ms)
+
+
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+Started GET "/" for 127.0.0.1 at 2017-04-26 18:12:42 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 711ms (Views: 686.7ms)
+
+
+**Airbrake: {"id"=>"00054e1b-a7ba-032a-045b-987ead52de00", "url"=>"https://airbrake.io/locate/00054e1b-a7ba-032a-045b-987ead52de00"}
+**Airbrake: closed
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170427011513)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170427011513"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-04-27 01:15:23.634434"], ["updated_at", "2017-04-27 01:15:23.634434"]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+**Airbrake: closed
+Started GET "/users/5" for 127.0.0.1 at 2017-04-26 18:16:02 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/5"):
+  
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2017-04-26 18:16:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user/1" for 127.0.0.1 at 2017-04-26 18:16:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user/2" for 127.0.0.1 at 2017-04-26 18:16:14 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/2"):
+  
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+**Airbrake: closed
+**Airbrake: closed
+Started GET "/user/2" for 127.0.0.1 at 2017-04-26 18:16:36 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/2"):
+  
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/2" for 127.0.0.1 at 2017-04-26 18:16:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/2"):
+  
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/2" for 127.0.0.1 at 2017-04-26 18:16:52 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/2"):
+  
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+Started GET "/users/2" for 127.0.0.1 at 2017-04-26 18:18:30 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/2"):
+  
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user/2" for 127.0.0.1 at 2017-04-26 18:18:32 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 45ms (ActiveRecord: 6.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/users_controller.rb:3:in `show'
+**Airbrake: {"id"=>"00054e1b-bc86-1682-845b-000000000080", "url"=>"https://airbrake.io/locate/00054e1b-bc86-1682-845b-000000000080"}
+Started GET "/user/2" for 127.0.0.1 at 2017-04-26 18:18:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 4.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/users_controller.rb:3:in `show'
+Started GET "/user/1" for 127.0.0.1 at 2017-04-26 18:18:37 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:3:in `show'
+**Airbrake: {"id"=>"00054e1b-bcb8-4389-0c5b-0000a89c6c82", "url"=>"https://airbrake.io/locate/00054e1b-bcb8-4389-0c5b-0000a89c6c82"}
+**Airbrake: {"id"=>"00054e1b-bcc6-fb44-8c5b-00e8d45f90ae", "url"=>"https://airbrake.io/locate/00054e1b-bcc6-fb44-8c5b-00e8d45f90ae"}
+**Airbrake: closed
+**Airbrake: closed
+Started GET "/user/5" for 127.0.0.1 at 2017-04-26 18:20:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 42ms (ActiveRecord: 8.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  
+app/controllers/users_controller.rb:3:in `show'
+**Airbrake: {"id"=>"00054e1b-c3e5-b81c-cc5b-0000486c92d1", "url"=>"https://airbrake.io/locate/00054e1b-c3e5-b81c-cc5b-0000486c92d1"}
+Started GET "/user/5" for 127.0.0.1 at 2017-04-26 18:22:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+Completed 406 Not Acceptable in 768ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.0.rc2) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.0.rc2) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.0.rc2) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.0.rc2) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.0.rc2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.0.rc2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.0.rc2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.0.rc2) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.0.rc2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.0.rc2) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.0.rc2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.0.rc2) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.0.rc2) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.0.rc2) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.0.rc2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.0.rc2) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.0.rc2) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.0.rc2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.0.rc2) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.0.rc2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.0.rc2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.0.rc2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.0.rc2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.0.rc2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+airbrake (6.0.0) lib/airbrake/rack/middleware.rb:52:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0.rc2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0.rc2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0.rc2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0.rc2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+**Airbrake: {"id"=>"00054e1b-ca0d-4638-0c5b-1da500000050", "url"=>"https://airbrake.io/locate/00054e1b-ca0d-4638-0c5b-1da500000050"}
+Started GET "/user/5" for 127.0.0.1 at 2017-04-26 18:24:01 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 11]]
+  Rendered users/show.html.erb within layouts/application (21.8ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 1.4ms)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 11]]
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation []>
+Did you mean?  ids):
+    1: <h1>Users#show for <%= @user.id %></h1>
+    2: <p>Find me in app/views/users/new.html.erb</p>
+  
+app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb___389024911222393591_70052843537800'
+**Airbrake: {"id"=>"00054e1b-d01f-ce67-7c5b-e261b10000e8", "url"=>"https://airbrake.io/locate/00054e1b-d01f-ce67-7c5b-e261b10000e8"}
+Started GET "/user/5" for 127.0.0.1 at 2017-04-26 18:24:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 149ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/5" for 127.0.0.1 at 2017-04-26 18:24:52 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 204ms (Views: 131.7ms | ActiveRecord: 4.6ms)
+
+
+**Airbrake: {"id"=>"00054e1b-d326-c64b-045b-000029000000", "url"=>"https://airbrake.io/locate/00054e1b-d326-c64b-045b-000029000000"}
+Started GET "/user/5" for 127.0.0.1 at 2017-04-26 18:26:48 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 189ms (Views: 138.5ms | ActiveRecord: 3.6ms)
+
+
+**Airbrake: {"id"=>"00054e1b-da14-a91a-d45b-000000d594f0", "url"=>"https://airbrake.io/locate/00054e1b-da14-a91a-d45b-000000d594f0"}
+**Airbrake: closed
+**Airbrake: {"id"=>"00054e1f-0dea-ff9d-045b-00000080d900", "url"=>"https://airbrake.io/locate/00054e1f-0dea-ff9d-045b-00000080d900"}
+**Airbrake: closed
+**Airbrake: {"id"=>"00054e1f-0deb-04f1-4c5b-550000806a63", "url"=>"https://airbrake.io/locate/00054e1f-0deb-04f1-4c5b-550000806a63"}
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: closed
+**Airbrake: {"id"=>"00054e2f-e74a-9218-045b-38702f788800", "url"=>"https://airbrake.io/locate/00054e2f-e74a-9218-045b-38702f788800"}
+**Airbrake: {"id"=>"00054e2f-e750-80af-a45b-f900e0101230", "url"=>"https://airbrake.io/locate/00054e2f-e750-80af-a45b-f900e0101230"}
+**Airbrake: {"id"=>"00054e2f-e918-d6e3-e45b-d3e391d2098b", "url"=>"https://airbrake.io/locate/00054e2f-e918-d6e3-e45b-d3e391d2098b"}
+**Airbrake: {"id"=>"00054e2f-ea36-a711-f45b-50d39ca58b20", "url"=>"https://airbrake.io/locate/00054e2f-ea36-a711-f45b-50d39ca58b20"}
+**Airbrake: {"id"=>"00054e2f-ec05-b482-645b-f0f24865ca58", "url"=>"https://airbrake.io/locate/00054e2f-ec05-b482-645b-f0f24865ca58"}
+**Airbrake: {"id"=>"00054e2f-ec0b-6a2e-b45b-a3dbfc3ee860", "url"=>"https://airbrake.io/locate/00054e2f-ec0b-6a2e-b45b-a3dbfc3ee860"}
+**Airbrake: closed
+**Airbrake: {"id"=>"00054e30-bb1e-072e-6c5b-016e9c54ed28", "url"=>"https://airbrake.io/locate/00054e30-bb1e-072e-6c5b-016e9c54ed28"}
+**Airbrake: closed
+**Airbrake: {"id"=>"00054e30-bc06-8b47-7c5b-44d6b2c4aeb3", "url"=>"https://airbrake.io/locate/00054e30-bc06-8b47-7c5b-44d6b2c4aeb3"}
+**Airbrake: closed
+**Airbrake: unexpected code (504). Body: 
+**Airbrake: unexpected code (504). Body: 
+**Airbrake: closed
+**Airbrake: closed
