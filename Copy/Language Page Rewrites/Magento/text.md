@@ -2,7 +2,9 @@ TODO: Change `a-m` to `Airbrake-Magento`
 
 # Magento Exception Handling
 
-Magento is one of the leading eCommerce platforms on the market for PHP-centric applications and with the power of the `a-m` plugin, you can quickly and easily enable the power of real-time error monitoring and automatic exception reporting across your entire Magento application in just a couple minutes.  
+Magento is one of the leading eCommerce platforms on the market for PHP-centric applications and with the power of the `a-m` plugin, you can quickly and easily enable the power of real-time error monitoring and automatic exception reporting across your entire Magento application in just a couple minutes.  With the `a-m` plugin there's no more need for manually tracking exceptions or digging around through massive log files.  Best of all, all errors are reported to `Airbrake.io's` dynamic web dashboard the moment they occur, providing you and your team immediate alerts and powerful search tools to find out exactly what went wrong, no matter where the problem occurred.
+
+
 
 The `Airbrake-Java` library provides real-time error monitoring and automatic exception reporting for all your Java-based projects.  Tight integration with `Airbrake.io's` state of the art web dashboard ensures that `Airbrake-Java` gives you round-the-clock status updates on your application's health and error rates.  `Airbrake-Java` easily integrates with all the latest Java frameworks and platforms like `Spring`, `Maven`, `log4j`, `Struts`, `Kotlin`, `Grails`, `Groovy`, and many more.  Plus, `Airbrake-Java` allows you to easily customize exception parameters and gives you full, configurable filter capabilities so you only gather the errors that matter most.
 
