@@ -34,18 +34,18 @@
         // console.log(doubler.next().value);
 
         // ES6 Generator
-        function *generator() {
+        function *useDoubler() {
             yield *doubler();
         }
         
-        var gen = generator();
+        var doubler = useDoubler();
 
-        console.log(gen.next().value);
-        console.log(gen.next().value);
-        console.log(gen.next().value);
-        console.log(gen.next().value);
-        console.log(gen.next().value);
-        console.log(gen.next().value);
+        console.log(doubler.next().value);
+        console.log(doubler.next().value);
+        console.log(doubler.next().value);
+        console.log(doubler.next().value);
+        console.log(doubler.next().value);
+        console.log(doubler.next().value);
     </script>
   </head>
   <body></body>
