@@ -26,7 +26,7 @@ To meet this demand the `Airbrake-Java` library makes it easy to associate near-
 
 `Airbrake-Java` makes it a breeze to filter the exceptions your application reports to the `Airbrake` dashboard, so you can ensure only the most important issues are highlighted.  Moreover, you can also quickly filter out custom data fields, ensuring no private or sensitive information is sent to `Airbrake`, nor to any integrated third-party services.  `Airbrake-Java` also makes it painless to filter environment or system properties associated with each error, ensuring only the most critical information remains, before being sent along to `Airbrake` and wherever else you need it!
 
-## Installation
+## Quick Setup
 
 ### Install via Maven and Log4j
 

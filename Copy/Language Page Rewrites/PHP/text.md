@@ -95,7 +95,7 @@ $notifier->addFilter(function($notice) {
 
 Head over to the [documentation](https://github.com/airbrake/phpbrake#adding-custom-data-to-the-notice) for full details on filtering with `Airbrake-PHP`.
 
-## Installation
+## Quick Setup
 
 #### Install via Composer
 

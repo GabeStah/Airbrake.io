@@ -20,7 +20,7 @@ The `Airbrake-Magento` module includes customizable fields within the Magento Ad
 
 If you've ever installed another Magento before then installing `Airbrake-Magento` will be a breeze, even for individuals that might be less technically-minded.  With the popular and incredibly helpful [`Modman`](https://github.com/colinmollenhour/modman) module manager installed, you can get `Airbrake-Magento` installed, configured, and reporting exceptions with just four commands and a few clicks.
 
-## Installation
+## Quick Setup
 
 ### Install with Modman
 

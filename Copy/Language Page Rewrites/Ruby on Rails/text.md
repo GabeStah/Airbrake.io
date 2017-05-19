@@ -75,9 +75,9 @@ Since the `Airbrake` gem is based on the powerful [`Airbrake-Ruby`](https://gith
 - [`Promise Callbacks`](https://github.com/airbrake/airbrake-ruby#promise) grant your application the ability to perform additional tasks after an exception is sent to `Airbrake` (or even if a report failed to go through).
 - And more!  Check out the [`Airbrake-Ruby` language page](https://airbrake.io/languages/ruby_exception_handling) or the [official `Airbrake-Ruby` documentation](https://github.com/airbrake/airbrake-ruby#introduction) for full details on the extra capabilities provided by this powerful gem.
 
-## Installation
+## Quick Setup
 
-#### Install via `Bundler`
+### Install via `Bundler`
 
 To install `Airbrake` through `Bundler`, first create a `Gemfile`, if necessary, with `bundle init`:
 
@@ -98,7 +98,7 @@ Finally, tell `Bundler` to install the newly-added gem:
 $ bundle install
 ```
 
-#### Install Gem Manually
+### Install Gem Manually
 
 If you aren't using `Bundler` and a `Gemfile` for your project, you can easily install `Airbrake` manually from your terminal:
 

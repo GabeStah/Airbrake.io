@@ -30,6 +30,12 @@ Beyond adding additional parameter data to your exception reports, `Sharpbrake` 
 
 Take a look at the full [documentation](https://github.com/airbrake/sharpbrake#ignoreenvironments) for more information on integrating the many robust filtering capabilities `Sharpbrake` has to offer.
 
-## Installation
+### ASP.NET Inegration
+
+In addition to client-side applications, `Sharpbrake` also includes modules that make it easy to integrate `Airbrake's` revolutionary exception handling and reporting services into ASP.NET web applications.  `Sharbrake` comes with the full-blown `ASP.NET HTTP` module that can be easily installed via `NuGet` and configured in just a few minutes.  Alternatively, if you need a middleware option, `Sharpbrake` also includes a powerful `ASP.NET Core Middleware` module that can be quickly integrated into the stack of other middleware components your application may be using.
+
+No matter the type of .NET application you're developing or maintaining, `Sharpbrake` has you covered, so feel free to check out all the details in the [documentation](https://github.com/airbrake/sharpbrake#aspnet-integration).
+
+## Quick Setup
 
 ### 

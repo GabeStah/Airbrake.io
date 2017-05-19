@@ -72,7 +72,7 @@ try {
 }
 ```
 
-## Installation
+## Quick Setup
 
 #### Install via `NPM`
 

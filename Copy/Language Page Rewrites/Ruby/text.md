@@ -60,9 +60,9 @@ Airbrake.notify("I'm sorry Dave, I'm afraid I can't do that.").rescue { |error| 
 
 Further details can be found in the [documentation](https://github.com/airbrake/airbrake-ruby#promise).
 
-## Installation
+## Quick Setup
 
-#### Install via `Bundler`
+### Install via `Bundler`
 
 To install `Airbrake-Ruby` through `Bundler`, first create a `Gemfile`, if necessary, with `bundle init`:
 
@@ -83,7 +83,7 @@ Finally, tell `Bundler` to install the newly-added gem:
 $ bundle install
 ```
 
-#### Install Gem Manually
+### Install Gem Manually
 
 If you aren't using `Bundler` and a `Gemfile` for your project, you can easily install `Airbrake-Ruby` manually from your terminal:
 
@@ -95,7 +95,7 @@ $ gem install airbrake-ruby
 
 Once installed, using `Airbrake-Ruby` only requires a few lines of code to quickly get up and running.
 
-#### Create a Notifier
+### Create a Notifier
 
 Each `notifier` is associated with a particular `Airbrake` `Project ID` and `Project API Key`, which can be found on the right-hand side of the `Project Settings` page while logged into your `Airbrake` dashboard.
 
@@ -131,7 +131,7 @@ Airbrake.configure(:production) do |c|
 end
 ```
 
-#### Asynchronous Exception Notification
+### Asynchronous Exception Notification
 
 With a `notifier` configured, now you can send asynchronous notifications to Airbrake using the `Airbrake#notify` method:
 
@@ -157,7 +157,7 @@ notice[:params][:username] = 'admin'
 Airbrake[:production].notify(notice)
 ```
 
-#### Synchronous Exception Notifications
+### Synchronous Exception Notifications
 
 Alternatively, you can send synchronous notifications using the `Airbrake#notify_sync` method, passing all the same parameter types, while also attaching it to a particular `notifier`, if you wish:
 
