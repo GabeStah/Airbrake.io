@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Linq;
 using Sharpbrake.Client;
 
-namespace Integration
+namespace DotNET
 {
     class AirbrakeIntegration
     {

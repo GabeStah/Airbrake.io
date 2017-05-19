@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Configuration;
-using Sharpbrake.Client;
+using Utility;
 
-namespace Integration
+namespace DotNET
 {
     class Program
     {
@@ -22,30 +19,22 @@ namespace Integration
 
             foreach (var value in values)
             {
-                Log($"TryParse of {value} is: {Int32.TryParse(value, out int number)}");
+                Logging.Log($"TryParse of {value} is: {Int32.TryParse(value, out int number)}");
             }
 
             try
             {
                 foreach (var value in values)
                 {
-                    Log($"Parse of {value} is: {Int32.Parse(value)}");
+                    Logging.Log($"Parse of {value} is: {Int32.Parse(value)}");
                 }
             }
             catch (System.FormatException e)
             {
-                Log(e);
-                notifier.Notify(e);
+                var result = notifier.NotifyAsync(e).Result;
+                Logging.Log(e);
+                Logging.Log(result);
             }
-        }
-
-        static void Log(object value)
-        {
-            #if DEBUG
-                System.Diagnostics.Debug.WriteLine(value);
-            #else
-                Console.WriteLine(value);
-            #endif
         }
     }
 }
