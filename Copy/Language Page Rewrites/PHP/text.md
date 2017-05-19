@@ -1,18 +1,18 @@
 # PHP Exception Handling
 
-The `Airbrake-PHP` library quickly and easily integrates into any PHP project, giving you and your team access to real-time error monitoring and reports throughout your application's entire life cycle.  With automatic, instantaneous error and exception notifications at your fingertips, you'll be constantly aware of your application's health, including any issues that may arise.  Best of all, with `Airbrake.io's` robust web dashboard cataloging every error event that occurs, you and your team can immediately dive into the exact details of what went wrong, making it easy to quickly recognize and resolve problems.
+The `Airbrake-PHP` library quickly and easily integrates into any PHP project, giving you and your team access to real-time error monitoring and reports throughout your application's entire life cycle.  With automatic, instantaneous error and exception notifications at your fingertips, you'll be constantly aware of your application's health, including any issues that may arise.  Best of all, with `Airbrake's` robust web dashboard cataloging every error event that occurs, you and your team can immediately dive into the exact details of what went wrong, making it easy to quickly recognize and resolve problems.
 
-`Airbrake-PHP` supports easy installation via the popular `Composer` dependency manager for PHP so you'll be up and running in just a few minutes.  While `Airbrake-PHP` works great out of the box for all manner of PHP applications, it also supports integration with many other popular frameworks and libraries such as `Laravel`, `Symfony`, `CakePHP`, and `Monolog` through powerful community-created packages.  Check out all the great features `Airbrake-PHP` has to offer and get started with powerful, robust error management using `Airbrake.io` today!
+`Airbrake-PHP` supports easy installation via the popular `Composer` dependency manager for PHP so you'll be up and running in just a few minutes.  While `Airbrake-PHP` works great out of the box for all manner of PHP applications, it also supports integration with many other popular frameworks and libraries such as `Laravel`, `Symfony`, `CakePHP`, and `Monolog` through powerful community-created packages.  Check out all the great features `Airbrake-PHP` has to offer and get started with powerful, robust error management using `Airbrake` today!
 
 ## Features
 
-`Airbrake-PHP` is packed with PHP-centric features designed with the PHP developer in mind.  Whether you're creating a plain PHP project or using a powerful framework like `CakePHP`, `Symfony`, or `Laravel`, `Airbrake-PHP` offers seamless integration so your team can receive immediate error reports through the `Airbrake.io` dashboard.  Beyond frameworks, all `Airbrake.io` projects can be easily integrated with popular outside services such as `GitHub`, `Trello`, `Slack`, `JIRA`, and many more, providing your organization with up-to-date alerts the moment something goes wrong with your application.
+`Airbrake-PHP` is packed with PHP-centric features designed with the PHP developer in mind.  Whether you're creating a plain PHP project or using a powerful framework like `CakePHP`, `Symfony`, or `Laravel`, `Airbrake-PHP` offers seamless integration so your team can receive immediate error reports through the `Airbrake` dashboard.  Beyond frameworks, all `Airbrake` projects can be easily integrated with popular outside services such as `GitHub`, `Trello`, `Slack`, `JIRA`, and many more, providing your organization with up-to-date alerts the moment something goes wrong with your application.
 
 Have a glance at just a handful of the great features below or head over to the full [documentation](https://github.com/airbrake/phpbrake) to find out everything `Airbrake-PHP` has on offer for your next PHP application!
 
 ### Extensive Framework Support
 
-While `Airbrake-PHP` can easily be used with every plain PHP application, it can also be quickly integrated with some of the most popular PHP frameworks on the market, including [Laravel](#integrating-with-laravel), [Symfony](#integrating-with-symfony), and [CakePHP](#integrating-with-cakephp).  In just a matter of minutes you'll have `Airbrake-PHP` running alongside your existing framework-based PHP applications.  This ensures that all exceptions are automatically and immediately reported through the `Airbrake.io` dashboard with very little code or configuration requirements.  However, if you need to make adjustments to the default settings, `Airbrake-PHP` comes with an in-depth [configuration API](https://github.com/airbrake/phpbrake#extra-configuration-options) that lets you tweak the library to just what you need.
+While `Airbrake-PHP` can easily be used with every plain PHP application, it can also be quickly integrated with some of the most popular PHP frameworks on the market, including [Laravel](#integrating-with-laravel), [Symfony](#integrating-with-symfony), and [CakePHP](#integrating-with-cakephp).  In just a matter of minutes you'll have `Airbrake-PHP` running alongside your existing framework-based PHP applications.  This ensures that all exceptions are automatically and immediately reported through the `Airbrake` dashboard with very little code or configuration requirements.  However, if you need to make adjustments to the default settings, `Airbrake-PHP` comes with an in-depth [configuration API](https://github.com/airbrake/phpbrake#extra-configuration-options) that lets you tweak the library to just what you need.
 
 ### Unlimited Custom Parameters
 
@@ -34,7 +34,7 @@ try {
 }
 ```
 
-Now this particular exception occurrence, when reported through the `Airbrake.io` dashboard, will include the extra `context` content we provided, in addition to the basic information generated by `Airbrake-PHP`, as seen below:
+Now this particular exception occurrence, when reported through the `Airbrake` dashboard, will include the extra `context` content we provided, in addition to the basic information generated by `Airbrake-PHP`, as seen below:
 
 ```json
 {
@@ -58,7 +58,7 @@ Now this particular exception occurrence, when reported through the `Airbrake.io
 
 ### Robust Exception Filtering
 
-`Airbrake-PHP` makes it simple to filter through all `notices` generated by the library.  This makes it easy to perform a wide range of tasks such as adding custom data to all `notices`, removing sensitive data from `Airbrake.io` reports, and even ignoring specific exceptions based on their PHP class type.
+`Airbrake-PHP` makes it simple to filter through all `notices` generated by the library.  This makes it easy to perform a wide range of tasks such as adding custom data to all `notices`, removing sensitive data from `Airbrake` reports, and even ignoring specific exceptions based on their PHP class type.
 
 To get started simply create a new `notifier` instance, then use the `Airbrake\Notifier->addFilter()` method to start filtering notices based on whatever criteria you need:
 
@@ -137,7 +137,7 @@ Once the library is installed, making use of `Airbrake-PHP` is simple.  You can 
 
 ### Using with Plain PHP
 
-To setup the basic form of `Airbrake-PHP`, which works with any PHP application, start by creating a new instance of `Airbrake\Notifier` and pass in your `Project ID` and `Project API Key`, both of which can be found on the right-hand side of the `Project Settings` page from the `Airbrake.io` dashboard.  You'll also want to set the global notifier instance via the `Airbrake\Instance::set()` method, then register the error and exception handlers through the `Airbrake\ErrorHandler` class:
+To setup the basic form of `Airbrake-PHP`, which works with any PHP application, start by creating a new instance of `Airbrake\Notifier` and pass in your `Project ID` and `Project API Key`, both of which can be found on the right-hand side of the `Project Settings` page from the `Airbrake` dashboard.  You'll also want to set the global notifier instance via the `Airbrake\Instance::set()` method, then register the error and exception handlers through the `Airbrake\ErrorHandler` class:
 
 ```php
 // Create new Notifier instance.
@@ -154,7 +154,7 @@ $handler = new Airbrake\ErrorHandler($notifier);
 $handler->register();
 ```
 
-That's all the configuration that's required!  You can now send `notices` to `Airbrake.io` by calling the `Airbrake\Instance::notify()` method:
+That's all the configuration that's required!  You can now send `notices` to `Airbrake` by calling the `Airbrake\Instance::notify()` method:
 
 ```php
 // Somewhere in the app...
@@ -186,7 +186,7 @@ Next, add the package to the `providers` list in `config/app.php`:
   ],
 ```
 
-Finally, publish with the associated `--provider` parameter and then fill out the `config/airbrake.php` file with your `Project ID` and `Project API Key` from the `Airbrake.io` dashboard:
+Finally, publish with the associated `--provider` parameter and then fill out the `config/airbrake.php` file with your `Project ID` and `Project API Key` from the `Airbrake` dashboard:
 
 ```bash
 $ php artisan vendor:publish --provider="Kouz\Providers\AirbrakeServiceProvider"
@@ -216,7 +216,7 @@ public function report(Exception $e)
 }
 ```
 
-_Note: The Laravel + `Airbrake-PHP` integration package is community-created and is not officially supported by `Airbrake.io`.  Please see the [documentation](https://github.com/TheoKouzelis/laravel-airbrake) for more details._
+_Note: The Laravel + `Airbrake-PHP` integration package is community-created and is not officially supported by `Airbrake`.  Please see the [documentation](https://github.com/TheoKouzelis/laravel-airbrake) for more details._
 
 ### Integrating with Symfony
 
@@ -252,9 +252,9 @@ ami_airbrake:
     project_key: PROJECT_API_KEY
 ```
 
-Once installed and configured, you don't need to manually create `notices` to send exceptions to `Airbrake.io`.  In fact, the package will automatically send all exceptions and errors to `Airbrake.io`.
+Once installed and configured, you don't need to manually create `notices` to send exceptions to `Airbrake`.  In fact, the package will automatically send all exceptions and errors to `Airbrake`.
 
-_Note: The Symfony + `Airbrake-PHP` integration package is community-created and is not officially supported by `Airbrake.io`.  Please see the [documentation](https://github.com/aminin/airbrake-bundle) for more details._
+_Note: The Symfony + `Airbrake-PHP` integration package is community-created and is not officially supported by `Airbrake`.  Please see the [documentation](https://github.com/aminin/airbrake-bundle) for more details._
 
 ### Integrating with CakePHP
 
@@ -280,7 +280,7 @@ if ($isCli) {
     (new AirbrakeHandler(Configure::read('Error')))->register();
 ```
 
-Now create a new file at `src/Error/AirbrakeHandler.php` and paste the following code.  As usual, be sure to replace the `Project ID` and `Project API Key` values with your own settings from the `Airbrake.io` project dashboard:
+Now create a new file at `src/Error/AirbrakeHandler.php` and paste the following code.  As usual, be sure to replace the `Project ID` and `Project API Key` values with your own settings from the `Airbrake` project dashboard:
 
 ```php
 <?php
@@ -355,6 +355,6 @@ class AirbrakeHandler extends ErrorHandler
 }
 ```
 
-That's all there is to it.  Your CakePHP application should now send appropriate errors and exceptions to the `Airbrake.io` dashboard!
+That's all there is to it.  Your CakePHP application should now send appropriate errors and exceptions to the `Airbrake` dashboard!
 
-_Note: The CakePHP + `Airbrake-PHP` integration package is community-created and is not officially supported by `Airbrake.io`.  Please see [this gist](https://gist.github.com/mauriciovillalobos/01a97f9ee6179ad70b17d54f37cc5010) for more details._
+_Note: The CakePHP + `Airbrake-PHP` integration package is community-created and is not officially supported by `Airbrake`.  Please see [this gist](https://gist.github.com/mauriciovillalobos/01a97f9ee6179ad70b17d54f37cc5010) for more details._

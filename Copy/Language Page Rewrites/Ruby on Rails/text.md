@@ -4,17 +4,17 @@ Airbrake's Rails exception handling gem simplifies the error-reporting process f
 
 ## Features
 
-`Airbrake` is loaded with features designed with the Ruby framework developer in mind.  Whether you're using the tried-and-true `Rails`, `Sinatra`, or even a `Rack` application, `Airbrake` will seamlessly integrate and provide your team with instant, beautiful error reports available at the `Airbrake.io` dashboard.  Plus, if you need additional integrations to suit your workflow, `Airbrake` seamlessly integrates with all the most popular job processing libraries.  From there, you can even expand that integration into outside services such as `GitHub`, `Trello`, `Slack`, `JIRA`, and many more, giving you and your team the most up-to-date alerts when something goes wrong inside your application.
+`Airbrake` is loaded with features designed with the Ruby framework developer in mind.  Whether you're using the tried-and-true `Rails`, `Sinatra`, or even a `Rack` application, `Airbrake` will seamlessly integrate and provide your team with instant, beautiful error reports available at the `Airbrake` dashboard.  Plus, if you need additional integrations to suit your workflow, `Airbrake` seamlessly integrates with all the most popular job processing libraries.  From there, you can even expand that integration into outside services such as `GitHub`, `Trello`, `Slack`, `JIRA`, and many more, giving you and your team the most up-to-date alerts when something goes wrong inside your application.
 
 Check out just a few of the amazing features below, or take a look at the full [documentation](https://github.com/airbrake/airbrake#key-features) to find out everything `Airbrake` brings to the table for you and your team!
 
 ### Broad Framework Support
 
-The `Airbrake` gem integrates easily with the most popular Ruby web frameworks such as [Rails](#integrating-with-rails), [Sinatra](#integrating-with-sinatra), and [Rack](#integrating-with-rack).  After just a few minutes and with only a couple lines of code, you can get `Airbrake` quickly up and running within your existing framework application.  `Airbrake` handles all exceptions across your entire app, automatically and instantly logging and reporting them to your `Airbrake.io` dashboard.  Of course, you can also customize `Airbrake` using the detailed [configuration API](https://github.com/airbrake/airbrake-ruby#configuration), so it precisely suits your application stack and particular project requirements.
+The `Airbrake` gem integrates easily with the most popular Ruby web frameworks such as [Rails](#integrating-with-rails), [Sinatra](#integrating-with-sinatra), and [Rack](#integrating-with-rack).  After just a few minutes and with only a couple lines of code, you can get `Airbrake` quickly up and running within your existing framework application.  `Airbrake` handles all exceptions across your entire app, automatically and instantly logging and reporting them to your `Airbrake` dashboard.  Of course, you can also customize `Airbrake` using the detailed [configuration API](https://github.com/airbrake/airbrake-ruby#configuration), so it precisely suits your application stack and particular project requirements.
 
 ### Easily Integrates With Most Job Processors
 
-Whether you use `Sidekiq`, `ActiveJob`, `Resque`, `DelayedJob`, or even `Shoryuken`, the `Airbrake` gem has you covered with built-in support and easy (often automatic) integration.  In most cases, if your application loaded your job processor prior to loading the `Airbrake` gem, then you don't need to perform any additional steps or configure any other settings -- `Airbrake` will automatically detect errors that occur within your processed jobs and report them to your `Airbrake.io` dashboard right away.  Best of all, `Airbrake` attempts to provide as much relevant information with the exception report as possible, helping you and your team quickly identify which job caused an issue and why.
+Whether you use `Sidekiq`, `ActiveJob`, `Resque`, `DelayedJob`, or even `Shoryuken`, the `Airbrake` gem has you covered with built-in support and easy (often automatic) integration.  In most cases, if your application loaded your job processor prior to loading the `Airbrake` gem, then you don't need to perform any additional steps or configure any other settings -- `Airbrake` will automatically detect errors that occur within your processed jobs and report them to your `Airbrake` dashboard right away.  Best of all, `Airbrake` attempts to provide as much relevant information with the exception report as possible, helping you and your team quickly identify which job caused an issue and why.
 
 For example, here's a sample of the `Parameters` JSON that `Airbrake` automatically generated after a `ZeroDivisionError` occurred during a simple `Sidekiq` job execution:
 
@@ -46,7 +46,7 @@ Check out the [full documentation](https://github.com/airbrake/airbrake#sidekiq)
 
 ### Automatic Deployment Tracking
 
-`Airbrake` makes it easy to automatically track the deployments of all your Ruby-based projects.  By alerting `Airbrake.io` of your deploys, all existing errors in the specified `environment` can be marked `Resolved`, providing you and your team with a clean slate, making it easy to determine which errors have been fixed by this new release, or which regressions might have recently popped up as a result.  Plus, you can `filter errors by deploy` on the `Airbrake.io` dashboard and follow simple click through links in your exception backtrace logs to the relevant revision > file > line using a `GitHub` or `GitLab` integration.
+`Airbrake` makes it easy to automatically track the deployments of all your Ruby-based projects.  By alerting `Airbrake` of your deploys, all existing errors in the specified `environment` can be marked `Resolved`, providing you and your team with a clean slate, making it easy to determine which errors have been fixed by this new release, or which regressions might have recently popped up as a result.  Plus, you can `filter errors by deploy` on the `Airbrake` dashboard and follow simple click through links in your exception backtrace logs to the relevant revision > file > line using a `GitHub` or `GitLab` integration.
 
 For example, to integrate with `Capistrano` deployments, simply `require` the `Airbrake` Capistrano file in your `Capfile`:
 
@@ -72,7 +72,7 @@ Since the `Airbrake` gem is based on the powerful [`Airbrake-Ruby`](https://gith
 
 - [`Custom Parameters`](https://github.com/airbrake/airbrake-ruby#custom-exception-attributes) allow you to associate an unlimited set of parameters to your exceptions reports, giving you the utmost control over the information your team has access to.
 - [`Exception Filtering`](https://github.com/airbrake/airbrake-ruby#airbrakeadd_filter) ensures you send only the errors that matter most.  With a robust API at your fingertips, you can filter out any exceptions that aren't relevant to a particular application, module, or even deployment.
-- [`Promise Callbacks`](https://github.com/airbrake/airbrake-ruby#promise) grant your application the ability to perform additional tasks after an exception is sent to `Airbrake.io` (or even if a report failed to go through).
+- [`Promise Callbacks`](https://github.com/airbrake/airbrake-ruby#promise) grant your application the ability to perform additional tasks after an exception is sent to `Airbrake` (or even if a report failed to go through).
 - And more!  Check out the [`Airbrake-Ruby` language page](https://airbrake.io/languages/ruby_exception_handling) or the [official `Airbrake-Ruby` documentation](https://github.com/airbrake/airbrake-ruby#introduction) for full details on the extra capabilities provided by this powerful gem.
 
 ## Installation
@@ -112,7 +112,7 @@ Once the gem is installed, using `Airbrake` is a breeze.  Just find the appropri
 
 ### Integrating with Rails
 
-The `Airbrake` gem needs access to your `Project ID` and `Project API Key`, both of which can be found on the right-hand side of the `Project Settings` page while being logged into the `Airbrake.io` dashboard.  With both of these values in hand, open a terminal to your Rails application root directory and enter the `rails generate airbrake` command, followed by your `Project ID` and `Project API Key`:
+The `Airbrake` gem needs access to your `Project ID` and `Project API Key`, both of which can be found on the right-hand side of the `Project Settings` page while being logged into the `Airbrake` dashboard.  With both of these values in hand, open a terminal to your Rails application root directory and enter the `rails generate airbrake` command, followed by your `Project ID` and `Project API Key`:
 
 ```bash
 $ rails generate airbrake PROJECT_ID PROJECT_API_KEY
@@ -132,7 +132,7 @@ description: ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
 The test exception was sent. Find it here: https://airbrake.io/locate/00054e1b-5288-186b-045b-123456789000
 ```
 
-If the integration was configured properly, you should see a confirmation that a test exception was generated and sent to `Airbrake.io`.  Click the provided link or login to your `Airbrake.io` dashboard to see the newly generated exception report under your project's `Errors` page.
+If the integration was configured properly, you should see a confirmation that a test exception was generated and sent to `Airbrake`.  Click the provided link or login to your `Airbrake` dashboard to see the newly generated exception report under your project's `Errors` page.
 
 #### Controller Helpers
 
@@ -154,11 +154,11 @@ class UsersController < ApplicationController
 end
 ```
 
-The above example asynchronously generates an error and sends it to `Airbrake.io` if no valid `User` can be found with an `:id`, as provided in the request parameters.
+The above example asynchronously generates an error and sends it to `Airbrake` if no valid `User` can be found with an `:id`, as provided in the request parameters.
 
 ### Integrating with Sinatra
 
-Just as with Rails integration, you'll need to configure the `Airbrake` gem to use your `Project ID` and `Project API Key`, both of which are found on your `Airbrake.io` project dashboard.  Add the `Airbrake#configure` method block to set configuration values, then make sure your Sinatra app `uses` `Airbrake::Rack::Middleware`, which will ensure exceptions are sent to Airbrake.
+Just as with Rails integration, you'll need to configure the `Airbrake` gem to use your `Project ID` and `Project API Key`, both of which are found on your `Airbrake` project dashboard.  Add the `Airbrake#configure` method block to set configuration values, then make sure your Sinatra app `uses` `Airbrake::Rack::Middleware`, which will ensure exceptions are sent to Airbrake.
 
 For example, here's a basic Sinatra app located in the `myapp.rb` file:
 

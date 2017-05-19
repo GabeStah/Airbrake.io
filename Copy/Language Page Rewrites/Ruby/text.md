@@ -1,6 +1,6 @@
 # Ruby Exception Handling
 
-Airbrake's `Ruby` exception handling tool easily integrates into all your new or existing Ruby applications.  Designed from the ground up as the stable and robust framework used to power all of `Airbrake.io's` Ruby-related error handling tools, `Airbrake-Ruby` provides your team with real-time error reporting for applications of any size and scope.  Ideal for plain Ruby v2.0 (and higher) projects, `Airbrake-Ruby` is extremely lightweight and dependency-free, so it won't negatively impact application performance.  Best of all, `Airbrake-Ruby` comes packed with features that developers from teams of all sizes will appreciate including: asynchronous exception reporting, flexible logging capabilities, multiple notifiers to help you precisely categorize errors, Java exceptions through JRuby, custom error parameters, simple filtering tools, and much more!
+Airbrake's `Ruby` exception handling tool easily integrates into all your new or existing Ruby applications.  Designed from the ground up as the stable and robust framework used to power all of `Airbrake's` Ruby-related error handling tools, `Airbrake-Ruby` provides your team with real-time error reporting for applications of any size and scope.  Ideal for plain Ruby v2.0 (and higher) projects, `Airbrake-Ruby` is extremely lightweight and dependency-free, so it won't negatively impact application performance.  Best of all, `Airbrake-Ruby` comes packed with features that developers from teams of all sizes will appreciate including: asynchronous exception reporting, flexible logging capabilities, multiple notifiers to help you precisely categorize errors, Java exceptions through JRuby, custom error parameters, simple filtering tools, and much more!
 
 ## Features
 
@@ -44,7 +44,7 @@ Head over to the [documentation](https://github.com/airbrake/airbrake-ruby#airbr
 
 ### Dynamic Promise Callbacks
 
-Similar to promises found in JavaScript, `Airbrake-Ruby` provides `Airbrake::Promises`, which enable additional callbacks to be chained onto `Airbrake#notify` method calls.  These callbacks will execute when the promise is either successfully resolved (a `notice` is sent) or is rejected (a `notice` is returned by the `Airbrake.io API`).
+Similar to promises found in JavaScript, `Airbrake-Ruby` provides `Airbrake::Promises`, which enable additional callbacks to be chained onto `Airbrake#notify` method calls.  These callbacks will execute when the promise is either successfully resolved (a `notice` is sent) or is rejected (a `notice` is returned by the `Airbrake API`).
 
 To create a callback when the promise is successful simply chain the `#then` method onto your `Airbrake#notify` call, with an appropriate code block to handle the `response` that is provided:
 
@@ -52,7 +52,7 @@ To create a callback when the promise is successful simply chain the `#then` met
 Airbrake.notify("Open the pod bay doors please, HAL.").then { |response| puts response }
 ```
 
-Conversely, to create a callback for promises that fail (in which the `Airbrake.io API` rejects the `notice` for some reason), chain the `#rescue` method onto `Airbrake#notify`:
+Conversely, to create a callback for promises that fail (in which the `Airbrake API` rejects the `notice` for some reason), chain the `#rescue` method onto `Airbrake#notify`:
 
 ```ruby
 Airbrake.notify("I'm sorry Dave, I'm afraid I can't do that.").rescue { |error| puts error }
@@ -97,7 +97,7 @@ Once installed, using `Airbrake-Ruby` only requires a few lines of code to quick
 
 #### Create a Notifier
 
-Each `notifier` is associated with a particular `Airbrake` `Project ID` and `Project API Key`, which can be found on the right-hand side of the `Project Settings` page while logged into your `Airbrake.io` dashboard.
+Each `notifier` is associated with a particular `Airbrake` `Project ID` and `Project API Key`, which can be found on the right-hand side of the `Project Settings` page while logged into your `Airbrake` dashboard.
 
 Initialize a `notifier` by ensuring that the `Airbrake-Ruby` gem is available, then make a call to the `Airbrake#configure` method, including a block to set the `Project ID` and `Project API Key` properties:
 
@@ -112,7 +112,7 @@ Airbrake.configure do |c|
 end
 ```
 
-Alternatively, you may create as many `notifiers` as you wish, each of which can be associated with a unique project through the `Airbrake.io` dashboard.  To create multiple `notifiers`, simply pass an (optional) `Symbol` parameter to the `Airbrake#configure` method, indicating the `name` of the `notifier` you wish to initialize:
+Alternatively, you may create as many `notifiers` as you wish, each of which can be associated with a unique project through the `Airbrake` dashboard.  To create multiple `notifiers`, simply pass an (optional) `Symbol` parameter to the `Airbrake#configure` method, indicating the `name` of the `notifier` you wish to initialize:
 
 ```ruby
 # Require the gem where necessary.
