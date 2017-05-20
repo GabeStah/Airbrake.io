@@ -10,19 +10,19 @@ Have a look around at all the great features `Sharpbrake` brings to the table an
 
 Plus, you're not limited to only client-side applications.  `Sharpbrake` also includes the `ASP.NET HTTP Module` and `ASP.NET Core Middleware`, making it easy to quickly integrate `Sharpbrake` into all your web-based .NET applications as well.
 
-`Sharpbrake` generates automatic, instantaneous exception reports the very moment an issue occurs, whether that's within a local development environment or even out in the wilds of live production.  Best of all, exceptions are sent directly to you and your team, without the need for user-intervention or writing out painstaking error reports.  With the multitude of features `Sharpbrake` provides, you will be continuously aware of any unexpected issues that may arise, and will be able to immediately respond.
+`Sharpbrake` generates automatic, instantaneous exception reports the very moment an issue occurs, whether that's within a local development environment or even out in the wilds of live production.  Best of all, exceptions are sent directly to you and your team, without the need for user intervention or writing out painstaking error reports.  With the multitude of features `Sharpbrake` provides, you will be continuously aware of any unexpected issues that may arise, and will be able to immediately respond.
 
 Take a peak at just a few of the great features below or head over to the full [documentation](https://github.com/airbrake/sharpbrake) and find out how `Sharpbrake` can help you and your team with your next .NET project!
 
 ### Asynchronous Exception Reporting
 
-As expected, `Sharpbrake` allows you to create and send exception reports to `Airbrake` synchronously, in which your application waits for the exception report to be sent and a response to return before moving on to additional tasks.  However, `Sharpbrake` also comes with a powerful asynchronous notification system as well, allowing your application to queue up exception reports that are waiting to be sent, while your app moves onto other tasks while the reports are processed in the background.  This makes `Sharpbrake` the perfect exception handling tool for high-performance applications where multi-threading or other demanding tasks are a requirement.
+As expected, `Sharpbrake` allows you to create and send exception reports to `Airbrake` synchronously, in which your application waits for the exception report to be sent and a response to return before moving on to additional tasks.  However, `Sharpbrake` also comes with a powerful asynchronous notification system as well, allowing your application to queue up exception reports that are waiting to be sent, while your app moves on to other tasks while the reports are processed in the background.  This makes `Sharpbrake` the perfect exception handling tool for high-performance applications where multi-threading or other demanding tasks are a requirement.
 
 Check out the [documentation](https://github.com/airbrake/sharpbrake#airbrakenotifier) for all the details on integrating synchronous versus asynchronous exception reporting with `Sharpbrake`.
 
 ### Limitless Custom Parameters
 
-Exceptions sent to the `Airbrake` dashboard automatically include all the basic information you'd expect, such as the error message, backtrace, environment, remote origin, and more.  Yet `Sharpbrake` takes these capabilities much further by providing a simple API to add near limitless custom parameters and data onto your exception records, before they are sent to `Airbrake` or to one of the many third-party integrations `Airbrake` offers.  This ensures that your exception reports always contain as much (or as little) relevant information as you need, so you and your team can quickly hone in on the root cause of the problem and get to work on a solution.
+Exceptions sent to the `Airbrake` dashboard automatically include all the basic information you'd expect, such as the error message, backtrace, environment, remote origin, and more.  Yet `Sharpbrake` takes these capabilities much further by providing a simple API for adding near limitless custom parameters and data onto your exception records, before they are sent to `Airbrake` or to one of the many third-party integrations `Airbrake` offers.  This ensures that your exception reports always contain as much (or as little) relevant information as you need, so you and your team can quickly hone in on the root cause of the problem and get to work on a solution.
 
 ### Flexible Exception Filtering
 
@@ -32,7 +32,7 @@ Take a look at the full [documentation](https://github.com/airbrake/sharpbrake#i
 
 ### ASP.NET Integration
 
-In addition to client-side applications, `Sharpbrake` also includes modules that make it a breeze to integrate `Airbrake's` revolutionary exception handling and reporting services into ASP.NET web applications.  `Sharbrake` comes with the full-blown `ASP.NET HTTP Module` that can be easily installed via `NuGet` and configured in just a few minutes.  Alternatively, if you need a middleware option, `Sharpbrake` also includes a powerful `ASP.NET Core Middleware` that can be quickly integrated into the stack of other middleware components your application may be using.
+In addition to client-side applications, `Sharpbrake` also includes modules that make it a breeze to integrate `Airbrake's` revolutionary exception handling and reporting services into ASP.NET web applications.  `Sharpbrake` comes with the full-blown `ASP.NET HTTP Module` that can be easily installed via `NuGet` and configured in just a few minutes.  Alternatively, if you need a middleware option, `Sharpbrake` also includes a powerful `ASP.NET Core Middleware` that can be quickly integrated into the stack of other middleware components your application may be using.
 
 No matter the type of .NET application you're developing or maintaining, `Sharpbrake` has you covered, so feel free to check out all the details in our full [documentation](https://github.com/airbrake/sharpbrake#aspnet-integration).
 

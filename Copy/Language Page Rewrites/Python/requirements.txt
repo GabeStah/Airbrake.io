@@ -1,0 +1,2 @@
+airbrake>=2.0.0
+pydevd
