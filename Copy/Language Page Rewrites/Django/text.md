@@ -28,7 +28,7 @@ While `Airbrake-Django` allows for all application exceptions to be automaticall
 
 ## Quick Setup
 
-1. To begin using `Airbrake-Django`, start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+1. To begin using `Airbrake-Django` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
 2. Install `Airbrake-Django` via [`pip`](https://pip.pypa.io/en/stable/):
 
 ```bash

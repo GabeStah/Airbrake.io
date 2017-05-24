@@ -30,7 +30,7 @@ Check out the `Airbrake-Android` [documentation](https://github.com/airbrake/air
 
 ## Quick Setup
 
-1. To begin using `Airbrake-Android`, start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+1. To begin using `Airbrake-Android` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
 2. Clone the [Airbrake-Android GitHub repository](https://github.com/airbrake/airbrake-android) to a local directory.
 3. Open the `build.xml` file and verify that the `env.ANDROID_HOME` and `lib.dir` path property values point to your Android SDK and platform directories:
 

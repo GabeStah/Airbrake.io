@@ -38,7 +38,7 @@ No matter the type of .NET application you're developing or maintaining, `Sharpb
 
 ## Quick Setup
 
-If you haven't done so already, all installations start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and creating a new project to configure.
+To begin using `Sharpbrake` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
 
 ### Install the Sharpbrake Client
 

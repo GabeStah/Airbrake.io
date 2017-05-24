@@ -32,24 +32,23 @@ Adjust the metadata associated with exceptions before they're sent to `Airbrake`
 
 ## Quick Setup
 
-To begin using `Airbrake-Python`, start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
-
-### Install with Logger Integration
-
-1. Install `Airbrake-Python` via [`pip`](https://pip.pypa.io/en/stable/):
+1. To begin using `Airbrake-Python` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+2. Install `Airbrake-Python` via [`pip`](https://pip.pypa.io/en/stable/):
 
 ```bash
 $ pip install -U airbrake
 ```
 
-2. Configure `Airbrake-Python` to use your newly created project by exporting a few environment variables.  Just copy and paste the appropriate `Project ID` and `Project API Key` values, which can be found on the right-hand side of the `Project Settings` page:
+3. Configure `Airbrake-Python` to use your newly created project by exporting a few environment variables.  Just copy and paste the appropriate `Project ID` and `Project API Key` values, which can be found on the right-hand side of the `Project Settings` page:
 
 ```bash
 export AIRBRAKE_PROJECT_ID=[PROJECT_ID]
 export AIRBRAKE_API_KEY=[PROJECT_API_KEY]
 ```
 
-3. In your code `import airbrake`, create a new instance of the `Airbrake-Python` `logger`, then call the `exception()` method wherever you want exception handling to occur:
+### With Logger Integration
+
+1. In your code `import airbrake`, create a new instance of the `Airbrake-Python` `logger`, then call the `exception()` method wherever you want exception handling to occur:
 
 ```python
 # Import the Airbrake-Python module.
@@ -66,31 +65,18 @@ except Exception as e:
     logger.exception(e)
 ```
 
-4. If you don't want to configure `Airbrake-Python` through environment variables, you can also pass `Project ID` and `Project API Key` as arguments to the new logger instance:
+2. If you don't want to configure `Airbrake-Python` through environment variables, you can also pass `Project ID` and `Project API Key` as arguments to the new logger instance:
 
 ```python
 # Create a new logger instance, with project settings:
 logger = airbrake.getLogger(api_key="PROJECT_API_KEY", project_id=PROJECT_ID)
 ```
 
-5. You're all set!  `Airbrake-Python` will send all exceptions that pass through your `logger.exception()` calls to `Airbrake`!
+3. You're all set!  `Airbrake-Python` will send all exceptions that pass through your `logger.exception()` calls to `Airbrake`!
 
-### Install without Logger Integration
+### Without Logger Integration
 
-1. Install `Airbrake-Python` via [`pip`](https://pip.pypa.io/en/stable/):
-
-```bash
-$ pip install -U airbrake
-```
-
-2. Configure `Airbrake-Python` to use your newly created project by exporting a few environment variables.  Just copy and paste the appropriate `Project ID` and `Project API Key` values, which can be found on the right-hand side of the `Project Settings` page:
-
-```bash
-export AIRBRAKE_PROJECT_ID=[PROJECT_ID]
-export AIRBRAKE_API_KEY=[PROJECT_API_KEY]
-```
-
-3. In your code `import Airbrake`, create a new instance of the `Airbrake`, then call the `notify()` method to send a specific exception to `Airbrake`.  Alternatively, you can also call the `capture()` method to send all unspecified exceptions:
+1. In your code `import Airbrake`, create a new instance of the `Airbrake`, then call the `notify()` method to send a specific exception to `Airbrake`.  Alternatively, you can also call the `capture()` method to send all unspecified exceptions:
 
 ```python
 # Import the Airbrake class.
@@ -110,11 +96,11 @@ except:
     manager.capture()
 ```
 
-4. If you don't want to configure `Airbrake-Python` through environment variables, you can also pass `Project ID` and `Project API Key` as arguments to the new `Airbrake` instance:
+2. If you don't want to configure `Airbrake-Python` through environment variables, you can also pass `Project ID` and `Project API Key` as arguments to the new `Airbrake` instance:
 
 ```python
 # Create a new Airbrake instance, with project settings:
 manager = Airbrake(api_key="PROJECT_API_KEY", project_id=PROJECT_ID)
 ```
 
-5. All done!  You now have full control over every single exception that is sent to `Airbrake`!
+3. All done!  You now have full control over every single exception that is sent to `Airbrake`!

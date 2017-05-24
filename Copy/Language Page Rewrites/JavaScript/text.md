@@ -74,19 +74,21 @@ try {
 
 ## Quick Setup
 
-#### Install via `NPM`
+To begin using `Airbrake-JS` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+
+### Install via `NPM`
 
 ```
 npm install airbrake-js
 ```
 
-#### Install via `Bower`
+### Install via `Bower`
 
 ```
 bower install airbrake-js-client
 ```
 
-#### Include via `CDN`
+### Include via `CDN`
 
 1. Visit [`airbrake-js`](https://cdnjs.com/libraries/airbrake-js) on [`cdnjs`](https://cdnjs.com/libraries/airbrake-js).
 2. Select the appropriate release type (`full`, `minified`, etc).
@@ -96,7 +98,7 @@ bower install airbrake-js-client
 
 Once installed, using `Airbrake-JS` is quick and easy.
 
-#### Initializing the Client
+### Initializing the Client
 
 Initialize the notifier by creating a new client object using the appropriate `Project ID` and `Project API Key`, which can be found on the right-hand side of the `Project Settings` page.
 
@@ -119,7 +121,7 @@ var airbrake = new airbrakeJs({
 });
 ```
 
-#### Direct Error Notification
+### Direct Error Notification
 
 To report an error to `Airbrake` directly, call the `airbrake.notify()` method:
 
@@ -142,7 +144,7 @@ try {
 }
 ```
 
-#### Indirect Error Notification
+### Indirect Error Notification
 
 In cases where you don't wish to directly call the `notify()` method each time an error occurs, you can wrap potentially problematic code in the `wrap()` method:
 
@@ -170,7 +172,7 @@ var myFunction = function() {
 airbrake.call(myFunction);
 ```
 
-### Common Integrations
+## Common Integrations
 
 Integrating `Airbrake-JS` with any of the common JavaScript modules is easy.  For example, here we're integrating `Airbrake-JS` with [`Express`](https://expressjs.com/):
 

@@ -97,9 +97,8 @@ Head over to the [documentation](https://github.com/airbrake/phpbrake#adding-cus
 
 ## Quick Setup
 
-#### Install via Composer
-
-To install `Airbrake-PHP` with `Composer` simply issue the `composer require` command in the terminal from your project's root directory:
+1. To begin using `Airbrake-PHP` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+2. Install `Airbrake-PHP` with `Composer` by issuing the `composer require` command in the terminal from your project's root directory:
 
 ```bash
 $ composer require airbrake/phpbrake
@@ -114,7 +113,7 @@ Writing lock file
 Generating autoload files
 ```
 
-Though not required, we also recommend you install the `guzzle` HTTP client, which `Airbrake-PHP` will use if available:
+3. Though not required, we also recommend you install the `guzzle` HTTP client, which `Airbrake-PHP` will use if available:
 
 ```bash
 $ composer require guzzlehttp/guzzle

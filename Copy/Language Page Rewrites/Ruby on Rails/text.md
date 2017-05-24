@@ -77,22 +77,24 @@ Since the `Airbrake` gem is based on the powerful [`Airbrake-Ruby`](https://gith
 
 ## Quick Setup
 
+To begin using `Airbrake` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+
 ### Install via `Bundler`
 
-To install `Airbrake` through `Bundler`, first create a `Gemfile`, if necessary, with `bundle init`:
+1. To install `Airbrake` through `Bundler`, first create a `Gemfile`, if necessary, with `bundle init`:
 
 ```bash
 $ bundle init
 Writing new Gemfile to /home/dev/apps/Airbrake
 ```
 
-Then add `Airbrake` to your `Gemfile`:
+2. Then add `Airbrake` to your `Gemfile`:
 
 ```ruby
 gem 'airbrake', '~> 6.0'
 ```
 
-Finally, tell `Bundler` to install the newly-added gem:
+3. Finally, tell `Bundler` to install the newly-added gem:
 
 ```bash
 $ bundle install

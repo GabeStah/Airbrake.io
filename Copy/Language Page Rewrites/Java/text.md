@@ -28,13 +28,14 @@ To meet this demand the `Airbrake-Java` library makes it easy to associate near-
 
 ## Quick Setup
 
+1. To begin using `Airbrake-Java` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+2. Copy the `Project API Key` to your clipboard, which can be found on the right-hand side of the `Project Settings` page.
+
 ### Install via Maven and Log4j
 
-Getting `Airbrake-Java` integrated with a `Maven` project only takes a few minutes.
+Getting `Airbrake-Java` integrated with a `Maven` project only takes a couple extra steps.
 
-1. [Create an Airbrake account](https://airbrake.io/account/new) and sign in.
-2. Create a new project then copy the `Project API Key` to your clipboard, which can be found on the right-hand side of the `Project Settings` page.
-3. Add the `Airbrake-Java` dependency to your Maven Project Object Model file (`pom.xml`), like so:
+1. Add the `Airbrake-Java` dependency to your Maven Project Object Model file (`pom.xml`), like so:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -59,7 +60,7 @@ Getting `Airbrake-Java` integrated with a `Maven` project only takes a few minut
 </project>
 ```
 
-4. Configure `log4j` to include the `Airbrake-Java` appender, along with the `Project API Key` you copied earlier.  Here we're using a `log4j.properties` file, but any form of configuration is acceptable:
+2. Configure `log4j` to include the `Airbrake-Java` appender, along with the `Project API Key` you copied earlier.  Here we're using a `log4j.properties` file, but any form of configuration is acceptable:
 
 ```
 log4j.rootLogger=INFO, stdout, airbrake
@@ -76,16 +77,14 @@ log4j.appender.airbrake.enabled=true
 log4j.appender.airbrake.url=http://api.airbrake.io/notifier_api/v2/notices
 ```
 
-5. That's it!  Now, any exceptions passed to the `error()` method of a `log4j` `Logger` class instance will be automatically sent to `Airbrake` via the `Airbrake-Java` library.
+3. That's it!  Now, any exceptions passed to the `error()` method of a `log4j` `Logger` class instance will be automatically sent to `Airbrake` via the `Airbrake-Java` library.
 
 ### Install Manually
 
 Installing `Airbrake-Java` within plain Java projects is also a piece of cake.
 
-1. [Create an Airbrake account](https://airbrake.io/account/new) and sign in.
-2. Create a new project then copy the `Project API Key` to your clipboard, which can be found on the right-hand side of the `Project Settings` page.
-3. Download the [Airbrake-Java JAR](https://github.com/airbrake/airbrake-java/blob/master/maven2/io/airbrake/airbrake-java/2.2.8/airbrake-java-2.2.8.jar?raw=true) file and add it to your `classpath`.
-4. In your code, create a new `AirbrakeNotifier` and `AirbrakeNotice` instance using your `Project API Key`:
+1. Download the [Airbrake-Java JAR](https://github.com/airbrake/airbrake-java/blob/master/maven2/io/airbrake/airbrake-java/2.2.8/airbrake-java-2.2.8.jar?raw=true) file and add it to your `classpath`.
+2. In your code, create a new `AirbrakeNotifier` and `AirbrakeNotice` instance using your `Project API Key`:
 
 ```java
 import airbrake.*;
@@ -112,4 +111,4 @@ public class Main {
 }
 ```
 
-5. Viola!  Your exceptions are now being pushed to `Airbrake`!
+3. Viola!  Your exceptions are now being pushed to `Airbrake`!

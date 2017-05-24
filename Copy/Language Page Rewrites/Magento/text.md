@@ -22,11 +22,8 @@ If you've ever installed another Magento before then installing `Airbrake-Magent
 
 ## Quick Setup
 
-### Install with Modman
-
-If you have `Modman` already then installing `Airbrake-Magento` is no sweat.
-
-1. Open a terminal window, navigate to your Magento project directory, initialize `Modman` (if necessary), clone the `Airbrake-Magento` `git` repository, then deploy it via Modman:
+1. To begin using `Airbrake-Magento` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+2. Open a terminal window, navigate to your Magento project directory, initialize `Modman` (if necessary), clone the `Airbrake-Magento` `git` repository, then deploy it via Modman:
 
 ```bash
 $ cd <your-magento-project>
@@ -35,11 +32,11 @@ $ git clone https://github.com/airbrake/Airbrake-Magento.git .modman/CodebaseExc
 $ modman deploy CodebaseExceptions --force
 ```
 
-2. [Create an Airbrake account](https://airbrake.io/account/new) and sign in.
-3. Create a new project and copy the `Project API Key` to your clipboard, which can be found on the right-hand side of the `Project Settings` page.
-4. Visit your Magento Administration Panel (`[APPLICATION-DOMAIN]/admin` by default) and navigate to `System > Configuration > Elgentos > CodebaseExceptions`.
-5. Paste the `Project API Key` into the `Airbrake API key` field, make any other adjustments you'd like, then click `Save Config`:
+3. [Create an Airbrake account](https://airbrake.io/account/new) and sign in.
+4. Create a new project and copy the `Project API Key` to your clipboard, which can be found on the right-hand side of the `Project Settings` page.
+5. Visit your Magento Administration Panel (`[APPLICATION-DOMAIN]/admin` by default) and navigate to `System > Configuration > Elgentos > CodebaseExceptions`.
+6. Paste the `Project API Key` into the `Airbrake API key` field, make any other adjustments you'd like, then click `Save Config`:
 
 ![magento admin panel airbrake](https://camo.githubusercontent.com/8153d690c29da28305aac3c537b93706825ab522/68747470733a2f2f696d672d666f746b692e79616e6465782e72752f6765742f343030302f39383939313933372e31662f305f62376662615f33303136303430635f6f726967)
 
-6. You're all set!  To confirm that `Airbrake-Magento` is working correctly visit the `[APPLICATION-DOMAIN]/exceptions/index/test` URL, which will generate a new test exception and send it to your `Airbrake` project dashboard.
+7. You're all set!  To confirm that `Airbrake-Magento` is working correctly visit the `[APPLICATION-DOMAIN]/exceptions/index/test` URL, which will generate a new test exception and send it to your `Airbrake` project dashboard.

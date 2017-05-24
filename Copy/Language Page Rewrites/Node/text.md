@@ -38,7 +38,7 @@ Feel free to check out the [documentation](https://github.com/airbrake/node-airb
 
 ## Quick Setup
 
-1. To begin using `Airbrake-Node`, start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
+1. To begin using `Airbrake-Node` start by [Creating an Airbrake account](https://airbrake.io/account/new), signing in, and making a new project.
 2. Install `Airbrake-Node` by adding the dependency to your `package.json` file:
 
 ```json
