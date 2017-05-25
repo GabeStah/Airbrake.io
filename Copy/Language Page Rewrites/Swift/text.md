@@ -54,7 +54,7 @@ _Note: `Airbrake-Swift` uses the [`Airbrake-iOS`](https://github.com/airbrake/ai
 3. Add the `CrashReporter.framework` directory from the `Airbrake` source directory to your project.
 4. Add `Airbrake-iOS` to the `podfile`:
 
-```
+```objective-c
 use_frameworks!
 pod 'Airbrake-iOS'
 ```
