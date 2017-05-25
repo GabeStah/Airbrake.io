@@ -62,7 +62,7 @@ pod 'Airbrake-iOS'
 5. Next `import Airbrake-iOS` in your app delegate.
 6. Set up the `ABNotifer` in your app delegate at the beginning of your `func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {` call.  Be sure to copy and paste the `Project ID` and `Project API Key` values into the appropriate fields, which can be found on the right-hand side of the `Project Settings` page of the `Airbrake` dashboard:
 
-```swift
+```objective-c
 ABNotifier.startNotifierWithAPIKey(
   PROJECT_API_KEY,
   projectID: PROJECT_ID,
@@ -83,7 +83,7 @@ $ pod 'Airbrake-iOS'
 2. Add a new file to your project using the `Header File` template and name the file `[ProjectName]_Bridging_Header.h` then save it to the project's root directory.
 3. Open `[ProjectName]_Bridging_Header.h` and `#import` the `ABNotifier` header file:
 
-```swift
+```objective-c
 #ifndef [ProjectName]_Bridging_Header
 #define [ProjectName]_Bridging_Header
 #import "ABNotifier.h"
@@ -94,7 +94,7 @@ $ pod 'Airbrake-iOS'
 
 5. Finally, set up the `ABNotifer` in your app delegate at the beginning of your `func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {` call.  Be sure to copy and paste the `Project ID` and `Project API Key` values into the appropriate fields, which can be found on the right-hand side of the `Project Settings` page of the `Airbrake` dashboard:
 
-```swift
+```objective-c
 ABNotifier.startNotifierWithAPIKey(
   PROJECT_API_KEY,
   projectID: PROJECT_ID,
