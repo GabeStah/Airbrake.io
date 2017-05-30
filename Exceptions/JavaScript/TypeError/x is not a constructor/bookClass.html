@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // Book as Class
+        class Book {
+            // Special constructor method
+            constructor(title, author) {
+                // Set properties
+                this.title = title;
+                this.author = author;
+                // Output creation message
+                console.log(`'Created Book via class: ${title} by ${author}'`)
+            }
+        }
+
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // New keyword to access constructor
+            var bookConstructed = new Book('The Stand', 'Stephen King')
+            console.log(bookConstructed)
+
+            // Direct class call
+            var book = Book('The Stand', 'Stephen King')
+            console.log(book)            
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+  </head>
+  <body></body>
+</html>

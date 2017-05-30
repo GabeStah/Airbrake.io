@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+        // 1
+        var printError = function(error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Initialize title as undefined
+            var title = undefined;
+            // Try to get substring of undefined title
+            console.log(title.substring(1));
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+
+        // 2
+        try {
+            // Initialize title as null
+            var title = null;
+            // Try to get substring of null title
+            console.log(title.substring(1));
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+
+        // 3
+        try {
+            // Initialize title as string
+            var title = 'The Hobbit';
+            // Try to create object from string title
+            console.log(Object.create(title));
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+  </head>
+  <body></body>
+</html>

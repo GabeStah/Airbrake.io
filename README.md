@@ -38,8 +38,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] SyntaxError: unterminated string literal
 - TypeError
     - [x] TypeError: "x" has no properties
-    - [ ] TypeError: "x" is (not) "y"
-    - [ ] TypeError: "x" is not a constructor
+    - [x] TypeError: "x" is (not) "y"
+    - [x] TypeError: "x" is not a constructor
     - [ ] TypeError: "x" is not a function
     - [ ] TypeError: "x" is read-only
     - [ ] TypeError: More arguments needed
