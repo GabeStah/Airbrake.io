@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to the Site!</title>
+    <script>
+        var printError = function (error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Output document.title
+            console.log(`Title is: ${document.title}`);
+            // Output document.title()
+            console.log(`Title is: ${document.title()}`);
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+</head>
+
+</html>

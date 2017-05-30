@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to the Site!</title>
+    <script>
+        var printError = function (error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Book title and author
+            var book = ['Robinson Crusoe', 'Daniel Defoe'];
+            // Book publisher
+            var publisher = ['W. Taylor'];
+
+            // Combine book and publisher arrays with Array.prototype.concat()
+            var combined = book.concat(publisher);
+            
+            // Output result
+            console.log(combined);
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+</head>
+
+</html>

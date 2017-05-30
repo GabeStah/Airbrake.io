@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to the Site!</title>
+    <script>
+        var printError = function (error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Book title and author
+            var book = {
+                title: 'Robinson Crusoe',
+                author: 'Daniel Defoe'
+            };
+            // Book publisher
+            var publisher = {
+                name: 'W. Taylor'
+            };
+
+            // Try to combine book and publisher objects with concat()
+            var combined = Object.assign(book, publisher);
+            
+            // Output result
+            console.log(combined);
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+</head>
+
+</html>

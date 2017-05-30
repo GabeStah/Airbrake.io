@@ -40,7 +40,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] TypeError: "x" has no properties
     - [x] TypeError: "x" is (not) "y"
     - [x] TypeError: "x" is not a constructor
-    - [ ] TypeError: "x" is not a function
+    - [x] TypeError: "x" is not a function
     - [ ] TypeError: "x" is read-only
     - [ ] TypeError: More arguments needed
     - [ ] TypeError: invalid Array.prototype.sort argument

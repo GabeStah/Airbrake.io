@@ -1,18 +1,18 @@
-# JavaScript Errors - "x" is not a Constructor TypeError
+# JavaScript Errors - "x" Is Not a Constructor TypeError
 
-Today, as we continue along through our [__JavaScript Error Handling__](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) series, we'll be taking a closer look at the `"x" is Not a Constructor TypeError`.  As the name suggests a `"x" is Not a Constructor TypeError` is thrown when incorrectly trying to invoke the `constructor` of a variable or object that _doesn't_ actually have a `constructor` itself.
+Today, as we continue along through our [__JavaScript Error Handling__](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) series, we'll be taking a closer look at the `"x" Is Not a Constructor TypeError`.  As the name suggests a `"x" Is Not a Constructor TypeError` is thrown when incorrectly trying to invoke the `constructor` of a variable or object that _doesn't_ actually have a `constructor` itself.
 
-In this article we'll examine the `"x" is Not a Constructor TypeError` in more detail by looking at where it resides within the JavaScript `Exception` hierarchy.  We'll also use a few simple code examples to illustrate how `"x" is Not a Constructor TypeErrors` are commonly thrown, which will hopefully help you in avoiding them in your own coding adventures.  Let's get started!
+In this article we'll examine the `"x" Is Not a Constructor TypeError` in more detail by looking at where it resides within the JavaScript `Exception` hierarchy.  We'll also use a few simple code examples to illustrate how `"x" Is Not a Constructor TypeErrors` are commonly thrown, which will hopefully help you in avoiding them in your own coding adventures.  Let's get started!
 
 ## The Technical Rundown
 
 - All JavaScript error objects are descendants of the [`Error`](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) object, or an inherited object therein.
 - The [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) object is inherited from the [`Error`](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) object.
-- The `"x" is Not a Constructor TypeError` is a descendant of [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) object.
+- The `"x" Is Not a Constructor TypeError` is a descendant of [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) object.
 
 ## When Should You Use It?
 
-To dig into the `"x" is Not a Constructor TypeError` we should first refresh ourselves on how `constructors` work in JavaScript.  A `constructor` is merely a special method that is automatically added to every `Object` (or derived type therein) that, when called, actually performs the instantiation and overall creation of the object in question.  In most cases the `constructor` is not called explicitly, but is instead implicitly invoked by using the `new` keyword (e.g. `var house = new House()`).
+To dig into the `"x" Is Not a Constructor TypeError` we should first refresh ourselves on how `constructors` work in JavaScript.  A `constructor` is merely a special method that is automatically added to every `Object` (or derived type therein) that, when called, actually performs the instantiation and overall creation of the object in question.  In most cases the `constructor` is not called explicitly, but is instead implicitly invoked by using the `new` keyword (e.g. `var house = new House()`).
 
 Moreover, `constructors` can be explicitly set when creating a `class`, or they can be implicitly added by JavaScript when defining a basic `function`.  For example, here we've defined a simple `Book` class that contains the special `constructor()` method in which we expect two parameters used to set the `author` and `title` properties.  For illustration purposes we also output a message after construction to indicate how this `Book` instance was created:
 
@@ -122,7 +122,7 @@ Created Book via function: The Hobbit by J.R.R. Tolkien
 undefined
 ```
 
-Now that we're a bit clearer on how JavaScript handles `constructors` we can dive back into the `"x" is Not a Constructor TypeError` to see what might cause it to be thrown.  In the simplest sense, a `"x" is Not a Constructor TypeError` is thrown when attempting to call a `constructor` on an object type that doesn't possess a `constructor` in the first place.  For example, here we've declared a `String` type named `title` and tried to invoke the `constructor` of our `String` type variable via the `new` keyword:
+Now that we're a bit clearer on how JavaScript handles `constructors` we can dive back into the `"x" Is Not a Constructor TypeError` to see what might cause it to be thrown.  In the simplest sense, a `"x" Is Not a Constructor TypeError` is thrown when attempting to call a `constructor` on an object type that doesn't possess a `constructor` in the first place.  For example, here we've declared a `String` type named `title` and tried to invoke the `constructor` of our `String` type variable via the `new` keyword:
 
 ```js
 var printError = function(error, explicit) {
@@ -143,7 +143,7 @@ try {
 }
 ```
 
-Sure enough a `"x" is Not a Constructor TypeError` is thrown because `title()` isn't a `constructor`:
+Sure enough a `"x" Is Not a Constructor TypeError` is thrown because `title()` isn't a `constructor`:
 
 ```
 [EXPLICIT] TypeError: title is not a constructor
@@ -155,7 +155,7 @@ To dive even deeper into understanding how your applications deal with JavaScrip
 
 __META DESCRIPTION__
 
-A deep dive into the "x" is not a constructor TypeError within JavaScript, including a quick overview of constructors with simple code examples.
+A deep dive into the "x" Is Not a Constructor TypeError within JavaScript, including a quick overview of constructors with simple code examples.
 
 ---
 
