@@ -1,4 +1,4 @@
-# JavaScript Errors - "x" is Not a Constructor TypeError
+# JavaScript Errors - "x" is not a Constructor TypeError
 
 Today, as we continue along through our [__JavaScript Error Handling__](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) series, we'll be taking a closer look at the `"x" is Not a Constructor TypeError`.  As the name suggests a `"x" is Not a Constructor TypeError` is thrown when incorrectly trying to invoke the `constructor` of a variable or object that _doesn't_ actually have a `constructor` itself.
 
