@@ -80,7 +80,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] NoMethodError
   - [x] RangeError
     - [x] FloatDomainError
-  - [ ] RegexpError
+  - [x] RegexpError
   - [ ] RuntimeError -- default for raise
   - [ ] SystemCallError
     - [ ] Errno::* __Part of `SystemCallError`?__

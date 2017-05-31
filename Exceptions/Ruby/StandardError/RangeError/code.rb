@@ -50,7 +50,7 @@ def create_book
         # Output fields.
         puts book.author
         puts book.title
-        puts book.page_count    
+        puts book.page_count
     rescue RangeError => e
         print_exception(e, true)
     rescue => e
