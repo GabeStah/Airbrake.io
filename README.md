@@ -81,9 +81,9 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] RangeError
     - [x] FloatDomainError
   - [x] RegexpError
-  - [ ] RuntimeError -- default for raise
-  - [ ] SystemCallError
-    - [ ] Errno::* __Part of `SystemCallError`?__
+  - [x] RuntimeError -- default for raise
+  - [x] SystemCallError
+    - [x] Errno::*
   - [ ] ThreadError
   - [ ] TypeError
   - [ ] ZeroDivisionError
