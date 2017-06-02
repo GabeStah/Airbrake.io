@@ -13,7 +13,7 @@ In this article we'll explore the `SystemCallError` in more detail, including wh
 
 ## When Should You Use It?
 
-`SystemCallError` is somewhat unique in the realm of Ruby exception classes because it isn't raised directly.  Instead, `SystemCallError` is the base class for dozens of `Errno` module subclasses.  The variety of `Errno` module classes is dependant on the operating system that Ruby is running on, but you can view the list of possible `Errno` classes by viewing the output of `Errno.constants` through an interactive Ruby console (`irb`) or similar tools.  As it happens, testing on both Windows 7 and Ubuntu 16.04 (Unix) show that, at least for Ruby 2.3, the list is identical:
+`SystemCallError` is somewhat unique in the realm of Ruby exception classes because it isn't raised directly.  Instead, `SystemCallError` is the base class for dozens of `Errno` module subclasses.  To view the list of possible `Errno` classes simply output `Errno.constants` through an interactive Ruby console (`irb`) or similar tool.  According to the official documentation, the list of possible `Errno` module classes is dependant on the operating system that Ruby is running on, but as it happens, the list is identical in Ruby 2.3 on both Windows 7 and Ubuntu 16.04 (Unix):
 
 **Unix `Errno` constants:**
 
