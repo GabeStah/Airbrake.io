@@ -1,18 +1,18 @@
-# JavaScript Errors - "x" Is Not a Function TypeError
+# JavaScript Errors - X Is Not a Function TypeError
 
-Making our way through our [__JavaScript Error Handling__](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) series, today we'll tackle the fun little error known as the `"x" Is Not a Function TypeError`.  As indicated by the name itself, the `"x" Is Not a Function TypeError` is most often thrown when attempting to invoke a `function()` call on a value or object that doesn't actually represent a function itself.
+Making our way through our [__JavaScript Error Handling__](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) series, today we'll tackle the fun little error known as the `X Is Not a Function TypeError`.  As indicated by the name itself, the `X Is Not a Function TypeError` is most often thrown when attempting to invoke a `function()` call on a value or object that doesn't actually represent a function itself.
 
-In this article we'll explore the `"x" Is Not a Function TypeError` in greater detail, including where it sits in the JavaScript `Exception` hierarchy, as well as a few simple code examples that illustrate how `"x" Is Not a Function TypeErrors` may occur.  Let's get crackin'!
+In this article we'll explore the `X Is Not a Function TypeError` in greater detail, including where it sits in the JavaScript `Exception` hierarchy, as well as a few simple code examples that illustrate how `X Is Not a Function TypeErrors` may occur.  Let's get crackin'!
 
 ## The Technical Rundown
 
 - All JavaScript error objects are descendants of the [`Error`](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) object, or an inherited object therein.
 - The [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) object is inherited from the [`Error`](https://airbrake.io/blog/javascript-error-handling/javascript-error-hierarchy) object.
-- The `"x" Is Not a Function TypeError` is a descendant of [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) object.
+- The `X Is Not a Function TypeError` is a descendant of [`TypeError`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) object.
 
 ## When Should You Use It?
 
-An `"x" Is Not a Function TypeError` typically occurs in one of the following three scenarios:
+An `X Is Not a Function TypeError` typically occurs in one of the following three scenarios:
 
 - When a function call is made on a property of that simply _isn't_ a function.
 - When a function call is made on an object type that doesn't contain that function or method.
@@ -84,13 +84,13 @@ However, since `document.title` is a property, what happens if we try to call it
 </html>
 ```
 
-Now we've accidentally caused a `"x" Is Not a Function TypeError` to be thrown because we're trying to call `document.title()` like a function instead of a property:
+Now we've accidentally caused a `X Is Not a Function TypeError` to be thrown because we're trying to call `document.title()` like a function instead of a property:
 
 ```
 [EXPLICIT] TypeError: document.title is not a function
 ```
 
-Another common cause of `"x" Is Not a Function TypeErrors` is when trying to call a particular method on an object that doesn't contain that method/function call.  For example, here we have a pair of `Arrays` that contain information about our book (`Robinson Crusoe`) that we want to combine into one single array.  Thankfully, we can simply use the [`Array.prototype.concat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=control) method to take our `book` array and combine it with the passed in `publisher` array:
+Another common cause of `X Is Not a Function TypeErrors` is when trying to call a particular method on an object that doesn't contain that method/function call.  For example, here we have a pair of `Arrays` that contain information about our book (`Robinson Crusoe`) that we want to combine into one single array.  Thankfully, we can simply use the [`Array.prototype.concat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=control) method to take our `book` array and combine it with the passed in `publisher` array:
 
 ```js
 var printError = function (error, explicit) {
@@ -143,7 +143,7 @@ var combined = book.concat(publisher);
 console.log(combined);
 ```
 
-Unfortunately, `Object.prototype.concat()` isn't a valid method, so a `"x" Is Not a Function TypeError` is thrown:
+Unfortunately, `Object.prototype.concat()` isn't a valid method, so a `X Is Not a Function TypeError` is thrown:
 
 ```
 [EXPLICIT] TypeError: book.concat is not a function
@@ -175,7 +175,7 @@ Sure enough this accomplished what we were after and outputs the expected result
 Object {title: "Robinson Crusoe", author: "Daniel Defoe", name: "W. Taylor"}
 ```
 
-Our final scenario where `"x" Is Not a Function TypeErrors` can commonly occur is when using any of the built-in methods that expect a provided callback function as an argument, but no function is given.  For example, here we want to use the `Array.prototype.every()` method to loop through every element of our array and check if it passes some logic.  However, in this case we've forgotten to provide the required callback function as the first argument (instead we just have a string):
+Our final scenario where `X Is Not a Function TypeErrors` can commonly occur is when using any of the built-in methods that expect a provided callback function as an argument, but no function is given.  For example, here we want to use the `Array.prototype.every()` method to loop through every element of our array and check if it passes some logic.  However, in this case we've forgotten to provide the required callback function as the first argument (instead we just have a string):
 
 ```js
 var printError = function (error, explicit) {
@@ -198,7 +198,7 @@ try {
 }
 ```
 
-As you might imagine this results in a `"x" Is Not a Function TypeError` output:
+As you might imagine this results in a `X Is Not a Function TypeError` output:
 
 ```
 [EXPLICIT] TypeError: My String is not a function
@@ -230,7 +230,7 @@ To dive even deeper into understanding how your applications deal with JavaScrip
 
 __META DESCRIPTION__
 
-A closer look at the "x" Is Not a Function TypeError within JavaScript, including a handful of functional code examples.
+A closer look at the X Is Not a Function TypeError within JavaScript, including a handful of functional code examples.
 
 ---
 
