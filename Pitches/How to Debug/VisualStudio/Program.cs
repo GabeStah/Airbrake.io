@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using Utility;
+using StringDialogVisualizer;
 
 namespace VisualStudio
 {
@@ -9,26 +11,64 @@ namespace VisualStudio
         {
             try
             {
+                String myString = "Hello, World";
+                DebuggerSide.TestShowVisualizer(myString);
                 Book book = new Book("Green Eggs and Ham", "Dr. Seuss");
                 Book book2 = new Book("This is a thing", "something");
-                book.Author = "Another guy";
+                throw new Exception("blah");
                 Logging.Log(book);
             }
-            catch (System.FieldAccessException exception)
+            catch (Exception exception)
             {
                 Logging.Log(exception);
             }
         }
 
+        [DebuggerTypeProxy(typeof(BookDebugView))]
+        [DebuggerDisplay("{Title} by {Author}")]
         public class Book
         {
-            public string Title { get; set; }
-            public string Author { get; set; }
+            private string _title { get; set; }
+            private string _author { get; set; }
 
             public Book(string title, string author)
             {
-                Title = title;
-                Author = author;
+                _title = title;
+                _author = author;
+            }
+
+            public String Author
+            {
+                get { return _author; }
+                set { _author = value; }
+            }
+
+            public String Title
+            {
+                get { return _title; }
+                set { _title = value; }
+            }
+
+            internal class BookDebugView
+            {
+                private Book _book;
+
+                public String Author
+                {
+                    get { return _book.Author; }
+                    set { _book.Author = value; }
+                }
+
+                public String Title
+                {
+                    get { return _book.Title; }
+                    set { _book.Title = value; }
+                }
+
+                public BookDebugView(Book book)
+                {
+                    _book = book;
+                }
             }
         }
     }
