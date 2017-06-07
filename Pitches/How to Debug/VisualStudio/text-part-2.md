@@ -77,21 +77,14 @@ Name | Value
 --- | ---
 book | {VisualStudio.Program.Book}
 
-| Name | Value |
-| --- | --- |
-| book | "Green Eggs and Ham" by "Dr. Seuss" |
-| :wrench: Author | "Dr. Seuss" |
-| :wrench: Title | "Green Eggs and Ham" |
-| :wrench: Raw View |   |
-
-
 to this:
 
 Name | Value
 --- | ---
-book | "Green Eggs and Ham" by "Dr. Seuss"
-  Author | "Dr. Seuss"
-  Title | "Green Eggs and Ham"
++ book | "Green Eggs and Ham" by "Dr. Seuss"
+:wrench: Author | "Dr. Seuss"
+:wrench: Title | "Green Eggs and Ham"
++ Raw View |
 
 ## Custom Data Visualizers
 
