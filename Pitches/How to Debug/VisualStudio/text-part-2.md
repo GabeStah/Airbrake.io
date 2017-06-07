@@ -57,38 +57,64 @@ For example we can modify our simple `Book` class below by adding those two attr
 
 ```cs
 [DebuggerTypeProxy(typeof(BookDebugView))]
-[DebuggerDisplay("{Title} by {Author}")]
+[DebuggerDisplay("{_title} by {_author}")]
 public class Book
 {
-    public string Title { get; set; }
-    public string Author { get; set; }
+    private string _title { get; set; }
+    private string _author { get; set; }
 
     public Book(string title, string author)
     {
-        Title = title;
-        Author = author;
+        _title = title;
+        _author = author;
+    }
+
+    internal class BookDebugView
+    {
+        private Book _book;
+
+        public String Author
+        {
+            get { return _book._author; }
+            set { _book._author = value; }
+        }
+
+        public String Title
+        {
+            get { return _book._title; }
+            set { _book._title = value; }
+        }
+
+        public BookDebugView(Book book)
+        {
+            _book = book;
+        }
     }
 }
 ```
 
-Now all our debugger windows will use the `BookDebugView` class as their base object type to display in the debug window thanks to the `DebuggerTypeProxy` attribute.  Plus, we've used the `DebuggerDisplay` attribute to alter how the `value` of our `Book` objects is displayed in our debugger windows.  Thus, when create a new instance of `Book` named `book` and view it in a debugger window, it changes from the default of this:
+In this simple example we basically want to override the default behavior by hiding the private properties of our `Book` class (`_author` and `_title`) in the drill-down display of debugger windows.  To accomplish this we create our `BookDebugView` class as an `internal` and give it a private `_book` property to hold our `Book` class instance, which is passed as the only parameter to the constructor.  We can then use our `public` `Author` and `Title` property methods as normal, which will act as our proxy replacement for the fields displayed in our debugger window.
 
-Name | Value
---- | ---
-book | {VisualStudio.Program.Book}
+The result is that all Visual Studio debugger windows now use the `BookDebugView` class as their base object type to display thanks to the `DebuggerTypeProxy` attribute.  Plus, we've used the `DebuggerDisplay` attribute to alter how the `value` of our `Book` objects is displayed in our debugger windows.  Thus, when create a new instance of `Book` named `book` and view it in a debugger window, it changes from the default of this:
+
+| Name | Value |
+| --- | --- |
+| + book | {VisualStudio.Program.Book} |
+| :wrench: _author | "Dr. Seuss" |
+| :wrench: _title | "Green Eggs and Ham" |
 
 to this:
 
-Name | Value
---- | ---
-+ book | "Green Eggs and Ham" by "Dr. Seuss"
-:wrench: Author | "Dr. Seuss"
-:wrench: Title | "Green Eggs and Ham"
-+ Raw View |
+| Name | Value |
+| --- | --- |
+| + book | "Green Eggs and Ham" by "Dr. Seuss" |
+| :wrench: Author | "Dr. Seuss" |
+| :wrench: Title | "Green Eggs and Ham" |
+| + Raw View |  |
 
 ## Custom Data Visualizers
 
-Visual Studio also includes powerful user interface components known as `visualizers`.  A visualizer typically creates a dialog box or other interface to display a value or object in a custom and appropriate manner based on that data type.  When debugging with Visual Studio you'll often see little magnifying glass icons which are the mechanism used to choose the visualizer you want to use to view that object.
+Visual Studio also includes powerful user interface components known as `visualizers`.  A visualizer typically creates a dialog box or other interface to display a value or object in a custom manner that is most appropriate based on that data type.  When debugging with Visual Studio you'll often see little magnifying glass icons which are the mechanism used to choose the visualizer you want to use to view that object.
 
 By default Visual Studio comes with visualizers for `HTML`, `JSON`, `Text`, `XML`, and a handful of others.  However, Visual Studio makes it easy to create your own custom visualizers.  Visualizers are effectively just compiled `.DLL` files that are referenced in whatever project you want to use them in, so creating a custom visualizer begins with creating a new `Class Library` project.  For example, here's a very simple visualizer that targets objects of type `System.String` and creates a message box dialog popup with the string value when the visualizer is called:
 
@@ -127,13 +153,13 @@ If you've ever found yourself trying to recreate a bug reported by another user 
 
 With a dump file in hand you can open it in Visual Studio and be presented with the `Dump File Summary` screen which outlines the basic information about the state of the application when the dump was taken.  This includes stuff like the process name, exception codes, and the list of modules (`.DLL` and `.exes`) that were used by the application.
 
-From there you can use Visual Studio to load up an exact recreation of the debugging process from the moment the dump was recorded.  If you have access to the source code (or symbol files therein) that are used by the application you'll be able to see exactly what line of code is paused at when the dump was recorded, the values of local variables, and basically everything else you're used to viewing within the Visual Studio debugger windows!
+From there you can use Visual Studio to load up an exact recreation of the debugging process from the moment the dump was recorded.  If you have access to the source code (or symbol files therein) that are used by the application you'll be able to see exactly what line of code execution halted at when the dump was recorded, the values of local variables, and basically everything else you're used to viewing within the Visual Studio debugger.
 
 Learn more in the [Using Dump Files docs](https://docs.microsoft.com/en-us/visualstudio/debugger/using-dump-files).
 
 ## IntelliTrace
 
-The final debugging feature of Visual Studio we'll discuss is `IntelliTrace`.  IntelliTrace is an advanced feature available to professional-grade Visual Studio versions that essentially acts as a _recorder for debugging sessions_.  When you begin a debugging session IntelliTrace will monitor for all "important" events that take place and record those events.  These might include user interactions like clicking buttons, file IO access, database connections and executions, exceptions, and so forth.  
+The final debugging feature of Visual Studio we'll discuss is `IntelliTrace`.  IntelliTrace is an advanced feature available to professional-grade Visual Studio versions that essentially acts as a _recorder for debugging sessions_.  When you begin a debugging session IntelliTrace will monitor for all "important" events that take place and record said events.  These might include user interactions like clicking buttons, file IO access, database connections and executions, exceptions, and so forth.  
 
 With IntelliTrace enabled during an active debugging session the `Diagnostic Tools` debugger window will feature a list of events that were tracked and recorded by IntelliTrace.  Again, these event types might include gestures by the user within the application interface, database queries, and so forth.  With the currently live debugging session paused you can then navigate through the event log and select a particular event you wish to view then click `Activate Historical Debugging`.  This will immediately enter `Historical Debugging` mode which shows your application code (along with all relevant local variables) in the state they were in at that specific moment of the accessed event.  
 

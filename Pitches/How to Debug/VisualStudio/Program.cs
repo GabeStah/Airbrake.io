@@ -25,7 +25,7 @@ namespace VisualStudio
         }
 
         [DebuggerTypeProxy(typeof(BookDebugView))]
-        [DebuggerDisplay("{Title} by {Author}")]
+        [DebuggerDisplay("{_title} by {_author}")]
         public class Book
         {
             private string _title { get; set; }
@@ -37,32 +37,20 @@ namespace VisualStudio
                 _author = author;
             }
 
-            public String Author
-            {
-                get { return _author; }
-                set { _author = value; }
-            }
-
-            public String Title
-            {
-                get { return _title; }
-                set { _title = value; }
-            }
-
             internal class BookDebugView
             {
                 private Book _book;
 
                 public String Author
                 {
-                    get { return _book.Author; }
-                    set { _book.Author = value; }
+                    get { return _book._author; }
+                    set { _book._author = value; }
                 }
 
                 public String Title
                 {
-                    get { return _book.Title; }
-                    set { _book.Title = value; }
+                    get { return _book._title; }
+                    set { _book._title = value; }
                 }
 
                 public BookDebugView(Book book)
