@@ -171,7 +171,7 @@ As usual, feel free to check out the [official documentation](https://docs.micro
 
 __META DESCRIPTION__
 
-A closer look at the debugging capabilities of Visual Studio including remote debugging, 64-bit applications, .NET Framework versions, and more!
+A closer look at debugging with Visual Studio including remote debugging, 64-bit applications, .NET Framework versions, and more!
 
 ---
 
