@@ -1,4 +1,4 @@
-# How to Debug: Visual Studio - Part 2
+# Debugging With Visual Studio - Part 2
 
 During the first article in our [How to Debug](https://airbrake.io/blog/debugging/debug-best-practices) series we went over a few generalized debugging best practices that are applicable to most platforms and debugging tools.  Next we dove into Visual Studio with [Debugging with Visual Studio - Part 1](https://airbrake.io/blog/debugging/debugging-with-visual-studio-part-1) and saw how Visual Studio handles code navigation, debugging windows, tooltips, and much more.
 
