@@ -41,7 +41,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] TypeError: "x" is (not) "y"
     - [x] TypeError: "x" is not a constructor
     - [x] TypeError: "x" is not a function
-    - [ ] TypeError: "x" is read-only
+    - [x] TypeError: "x" is read-only
     - [ ] TypeError: More arguments needed
     - [ ] TypeError: invalid Array.prototype.sort argument
     - [ ] TypeError: property "x" is non-configurable and can't be deleted

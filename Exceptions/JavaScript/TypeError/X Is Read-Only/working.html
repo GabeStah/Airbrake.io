@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to the Site!</title>
+    <script>
+        // Enable strict mode.
+        'use strict';
+
+        let printError = function (error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Create book object with a misspelled title.
+            let book = { title: 'Jurrassic Park', author: 'Michael Crichton' };
+            // Output book.
+            console.log(book); // Object {title: "Jurrassic Park", author: "Michael Crichton"}
+            // Update title with correct spelling.
+            book.title = 'Jurassic Park';
+            // Output book.
+            console.log(book); // Object {title: "Jurassic Park", author: "Michael Crichton"}
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+</head>
+
+</html>
