@@ -102,7 +102,7 @@ console.log(book); // Object {title: "Jurassic Park", author: "Michael Crichton"
 
 While this feels a bit like cheating (and it arguably is depending on your viewpoint and the purpose of your code), it's one particular quirk to remember when using immutable objects, as well as references to said immutable objects.  If your goal is to write code that never allows frozen/immutable objects to be modified once instantiated then make sure you never make any `assignment` statement (`x = y`) after the initial declaration.  While that solution might not work for all projects or meet all business requirements, it's a solid safety practice.
 
-## Conclusion
+## <a name="conclusion"></a>Conclusion
 
 To dive even deeper into understanding how your applications deal with JavaScript Errors, check out the revolutionary <a class="js-cta-utm" href="https://airbrake.io/languages/javascript_exception_handler?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-js">Airbrake JavaScript</a> error tracking tool for real-time alerts and instantaneous insight into what went wrong with your JavaScript code.
 
