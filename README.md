@@ -84,7 +84,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] RuntimeError -- default for raise
   - [x] SystemCallError
     - [x] Errno::*
-  - [ ] ThreadError
+  - [x] ThreadError
   - [ ] TypeError
   - [ ] ZeroDivisionError
 - [ ] SystemExit
