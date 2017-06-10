@@ -85,7 +85,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] SystemCallError
     - [x] Errno::*
   - [x] ThreadError
-  - [ ] TypeError
+  - [x] TypeError
   - [ ] ZeroDivisionError
 - [ ] SystemExit
 - [ ] SystemStackError
