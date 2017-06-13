@@ -1,4 +1,6 @@
-﻿using Utility;
+﻿using ObjectDumper;
+using System.Text;
+using Utility;
 
 namespace Builder
 {
@@ -20,6 +22,7 @@ namespace Builder
                                  .AddOlives()
                                  .Build();
             Logging.Log(pizzaPepOlives);
+            ObjectDumper.ObjectDumperExtensions.Dump(pizzaPepOlives);
 
             // Set Large size (default), add Sauce, add Mozzarella cheese (default), add Olives, add Mushrooms, then build it.
             var pizzaOlivesMushrooms = new PizzaBuilder()

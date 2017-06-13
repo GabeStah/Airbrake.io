@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A6C6E59-3418-481F-A0A6-146BA85CDFF7}</ProjectGuid>
+    <ProjectGuid>{263950BA-6F41-4BF0-9AAC-B38DB70D8ED4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Airbrake.Net.WebException</RootNamespace>
-    <AssemblyName>Airbrake.Net.WebException</AssemblyName>
+    <RootNamespace>Composite</RootNamespace>
+    <AssemblyName>Composite</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,13 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AngleSharp">
-      <HintPath>..\packages\AngleSharp.0.9.9\lib\net45\AngleSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="ObjectDumper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d00c15f0cf307d22, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\dev\csharp\projects\ObjectDumper\build\Debug\ObjectDumper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
