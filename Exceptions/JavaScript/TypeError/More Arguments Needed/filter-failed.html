@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to the Site!</title>
+    <script>
+        let printError = function (error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Create book array with a misspelled title.
+            let book = [ 'The Stand', 'Stephen King', new Date(1978, 9) ];
+            // Filter the title and author.
+            let titleAuthor = book.filter(v => typeof v === 'string');
+            // Try to filter without required argument.
+            let publicationDate = book.filter();
+            // [EXPLICIT] TypeError: missing argument 0 when calling function Array.prototype.filter
+            // Output the results.
+            console.log(titleAuthor);
+            console.log(publicationDate); 
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+</head>
+
+</html>
