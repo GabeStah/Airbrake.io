@@ -42,7 +42,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] TypeError: "x" is not a constructor
     - [x] TypeError: "x" is not a function
     - [x] TypeError: "x" is read-only
-    - [ ] TypeError: More arguments needed
+    - [x] TypeError: More arguments needed
     - [ ] TypeError: invalid Array.prototype.sort argument
     - [ ] TypeError: property "x" is non-configurable and can't be deleted
     - [ ] TypeError: variable "x" redeclares argument
@@ -86,7 +86,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] Errno::*
   - [x] ThreadError
   - [x] TypeError
-  - [ ] ZeroDivisionError
+  - [x] ZeroDivisionError
 - [ ] SystemExit
 - [ ] SystemStackError
 - [ ] fatal – impossible to rescue

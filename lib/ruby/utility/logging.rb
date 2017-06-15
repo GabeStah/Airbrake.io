@@ -33,7 +33,7 @@ module Logging
                 puts timestamp << value                
             else
                 # If +value+ is anything else output.
-                puts timestamp
+                puts timestamp if !timestamp.empty?
                 puts value
             end 
         end
