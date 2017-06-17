@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to the Site!</title>
+    <script src="file:///D:/work/Airbrake.io/lib/js/utility.js"></script>
+    <script>
+        let printError = function (error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Create a list of unordered data.
+            let data = [5, 7, 4, 3, 2, 1, 8, 6];
+
+            // Sort function that performs basic sorting.
+            let sort = (a, b) => {
+                console.log(data.join(', '));                
+                // Output comparison chart.
+                console.log(`(${a} >= ${b}) is ${a >= b}`);
+                // Sort all other elements as usual.
+                return a >= b;
+            };
+
+            // Output original list.
+            console.log(`Original: ${data.join(', ')}`);
+            // Call Array.prototype.sort and use sort to process.
+            data.sort(sort);
+            // Output sorted list.
+            console.log(`Sorted: ${data.join(', ')}`);
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+</head>
+
+</html>

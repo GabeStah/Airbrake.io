@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.ArgumentNullExcept
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Net.WebException", "Airbrake.Net.WebException\Airbrake.Net.WebException.csproj", "{8A6C6E59-3418-481F-A0A6-146BA85CDFF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Web.HttpException", "Airbrake.Web.HttpException\Airbrake.Web.HttpException.csproj", "{3726F952-1E69-45D6-8142-41FDF3E1BB21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +123,14 @@ Global
 		{8A6C6E59-3418-481F-A0A6-146BA85CDFF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A6C6E59-3418-481F-A0A6-146BA85CDFF7}.Release|x86.ActiveCfg = Release|Any CPU
 		{8A6C6E59-3418-481F-A0A6-146BA85CDFF7}.Release|x86.Build.0 = Release|Any CPU
+		{3726F952-1E69-45D6-8142-41FDF3E1BB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3726F952-1E69-45D6-8142-41FDF3E1BB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3726F952-1E69-45D6-8142-41FDF3E1BB21}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3726F952-1E69-45D6-8142-41FDF3E1BB21}.Debug|x86.Build.0 = Debug|Any CPU
+		{3726F952-1E69-45D6-8142-41FDF3E1BB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3726F952-1E69-45D6-8142-41FDF3E1BB21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3726F952-1E69-45D6-8142-41FDF3E1BB21}.Release|x86.ActiveCfg = Release|Any CPU
+		{3726F952-1E69-45D6-8142-41FDF3E1BB21}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
