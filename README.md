@@ -87,6 +87,6 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] ThreadError
   - [x] TypeError
   - [x] ZeroDivisionError
-- [ ] SystemExit
+- [x] SystemExit
 - [ ] SystemStackError
 - [ ] fatal – impossible to rescue
