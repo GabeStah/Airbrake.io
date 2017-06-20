@@ -43,8 +43,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] TypeError: "x" is not a function
     - [x] TypeError: "x" is read-only
     - [x] TypeError: More arguments needed
-    - [ ] TypeError: invalid Array.prototype.sort argument
-    - [ ] TypeError: property "x" is non-configurable and can't be deleted
+    - [x] TypeError: invalid Array.prototype.sort argument
+    - [x] TypeError: property "x" is non-configurable and can't be deleted
     - [ ] TypeError: variable "x" redeclares argument
 - Warning
     - [ ] Warning: -file- is being assigned a //# sourceMappingURL, but already has one

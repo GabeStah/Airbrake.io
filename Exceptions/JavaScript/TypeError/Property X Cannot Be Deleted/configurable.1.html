@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to the Site!</title>
+    <script>
+        // Enable strict mode.
+        'use strict';
+
+        let printError = function (error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        try {
+            // Create book object with a misspelled title.
+            let book = {};
+
+            Object.defineProperties(book, {
+                'author': {
+                    value: 'Patrick Rothfuss',
+                    configurable: false // Default is false                    
+                },                
+                'title': {
+                    value: 'The Name of the Wind'
+                }
+            });
+            // Output book.
+            console.log(book); // Object {title: "The Name of the Wind", author: "Patrick Rothfuss"}
+            // Delete the author property.
+            delete book.author;
+            // Output modified book.
+            console.log(book); // Object {title: "The Name of the Wind"}
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+</head>
+
+</html>
