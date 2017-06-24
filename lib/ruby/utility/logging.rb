@@ -22,12 +22,14 @@ module Logging
         def log(value, args = {})
             # Check if exception was explicit.
             explicit = args[:explicit].nil? ? true : args[:explicit]
+            # Include backtrace
+            backtrace = args[:backtrace].nil? ? true : args[:backtrace]
             # Get timestamp if necessary.
             timestamp = args[:timestamp] ? formatted_timestamp : ""
 
             if value.is_a?(Exception)
                 # If +value+ is an +Exception+ type output formatted exception.
-                puts timestamp << formatted_exception(value, explicit)
+                puts timestamp << formatted_exception( { exception: value, explicit: explicit, backtrace: backtrace } )
             elsif value.is_a?(String)
                 # If +value+ is a +String+ directly output
                 puts timestamp << value                
@@ -52,13 +54,14 @@ module Logging
 
         private
 
-            def formatted_exception(exception, explicit)
+            def formatted_exception(args = {})
+                backtrace = args[:backtrace].nil? ? true : args[:backtrace]
                 # Set explicit or inexplicit tag.
-                output = "(#{explicit ? 'EXPLICIT' : 'INEXPLICIT'}) "
+                output = "(#{args[:explicit] ? 'EXPLICIT' : 'INEXPLICIT'}) "
                 # Add class and message.
-                output << "#{exception.class}: #{exception.message}\n"
+                output << "#{args[:exception].class}: #{args[:exception].message}\n"
                 # Append backtrace with leading tabs.
-                output << "\t" << exception.backtrace.join("\n\t")
+                output << "\t" << args[:exception].backtrace.join("\n\t") if backtrace
                 # Return output string.
                 output
             end
