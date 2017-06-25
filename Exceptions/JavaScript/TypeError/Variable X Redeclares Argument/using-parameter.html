@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to the Site!</title>
+    <script>
+        // Enable strict mode.
+        'use strict';
+
+        let printError = function (error, explicit) {
+            console.log(`[${explicit ? 'EXPLICIT' : 'INEXPLICIT'}] ${error.name}: ${error.message}`);
+        }
+
+        // Book as Class
+        class Book {
+            // Special constructor method.
+            constructor(title, author, publicationDate) {
+                // Set properties
+                this.title = title;
+                this.author = author;
+                this.publicationDate = publicationDate;
+            }
+
+            getBookData(includePublicationDate)
+            {
+                return `"${this.title}" by ${this.author}${includePublicationDate ? `, published on ${this.publicationDate}` : `` }`
+            }
+        }
+
+        try {
+            // Create new Book instance.
+            let book = new Book('The Name of the Wind', 'Patrick Rothfuss', new Date(2007, 3, 27));
+            // Output book.
+            console.log(book);
+            // Book {title: "The Name of the Wind", author: "Patrick Rothfuss", publicationDate: Fri Apr 27 2007 00:00:00 GMT-0700 (Pacific Daylight Time)}
+
+            // Output default getBookData() return.
+            console.log(book.getBookData());
+            // "The Name of the Wind" by Patrick Rothfuss
+
+            // Output getBookData(true) return (includes publication date).
+            console.log(book.getBookData(true));
+            // "The Name of the Wind" by Patrick Rothfuss, published on Fri Apr 27 2007 00:00:00 GMT-0700 (Pacific Daylight Time)
+        } catch (e) {
+            if (e instanceof TypeError) {
+                printError(e, true);
+            } else {
+                printError(e, false);
+            }
+        }
+    </script>
+</head>
+
+</html>

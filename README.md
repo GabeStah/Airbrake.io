@@ -45,7 +45,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] TypeError: More arguments needed
     - [x] TypeError: invalid Array.prototype.sort argument
     - [x] TypeError: property "x" is non-configurable and can't be deleted
-    - [ ] TypeError: variable "x" redeclares argument
+    - [x] TypeError: variable "x" redeclares argument
 - Warning
     - [ ] Warning: -file- is being assigned a //# sourceMappingURL, but already has one
     - [ ] Warning: JavaScript 1.6's for-each-in loops are deprecated
