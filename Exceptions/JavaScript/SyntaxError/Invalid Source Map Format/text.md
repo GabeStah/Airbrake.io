@@ -1,4 +1,4 @@
-# SyntaxError: SyntaxError: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+# JavaScript Errors - Using //@ to Indicate SourceURL Pragmas is Deprecated SyntaxError
 
 Moving right along through our __JavaScript Error Handling__ series, today we'll be tackling the `Invalid Source Map Format` JavaScript error.  Although the `Invalid Source Map Format` error is technically a descendant of the base `SyntaxError` object, it applies to a _very_ specific case; when using a deprecated symbol to indicate the URL for a `source map`, which allows for easier debugging of obfuscated code.
 

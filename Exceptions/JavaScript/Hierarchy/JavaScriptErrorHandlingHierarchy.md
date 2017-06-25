@@ -2,14 +2,52 @@ The powerful JavaScript language and development platform provides a number of u
 
 Here we see the basic list of built-in error objects provided by JavaScript:
 
-- `Error`
-- `EvalError`
-- `InternalError`
-- `RangeError`
-- `ReferenceError`
-- `SyntaxError`
-- `TypeError`
-- `URIError`
+- Error
+  - [Permission denied to access property "x"](https://airbrake.io/blog/javascript-error-handling/permission-denied)
+- InternalError
+  - [too much recursion](https://airbrake.io/blog/javascript-error-handling/internalerror-too-much-recursion)
+- RangeError
+    - [argument is not a valid code point](https://airbrake.io/blog/javascript/rangeerror-argument-is-not-a-valid-code-point)
+    - [invalid array length](https://airbrake.io/blog/javascript/rangeerror-invalid-array-length)
+    - [precision is out of range](https://airbrake.io/blog/javascript-error-handling/java)
+    - [radix must be an integer](https://airbrake.io/blog/javascript/radix-must-be-an-integer)
+    - [repeat count must be less than infinity](https://airbrake.io/blog/javascript/rangeerror-repeat-count-less-than-infinity)
+    - [repeat count must be non-negative](https://airbrake.io/blog/javascript-error-handling/rangeerror-repeat-count-non-negative)
+- ReferenceError
+    - ["x" is not defined](https://airbrake.io/blog/javascript/referenceerror-x-is-not-defined)
+    - [assignment to undeclared variable "x"](https://airbrake.io/blog/javascript-error-handling/referenceerror-assignment-to-undeclared-variable-x)
+    - [deprecated caller or arguments usage](https://airbrake.io/blog/javascript/referenceerror-deprecated-caller-or-arguments-usage)
+    - [invalid assignment left-hand side](https://airbrake.io/blog/javascript-error-handling/invalid-assignment-left-hand-side)
+    - [reference to undefined property "x"](https://airbrake.io/blog/javascript/referenceerror-reference-to-undefined-property-x)
+- SyntaxError
+    - ["use strict" not allowed in function with non-simple parameters](https://airbrake.io/blog/javascript-error-handling/syntaxerror-use-strict-not-allowed-non-simple-parameters)
+    - [ "x" is not a legal ECMA-262 octal constant](https://airbrake.io/blog/javascript/x-not-legal-ecma-262-octal-constant)
+    - [JSON.parse: bad parsing](https://airbrake.io/blog/javascript/syntaxerror-json-parse-bad-parsing)
+    - [Malformed formal parameter](https://airbrake.io/blog/javascript/syntaxerror-malformed-formal-parameter)
+    - [Unexpected token](https://airbrake.io/blog/javascript/unexpected-token)
+    - [Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead](https://airbrake.io/blog/javascript/invalid-source-map-url)
+    - [missing ) after argument list](https://airbrake.io/blog/javascript/javascript-error-handling-syntaxerror-missing-after-argument-list)
+    - [missing ; before statement](https://airbrake.io/blog/javascript/syntaxerror-missing-before-statement)
+    - [missing bracket after element list](https://airbrake.io/blog/javascript/syntaxerror-missing-after-element-list)
+    - [missing } after property list](https://airbrake.io/blog/javascript/syntaxerror-missing-after-property-list)
+    - [redeclaration of formal parameter "x"](https://airbrake.io/blog/javascript/redeclaration-formal-parameter-x)
+    - [return not in function](https://airbrake.io/blog/javascript/syntaxerror-return-not-function)
+    - [test for equality (==) mistyped as assignment (=)?](https://airbrake.io/blog/javascript/test-for-equality-mistyped-assignment)
+    - [unterminated string literal](https://airbrake.io/blog/javascript/javascript-errors-syntaxerror-unterminated-string-literal)
+- TypeError
+    - ["x" has no properties](https://airbrake.io/blog/javascript/null-undefined-properties)
+    - ["x" is (not) "y"](https://airbrake.io/blog/javascript/javascript-errors-x-not-y-typeerror)
+    - ["x" is not a constructor](https://airbrake.io/blog/javascript/javascript-errors-x-not-constructor-typeerror)
+    - ["x" is not a function](https://airbrake.io/blog/javascript/javascript-errors-x-is-not-a-function-typeerror)
+    - ["x" is read-only](https://airbrake.io/blog/javascript/javascript-errors-x-is-read-only-typeerror)
+    - [More arguments needed](https://airbrake.io/blog/javascript/javascript-errors-more-arguments-needed)
+    - [invalid Array.prototype.sort argument](https://airbrake.io/blog/javascript/javascript-errors-invalid-array-sort-argument-typeerror)
+    - [property "x" is non-configurable and can't be deleted](https://airbrake.io/blog/javascript/javascript-errors-property-x-cannot-be-deleted-typeerror)
+    - [variable "x" redeclares argument](https://airbrake.io/blog/javascript/javascript-errors-variable-x-redeclares-argument-typeerror)
+- Warning
+    - [-file- is being assigned a //# sourceMappingURL, but already has one]()
+    - [JavaScript 1.6's for-each-in loops are deprecated]()
+    - [unreachable code after return statement]()
 
 Below we'll examine each of the core error constructors provided by JavaScript, looking at simple examples and descriptions for what can cause each type of error to occur.
 
@@ -142,7 +180,6 @@ __Output__: `URIError: URI malformed`.
 [`SyntaxError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError
 [`TypeError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError
 [`URIError`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError
-
 
 ---
 
