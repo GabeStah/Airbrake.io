@@ -22,7 +22,6 @@ namespace Builder
                                  .AddOlives()
                                  .Build();
             Logging.Log(pizzaPepOlives);
-            ObjectDumper.ObjectDumperExtensions.Dump(pizzaPepOlives);
 
             // Set Large size (default), add Sauce, add Mozzarella cheese (default), add Olives, add Mushrooms, then build it.
             var pizzaOlivesMushrooms = new PizzaBuilder()
@@ -35,10 +34,7 @@ namespace Builder
         }
     }
 
-    public enum Cheese { Cheddar, Mozzarella, Parmesan, Provolone }
-    public enum Size { Small, Medium, Large, XLarge }
-
-    class TelescopedPizza
+    public class TelescopedPizza
     {
 
         public Size Size { get; set; }
@@ -82,7 +78,10 @@ namespace Builder
         }
     }
 
-    class Pizza
+    public enum Cheese { Cheddar, Mozzarella, Parmesan, Provolone }
+    public enum Size { Small, Medium, Large, XLarge }
+
+    public class Pizza
     {
         public Size Size { get; set; }
         public Cheese Cheese { get; set; }
@@ -104,7 +103,7 @@ namespace Builder
         }
     }
 
-    class PizzaBuilder
+    public class PizzaBuilder
     {
         public Size Size { get; set; }
         public Cheese Cheese { get; set; }
