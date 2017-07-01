@@ -1,21 +1,21 @@
-# Ruby Exception Handling: FatalError
+# Ruby Exception Handling: Fatal Error
 
-Today we finally come to the end of the journey through our [__Ruby Exception Handling__](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes) series.  The last, and perhaps most critical, error left to discuss is the `FatalError`, which indicates a severe crash in a Ruby application -- something so dramatic that the process couldn't recover from it through normal means.
+Today we finally come to the end of the journey through our [__Ruby Exception Handling__](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes) series.  The last, and perhaps most critical, error left to discuss is the `Fatal Error`, which indicates a severe crash in a Ruby application -- something so dramatic that the process couldn't recover from it through normal means.
 
-There's no time to waste, so let's get on with our last article detailing the plethora of possible Ruby exceptions.  In this piece we'll explore the `FatalError` in more detail, looking at where it fits within the Ruby `Exception` class hierarchy, as well as showing a few code examples illustrating how these painful errors might occur.  Let's get to it!
+There's no time to waste, so let's get on with our last article detailing the plethora of possible Ruby exceptions.  In this piece we'll explore the `Fatal Error` in more detail, looking at where it fits within the Ruby `Exception` class hierarchy, as well as showing a few code examples illustrating how these painful errors might occur.  Let's get to it!
 
 ## The Technical Rundown
 
 - All Ruby exceptions are descendants of the [`Exception`](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes) class, or a subclass therein.
-- `FatalError` is the direct descendant of the [`Exception`](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes) class.
+- `Fatal Error` is the direct descendant of the [`Exception`](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes) class.
 
 ## When Should You Use It?
 
-`FatalErrors` are a beast.  Generally speaking, when a `FatalError` occurs it means the application has failed so horrendously that Ruby is unable to recover from the problem.  This can occur for a variety of reasons but some typical cases might be process issues, memory problems, IO failures, and so forth.  However, Ruby already has built-in errors specifically designed for such failures, so when one of those existing error types isn't raised it's usually because the application broke unexpectedly and the a `FatalError` occurs.
+`Fatal Errors` are a beast.  Generally speaking, when a `Fatal Error` occurs it means the application has failed so horrendously that Ruby is unable to recover from the problem.  This can occur for a variety of reasons but some typical cases might be process issues, memory problems, IO failures, and so forth.  However, Ruby already has built-in errors specifically designed for such failures, so when one of those existing error types isn't raised it's usually because the application broke unexpectedly and the a `Fatal Error` occurs.
 
-Consequently, it should come as no surprise that `FatalErrors` effectively _cannot be `rescued` or recovered from_.  When a `FatalError` occurs the Ruby application is generally going to be shutting down/killing the process.
+Consequently, it should come as no surprise that `Fatal Errors` effectively _cannot be `rescued` or recovered from_.  When a `Fatal Error` occurs the Ruby application is generally going to be shutting down/killing the process.
 
-That said, we can still _play_ with `FatalErrors` a bit, since the underlying object that Ruby uses is still just that: an object.
+That said, we can still _play_ with `Fatal Errors` a bit, since the underlying object that Ruby uses is still just that: an object.
 
 First we'll start with the full code sample below, after which we'll go over it in more detail.
 
@@ -209,7 +209,7 @@ However, trying to perform the same creation and write operation to `...\inacces
 (INEXPLICIT) Errno::EACCES: Permission denied @ rb_sysopen - D:\work\Airbrake.io\Exceptions\Ruby\Fatal\inaccessible\data.csv
 ```
 
-Unsurprisingly, this isn't a `FatalError` at all.  As it happens, it is _very_ difficult to purposefully cause a `FatalError` in Ruby code (and for good reason).  However, to see just what the `FatalError` exception object is like and to play with it yourself, we can perform a small trick to raise such an error.
+Unsurprisingly, this isn't a `Fatal Error` at all.  As it happens, it is _very_ difficult to purposefully cause a `Fatal Error` in Ruby code (and for good reason).  However, to see just what the `Fatal Error` exception object is like and to play with it yourself, we can perform a small trick to raise such an error.
 
 ```ruby
 def raise_fatal_error
@@ -249,4 +249,4 @@ To get the most out of your own applications and to fully manage any and all Rub
 
 __META DESCRIPTION__
 
-A closer look at FatalError class in Ruby, including functional code examples and a short exploration of explicitly raising such errors.
+A closer look at Fatal Error class in Ruby, including functional code examples and a short exploration of explicitly raising such errors.
