@@ -19,10 +19,6 @@ namespace DemoClient
                 client.ReserveBook("The Stand", null);
                 client.Close();
             }
-            catch (FaultException<LibraryServiceReference> e)
-            {
-
-            }
             catch (Exception e)
             {
                 Logging.Log(e, false);
