@@ -37,7 +37,7 @@ Below is the entire list of built-in subclasses of the `Exception` class:
   - [`ZeroDivisionError`](https://airbrake.io/blog/ruby/ruby-exception-handling-zerodivisionerror)
 - [`SystemExit`](https://airbrake.io/blog/ruby/ruby-exception-handling-systemexit)
 - [`SystemStackError`](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-handling-systemstackerror)
-- `fatal – impossible to rescue`
+- [`fatal – impossible to rescue`](https://airbrake.io/blog/ruby-exception-handling/fatal-error)
 
 Below we'll briefly examine each of the top-level subclasses of `Exception` to easily define when and why they might be raised during normal execution.
 
