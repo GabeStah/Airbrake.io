@@ -44,10 +44,6 @@ Here we see the basic list of built-in error objects provided by JavaScript:
     - [invalid Array.prototype.sort argument](https://airbrake.io/blog/javascript/javascript-errors-invalid-array-sort-argument-typeerror)
     - [property "x" is non-configurable and can't be deleted](https://airbrake.io/blog/javascript/javascript-errors-property-x-cannot-be-deleted-typeerror)
     - [variable "x" redeclares argument](https://airbrake.io/blog/javascript/javascript-errors-variable-x-redeclares-argument-typeerror)
-- Warning
-    - [-file- is being assigned a //# sourceMappingURL, but already has one]()
-    - [JavaScript 1.6's for-each-in loops are deprecated]()
-    - [unreachable code after return statement]()
 
 Below we'll examine each of the core error constructors provided by JavaScript, looking at simple examples and descriptions for what can cause each type of error to occur.
 
