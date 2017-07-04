@@ -74,15 +74,15 @@ canvas {
 }
 ```
 
-As indicated by the comments, all we're doing here is changing the `<body>` background to black and removing the `margins`.  For the critical `<canvas>` element we're simply changing the `display` style to `block`, which ensures that our canvas stretches the entire width of the page.
+As indicated by the comments, all we're doing here is changing the `<body>` background to black and removing the `margins`.  For the critical `<canvas>` element we're simply changing the `display` style to `block`, which ensures that the canvas stretches the entire width of the page.
 
-That's all we need to do for styling, since most of the graphics will be created in real-time through our JavaScript code.  It's also important to note here that we're using so little CSS that we could've just included the inline styling directly inside our `index.html` page using `<style></style>` tags.  However, I'd generally recommend avoiding inline styling, since it helps to keep projects much cleaner to separate styling (`CSS`) from layout (`HTML`) whenever possible.
+That's all we need to do for styling, since most of the graphics will be created in real-time through our JavaScript code.  It's also important to note here that we're using so little CSS that we could've just included the inline styling directly inside our `index.html` page using `<style></style>` tags.  However, it's generally recommended to avoid inline styling, since it helps to keep projects much cleaner by separating styling (`CSS`) from layout (`HTML`).
 
 ## Writing Our JavaScript Code
 
 Finally we get to the fun part -- writing some JavaScript code!  There are many ways to accomplish the goal of creating fireworks (just browse through the plethora of [examples on CodePen](https://codepen.io/search/pens?q=fireworks&limit=all&type=type-pens) and elsewhere), but for this script we've opted for a fairly simple approach.  Our fireworks display will be made up of two types of elements: `fireworks` and `particles`.
 
-A `firework` (within our code) represents a single trail that is launched from the bottom of the screen to a destination position.  Once it reaches its destination, it should explode and create a series of `particles`, which will shimmer and rain down, just like real fireworks!
+A `firework` (within our code) represents a single trail that is launched from the bottom of the screen to a destination position.  Once it reaches its destination, it should explode and create a series of `particles`, which will shimmer and rain down just like real fireworks!
 
 ### Configuration
 
@@ -149,13 +149,13 @@ const TICKS_PER_FIREWORK_AUTOMATED_MAX = 80;
 // === END CONFIGURATION ===
 ```
 
-We've purposefully opted to use the `const` keyword for all the configuration settings.  This is generally good practice since it ensures we cannot accidentally change the value during runtime.  Most of the configuration options are reasonably commented and given appropriate default values, but once our application is up and running, feel free to play with these settings and see what you can do!
+We've purposefully opted to use the `const` keyword for all the configuration settings.  This is generally good practice since it ensures we cannot accidentally change the value during runtime.  Most of the configuration options are reasonably commented and use appropriate default values, but once our application is up and running, feel free to play with these settings and see what you can do!
 
-Our configuration is split into four main categories: Fireworks settings to adjust the behavior of the fireworks themselves, particles to adjust the behavior of explosion particles, canvas coloration to modify global behavior, and tick restrictions to adjust how frequently fireworks are launched.
+The configuration is split into four main categories: Fireworks settings to adjust the behavior of the fireworks themselves, particles to adjust the behavior of explosion particles, canvas coloration to modify global behavior, and tick restrictions to adjust how frequently fireworks are launched.
 
 ### Local Variables
 
-The next section houses all our local variables.  These are _not_ constants, and will be used and modified frequently throughout the entire project.  Go ahead and add this next section to `app.js`:
+The next section houses all the local variables.  These are _not_ constants, and will be used and modified frequently throughout the entire project.  Go ahead and add this next section to `app.js`:
 
 ```js
 // === LOCAL VARS ===
@@ -182,11 +182,11 @@ let ticksSinceFirework = 0;
 // === END LOCAL VARS ===
 ```
 
-Again, most variables are commented, but critical ones include the `fireworks = []` and `particles = []` arrays that we'll use to keep track all the individual instances of fireworks and particles we have active at any given time.
+Again, most variables are commented, but critical ones include the `fireworks = []` and `particles = []` arrays that we'll use to keep track all the individual instances that are active at any given time.
 
 ### Helper Functions
 
-While not required, it's often beneficial to create a few helper functions in any application.  These should be **independent** functions that are not tied into the logic or functionality of your application in anyway.  Think of them like a library that can be used in any project.
+While not required, it's often beneficial to create a few helper functions in most applications.  These should be **independent** functions that are not tied into the logic or functionality of your application in anyway.  Think of them like a library that can be used in virtually any project.
 
 For our purposes we just have a few helper functions to add to `app.js`:
 
@@ -219,7 +219,7 @@ function calculateDistance(aX, aY, bX, bY) {
 // === END HELPERS ===
 ```
 
-In addition to `random()` to get a random value within a random and `calculateDistance()` to figure out how far apart two points are, a very critical helper is `window.requestAnimFrame()`.  This immediately invoked function expression (`IIFE`) we've defined here allows us to call the appropriate [`requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) method of whatever browser is being used.  `requestAnimationFrame()` is a smooth way to request the browser redraw the window, without resorting to weaker techniques like using `setTimeout()` (which should be a last resort for modern development).
+In addition to `random()`, used to get a random value within a range, and `calculateDistance()`, to figure out how far apart two points are, a particularly important helper function is `window.requestAnimFrame()`.  This immediately invoked function expression (`IIFE`) allows us to call the appropriate [`requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) method of whatever browser is being used.  `requestAnimationFrame()` is a smooth way to request that the browser redraw the window, without resorting to weaker techniques like using `setTimeout()` (which should be a last resort for modern development).
 
 ### Event Listeners
 
@@ -251,7 +251,7 @@ canvas.addEventListener('mouseup', (e) => {
 
 ### Prototyping
 
-The prototyping section of our `app.js` code is where the majority of our logic takes place.  This is where we'll define how fireworks and particles are created, updated, and eventually destroyed.  We'll use the great number of configuration settings we defined at the top of the `app.js` file, along with elapsed time (in the form of `ticks` or loops of our animation), to determine what should be changed.  This will be a fairly extensive section, so we'll break it up into individual function definitions to make it easier to digest.
+The prototyping section of the `app.js` code is where the majority of our application logic takes place.  This is where we'll define how fireworks and particles are created, updated, and eventually destroyed.  We'll use the great number of configuration settings we defined at the top of the `app.js` file, along with elapsed time (in the form of `ticks` or loops of our animation), to determine what should be changed.  This will be a fairly extensive section, so we'll break it up into functinal sections to make it easier to digest.
 
 As the name of this section indicates, we'll be using the tried-and-true [`prototyping`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype) technique to create our critical `Firework` and `Particle` objects.  This allows us to track individual instances of these elements easily, while also assigning each instance a unique set of properties that will affect its behavior.
 
@@ -298,7 +298,7 @@ function Firework(startX, startY, endX, endY) {
 }
 ```
 
-Most of this function is used to set the assortment of properties that our `Firework` will use elsewhere.  Of particular note is the start and end point parameter coordinates that tell the `Firework` the path it should travel on.  We use these points to calculate the distance it will travel, the angle of trajectory, and so forth.
+Most of this function is used to set the assortment of properties that the `Firework` will use elsewhere.  Of particular note is the start and end point parameter coordinates, which tell the `Firework` the path it should travel on.  We use these points to calculate the distance it will travel, the angle of trajectory, and so forth.
 
 Next is the `Firework.prototype.update()` method:
 
@@ -380,15 +380,15 @@ Firework.prototype.draw = function() {
 }
 ```
 
-This is where all visual updates are made to this particular `Firework` instance.  All we're really doing is creating a new `line` that spans between the current position of the firework and the tail end of the `trail`.
+This is where all visual updates are made to this particular `Firework` instance.  All we're really doing is creating a new `line` that spans between the current position of the firework and the tail end of the firework's trail.
 
 We also have a second stroke using the `arc()` method that creates our target circle indicator, showing the position that the firework is heading toward.
 
 #### Handling Particles
 
-The next section contains the latter half of our prototyping code, which we're using to handle our `Particle` elements.  As we've already seen, `Particles` are the series of trails that are generated when a `Firework` reaches its target position and explodes.
+The next section contains the latter half of our prototyping code, which we're using to handle the `Particle` elements.  As we've already seen, `Particles` are the series of trails that are generated when a `Firework` reaches its target position and explodes.
 
-Since much of the `Particle` prototype code is similar to that of `Firework` we don't need to explain it in greater detail outside of the comments, so feel free to add the following to `app.js` to continue:
+Since much of the `Particle` prototype code is similar to that of `Firework`, we don't need to explain it in detail outside of the provided comments, so feel free to add the following to `app.js` to continue:
 
 ```js
 // Creates a new particle at provided 'x' and 'y' coordinates.
@@ -470,7 +470,7 @@ Particle.prototype.draw = function() {
 
 Next we need to add a series of helper functions that are _specifically_ tied to the logic and functionality of our application.  That means they make direct use of the various app-specific variables and objects we've defined, so these functions are distinctly different from the `helper functions` we defined earlier.
 
-We start with `cleanCanvas()`, which you can read more about in the source comments, but is primarily meant to cleanup existing trails based on their current transparency/alpha level:
+We start with `cleanCanvas()`, which you can read more about in the source comments, but is primarily intended to cleanup existing trails based on their current transparency/alpha level:
 
 ```js
 // Cleans up the canvas by removing older trails.
@@ -503,7 +503,7 @@ function createParticles(x, y) {
 }
 ```
 
-`launchAutomatedFirework()` is executed every animation loop and determines if enough time has passed to launch another automatic firework.  We launch fireworks from the bottom center of the screen and target them toward a random position in the upper half:
+`launchAutomatedFirework()` is executed every animation loop and determines if enough time has passed to launch another automatic firework.  We launch fireworks from the bottom center of the screen and aim them toward a random position in the upper half:
 
 ```js
 // Launch fireworks automatically.
@@ -557,7 +557,7 @@ function launchManualFirework() {
 }
 ```
 
-Our last two app helper functions are `updateFireworks()` and `updateParticles()`, which perform their respective tasks of drawing and updating the status of all existing `Firework/Particle` elements that are currently active:
+The last two app helper functions are `updateFireworks()` and `updateParticles()`, which perform their respective tasks of drawing and updating the status of all existing `Firework/Particle` elements that are currently active:
 
 ```js
 // Update all active fireworks.
@@ -581,7 +581,7 @@ function updateParticles() {
 // === END APP HELPERS ===
 ```
 
-Last but certainly not least comes the main `loop()` function, which drives the entire application by recursively passing itself to each `requestAnimFrame()` call.  This ensure that each frame all our `Fireworks` and `Particles` are moved, updated, and redrawn as necessary, while also creating any new fireworks that need to be launched.  The final snippet of code to add to `app.js` is as follows:
+Last but certainly not least comes the main `loop()` function, which drives the entire application by recursively passing itself to each `requestAnimFrame()` call.  This ensure that within each frame, all our `Fireworks` and `Particles` are moved, updated, and redrawn as necessary, while also creating any new fireworks that need to be launched.  The final snippet of code to add to `app.js` is as follows:
 
 ```js
 // Primary loop.
@@ -612,7 +612,7 @@ function loop() {
 window.onload = loop;
 ```
 
-That's all there is to it!  You're now ready to open up the `index.html` file in your browser of choice and watch the fireworks fly.  Feel free to click around (or hold the mouse button) to launch them quickly.  Best of all, start messing with some of the configuration options to really kick things up a notch.  If your system can handle it, I recommend dramatically increasing `PARTICLE_COUNT` and lowering `CANVAS_CLEANUP_ALPHA` to really make things come alive!  Happy Fourth of July!
+That's all there is to it!  You're now ready to open up the `index.html` file in your browser of choice and watch the fireworks fly.  Feel free to click around (or hold the mouse button) to launch them even faster.  Best of all, start messing with some of the configuration options to really kick things up a notch.  If your system can handle it, I recommend dramatically increasing `PARTICLE_COUNT` and lowering `CANVAS_CLEANUP_ALPHA` to really make things come alive!  Happy Fourth of July!
 
 ---
 
