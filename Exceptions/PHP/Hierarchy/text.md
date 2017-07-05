@@ -1,6 +1,6 @@
 # The PHP Exception Class Hierarchy
 
-In older PHP versions it often proved difficult, if not impossible, to handle fatal errors.  In fact, most fatal errors typically caused the application to halt execution entirely.  Now, thanks to changes introduced in PHP 7, exceptions are thrown (and can therefore be caught) when a fatal error occurs, allowing the application to continue functioning.
+In the past, understanding the PHP exception class hierarchy was easy but seriously flawed.  In older PHP versions it often proved difficult, if not impossible, to handle fatal errors.  In fact, most fatal errors typically caused the application to halt execution entirely.  Now, thanks to changes introduced in PHP 7, exceptions are thrown (and can therefore be caught) when a fatal error occurs, allowing the application to continue functioning.
 
 As of PHP 7, PHP divides errors into two unique classes: `Exception` and `Error`.  An `Error` is typically used for issues that have historically been considered fatal errors.  When a fatal error occurs, PHP will now throw an `Error` class instance.  An `Exception` instance, on the other hand, is thrown for more traditional, recoverable errors.
 
