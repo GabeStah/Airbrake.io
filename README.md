@@ -4,6 +4,38 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
 
 ## Exception Checklist
 
+### PHP
+
+- [ ] `Throwable`
+  - [ ] `Error`
+    - [ ] `ArithmeticError`
+      - [ ] `DivisionByZeroError`
+    - [ ] `AssertionError`
+    - [ ] `ParseError`
+    - [ ] `TypeError`
+  - [ ] `Exception`
+    - [ ] `ClosedGeneratorException`
+    - [ ] `DOMException`
+    - [ ] `ErrorException`
+    - [ ] `IntlException`
+    - [ ] `LogicException`
+      - [ ] `BadFunctionCallException`
+        - [ ] `BadMethodCallException`
+      - [ ] `DomainException`
+      - [ ] `InvalidArgumentException`
+      - [ ] `LengthException`
+      - [ ] `OutOfRangeException`
+    - [ ] `PharException`
+    - [ ] `ReflectionException`
+    - [ ] `RuntimeException`
+      - [ ] `mysqli_sql_exception`
+      - [ ] `OutOfBoundsException`
+      - [ ] `OverflowException`
+      - [ ] `PDOException`
+      - [ ] `RangeException`
+      - [ ] `UnderflowException`
+      - [ ] `UnexpectedValueException`
+
 ### JavaScript
 
 - [x] Error: Permission denied to access property "x"
