@@ -6,8 +6,8 @@ As of PHP 7, PHP divides errors into two unique classes: `Exception` and `Error`
 
 To bring these two concepts together PHP 7 introduces the new `Throwable` interface, which both `Exception` and `Error` implement.  Here's a look at the entire PHP exception hierarchy:
 
-- [`Throwable`]()
-  - [`Error`]()
+- `Throwable`
+  - `Error`
     - `ArithmeticError`
       - `DivisionByZeroError`
     - `AssertionError`
@@ -56,13 +56,13 @@ As previously discussed, `Errors` encompass issues that would normally be consid
 - `ReflectionException` - Thrown when attempting to perform an invalid operation during reflection.
 - `RuntimeException` - Thrown for exceptions that only occur during runtime, such as overflow or out of bounds issues.
 
-That's just a small taste of the powerful, built-in exception class hierarchy provided with modern PHP.  Stay tuned for more in-depth articles examining each of these exceptions in greater detail, and be sure to check out Airbrake's robust <a class="js-cta-utm" href="https://airbrake.io/languages/ruby_exception_handling?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-php">PHP Exception Tracker</a> to help you streamline all your exception handling practices!
+That's just a small taste of the powerful, built-in exception class hierarchy provided with modern PHP.  Stay tuned for more in-depth articles examining each of these exceptions in greater detail, and be sure to check out Airbrake's robust <a class="js-cta-utm" href="https://airbrake.io/languages/ruby_exception_handling?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-php">PHP Exception Tracker</a>, designed to help you streamline all your PHP exception handling practices!
 
 ---
 
 __META DESCRIPTION__
 
-A brief overview of the PHP exception class hierarchy, including dramatic changes introduces in PHP 7 with the new Throwable interface.
+A brief overview of the PHP exception class hierarchy, including the dramatic changes introduced in PHP 7 with the new Throwable interface.
 
 ---
 
