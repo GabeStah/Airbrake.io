@@ -6,9 +6,9 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
 
 ### PHP
 
-- [ ] `Throwable`
-  - [ ] `Error`
-    - [ ] `ArithmeticError`
+- [x] `Throwable`
+  - [x] `Error`
+    - [x] `ArithmeticError`
       - [ ] `DivisionByZeroError`
     - [ ] `AssertionError`
     - [ ] `ParseError`
