@@ -334,4 +334,4 @@ Check out the <a class="js-cta-utm" href="https://airbrake.io/languages/php_bug_
 
 __META DESCRIPTION__
 
-A deep dive into the System.ServiceModel.FaultException in .NET, including a working C# code samples illustrating how to handle service exceptions.
+A close look at the ArithmeticError in PHP, including a working example code and a dive into why signed numbers have differing min and max values.
