@@ -77,8 +77,3 @@ function DoInvalidIntegerDivision() {
 }
 
 ExecuteExamples();
-
-Logging::Log(PHP_INT_MIN);
-Logging::Log(PHP_INT_MAX);
-// Logging::Log(intdiv(-3, -1));
-// Logging::Log(intdiv(PHP_INT_MIN, 1));

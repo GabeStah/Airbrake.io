@@ -8,7 +8,7 @@ To bring these two concepts together PHP 7 introduces the new `Throwable` interf
 
 - `Throwable`
   - `Error`
-    - `ArithmeticError`
+    - [`ArithmeticError`](https://airbrake.io/blog/php-exception-handling/arithmeticerror)
       - `DivisionByZeroError`
     - `AssertionError`
     - `ParseError`
