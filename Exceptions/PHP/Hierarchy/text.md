@@ -6,35 +6,35 @@ As of PHP 7, PHP divides errors into two unique classes: `Exception` and `Error`
 
 To bring these two concepts together PHP 7 introduces the new `Throwable` interface, which both `Exception` and `Error` implement.  Here's a look at the entire PHP exception hierarchy:
 
-- `Throwable`
-    - `Error`
-        - [`ArithmeticError`](https://airbrake.io/blog/php-exception-handling/arithmeticerror)
-            - [`DivisionByZeroError`](https://airbrake.io/blog/php-exception-handling/divisionbyzeroerror)
-        - `AssertionError`
-        - `ParseError`
-        - `TypeError`
-    - `Exception`
-        - `ClosedGeneratorException`
-        - `DOMException`
-        - `ErrorException`
-        - `IntlException`
-        - `LogicException`
-            - `BadFunctionCallException`
-                - `BadMethodCallException`
-            - `DomainException`
-            - `InvalidArgumentException`
-            - `LengthException`
-            - `OutOfRangeException`
-        - `PharException`
-        - `ReflectionException`
-            - `RuntimeException`
-            - `mysqli_sql_exception`
-            - `OutOfBoundsException`
-            - `OverflowException`
-            - `PDOException`
-            - `RangeException`
-            - `UnderflowException`
-            - `UnexpectedValueException`
+- Throwable
+    - Error
+        - [ArithmeticError](https://airbrake.io/blog/php-exception-handling/arithmeticerror)
+            - [DivisionByZeroError](https://airbrake.io/blog/php-exception-handling/divisionbyzeroerror)
+        - AssertionError
+        - ParseError
+        - TypeError
+    - Exception
+        - ClosedGeneratorException
+        - DOMException
+        - ErrorException
+        - IntlException
+        - LogicException
+            - BadFunctionCallException
+                - BadMethodCallException
+            - DomainException
+            - InvalidArgumentException
+            - LengthException
+            - OutOfRangeException
+        - PharException
+        - ReflectionException
+            - RuntimeException
+            - mysqli_sql_exception
+            - OutOfBoundsException
+            - OverflowException
+            - PDOException
+            - RangeException
+            - UnderflowException
+            - UnexpectedValueException
 
 Below we'll briefly discuss each top-level exception type, providing a rough overview, which we'll expand upon in much more detail throughout further articles.
 
