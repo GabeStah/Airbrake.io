@@ -10,7 +10,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
   - [x] `Error`
     - [x] `ArithmeticError`
       - [x] `DivisionByZeroError`
-    - [ ] `AssertionError`
+    - [x] `AssertionError`
     - [ ] `ParseError`
     - [ ] `TypeError`
   - [ ] `Exception`
