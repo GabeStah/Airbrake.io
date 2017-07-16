@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="greeter_main" target="1.8" />
+      <module name="greeter_test" target="1.8" />
+      <module name="greeting-library_main" target="1.8" />
+      <module name="greeting-library_test" target="1.8" />
+      <module name="logging_main" target="1.8" />
+      <module name="logging_test" target="1.8" />
+      <module name="NoClassDefFoundError_main" target="1.8" />
+      <module name="NoClassDefFoundError_test" target="1.8" />
+      <module name="throwables_main" target="1.8" />
+      <module name="throwables_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Utility-src">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../lib/java/src" />
+    </SOURCES>
+  </library>
+</component>

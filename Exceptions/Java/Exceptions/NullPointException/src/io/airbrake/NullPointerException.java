@@ -5,11 +5,8 @@ import io.airbrake.utility.*;
 
 public class NullPointerException {
 
-    private int[] data = new int[100];
-
     public static void main(String[] args) {
-        callInstanceMethodOfNull();
-        callInstanceFieldOfNull();
+        test();
     }
 
     private static void callInstanceMethodOfNull()
@@ -49,6 +46,28 @@ public class NullPointerException {
         catch (java.lang.NullPointerException exception)
         {
             // Catch NullPointerExceptions.
+            Logging.log(exception);
+        }
+        catch (Throwable exception)
+        {
+            // Catch other Throwables.
+            Logging.log(exception, false);
+        }
+    }
+
+    private static void test()
+    {
+        try
+        {
+            // Instantiate a new Book.
+            Book book = new Book("The Stand", "Stephen King");
+            Novel novel = new Novel();
+            // Output found novel.
+            Logging.log(novel);
+        }
+        catch (java.lang.NoClassDefFoundError exception)
+        {
+            // Catch NoClassDefFoundError.
             Logging.log(exception);
         }
         catch (Throwable exception)

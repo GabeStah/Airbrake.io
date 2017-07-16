@@ -1,0 +1,5 @@
+rootProject.name = 'throwables'
+
+include 'logging'
+include 'NoClassDefFoundError'
+

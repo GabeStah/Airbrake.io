@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NoClassDefFoundError.iml" filepath="$PROJECT_DIR$/.idea/modules/NoClassDefFoundError.iml" group="NoClassDefFoundError" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NoClassDefFoundError/NoClassDefFoundError_main.iml" filepath="$PROJECT_DIR$/.idea/modules/NoClassDefFoundError/NoClassDefFoundError_main.iml" group="NoClassDefFoundError" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NoClassDefFoundError/NoClassDefFoundError_test.iml" filepath="$PROJECT_DIR$/.idea/modules/NoClassDefFoundError/NoClassDefFoundError_test.iml" group="NoClassDefFoundError" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lo/lo.iml" filepath="$PROJECT_DIR$/.idea/modules/lo/lo.iml" group="lo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/logging/logging.iml" filepath="$PROJECT_DIR$/.idea/modules/logging/logging.iml" group="logging" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/logging/logging_main.iml" filepath="$PROJECT_DIR$/.idea/modules/logging/logging_main.iml" group="logging" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/logging/logging_test.iml" filepath="$PROJECT_DIR$/.idea/modules/logging/logging_test.iml" group="logging" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/throwables.iml" filepath="$PROJECT_DIR$/.idea/modules/throwables.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/throwables_main.iml" filepath="$PROJECT_DIR$/.idea/modules/throwables_main.iml" group="throwables" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/throwables_test.iml" filepath="$PROJECT_DIR$/.idea/modules/throwables_test.iml" group="throwables" />
+    </modules>
+  </component>
+</project>
