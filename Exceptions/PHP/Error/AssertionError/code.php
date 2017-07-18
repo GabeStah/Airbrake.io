@@ -14,6 +14,19 @@ class Book {
     private $title;
 
     /**
+     * Book constructor.
+     *
+     * @param Book|string $title Book title.
+     * @param Book|string $author Book author.
+     * @param Book|int $pageCount Book page count.
+     */
+    public function __construct(string $title, string $author, int $pageCount) {
+        $this->setTitle($title);
+        $this->setAuthor($author);
+        $this->setPageCount($pageCount);
+    }
+
+    /**
      * Get the author.
      *
      * @return string Book author.
