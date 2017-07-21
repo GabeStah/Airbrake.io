@@ -1,0 +1,95 @@
+// Book.java
+package io.airbrake;
+
+/**
+ * Simple example class to store book instances.
+ */
+public class Book
+{
+    private String author;
+    private String title;
+    private Integer pageCount;
+
+    /**
+     * Constructs an empty book.
+     */
+    public Book() { }
+
+    /**
+     * Constructs a basic book.
+     *
+     * @param title Book title.
+     * @param author Book author.
+     */
+    public Book(String title, String author) {
+        setAuthor(author);
+        setTitle(title);
+    }
+
+    /**
+     * Constructs a basic book, with page count.
+     *
+     * @param title Book title.
+     * @param author Book author.
+     * @param pageCount Book page count.
+     */
+    public Book(String title, String author, Integer pageCount) {
+        setAuthor(author);
+        setPageCount(pageCount);
+        setTitle(title);
+    }
+
+    /**
+     * Get author of book.
+     *
+     * @return Author name.
+     */
+    public String getAuthor() {
+        return author;
+    }
+
+    /**
+     * Set author of book.
+     *
+     * @param author Author name.
+     */
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    /**
+     * Get page count of book.
+     *
+     * @return Page count.
+     */
+    public Integer getPageCount() {
+        return pageCount;
+    }
+
+    /**
+     * Set page count of book.
+     *
+     * @param pageCount Page count.
+     */
+    public void setPageCount(Integer pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    /**
+     * Get title of book.
+     *
+     * @return Title.
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * Set title of book.
+     *
+     * @param title Title.
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+}
