@@ -1,5 +1,6 @@
 ﻿using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 
 namespace LibraryService
 {
@@ -17,8 +18,9 @@ namespace LibraryService
     [ServiceContract]
     public interface ILibraryService
     {
-        [OperationContract]
         [FaultContract(typeof(InvalidBookFault))]
+        [OperationContract]
+        [WebGet]
         bool ReserveBook(string title, string author);
     }
 }
