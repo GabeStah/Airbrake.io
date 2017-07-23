@@ -12,7 +12,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
       - [x] `DivisionByZeroError`
     - [x] `AssertionError`
     - [x] `ParseError`
-    - [ ] `TypeError`
+    - [x] `TypeError`
   - [ ] `Exception`
     - [ ] `ClosedGeneratorException`
     - [ ] `DOMException`

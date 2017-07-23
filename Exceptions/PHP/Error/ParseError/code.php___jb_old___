@@ -95,7 +95,7 @@ function executeExamples()
 function test() {
     $book = new Book("The Two Towers", "J.R.R. Tolkien", 415);
     Logging::Log($book);
-    $book->setTitle(123);
+    $book->setPageCount("400");
     Logging::Log($book);
 }
 
