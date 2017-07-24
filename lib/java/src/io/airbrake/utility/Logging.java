@@ -17,7 +17,14 @@ public class Logging {
      */
     public static void log(Object value)
     {
-        System.out.println(new ReflectionToStringBuilder(value, ToStringStyle.MULTI_LINE_STYLE).toString());
+        if (value instanceof String)
+        {
+            System.out.println(value);
+        }
+        else
+        {
+            System.out.println(new ReflectionToStringBuilder(value, ToStringStyle.MULTI_LINE_STYLE).toString());
+        }
     }
 
     /**

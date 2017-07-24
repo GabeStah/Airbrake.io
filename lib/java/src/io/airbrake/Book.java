@@ -49,15 +49,6 @@ public class Book
     }
 
     /**
-     * Set author of book.
-     *
-     * @param author Author name.
-     */
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    /**
      * Get page count of book.
      *
      * @return Page count.
@@ -67,12 +58,12 @@ public class Book
     }
 
     /**
-     * Set page count of book.
+     * Get a formatted tagline with author, title, and page count.
      *
-     * @param pageCount Page count.
+     * @return Formatted tagline.
      */
-    public void setPageCount(Integer pageCount) {
-        this.pageCount = pageCount;
+    public String getTagline() {
+        return String.format("'%s' by %s is %d pages.", this.title, this.author, this.pageCount);
     }
 
     /**
@@ -85,11 +76,36 @@ public class Book
     }
 
     /**
+     * Set author of book.
+     *
+     * @param author Author name.
+     */
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    /**
+     * Set page count of book.
+     *
+     * @param pageCount Page count.
+     */
+    public void setPageCount(Integer pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    /**
      * Set title of book.
      *
      * @param title Title.
      */
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    /**
+     * Throw an Exception.
+     */
+    public void throwException(String message) throws Exception {
+        throw new Exception(message);
     }
 }
