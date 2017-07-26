@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Data.SqlClient.SqlException", "System.Data.SqlClient.SqlException\Airbrake.Data.SqlClient.SqlException.csproj", "{CE878BB3-2ADB-4D00-9F51-93719844017D}"
 EndProject
@@ -68,6 +68,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Web.Services.Proto
 	ProjectSection(ProjectDependencies) = postProject
 		{F0A6B7BF-FEB5-4C51-83F2-E5B111A6CA88} = {F0A6B7BF-FEB5-4C51-83F2-E5B111A6CA88}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Data.Linq.DuplicateKeyException", "Airbrake.Data.Linq.DuplicateKeyException\Airbrake.Data.Linq.DuplicateKeyException.csproj", "{50094EFD-6949-4CD1-9863-90006B5F5DDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sytem.Data.Linq.DuplicateKeyException", "Sytem.Data.Linq.DuplicateKeyException", "{EE82BE58-D595-4C48-8343-9EE69FFA0E34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Data.Linq.DuplicateKeyExceptionSqlite", "Airbrake.Data.Linq.DuplicateKeyExceptionSqlite\Airbrake.Data.Linq.DuplicateKeyExceptionSqlite.csproj", "{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -389,6 +395,30 @@ Global
 		{2920A6CF-3CB2-4F4A-8B78-9E2BA4A32037}.Release|x64.Build.0 = Release|Any CPU
 		{2920A6CF-3CB2-4F4A-8B78-9E2BA4A32037}.Release|x86.ActiveCfg = Release|Any CPU
 		{2920A6CF-3CB2-4F4A-8B78-9E2BA4A32037}.Release|x86.Build.0 = Release|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Debug|x64.Build.0 = Debug|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Debug|x86.Build.0 = Debug|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Release|x64.ActiveCfg = Release|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Release|x64.Build.0 = Release|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Release|x86.ActiveCfg = Release|Any CPU
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF}.Release|x86.Build.0 = Release|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Debug|x64.Build.0 = Debug|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Debug|x86.Build.0 = Debug|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Release|x64.ActiveCfg = Release|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Release|x64.Build.0 = Release|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Release|x86.ActiveCfg = Release|Any CPU
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -401,5 +431,7 @@ Global
 		{612582E0-CD6A-4F46-8E96-EA1FEA05703B} = {A284E5F5-B20E-408E-AA79-81A757BC6243}
 		{783EF08A-BAD0-4E89-9056-86194E71E28C} = {9363E814-EFEC-4596-BB9B-C56445943D75}
 		{2920A6CF-3CB2-4F4A-8B78-9E2BA4A32037} = {9363E814-EFEC-4596-BB9B-C56445943D75}
+		{50094EFD-6949-4CD1-9863-90006B5F5DDF} = {EE82BE58-D595-4C48-8343-9EE69FFA0E34}
+		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8} = {EE82BE58-D595-4C48-8343-9EE69FFA0E34}
 	EndGlobalSection
 EndGlobal
