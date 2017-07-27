@@ -1,9 +1,9 @@
 | Topic | Complete? |
 | --- | --- |
 | out variables | Yes |
-| pattern matching | No |
+| pattern matching | Yes |
 | tuples | Yes |
-| local functions | No |
+| local functions | Yes |
 | Literal improvements | No |
 | ref returns and locals | No |
 | More expression bodied members | No |
