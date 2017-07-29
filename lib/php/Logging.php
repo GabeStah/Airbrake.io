@@ -1,5 +1,4 @@
 <?php
-
 require('kint.php');
 
 /**
@@ -14,7 +13,7 @@ class Logging {
      * @param null $b Secondary value, such as boolean for Throwables indicating if error was expected.
      */
     public static function Log($a, $b = null) {
-        if (is_string($a)) {
+        if (is_string($a) || is_numeric($a)) {
             Logging::LogString($a);
         } elseif ($a instanceof Throwable) {
             Logging::LogThrowable($a, is_null($b) ? true : $b);
@@ -31,6 +30,8 @@ class Logging {
      * @see https://github.com/kint-php/kint    Kint tool used for structured outputs.
      */
     private static function LogObject($object) {
+        Kint_Renderer_Cli::$force_utf8 = true;
+        Kint_Renderer_Text::$decorations = false;
         Kint::dump($object);
     }
 

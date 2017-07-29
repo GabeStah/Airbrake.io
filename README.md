@@ -13,8 +13,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] `AssertionError`
     - [x] `ParseError`
     - [x] `TypeError`
-  - [ ] `Exception`
-    - [ ] `ClosedGeneratorException`
+  - [x] `Exception`
+    - [x] `ClosedGeneratorException`
     - [ ] `DOMException`
     - [ ] `ErrorException`
     - [ ] `IntlException`

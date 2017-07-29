@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-require('/media/sf_Airbrake.io/lib/php/Logging.php');
+include("D:\work\Airbrake.io\lib\php\Logging.php");
 
 /**
  * Class Publisher
