@@ -7,7 +7,7 @@ namespace Airbrake.IndexOutOfRangeException
     /// <summary>
     /// Book interface.
     /// </summary>
-    public interface IBook
+    internal interface IBook
     {
         string Author { get; set; }
         string Title { get; set; }
@@ -16,7 +16,7 @@ namespace Airbrake.IndexOutOfRangeException
     /// <summary>
     /// Basic Book class.
     /// </summary>
-    public class Book : IBook
+    internal class Book : IBook
     {
         public string Author { get; set; }
         public string Title { get; set; }

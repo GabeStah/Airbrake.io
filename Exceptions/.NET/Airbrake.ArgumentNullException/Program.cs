@@ -74,7 +74,7 @@ namespace Airbrake.ArgumentNullException
         }
     }
 
-    public class Book
+    internal class Book
     {
         private string _author;
         private string _title;

@@ -100,9 +100,9 @@ namespace Airbrake.Data.Linq.DuplicateKeyException
     partial void OnAuthorChanged();
     partial void OnPageCountChanging(System.Nullable<int> value);
     partial void OnPageCountChanged();
-    #endregion
-		
-		public Book()
+        #endregion
+
+	    internal Book()
 		{
 			OnCreated();
 		}

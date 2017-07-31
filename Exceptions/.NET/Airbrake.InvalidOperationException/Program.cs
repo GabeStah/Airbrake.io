@@ -76,13 +76,13 @@ namespace Airbrake.InvalidOperationException
         }
     }
 
-    public interface IBook
+    internal interface IBook
     {
         string Author { get; set; }
         string Title { get; set; }
     }
 
-    public class Book : IBook
+    internal class Book : IBook
     {
         public string Title { get; set; }
         public string Author { get; set; }

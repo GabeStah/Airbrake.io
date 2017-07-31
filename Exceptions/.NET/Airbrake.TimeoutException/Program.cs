@@ -14,11 +14,9 @@ namespace Airbrake.TimeoutException
     {
         static void Main(string[] args)
         {
-            string input;
             try
             {
                 var result = GetRequestWithHttpClient("http://192.166.166.166");
-                var blah = true;
             }
 
             // Only catch timeout exceptions.

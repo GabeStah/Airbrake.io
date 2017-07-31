@@ -13,14 +13,14 @@ namespace Airbrake.Data.Linq.DuplicateKeyExceptionSqlite
         }
     }
 
-    public interface IBook
+    internal interface IBook
     {
         string Author { get; set; }
         int PageCount { get; set; }
         string Title { get; set; }
     }
 
-    public class Book : IBook
+    internal class Book : IBook
     {
         public string Author { get; set; }
         public int PageCount { get; set; }

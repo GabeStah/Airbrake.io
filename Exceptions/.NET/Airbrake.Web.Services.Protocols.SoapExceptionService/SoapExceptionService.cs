@@ -6,14 +6,14 @@ using Utility;
 
 namespace SoapExceptionService
 {
-    public interface IBook
+    internal interface IBook
     {
         string Author { get; set; }
         string Title { get; set; }
         bool Reserved { get; set; }
     }
 
-    public class Book : IBook
+    internal class Book : IBook
     {
         public string Title { get; set; }
         public string Author { get; set; }
@@ -28,7 +28,7 @@ namespace SoapExceptionService
         }
     }
 
-    public class LibraryService : ILibraryService
+    internal class LibraryService : ILibraryService
     {
         public bool ReserveBook(string title, string author)
         {

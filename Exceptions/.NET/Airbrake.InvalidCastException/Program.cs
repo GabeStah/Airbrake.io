@@ -122,7 +122,7 @@ namespace Airbrake.InvalidCastException
         }
     }
 
-    public class Book
+    internal class Book
     {
         public string Title { get; set; }
         public string Author { get; set; }
@@ -134,7 +134,7 @@ namespace Airbrake.InvalidCastException
         }
     }
 
-    public class PublishedBook : Book
+    internal class PublishedBook : Book
     {
         public DateTime PublishedAt { get; set; }
 

@@ -55,13 +55,13 @@ namespace Airbrake.NotImplementedException
         }
     }
 
-    public interface IBook
+    internal interface IBook
     {
         string Author { get; set; }
         string Title { get; set; }
     }
 
-    static class Platforms
+    internal class Platforms
     {
         public const string Windows7    = "Windows NT 6.1";
         public const string Windows8    = "Windows NT 6.2";
@@ -69,7 +69,7 @@ namespace Airbrake.NotImplementedException
         public const string Windows10   = "Windows NT 10";
     }
 
-    public class Book : IBook
+    internal class Book : IBook
     {
         public string Title { get; set; }
         public string Author { get; set; }
@@ -111,13 +111,13 @@ namespace Airbrake.NotImplementedException
         }
     }
 
-    public abstract class Publisher
+    internal abstract class Publisher
     {
         public abstract string Name { get; set; }
         public abstract decimal Revenue { get; set; }
     }
 
-    public class Blog : Publisher
+    internal class Blog : Publisher
     {
         public override string Name { get; set; }
 
