@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethod", "FactoryMethod\FactoryMethod.csproj", "{40F9902D-AFF9-469A-908E-216CFC0CA09E}"
 EndProject
@@ -30,6 +30,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy\Proxy.csproj", "{FEEF6D17-40F6-4FFB-879F-686A84A6AE1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsibility", "ChainOfResponsibility\ChainOfResponsibility.csproj", "{555BA6FC-2A56-4CC6-BEA0-6CB7FECAE6CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{A17DBC12-BC40-404D-B922-B43778F40EF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{555BA6FC-2A56-4CC6-BEA0-6CB7FECAE6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{555BA6FC-2A56-4CC6-BEA0-6CB7FECAE6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{555BA6FC-2A56-4CC6-BEA0-6CB7FECAE6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17DBC12-BC40-404D-B922-B43778F40EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17DBC12-BC40-404D-B922-B43778F40EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17DBC12-BC40-404D-B922-B43778F40EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17DBC12-BC40-404D-B922-B43778F40EF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
