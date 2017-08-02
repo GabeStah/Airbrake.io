@@ -9,8 +9,8 @@ class Logging {
     /**
      * Logs the passed object, string, or Throwable instance to the console.
      *
-     * @param $a Primary message or value to be logged.
-     * @param null $b Secondary value, such as boolean for Throwables indicating if error was expected.
+     * @param object|string $a Message or value to be logged.
+     * @param object|bool $b Secondary value, such as boolean for Throwables indicating if error was expected.
      */
     public static function Log($a, $b = null) {
         if (is_string($a) || is_numeric($a)) {
@@ -25,11 +25,11 @@ class Logging {
     /**
      * Logs the passed object.
      *
-     * @param $object Object to be logged.
+     * @param object $object Object to be logged.
      *
      * @see https://github.com/kint-php/kint    Kint tool used for structured outputs.
      */
-    private static function LogObject($object) {
+    private static function LogObject(object $object) {
         Kint_Renderer_Cli::$force_utf8 = true;
         Kint_Renderer_Text::$decorations = false;
         Kint::dump($object);
@@ -38,9 +38,9 @@ class Logging {
     /**
      * Logs the passed string value.
      *
-     * @param $value Value to be logged.
+     * @param string $value Value to be logged.
      */
-    private static function LogString($value) {
+    private static function LogString(string $value) {
         print_r("{$value}\n");
     }
 
@@ -50,10 +50,10 @@ class Logging {
      *
      * Uses internal Reflection to retrieve protected/private properties.
      *
-     * @param $throwable Throwable object to be output.
+     * @param Throwable $throwable Throwable object to be output.
      * @param bool $expected Indicates if error was expected or not.
      */
-    private static function LogThrowable($throwable, bool $expected = true) {
+    private static function LogThrowable(Throwable $throwable, bool $expected = true) {
         $expected = $expected ? "EXPECTED" : "UNEXPECTED";
         $message = substr($throwable->xdebug_message, 1);
         // Output whether error was expected or not, the class name, the message, and stack trace.

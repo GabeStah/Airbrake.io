@@ -15,7 +15,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] `TypeError`
   - [x] `Exception`
     - [x] `ClosedGeneratorException`
-    - [ ] `DOMException`
+    - [x] `DOMException`
     - [ ] `ErrorException`
     - [ ] `IntlException`
     - [ ] `LogicException`
