@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatternMatching", "PatternM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalFunctions", "LocalFunctions\LocalFunctions.csproj", "{90181B59-0C53-4967-A38C-ADEDFC97D8E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericLiterals", "NumericLiterals\NumericLiterals.csproj", "{C1A58644-1780-4734-B7E1-288417AC7705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefReturnsAndLocals", "RefReturnsAndLocals\RefReturnsAndLocals.csproj", "{EB5A3AE2-312E-4109-AC17-D292FCF070A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{90181B59-0C53-4967-A38C-ADEDFC97D8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90181B59-0C53-4967-A38C-ADEDFC97D8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90181B59-0C53-4967-A38C-ADEDFC97D8E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A58644-1780-4734-B7E1-288417AC7705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A58644-1780-4734-B7E1-288417AC7705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A58644-1780-4734-B7E1-288417AC7705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A58644-1780-4734-B7E1-288417AC7705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB5A3AE2-312E-4109-AC17-D292FCF070A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5A3AE2-312E-4109-AC17-D292FCF070A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5A3AE2-312E-4109-AC17-D292FCF070A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5A3AE2-312E-4109-AC17-D292FCF070A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -29,9 +29,9 @@ function executeExamples()
  *
  * @param string $name
  * @param DOMDocument $document
- * @return DomNode|null
+ * @return DOMNode|null
  */
-function appendElementByNameToDocument(string $name, DOMDocument $document) : ?DomNode {
+function appendElementByNameToDocument(string $name, DOMDocument $document) : ?DOMNode {
     try {
         $node = $document->appendChild(new DOMElement($name));
         Logging::Log("Successfully appended element (by name) [{$node->localName}] to [document].");
