@@ -10,6 +10,8 @@ public class Book
     private String title;
     private Integer pageCount;
 
+    private static final Integer maximumPageCount = 4000;
+
     /**
      * Constructs an empty book.
      */
@@ -89,7 +91,10 @@ public class Book
      *
      * @param pageCount Page count.
      */
-    public void setPageCount(Integer pageCount) {
+    public void setPageCount(Integer pageCount) throws IllegalArgumentException {
+        if (pageCount > maximumPageCount) {
+            throw new IllegalArgumentException(String.format("Page count value [%d] exceeds maximum limit [%d].", pageCount, maximumPageCount));
+        }
         this.pageCount = pageCount;
     }
 
