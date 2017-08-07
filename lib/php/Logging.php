@@ -1,4 +1,5 @@
 <?php
+// Logging.php
 require('kint.php');
 
 /**
@@ -63,13 +64,37 @@ class Logging {
     }
 
     /**
-     * Outputs a separator line to log.
+     * Outputs a dashed line separator with
+     * inserted text centered in the middle.
      *
-     * @param int $length Length of the line separator.
-     * @param string $character Character to use as separator.
+     * @param array ...$args Insert, length, and separator character.
      */
-    public static function LineSeparator(int $length = 40, string $character = '-') {
-        $break = str_repeat($character, $length);
-        print_r("{$break}\n");
+    public static function LineSeparator(...$args) {
+        $insert = empty($args[0]) ? "" : $args[0];
+        $length = empty($args[1]) ? 40 : $args[1];
+        $separator = empty($args[2]) ? '-' : $args[2];
+
+        $output = $insert;
+
+        if (strlen($insert) == 0) {
+            $output = str_repeat($separator, $length);
+        } elseif (strlen($insert) < $length) {
+            // Update length based on insert length, less a space for margin.
+            $length -= (strlen($insert) + 2);
+            // Halve the length and floor left side.
+            $left = floor($length / 2);
+            $right = $left;
+            // If odd number, add dropped remainder to right side.
+            if ($length % 2 != 0) $right += 1;
+
+            // Create separator strings.
+            $left = str_repeat($separator, $left);
+            $right = str_repeat($separator, $right);
+
+            // Surround insert with separators.
+            $output = "{$left} {$insert} {$right}";
+        }
+
+        print_r("{$output}\n");
     }
 }
