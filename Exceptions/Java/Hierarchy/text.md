@@ -25,7 +25,7 @@ As mentioned, every possible built-in exception class extends directly (or subcl
                 - InstantiationError
                 - NoSuchFieldError
                 - NoSuchMethodError
-            - NoClassDefFoundError
+            - [NoClassDefFoundError](https://airbrake.io/blog/java-exception-handling/noclassdeffounderror)
             - UnsatisfiedLinkError
             - VerifyError
         - ThreadDeath
@@ -48,16 +48,16 @@ As mentioned, every possible built-in exception class extends directly (or subcl
             - ArrayStoreException
             - ClassCastException
             - EnumConstantNotPresentException
-            - IllegalArgumentException
+            - [IllegalArgumentException](https://airbrake.io/blog/java-exception-handling/illegalargumentexception)
                 - IllegalThreadStateException
                 - NumberFormatException
             - IllegalMonitorStateException
             - IllegalStateException
             - IndexOutOfBoundsException
-                - ArrayIndexOutOfBoundsException
+                - [ArrayIndexOutOfBoundsException](https://airbrake.io/blog/java-exception-handling/arrayindexoutofboundsexception)
                 - StringIndexOutOfBoundsException
             - NegativeArraySizeException
-            - NullPointerException
+            - [NullPointerException](https://airbrake.io/blog/java-exception-handling/nullpointerexception)
             - SecurityException
             - TypeNotPresentException
             - UnsupportedOperationException

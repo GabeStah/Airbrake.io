@@ -10,13 +10,13 @@ To bring these two concepts together PHP 7 introduces the new `Throwable` interf
     - Error
         - [ArithmeticError](https://airbrake.io/blog/php-exception-handling/arithmeticerror)
             - [DivisionByZeroError](https://airbrake.io/blog/php-exception-handling/divisionbyzeroerror)
-        - AssertionError
-        - ParseError
-        - TypeError
+        - [AssertionError](https://airbrake.io/blog/php-exception-handling/assertionerror)
+        - [ParseError](https://airbrake.io/blog/php-exception-handling/php-parseerror)
+        - [TypeError](https://airbrake.io/blog/php-exception-handling/php-typeerror)
     - Exception
-        - ClosedGeneratorException
-        - DOMException
-        - ErrorException
+        - [ClosedGeneratorException](https://airbrake.io/blog/php-exception-handling/closedgeneratorexception)
+        - [DOMException](https://airbrake.io/blog/php-exception-handling/domexception)
+        - [ErrorException](https://airbrake.io/blog/php-exception-handling/errorexception)
         - IntlException
         - LogicException
             - BadFunctionCallException
