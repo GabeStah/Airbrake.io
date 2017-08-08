@@ -9,8 +9,5 @@
 bin/
 obj/
 Properties/
-project.json
+#project.json
 project.lock.json
-
-# Java
-*.jar
