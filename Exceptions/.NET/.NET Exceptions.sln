@@ -79,6 +79,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Threading.ThreadAb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Activities.ValidationException", "Airbrake.Activities.ValidationException\Airbrake.Activities.ValidationException.csproj", "{F9A29A03-9BD4-49C1-BB6D-68153F43324D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "System.IO.PathTooLongException", "System.IO.PathTooLongException", "{A6EB9835-3A0A-480A-9EA3-62DECA981758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.IO.PathTooLongException", "Airbrake.IO.PathTooLongException\Airbrake.IO.PathTooLongException.csproj", "{E762B454-FA87-4839-A93C-8C30544811B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -443,6 +447,18 @@ Global
 		{F9A29A03-9BD4-49C1-BB6D-68153F43324D}.Release|x64.ActiveCfg = Release|x86
 		{F9A29A03-9BD4-49C1-BB6D-68153F43324D}.Release|x86.ActiveCfg = Release|x86
 		{F9A29A03-9BD4-49C1-BB6D-68153F43324D}.Release|x86.Build.0 = Release|x86
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Debug|x64.Build.0 = Debug|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Debug|x86.Build.0 = Debug|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Release|x64.ActiveCfg = Release|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Release|x64.Build.0 = Release|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Release|x86.ActiveCfg = Release|Any CPU
+		{E762B454-FA87-4839-A93C-8C30544811B9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -457,5 +473,6 @@ Global
 		{2920A6CF-3CB2-4F4A-8B78-9E2BA4A32037} = {9363E814-EFEC-4596-BB9B-C56445943D75}
 		{50094EFD-6949-4CD1-9863-90006B5F5DDF} = {EE82BE58-D595-4C48-8343-9EE69FFA0E34}
 		{C548B0EB-01C0-4042-B9AF-3257EAB0C3E8} = {EE82BE58-D595-4C48-8343-9EE69FFA0E34}
+		{E762B454-FA87-4839-A93C-8C30544811B9} = {A6EB9835-3A0A-480A-9EA3-62DECA981758}
 	EndGlobalSection
 EndGlobal
