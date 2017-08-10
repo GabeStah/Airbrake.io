@@ -26,11 +26,11 @@ class Logging {
     /**
      * Logs the passed object.
      *
-     * @param object $object Object to be logged.
+     * @param mixed $object Object to be logged.
      *
      * @see https://github.com/kint-php/kint    Kint tool used for structured outputs.
      */
-    private static function LogObject(object $object) {
+    private static function LogObject($object) {
         Kint_Renderer_Cli::$force_utf8 = true;
         Kint_Renderer_Text::$decorations = false;
         Kint::dump($object);
