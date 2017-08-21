@@ -2,6 +2,8 @@
 package io.airbrake.utility;
 
 import java.util.Arrays;
+
+import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.builder.*;
 
 /**
@@ -35,12 +37,15 @@ public class Logging {
      */
     public static void log(Object value)
     {
-        if (value instanceof String)
+        if (value == null) return;
+        // If primitive or wrapper object, directly output.
+        if (ClassUtils.isPrimitiveOrWrapper(value.getClass()))
         {
             System.out.println(value);
         }
         else
         {
+            // For complex objects, use reflection builder output.
             System.out.println(new ReflectionToStringBuilder(value, ToStringStyle.MULTI_LINE_STYLE).toString());
         }
     }
