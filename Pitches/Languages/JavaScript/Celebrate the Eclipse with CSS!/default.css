@@ -1,0 +1,43 @@
+body {
+  animation: adjust-brightness 12s linear infinite; }
+
+.eclipse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%; }
+  .eclipse.sun {
+    z-index: 0;
+    background-color: #ffad00;
+    animation: corona 12s linear infinite; }
+  .eclipse.moon {
+    z-index: 1;
+    animation: eclipse 12s linear infinite; }
+
+@keyframes adjust-brightness {
+  0%, 100% {
+    background-color: #82b1ff; }
+  35%, 65% {
+    background-color: #04101c; } }
+@keyframes corona {
+  0%, 100% {
+    box-shadow: unset; }
+  35%, 65% {
+    box-shadow: 0px 0px 200px 50px #efefef; } }
+@keyframes eclipse {
+  0% {
+    left: 1000px;
+    background-color: #dddddd; }
+  35%, 65% {
+    left: 0;
+    background-color: #04101c; }
+  100% {
+    left: -1000px;
+    background-color: #dddddd; } }
+
+/*# sourceMappingURL=default.css.map */

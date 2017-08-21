@@ -1,0 +1,91 @@
+// === CONFIGURATION ===
+
+// Duration of full eclipse animation.
+$duration: 12s;
+
+// Size of the sun and moon.
+$celestial-body-diameter: 400px;
+
+// Sun color.
+$sun-color: #ffad00;
+
+// Moon color.
+$moon-color: #dddddd;
+
+// Corona color.
+$corona-color: #efefef;
+// Radius of the corona.
+$corona-radius: $celestial-body-diameter / 2;
+// Radius of the corona spread.
+$corona-spread-radius: $celestial-body-diameter / 8;
+
+// Normal color of the sky.
+$sky-color: #82b1ff;
+// Sky color during eclipse.
+$eclipsed-sky-color: #04101c;
+
+// How far along through animation the total eclipse occurs.
+// Adjusting the gap determines length of total eclipse 
+// relative to full animation duration.
+$total-eclipse-start-percent: 35%;
+$total-eclipse-end-percent: 65%;
+
+// === END CONFIGURATION ===
+
+body {
+	animation: adjust-brightness $duration linear infinite;
+}
+
+.eclipse {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: auto;
+	width: $celestial-body-diameter;
+	height: $celestial-body-diameter;
+	border-radius: 50%;
+	&.sun {
+		z-index: 0;
+		background-color: $sun-color;
+		animation: corona $duration linear infinite;
+	}
+	&.moon {
+		z-index: 1;
+		animation: eclipse $duration linear infinite;
+	}
+}
+
+@keyframes adjust-brightness {
+	0%, 100% {
+		background-color: $sky-color;
+	}
+	#{$total-eclipse-start-percent}, #{$total-eclipse-end-percent} {
+		background-color: $eclipsed-sky-color;
+	}
+}
+
+@keyframes corona {
+	0%, 100% {
+		box-shadow: unset;
+	}
+	// Create a slight corona effect during eclipse.
+	#{$total-eclipse-start-percent}, #{$total-eclipse-end-percent} {
+		box-shadow: 0px 0px $corona-radius $corona-spread-radius $corona-color;
+	}
+}
+
+@keyframes eclipse {
+	0% { 
+		// Offset moon starting position so it fades in.
+		left: $celestial-body-diameter * 2.5;
+		background-color: $moon-color;
+	}
+	#{$total-eclipse-start-percent}, #{$total-eclipse-end-percent} {
+		left: 0;
+		background-color: $eclipsed-sky-color;
+	}
+	100% { 
+		// Offset moon ending position so it fades out.
+		left: -$celestial-body-diameter * 2.5;
+		background-color: $moon-color;
+	}
+}
