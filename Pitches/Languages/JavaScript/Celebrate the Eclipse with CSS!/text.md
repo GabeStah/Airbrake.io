@@ -1,6 +1,6 @@
 # Celebrate the Eclipse with CSS!
 
-Although total solar eclipses typically occur at least twice a year in some part of the world, on August 21st, 2017, many Americans will experience the first total eclipse in their lifetimes!  Last last time anyone on U.S. soil saw a total eclipse was in the lovely state of Hawaii back in 1991.  Prior to that, a few states near the west coast got a glimpse in 1979, but this 2017 event will mark a total eclipse path across the entire country!
+Although total solar eclipses typically occur at least twice a year in some part of the world, on August 21st, 2017, many Americans will experience the first total eclipse in their lifetimes!  Last time anyone on U.S. soil saw a total eclipse was in the lovely state of Hawaii back in 1991.  Prior to that, a few states near the west coast got a glimpse in 1979, but this 2017 event will mark a total eclipse path across the entire country!
 
 To celebrate this momentous occasion we thought we'd show you how to create your very own solar eclipse using nothing but the power of cascading style sheet (`CSS`) animations.  As you may recall, we celebrated the Fourth of July this year with a cool [`JavaScript Fireworks`](https://airbrake.io/blog/javascript/fourth-of-july-javascript-fireworks) animation, but now we're simplifying things even more by sticking with CSS for this little tutorial.  With that, let's have some fun!
 
