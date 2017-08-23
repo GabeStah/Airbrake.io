@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Books>
+  <Book>
+    <Title>The Stand</Title>
+    <Author>Stephen King</Author>
+    <PageCount>1153</PageCount>
+  </Book>
+  <Book>
+    <Title>The Slow Regard of Silent Things</Title>
+    <Author>Patrick Rothfuss</Author>
+    <PageCount>159</PageCount>
+  </Book>
+  <Book>
+    <Title>Magician</Title>
+    <Author>Raymond E. Feist</Author>
+    <PageCount>681</PageCount>
+  </Book>
+</Books>

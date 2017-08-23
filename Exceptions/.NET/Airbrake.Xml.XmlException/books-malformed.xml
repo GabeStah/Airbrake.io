@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- books-malformed.xml -->
+<Books>
+  <Book>
+    <Title>Dune</Title>
+    <Author>Frank Herbert</Author>
+    <PageCount604</PageCount>
+  </Book>
+  <Book>
+    <Title>The Revenant</Title>
+    <Author>Michael Punke</Author>
+    <PageCount>272</PageCount>
+  </Book>
+  <Book>
+    <Title>The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography</Title>
+    <Author>Simon Singh</Author>
+    <PageCount>412</PageCount>
+  </Book>
+</Books>

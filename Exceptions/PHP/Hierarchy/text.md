@@ -19,10 +19,10 @@ To bring these two concepts together PHP 7 introduces the new `Throwable` interf
         - [ErrorException](https://airbrake.io/blog/php-exception-handling/errorexception)
         - IntlException
         - LogicException
-            - BadFunctionCallException
-                - BadMethodCallException
-            - DomainException
-            - InvalidArgumentException
+            - [BadFunctionCallException](https://airbrake.io/blog/php-exception-handling/badmethodcallexception)
+                - [BadMethodCallException](https://airbrake.io/blog/php-exception-handling/badmethodcallexception)
+            - [DomainException](https://airbrake.io/blog/php-exception-handling/domainexception)
+            - [InvalidArgumentException](https://airbrake.io/blog/php-exception-handling/invalidargumentexception-2)
             - LengthException
             - OutOfRangeException
         - PharException
