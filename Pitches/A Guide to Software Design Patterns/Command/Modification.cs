@@ -6,7 +6,7 @@ using Utility;
 
 namespace Command
 {
-    internal enum Status
+    public enum Status
     {
         ExecuteFailed,
         ExecuteSucceeded,
@@ -33,7 +33,7 @@ namespace Command
     /// 
     /// Acts as a 'ConcreteCommand' within Command pattern.
     /// </summary>
-    internal class Modification : IModification
+    public class Modification : IModification
     {
         private readonly Character _character;
         private readonly StatisticType _statisticType;
@@ -120,7 +120,7 @@ namespace Command
 
         public override string ToString()
         {
-            return $"[Id: {Id}, Statistic: {_statisticType}, Value: {Value}]";
+            return $"[Id: {Id}, Character: {_character}, Statistic: {_statisticType}, Value: {Value}]";
         }
     }
 }

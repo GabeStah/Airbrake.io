@@ -8,7 +8,7 @@ namespace Command
     /// 
     /// Acts as 'Receiver' within Command pattern.
     /// </summary>
-    internal class Character
+    public class Character
     {
         public string Name { get; set; }
 
@@ -32,7 +32,7 @@ namespace Command
 
         public override string ToString()
         {
-            return Name;
+            return $"Character: {Name} [Agility: {Agility.Value}, Charisma: {Charisma.Value}, Strength: {Strength.Value}]";
         }
     }
 }
