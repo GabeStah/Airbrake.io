@@ -14,11 +14,6 @@ All Java errors implement the [`java.lang.Throwable`](https://airbrake.io/blog/j
             - [`java.net.SocketException`](https://docs.oracle.com/javase/8/docs/api/java/net/SocketException.html)
                 - `ConnectException`
 
-- [`java.lang.Exception`](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html) inherits from [`java.lang.Throwable`](https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy).
-- [`java.io.IOException`](https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html) inherits from [`java.lang.Exception`](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html).
-- [`java.net.SocketException`](https://docs.oracle.com/javase/8/docs/api/java/net/SocketException.html) then inherits from [`java.io.IOException`](https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html).
-- Lastly, `ConnectException` inherits from [`java.net.SocketException`](https://docs.oracle.com/javase/8/docs/api/java/net/SocketException.html).
-
 ## Full Code Sample
 
 Below is the full code sample we'll be using in this article.  It can be copied and pasted if you'd like to play with the code yourself and see how everything works.
