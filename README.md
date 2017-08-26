@@ -23,7 +23,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
         - [x] `BadMethodCallException`
       - [x] `DomainException`
       - [x] `InvalidArgumentException`
-      - [ ] `LengthException`
+      - [x] `LengthException`
       - [ ] `OutOfRangeException`
     - [ ] `PharException`
     - [ ] `ReflectionException`
