@@ -51,6 +51,17 @@ public class Logging {
     }
 
     /**
+     * Outputs any kind of String.
+     *
+     * @param value String to be output.
+     */
+    public static void log(String value)
+    {
+        if (value == null) return;
+        System.out.println(value);
+    }
+
+    /**
      * Outputs passed in Throwable exception or error instance.
      * Can be overloaded if expected parameter should be specified.
      *
