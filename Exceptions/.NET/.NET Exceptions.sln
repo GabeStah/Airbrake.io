@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.OverflowException"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Xml.XmlException", "Airbrake.Xml.XmlException\Airbrake.Xml.XmlException.csproj", "{66AC74B9-B612-416C-B584-C0242C6DB1AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Data.ObjectNotFoundException", "Airbrake.Data.ObjectNotFoundException\Airbrake.Data.ObjectNotFoundException.csproj", "{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -487,6 +489,18 @@ Global
 		{66AC74B9-B612-416C-B584-C0242C6DB1AA}.Release|x64.Build.0 = Release|Any CPU
 		{66AC74B9-B612-416C-B584-C0242C6DB1AA}.Release|x86.ActiveCfg = Release|Any CPU
 		{66AC74B9-B612-416C-B584-C0242C6DB1AA}.Release|x86.Build.0 = Release|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Debug|x64.Build.0 = Debug|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Debug|x86.Build.0 = Debug|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|x64.ActiveCfg = Release|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|x64.Build.0 = Release|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|x86.ActiveCfg = Release|Any CPU
+		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
