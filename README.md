@@ -24,7 +24,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
       - [x] `DomainException`
       - [x] `InvalidArgumentException`
       - [x] `LengthException`
-      - [ ] `OutOfRangeException`
+      - [x] `OutOfRangeException`
     - [ ] `PharException`
     - [ ] `ReflectionException`
     - [ ] `RuntimeException`
