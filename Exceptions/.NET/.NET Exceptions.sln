@@ -89,6 +89,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Xml.XmlException",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Data.ObjectNotFoundException", "Airbrake.Data.ObjectNotFoundException\Airbrake.Data.ObjectNotFoundException.csproj", "{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.DivideByZeroException", "Airbrake.DivideByZeroException\Airbrake.DivideByZeroException.csproj", "{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -501,6 +503,18 @@ Global
 		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|x64.Build.0 = Release|Any CPU
 		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|x86.ActiveCfg = Release|Any CPU
 		{9ACC5BB6-F913-4AF2-B10F-9527E38EC22B}.Release|x86.Build.0 = Release|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Debug|x64.Build.0 = Debug|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Debug|x86.Build.0 = Debug|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Release|x64.ActiveCfg = Release|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Release|x64.Build.0 = Release|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B5BC95F-D672-4018-AD49-1C4E3054EBF9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
