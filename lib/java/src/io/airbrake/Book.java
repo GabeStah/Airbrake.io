@@ -1,6 +1,10 @@
 // Book.java
 package io.airbrake;
 
+import io.airbrake.utility.Logging;
+
+import java.util.Date;
+
 /**
  * Simple example class to store book instances.
  */
@@ -9,6 +13,7 @@ public class Book
     private String author;
     private String title;
     private Integer pageCount;
+    private Date publishedAt;
 
     private static final Integer maximumPageCount = 4000;
 
@@ -42,6 +47,20 @@ public class Book
     }
 
     /**
+     * Constructs a basic book, with page count.
+     *
+     * @param title Book title.
+     * @param author Book author.
+     * @param pageCount Book page count.
+     */
+    public Book(String title, String author, Integer pageCount, Date publishedAt) {
+        setAuthor(author);
+        setPageCount(pageCount);
+        setTitle(title);
+        setPublishedAt(publishedAt);
+    }
+
+    /**
      * Get author of book.
      *
      * @return Author name.
@@ -60,6 +79,13 @@ public class Book
     }
 
     /**
+     * Get published date of book.
+     *
+     * @return Published date.
+     */
+    public Date getPublishedAt() { return publishedAt; }
+
+    /**
      * Get a formatted tagline with author, title, and page count.
      *
      * @return Formatted tagline.
@@ -75,6 +101,24 @@ public class Book
      */
     public String getTitle() {
         return title;
+    }
+
+    /**
+     * Publish current book.
+     * If book already published, throws IllegalStateException.
+     */
+    public void publish() throws IllegalStateException {
+        Date publishedAt = getPublishedAt();
+        if (publishedAt == null) {
+            setPublishedAt(new Date());
+            Logging.log(String.format("Published '%s' by %s.", getTitle(), getAuthor()));
+        } else {
+            throw new IllegalStateException(
+                    String.format("Cannot publish '%s' by %s (already published on %s).",
+                            getTitle(),
+                            getAuthor(),
+                            publishedAt));
+        }
     }
 
     /**
@@ -96,6 +140,15 @@ public class Book
             throw new IllegalArgumentException(String.format("Page count value [%d] exceeds maximum limit [%d].", pageCount, maximumPageCount));
         }
         this.pageCount = pageCount;
+    }
+
+    /**
+     * Set published date of book.
+     *
+     * @param publishedAt Page count.
+     */
+    public void setPublishedAt(Date publishedAt) {
+        this.publishedAt = publishedAt;
     }
 
     /**
