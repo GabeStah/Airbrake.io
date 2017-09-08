@@ -1,6 +1,6 @@
 # New Development Tools in Chrome 61
 
-The latest version of the popular Chrome browser was officially released this week, and with it comes a handful of exciting new features for developers and technical managers alike.  From out of the box ES6 module support and mobile device throttling to WebUSB API support and storage usage statistics, Chrome 61 provides an ideal platform for developers.
+The latest version of the popular Chrome browser was officially released this week, and with it comes a handful of exciting new features for developers and technical managers alike.  From out of the box ES6 module support and mobile device throttling to WebUSB API support and storage usage statistics, there are a bunch of new development tools in Chrome!
 
 Moreover, Chrome continues to dominate the browser market with a _vast_ and continually rising lead over the competition.  According to [recent statistics gathered from billions of page views worldwide](http://gs.statcounter.com/browser-market-share), as of August 2017 Chrome has approximately `55%` global market share.  By comparison, its next closest competitor, Safari, clocks in at less than a third of that with around `15%` of the market.  Moreover, Chrome has been reliably gaining about half a percent of the market every month for a few years now, with no signs of stopping.
 
