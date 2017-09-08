@@ -52,6 +52,8 @@ The [`command menu`](https://developers.google.com/web/updates/2016/04/devtools-
 
 ![FPS Command Menu](https://s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2017/09/07201727/chrome61_fps.png)
 
+Check out Airbrake's <a class="js-cta-utm" href="https://airbrake.io/languages/javascript_exception_handler?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=chrome61">Airbrake-JS</a> error tracking tool, which quickly and easily integrates into any new or existing JavaScript application, providing you and your team with real-time error reporting and instant insight into exactly what went wrong.  <a class="js-cta-utm" href="https://airbrake.io/languages/javascript_exception_handler?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=chrome61">Airbrake-JS</a> works with all the latest JavaScript frameworks and supports full source map control, to ensure your error reports are as detailed as possible.  <a class="js-cta-utm" href="https://airbrake.io/languages/javascript_exception_handler?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=chrome61">Airbrake-JS</a> also allows you to easily customize error parameters and grants simple filtering tools so you only capture and report the errors you care about most.
+
 ---
 
 __META DESCRIPTION__
