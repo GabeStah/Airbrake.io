@@ -1,6 +1,9 @@
 // Book.java
 package io.airbrake;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.*;
 import io.airbrake.utility.Logging;
 
 import java.util.Date;
@@ -8,6 +11,7 @@ import java.util.Date;
 /**
  * Simple example class to store book instances.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Book
 {
     private String author;
@@ -158,6 +162,16 @@ public class Book
      */
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    /**
+     * Output
+     *
+     * @return
+     * @throws JsonProcessingException
+     */
+    public String toJsonString() throws JsonProcessingException {
+        return new ObjectMapper().writeValueAsString(this);
     }
 
     /**
