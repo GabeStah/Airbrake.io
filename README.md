@@ -26,7 +26,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
       - [x] `LengthException`
       - [x] `OutOfRangeException`
     - [x] `PharException`
-    - [ ] `ReflectionException`
+    - [x] `ReflectionException`
     - [ ] `RuntimeException`
       - [ ] `mysqli_sql_exception`
       - [ ] `OutOfBoundsException`
