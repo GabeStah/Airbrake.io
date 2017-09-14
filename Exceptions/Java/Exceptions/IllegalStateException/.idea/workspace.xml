@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/io/airbrake/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="60" />
+            <state relative-caret-position="1445">
+              <caret line="93" column="7" lean-forward="false" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,11 +27,10 @@
       <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="918">
               <caret line="59" column="11" lean-forward="false" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1504944095918" expanded="true" signature="4151:4218" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -47,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Logging.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Logging.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/utility/Logging.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="56" column="7" lean-forward="false" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
+            <state relative-caret-position="170">
+              <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -106,13 +105,54 @@
     <panes>
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="IllegalStateException" type="b2602c69:ProjectViewProjectNode" />
               <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IllegalStateException" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IllegalStateException" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IllegalStateException" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IllegalStateException" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IllegalStateException" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="airbrake" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IllegalStateException" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IllegalStateException" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IllegalStateException" type="b2602c69:ProjectViewProjectNode" />
@@ -130,6 +170,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,6 +180,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -202,14 +244,17 @@
       <updated>1504492664953</updated>
       <workItem from="1504492668408" duration="4598000" />
       <workItem from="1504931257885" duration="2617000" />
+      <workItem from="1505367125682" duration="1850000" />
+      <workItem from="1505373169312" duration="648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7215000" />
+    <option name="totallyTimeSpent" value="9713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -218,8 +263,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -229,8 +274,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -255,6 +300,78 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/io/airbrake/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="93" column="7" lean-forward="true" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="59" column="11" lean-forward="false" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_141/src.zip!/java/net/URLConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2873">
+          <caret line="169" column="57" lean-forward="false" selection-start-line="169" selection-start-column="57" selection-end-line="169" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/utility/Logging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/airbrake/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_141/src.zip!/java/net/URLConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="169" column="57" lean-forward="false" selection-start-line="169" selection-start-column="57" selection-end-line="169" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="59" column="11" lean-forward="false" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/utility/Logging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="56" column="7" lean-forward="false" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/airbrake/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
@@ -277,7 +394,6 @@
           <caret line="135" column="35" lean-forward="true" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1504944095918" expanded="true" signature="4151:4218" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -294,10 +410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-169">
           <caret line="163" column="11" lean-forward="false" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
-          <folding>
-            <element signature="e#6390#6391#0" expanded="false" />
-            <element signature="e#6438#6439#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -305,14 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/utility/Logging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="56" column="7" lean-forward="false" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -324,24 +428,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/io/airbrake/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="59" column="11" lean-forward="false" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+        <state relative-caret-position="1445">
+          <caret line="93" column="7" lean-forward="false" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1504944095918" expanded="true" signature="4151:4218" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/airbrake/Main.java">
+    <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="60" />
+        <state relative-caret-position="918">
+          <caret line="59" column="11" lean-forward="false" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../lib/java/src/io/airbrake/utility/Logging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
