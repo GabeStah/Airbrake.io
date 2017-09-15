@@ -1,4 +1,4 @@
-# Kotlin: The Better Form of Java
+# Kotlin: A Better Way to Java
 
 If you haven't been keeping up with new developments in the world of, well, Java development, then you may have overlooked the ground-breaking release of the Kotlin language version 1.0 in early 2016.  Kotlin rethinks many of the syntaxes, shortcomings, and limitations of Java and pushes the boundaries for Java and Android application development.
 
@@ -471,7 +471,7 @@ Check out all the amazing features <a class="js-cta-utm" href="https://airbrake.
 
 __META DESCRIPTION__
 
-A close look at why Kotlin is the better form of Java, including functional code sample comparisons between the two langauges.
+A close look at why Kotlin is a better way to Java, including functional code sample comparisons between the two languages.
 
 ---
 
