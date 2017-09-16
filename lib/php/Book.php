@@ -1,11 +1,15 @@
 <?php
 // Book.php
+
+include("Character.php");
+
 /**
  * Class Book
  */
 class Book
 {
     private $author;
+    private $characters = [];
     private $pageCount;
     private $publicationDate;
     private $title;
@@ -79,7 +83,7 @@ class Book
      *
      * @return DateTime Publication date.
      */
-    public function getPublicationDate() {
+    public function getPublicationDate() : ?DateTime {
         return $this->publicationDate;
     }
 
@@ -88,7 +92,7 @@ class Book
      *
      * @param DateTime $date Publication date.
      */
-    public function setPublicationDate(DateTime $date) {
+    public function setPublicationDate(?DateTime $date) {
         $this->publicationDate = $date;
     }
 
@@ -116,6 +120,51 @@ class Book
             throw new LengthException("Cannot set Title containing $length bytes, which exceeds the maximum of $max by $diff bytes.");
         }
         $this->title = $value;
+    }
+
+    /**
+     * Add a Character to the Book.
+     *
+     * @param Character $character
+     * @param mixed $key
+     */
+    public function addCharacter(Character $character, $key = null) {
+        if (!is_null($key)) {
+            $this->characters[$key] = $character;
+        } else {
+            $this->characters[] = $character;
+        }
+    }
+
+    /**
+     * Get a Character using passed key.
+     *
+     * @param mixed $key
+     * @return mixed
+     */
+    public function getCharacter($key) {
+        if (!array_key_exists($key, $this->characters)) {
+            throw new OutOfBoundsException("Character element at key $key does not exist.");
+        }
+        return $this->characters[$key];
+    }
+
+    /**
+     * Get Characters collection.
+     *
+     * @return array
+     */
+    public function getCharacters() : array {
+        return $this->characters;
+    }
+
+    /**
+     * Set characters collection.
+     *
+     * @param array $characters
+     */
+    public function setCharacters(array $characters) {
+        $this->characters = $characters;
     }
 
     /**

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0df49ec-c9a1-40d5-8537-d0d6caf103df" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="code.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Logging.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Logging.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Book.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Book.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="124" column="4" lean-forward="false" selection-start-line="124" selection-start-column="4" selection-end-line="167" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Character.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Character.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="45" column="27" lean-forward="true" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>cah</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/text.md" />
+        <option value="$PROJECT_DIR$/code.php" />
+        <option value="$PROJECT_DIR$/../../../../../lib/php/Book.php" />
+        <option value="$PROJECT_DIR$/../../../../../lib/php/Character.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP">
+    <include_path>
+      <path value="D:\work\Airbrake.io\lib\php" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="OutOfBoundsException" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OutOfBoundsException" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../lib/php" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\Airbrake.io\Exceptions\PHP\Exception\RuntimeException\OutOfBoundsException" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="PHP Script.code.php">
+    <configuration name="code.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/code.php" />
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.code.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0df49ec-c9a1-40d5-8537-d0d6caf103df" name="Default" comment="" />
+      <created>1505542286434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1505542286434</updated>
+      <workItem from="1505542287950" duration="3673000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3673000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3916582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/text.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <folding>
+              <marker date="1505545609468" expanded="true" signature="1618:2643" ph="{...}" />
+              <marker date="1505545609468" expanded="true" signature="1630:2392" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="2434:2521" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="2553:2640" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="2697:2713" ph=" Class Book ..." />
+              <marker date="1505545609468" expanded="true" signature="2726:6612" ph="{...}" />
+              <marker date="1505545609468" expanded="true" signature="2991:3197" ph=" Book constructor. ..." />
+              <marker date="1505545609468" expanded="true" signature="3318:3485" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="3495:3566" ph=" Get the author. ..." />
+              <marker date="1505545609468" expanded="true" signature="3610:3645" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="3655:3743" ph=" Set the author. ..." />
+              <marker date="1505545609468" expanded="true" signature="3792:4257" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="3892:4219" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="4267:4364" ph=" Get the current page count of Book. ..." />
+              <marker date="1505545609468" expanded="true" signature="4408:4446" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="4456:4560" ph=" Set the current page count of Book. ..." />
+              <marker date="1505545609468" expanded="true" signature="4613:4657" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="4667:4755" ph=" Get the publication date. ..." />
+              <marker date="1505545609468" expanded="true" signature="4800:4844" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="4854:4947" ph=" Set the publication date. ..." />
+              <marker date="1505545609468" expanded="true" signature="5006:5051" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="5061:5130" ph=" Get the title. ..." />
+              <marker date="1505545609468" expanded="true" signature="5173:5207" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="5217:5303" ph=" Set the title. ..." />
+              <marker date="1505545609468" expanded="true" signature="5351:5812" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="5450:5775" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="5822:6054" ph=" Magic method triggers when inaccessible instance method is invoked. ..." />
+              <marker date="1505545609468" expanded="true" signature="6112:6206" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="6216:6446" ph=" Magic method triggers when inaccessible static method is invoked. ..." />
+              <marker date="1505545609468" expanded="true" signature="6517:6609" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="6671:6721" ph=" Provides basic logging/output functionality. ..." />
+              <marker date="1505545609468" expanded="true" signature="6739:9911" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="6748:7011" ph=" Logs the passed object, string, or Throwable instance to the console. ..." />
+              <marker date="1505545609468" expanded="true" signature="7061:7321" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="7108:7153" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="7189:7262" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="7270:7315" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="7331:7518" ph=" Logs the passed object. ..." />
+              <marker date="1505545609468" expanded="true" signature="7569:7700" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="7710:7808" ph=" Logs the passed string value. ..." />
+              <marker date="1505545609468" expanded="true" signature="7865:7901" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="7911:8258" ph=" Logs the passed Throwable object.   ..." />
+              <marker date="1505545609468" expanded="true" signature="8348:8694" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="8704:8876" ph=" Outputs a dashed line separator with ..." />
+              <marker date="1505545609468" expanded="true" signature="8931:9909" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="9153:9217" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="9255:9870" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="10742:10758" ph=" Class Book ..." />
+              <marker date="1505545609468" expanded="true" signature="10771:14657" ph="{...}" />
+              <marker date="1505545609468" expanded="true" signature="11036:11242" ph=" Book constructor. ..." />
+              <marker date="1505545609468" expanded="true" signature="11363:11530" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="11540:11611" ph=" Get the author. ..." />
+              <marker date="1505545609468" expanded="true" signature="11655:11690" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="11700:11788" ph=" Set the author. ..." />
+              <marker date="1505545609468" expanded="true" signature="11837:12302" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="11937:12264" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="12312:12409" ph=" Get the current page count of Book. ..." />
+              <marker date="1505545609468" expanded="true" signature="12453:12491" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="12501:12605" ph=" Set the current page count of Book. ..." />
+              <marker date="1505545609468" expanded="true" signature="12658:12702" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="12712:12800" ph=" Get the publication date. ..." />
+              <marker date="1505545609468" expanded="true" signature="12845:12889" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="12899:12992" ph=" Set the publication date. ..." />
+              <marker date="1505545609468" expanded="true" signature="13051:13096" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="13106:13175" ph=" Get the title. ..." />
+              <marker date="1505545609468" expanded="true" signature="13218:13252" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="13262:13348" ph=" Set the title. ..." />
+              <marker date="1505545609468" expanded="true" signature="13396:13857" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="13495:13820" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="13867:14099" ph=" Magic method triggers when inaccessible instance method is invoked. ..." />
+              <marker date="1505545609468" expanded="true" signature="14157:14251" ph="..." />
+              <marker date="1505545609468" expanded="true" signature="14261:14491" ph=" Magic method triggers when inaccessible static method is invoked. ..." />
+              <marker date="1505545609468" expanded="true" signature="14562:14654" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="124" column="4" lean-forward="false" selection-start-line="124" selection-start-column="4" selection-end-line="167" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Character.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="45" column="27" lean-forward="true" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Logging.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
