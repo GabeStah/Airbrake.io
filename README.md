@@ -30,7 +30,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] `RuntimeException`
       - [ ] `mysqli_sql_exception`
       - [x] `OutOfBoundsException`
-      - [ ] `OverflowException`
+      - [x] `OverflowException`
       - [ ] `PDOException`
       - [ ] `RangeException`
       - [ ] `UnderflowException`
