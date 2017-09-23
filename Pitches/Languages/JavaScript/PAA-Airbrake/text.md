@@ -4,6 +4,8 @@ Introduced in ES6, [`promises`](https://developer.mozilla.org/en-US/docs/Web/Jav
 
 The secret sauce when using `async` and `await` together is that they effectively allow code to be written _synchronously_, while their behavior is still carried out behind the scenes as an asynchronous action.  This is an extremely powerful feature, but the most noticeable effect when implementing async/await into your code is just how **simple** and easy to maintain the new syntax becomes.
 
+In this article we'll explore how to handle JavaScript async/await exception handling, including easy integration of the [`Airbrake-JS`](https://airbrake.io/languages/javascript_exception_handler) library, so let's get to it!
+
 ## Full Code Sample
 
 Below is the full code sample we'll be using in this example.  Feel free to copy and paste it into your own project to try it out or follow along:
