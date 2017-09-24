@@ -1,17 +1,8 @@
 class Book {
-    constructor(title, author, pageCount, wordCount) {
+    constructor(title, author, pageCount) {
         this.title = title;
         this.author = author;
         this.pageCount = pageCount;
-        this.wordCount = wordCount;                
-    }
-
-    get wordsPerPage() {
-        return this.wordCount / this.pageCount;
-    }
-
-    static wordsPerPage(pageCount, wordCount) {
-        return wordCount / pageCount;
     }
 
     // Perform basic CRUD queries regarding this instance.

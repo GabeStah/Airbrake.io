@@ -16,6 +16,8 @@ class Book
 
     // Maximum byte length of author field.
     const AUTHOR_MAX_LENGTH = 255;
+    // Maximum allow number of characters.
+    const MAX_CHARACTER_COUNT = 5;
     // Maximum byte length of title field.
     const TITLE_MAX_LENGTH = 65535;
 
@@ -129,6 +131,10 @@ class Book
      * @param mixed $key
      */
     public function addCharacter(Character $character, $key = null) {
+        if (count($this->characters) >= self::MAX_CHARACTER_COUNT) {
+            $max = self::MAX_CHARACTER_COUNT;
+            throw new OverflowException("Character count cannot exceed maximum of $max");
+        }
         if (!is_null($key)) {
             $this->characters[$key] = $character;
         } else {
