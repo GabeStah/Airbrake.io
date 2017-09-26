@@ -1,8 +1,6 @@
 # Behavioral Design Patterns: State
 
-As we approach the end of our thorough [Guide to Software Design Patterns](https://airbrake.io/blog/software-design/software-design-patterns-guide) series we're going to look into the **state design pattern** in today's article.  The `state pattern` allows you to programmatically change the behavior of a class based on when an underlying _state_ changes.
-
-In this article we'll look at both a real world example and a fully-functional C# code sample of the `state design pattern`, so let's get to it!
+As we approach the end of our thorough [Guide to Software Design Patterns](https://airbrake.io/blog/software-design/software-design-patterns-guide) series we'll be looking into the **state design pattern**.  The `state pattern` allows you to programmatically change the behavior of a class based on changes made to the underlying _state_ of said class.  In this article we'll look at both a real world example and a fully-functional C# code sample of the `state design pattern`, so let's get to it!
 
 ## In the Real World
 
@@ -14,7 +12,7 @@ The `state pattern` consists of three basic components:
 
 As you can start to see, the purpose of the `state design pattern` is to allow `Context` objects to adjust their behavior solely because of the change of the current `ConcreteState(s)` that may be applied.  While this sort of logic _can_ be performed with traditional `if-else` control statements, it's far cleaner to apply `State` objects to a `Context` object, so said `Context` doesn't need to be aware of how the `State` logic is implemented.
 
-In the real world, this can be seen all over, particularly in digital services and technologies.  For example, consider making a purchase with your debit card, or depositing money into that same checking account.  Behind the scenes, it's likely that your account behaves as `Context` object, with various `ConcreteStates` assigned to it depending on the characteristics of your account.  If your bank has a minimum balance requirement before your account accrues interest, this change in behavior could be easily handled with a handful of `ConcreteState` objects.  When your balance meets or exceeds the minimum balance threshold, the state of your account changes, and additional behaviors (such as applying interest) may be automatically put into action.
+In the real world, this can be seen all over, particularly in digital services and technologies.  For example, consider making a purchase with your debit card, or depositing money into that same checking account.  Behind the scenes, it's likely that your account behaves as a `Context` object, with various `ConcreteStates` assigned to it, dependent on the characteristics of your account.  If your bank has a minimum balance requirement before your account accrues interest, this change in behavior could be easily handled with a handful of `ConcreteState` objects.  When your balance meets or exceeds the minimum balance threshold, the state of your account changes, and additional behaviors (such as applying interest) may be automatically put into action.
 
 ## Full Code Sample
 
@@ -636,9 +634,9 @@ namespace State
 }
 ```
 
-Everything works as you might expect, but it's worth noting the `TryStateChange()` method that is invoked after every other major method is called.  This is where this specific `ConcreteState` object determines if the assigned `Account.AccountState` should be changed to a different state or not.  In this case, if the balance falls below the `LowerLimit` of `$0`, we want to be sure the account is now considered overdrawn.  On the other hand, if the balance exceeds the `UpperLimit` of `$1,000`, the account should start accruing interest.
+Everything works as you might expect, but it's worth noting the `TryStateChange()` method that is invoked inside every other major method call.  This is where this specific `ConcreteState` object determines if the assigned `Account.AccountState` should be changed to a different state or not.  In this case, if the balance falls below the `LowerLimit` of `$0`, we want to be sure the account is now considered overdrawn.  On the other hand, if the balance exceeds the `UpperLimit` of `$1,000`, the account should start accruing interest.
 
-Now, the `TryStateChange()` method and logic _could_ be placed within the base `AccountState` object, but keeping it separated and in each individual `ConcreteAccountState` class ensures that each class can have very specific logic and behavior in the future, regardless of what other states may be doing.
+Now, the `TryStateChange()` method and logic _could_ be placed within the base `AccountState` object, but keeping it separated, and inside each individual `ConcreteAccountState` class, ensures that each class can have distinctly specific logic and behavior in the future, regardless of what other states may be doing.  It's also likely that in real-world code we'd opt to implement all the various calls to the `TryStateChange()` method in a more elegant manner, perhaps by linking all `Withdraw`, `Deposit`, and similar methods to an `event`, that could then ensure `TryStateChange()` logic is invoked when appropriate.  But, for our purposes, this simple setup will suffice.
 
 Next we have the `InterestAccountState` which, as we just saw, is applied when the balance exceeds `$1,000`:
 
@@ -765,7 +763,7 @@ namespace State
 }
 ```
 
-No interest can be accrued, nor can any withdrawals be made, so a warning is given indicating a lack of funds.
+No interest can be accrued, nor can any withdrawals be made, so any attempt to do so issues a warning indicating a lack of funds.
 
 To tie everything together and test it out we just create a new `Account`, then perform some deposits:
 
