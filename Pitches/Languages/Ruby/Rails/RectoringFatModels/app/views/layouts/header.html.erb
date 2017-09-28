@@ -1,0 +1,9 @@
+<!-- header.html.erb -->
+<div class="tabs home-tabs">
+  <%= link_to 'Home', root_path, class: "tabs--link #{'is-active' if is_menu_tab_active?(:index)}" %>
+  <% if can? :view, Book %>
+    <%= link_to 'Books', books_path, class: "tabs--link #{'is-active' if is_menu_tab_active?(:book)}" %>
+  <% end %>
+  <%= link_to 'About', about_path, class: "tabs--link #{'is-active' if is_menu_tab_active?(:about)}" %>
+  <%= link_to 'Contact', contact_path, class: "tabs--link #{'is-active' if is_menu_tab_active?(:contact)}" %>
+</div>
