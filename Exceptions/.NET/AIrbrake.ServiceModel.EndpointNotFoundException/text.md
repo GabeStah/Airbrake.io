@@ -1,6 +1,6 @@
 # .NET Exceptions - System.ServiceModel.EndpointNotFoundException
 
-Making our way through the detailed [__.NET Exception Handling__](https://airbrake.io/blog/dotnet-exception-handling/exception-class-hierarchy) series, today we'll dive into the **System.ServiceModel.EndpointNotFoundException**.  The `EndpointNotFoundException` is thrown when a failure occurs connect to a [Windows Communication Foundation](https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf) (`WCF`) service-oriented application.
+Making our way through our detailed [__.NET Exception Handling__](https://airbrake.io/blog/dotnet-exception-handling/exception-class-hierarchy) series, today we'll dive into the **System.ServiceModel.EndpointNotFoundException**.  The `EndpointNotFoundException` is thrown when something goes awry while trying to connect to a [Windows Communication Foundation](https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf) (`WCF`) service-oriented application.
 
 In this article we'll examine the `EndpointNotFoundException` in more detail by looking at where it sits in the larger .NET exception hierarchy.  We'll also look at some functional C# code samples that illustrate how a basic service can be setup, and how invalid connections to such a `WCF` service might lead to `EndpointNotFoundExceptions`, so let's get crackin'!
 
@@ -324,7 +324,7 @@ namespace Utility
 
 ## When Should You Use It?
 
-As mentioned in the introduction, the `EndpointNotFoundException` is tightly correlated to use of the [Windows Communication Foundation](https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf) (`WCF`), which is a .NET framework decides to make it easy to create service-oriented applications.  Essentially, a `WCF` application provides at least one service endpoint (`URI`), which can be connected to and utilized via the service's API.  Such API method calls can even be made asynchronously, which makes the `WCF` framework perfect for easily creating services of any scope.
+As mentioned in the introduction, the `EndpointNotFoundException` is tightly correlated with the [Windows Communication Foundation](https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf) (`WCF`), which is a .NET framework for easily creating service-oriented applications.  Essentially, a `WCF` application provides at least one service endpoint (`URI`), which can be connected to and utilized via the service's API.  Plus, such API method calls can even be made asynchronously.
 
 For the code sample today we've created a default `WCF` service application named `MyService`.  It starts with the `IMyService` interface, which defines the basic service and data contracts the service will provide:
 
@@ -560,7 +560,7 @@ Exception thrown: 'System.Reflection.TargetInvocationException' in mscorlib.dll
   IsFaulted: True
 ```
 
-Ah hah, there we see our good friend the `EndpointNotFoundException` popup.  As the error message indicates, the specific reason for a thrown `EndpointNotFoundException` could be for a variety of reasons, but typically is because the provided `endpoint.address` value in `App.config` is incorrect.
+Ah hah!  Here we see our good friend the `EndpointNotFoundException` popup.  As the error message indicates, the specific reason for a thrown `EndpointNotFoundException` could be any of a variety of reasons, but typically it's is because the provided `endpoint.address` value in `App.config` is incorrect.
 
 To get the most out of your own applications and to fully manage any and all .NET Exceptions, check out the <a class="js-cta-utm" href="https://airbrake.io/languages/net_bug_tracker?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-net">Airbrake .NET Bug Handler</a>, offering real-time alerts and instantaneous insight into what went wrong with your .NET code, along with built-in support for a variety of popular development integrations including: JIRA, GitHub, Bitbucket, and much more.
 
