@@ -32,7 +32,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
       - [x] `OutOfBoundsException`
       - [x] `OverflowException`
       - [x] `PDOException`
-      - [ ] `RangeException`
+      - [x] `RangeException`
       - [ ] `UnderflowException`
       - [ ] `UnexpectedValueException`
 

@@ -27,7 +27,7 @@ class Book
      * @param string $title Book title.
      * @param string $author Book author.
      * @param int $pageCount Book page count.
-     * @param DateTime $publicationDate
+     * @param DateTime $publicationDate Book publication date.
      */
     public function __construct(string $title, string $author, int $pageCount = 0, DateTime $publicationDate = null) {
         $this->setAuthor($author);
