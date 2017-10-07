@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -13,73 +10,97 @@ using Utility;
 
 namespace Airbrake.Web.HttpParseException
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            var control = new MyHtmlSelectBuilderWithparseException();
-            control.GetChildControlType("something", new Dictionary<string, string>());
-            Logging.Log(control);
+            // Instantiate a new select builder.
+            var selectBuilder = new MySelectBuilder
+            {
+                ID = "names"
+            };
+
+            // Attempt to get builder control with MyCustomOption suffix.
+            Logging.LineSeparator("TESTING MyCustomOption SUFFIX");
+            GetChildControlOfControlBuilder(selectBuilder, $"Select-{MyCustomOption.Suffix}");
+
+            // Attempt to get builder control with Invalid suffix.
+            Logging.LineSeparator("TESTING Invalid SUFFIX");
+            GetChildControlOfControlBuilder(selectBuilder, $"Select-Invalid");
+        }
+
+        private static void GetChildControlOfControlBuilder(ControlBuilder builder, string tagName)
+        {
+            try
+            {
+                // Get the child control type of passed 
+                // builder using passed tag name.
+                var type = builder.GetChildControlType(
+                    tagName, 
+                    new Dictionary<string, string>()
+                );
+                Logging.Log($"Child Control Type of {builder.GetType().Name} (ID: {builder.ID}) is {type}");
+            }
+            catch (System.Web.HttpParseException exception)
+            {
+                // Output expected HttpParseExceptions.
+                Logging.Log(exception);
+            }
+            catch (Exception exception)
+            {
+                // Output unexpected Exceptions.
+                Logging.Log(exception, false);
+            }
         }
     }
 
-    // Define a child control for the custom HtmlSelect.
+    /// <summary>
+    /// A basic custom Select Option.
+    /// </summary>
     public class MyCustomOption
     {
-        string _id;
-        string _value;
-
-        public string optionid
-        {
-            get
-            { return _id; }
-            set
-            { _id = value; }
-        }
-
-        public string value
-        {
-            get
-            { return _value; }
-            set
-            { _value = value; }
-        }
-
+        public const string Suffix = "MyCustomOption";
+        public string Id { get; set; }
+        public string Value { get; set; }
     }
 
-    // Define a custom HtmlSelectBuilder.
-    public class MyHtmlSelectBuilderWithparseException : HtmlSelectBuilder
+    /// <summary>
+    /// Custom HtmlSelectBuilder, which only allows MyCustomOption child controls.
+    /// </summary>
+    public class MySelectBuilder : HtmlSelectBuilder
     {
         [AspNetHostingPermission(SecurityAction.Demand, Level = AspNetHostingPermissionLevel.Minimal)]
-        public override Type GetChildControlType(string tagName, IDictionary attribs)
+        public override Type GetChildControlType(string tagName, IDictionary attributes)
         {
-            // Distinguish between two possible types of child controls.
-            if (tagName.ToLower().EndsWith("mycustomoption"))
+            // Verify that child control tag ends with MyCustomOption suffix.
+            if (tagName != null && tagName.EndsWith(MyCustomOption.Suffix))
             {
+                // Return MyCustomOption type.
                 return typeof(MyCustomOption);
             }
-            else
-            {
-                throw new System.Web.HttpParseException("This custom HtmlSelect control" + "requires child elements of the form \"MyCustomOption\"");
-            }
+            // If a different tagName is passed, throw HttpParseException.
+            throw new System.Web.HttpParseException($"Unable to get child control type.  '{GetType()}' control requires child element type of '{MyCustomOption.Suffix}.'");
         }
-
     }
 
-    [ControlBuilder(typeof(MyHtmlSelectBuilderWithparseException))]
-    public class CustomHtmlSelectWithHttpParseException : HtmlSelect
+    /// <summary>
+    /// Custom HtmlSelect that uses MySelectBuilder.
+    /// </summary>
+    [ControlBuilder(typeof(MySelectBuilder))]
+    public class CustomHtmlSelect : HtmlSelect
     {
         // Override the AddParsedSubObject method.
         protected override void AddParsedSubObject(object obj)
         {
-
-            string _outputtext;
-            if (obj is MyCustomOption)
-            {
-                _outputtext = "custom select option : " + ((MyCustomOption)obj).value;
-                ListItem li = new ListItem(_outputtext, ((MyCustomOption)obj).value);
-                base.Items.Add(li);
-            }
+            // Create new custom option.
+            var option = obj as MyCustomOption;
+            // Ensure option is not null.
+            if (option == null) return;
+            // Create select option text.
+            var text = $"{option.Id} : {option.Value}";
+            // Add option to Items list.
+            var listItem = new ListItem(text, option.Value);
+            Items.Add(listItem);
         }
     }
 }
