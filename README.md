@@ -32,8 +32,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
       - [x] `OutOfBoundsException`
       - [x] `OverflowException`
       - [x] `PDOException`
-      - [x] `RangeException`
-      - [ ] `UnderflowException`
+      - [x] `RangeException`st
+      - [x] `UnderflowException`
       - [ ] `UnexpectedValueException`
 
 ### JavaScript

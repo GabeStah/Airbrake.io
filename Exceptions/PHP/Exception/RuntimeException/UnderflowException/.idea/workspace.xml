@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e0c01dd2-743d-454a-8b9c-0d3a4aff939e" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="code.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Logging.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Logging.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>echo</find>
+      <find>getScale</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Logging::Log</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/text.md" />
+        <option value="$PROJECT_DIR$/code.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP">
+    <include_path>
+      <path value="D:\work\Airbrake.io\lib\php" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="UnderflowException" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UnderflowException" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../lib/php" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\Airbrake.io\Exceptions\PHP\Exception\RuntimeException\UnderflowException" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="PHP Script.code.php">
+    <configuration name="code.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/code.php" />
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.code.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0c01dd2-743d-454a-8b9c-0d3a4aff939e" name="Default" comment="" />
+      <created>1507510274585</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1507510274585</updated>
+      <workItem from="1507510276265" duration="6887000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6887000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/text.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+            <folding>
+              <marker date="1507516799076" expanded="true" signature="1925:2189" ph="{...}" />
+              <marker date="1507516799076" expanded="true" signature="2227:2722" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="2237:2480" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="2518:2601" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="2633:2720" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="2763:3257" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="2773:3015" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="3053:3136" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="3168:3255" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="3294:4036" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="3304:3796" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="3833:3915" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="3947:4034" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="4119:4135" ph=" Class Book ..." />
+              <marker date="1507516799076" expanded="true" signature="4148:9458" ph="{...}" />
+              <marker date="1507516799076" expanded="true" signature="4521:4750" ph=" Book constructor. ..." />
+              <marker date="1507516799076" expanded="true" signature="4871:5038" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="5048:5119" ph=" Get the author. ..." />
+              <marker date="1507516799076" expanded="true" signature="5163:5198" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="5208:5296" ph=" Set the author. ..." />
+              <marker date="1507516799076" expanded="true" signature="5345:5810" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="5445:5772" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="5820:5917" ph=" Get the current page count of Book. ..." />
+              <marker date="1507516799076" expanded="true" signature="5961:5999" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="6009:6113" ph=" Set the current page count of Book. ..." />
+              <marker date="1507516799076" expanded="true" signature="6166:6210" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="6220:6308" ph=" Get the publication date. ..." />
+              <marker date="1507516799076" expanded="true" signature="6365:6409" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="6419:6512" ph=" Set the publication date. ..." />
+              <marker date="1507516799076" expanded="true" signature="6572:6617" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="6627:6696" ph=" Get the title. ..." />
+              <marker date="1507516799076" expanded="true" signature="6739:6773" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="6783:6869" ph=" Set the title. ..." />
+              <marker date="1507516799076" expanded="true" signature="6917:7378" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="7016:7341" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="7388:7497" ph=" Add a Character to the Book. ..." />
+              <marker date="1507516799076" expanded="true" signature="7569:7942" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="7638:7783" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="7814:7873" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="7881:7936" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="7952:8052" ph=" Get a Character using passed key. ..." />
+              <marker date="1507516799076" expanded="true" signature="8095:8301" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="8153:8255" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="8311:8379" ph=" Get Characters collection. ..." />
+              <marker date="1507516799076" expanded="true" signature="8427:8466" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="8476:8555" ph=" Set characters collection. ..." />
+              <marker date="1507516799076" expanded="true" signature="8612:8658" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="8668:8900" ph=" Magic method triggers when inaccessible instance method is invoked. ..." />
+              <marker date="1507516799076" expanded="true" signature="8958:9052" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="9062:9292" ph=" Magic method triggers when inaccessible static method is invoked. ..." />
+              <marker date="1507516799076" expanded="true" signature="9363:9455" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="9499:9522" ph=" Class Publication ..." />
+              <marker date="1507516799076" expanded="true" signature="9555:11579" ph="{...}" />
+              <marker date="1507516799076" expanded="true" signature="9588:9662" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="9703:10047" ph=" Publication constructor. ..." />
+              <marker date="1507516799076" expanded="true" signature="10200:10334" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="10344:10430" ph=" Set the publication type. ..." />
+              <marker date="1507516799076" expanded="true" signature="10484:10891" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="10620:10706" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="10714:10885" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="10901:11019" ph=" Get the publication type. ..." />
+              <marker date="1507516799076" expanded="true" signature="11094:11576" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="11269:11370" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="11378:11570" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="11638:11688" ph=" Provides basic logging/output functionality. ..." />
+              <marker date="1507516799076" expanded="true" signature="11706:14878" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="11715:11978" ph=" Logs the passed object, string, or Throwable instance to the console. ..." />
+              <marker date="1507516799076" expanded="true" signature="12028:12288" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="12075:12120" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="12156:12229" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="12237:12282" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="12298:12485" ph=" Logs the passed object. ..." />
+              <marker date="1507516799076" expanded="true" signature="12536:12667" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="12677:12775" ph=" Logs the passed string value. ..." />
+              <marker date="1507516799076" expanded="true" signature="12832:12868" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="12878:13225" ph=" Logs the passed Throwable object.   ..." />
+              <marker date="1507516799076" expanded="true" signature="13315:13661" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="13671:13843" ph=" Outputs a dashed line separator with ..." />
+              <marker date="1507516799076" expanded="true" signature="13898:14876" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="14120:14184" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="14222:14837" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="15602:15625" ph=" Class Publication ..." />
+              <marker date="1507516799076" expanded="true" signature="15658:17682" ph="{...}" />
+              <marker date="1507516799076" expanded="true" signature="15691:15765" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="15806:16150" ph=" Publication constructor. ..." />
+              <marker date="1507516799076" expanded="true" signature="16303:16437" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="16447:16533" ph=" Set the publication type. ..." />
+              <marker date="1507516799076" expanded="true" signature="16587:16994" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="16723:16809" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="16817:16988" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="17004:17122" ph=" Get the publication type. ..." />
+              <marker date="1507516799076" expanded="true" signature="17197:17679" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="17372:17473" ph="..." />
+              <marker date="1507516799076" expanded="true" signature="17481:17673" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Publication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="812" column="9" lean-forward="false" selection-start-line="812" selection-start-column="9" selection-end-line="812" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../lib/php/Logging.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
