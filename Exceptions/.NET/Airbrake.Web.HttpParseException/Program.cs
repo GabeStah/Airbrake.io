@@ -12,7 +12,7 @@ namespace Airbrake.Web.HttpParseException
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
             // Instantiate a new select builder.
             var selectBuilder = new MySelectBuilder
