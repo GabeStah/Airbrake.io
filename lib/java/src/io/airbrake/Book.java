@@ -18,8 +18,16 @@ public class Book
     private String title;
     private Integer pageCount;
     private Date publishedAt;
+    private static String publicationType = "Book";
 
     private static final Integer maximumPageCount = 4000;
+
+    /**
+     * Ensure publication type is upper case.
+     */
+    static {
+        publicationType = publicationType.toUpperCase();
+    }
 
     /**
      * Constructs an empty book.
@@ -65,6 +73,21 @@ public class Book
     }
 
     /**
+     * Constructs a basic book, with page count.
+     *
+     * @param title Book title.
+     * @param author Book author.
+     * @param pageCount Book page count.
+     */
+    public Book(String title, String author, Integer pageCount, Date publishedAt, String publicationType) {
+        setAuthor(author);
+        setPageCount(pageCount);
+        setTitle(title);
+        setPublishedAt(publishedAt);
+        setPublicationType(publicationType);
+    }
+
+    /**
      * Get author of book.
      *
      * @return Author name.
@@ -81,6 +104,13 @@ public class Book
     public Integer getPageCount() {
         return pageCount;
     }
+
+    /**
+     * Get publication type of book.
+     *
+     * @return Publication type.
+     */
+    public String getPublicationType() { return publicationType; }
 
     /**
      * Get published date of book.
@@ -145,6 +175,13 @@ public class Book
         }
         this.pageCount = pageCount;
     }
+
+    /**
+     * Set publication type of book.
+     *
+     * @param type Publication type.
+     */
+    public void setPublicationType(String type) { this.publicationType = type; }
 
     /**
      * Set published date of book.
