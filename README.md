@@ -34,7 +34,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
       - [x] `PDOException`
       - [x] `RangeException`st
       - [x] `UnderflowException`
-      - [ ] `UnexpectedValueException`
+      - [x] `UnexpectedValueException`
 
 ### JavaScript
 
