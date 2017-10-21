@@ -17,7 +17,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] `ClosedGeneratorException`
     - [x] `DOMException`
     - [x] `ErrorException`
-    - [ ] `IntlException`
+    - [x] `IntlException`
     - [ ] `LogicException`
       - [x] `BadFunctionCallException`
         - [x] `BadMethodCallException`
