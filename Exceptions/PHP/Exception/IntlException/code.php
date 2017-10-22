@@ -10,6 +10,8 @@ function executeExamples()
 
 function test() {
     Logging::Log("Hello there");
+    MessageFormatter::formatMessage('en_US', 'Today is {0, date, full}.', array(new DateTime()));
+
 }
 
 executeExamples();
