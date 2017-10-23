@@ -1,8 +1,8 @@
-# PHP Exception Handling - UnderflowException
+# PHP Exception Handling - IntlException
 
-Making our way through our in-depth [__PHP Exception Handling__](https://airbrake.io/blog/php-exception-handling/the-php-exception-class-hierarchy) series, today we'll be going over the **UnderflowException**.   If you're familiar with computer-based arithmetic rules, you'll likely be able to deduce that the `UnderflowException` is intended when performing arithmetic using decimal numbers that result in an inaccurate value, because the PHP engine cannot represent the proper `scale` of the actual, absolute value.
+As we approach the end of our detailed [__PHP Exception Handling__](https://airbrake.io/blog/php-exception-handling/the-php-exception-class-hierarchy) series, today we'll take a closer look at the **IntlException**.   The `IntlException` is thrown by the wide variety of classes, functions, and methods found within the [`Internationalization Functions`](http://php.net/manual/en/book.intl.php) API set.  These functions are are a PHP-based wrapper for the [International Components for Unicode](http://site.icu-project.org/) (`ICU`) library set, allowing code to easily work with strings, numbers, and dates across a variety of locales and formats.
 
-In this article we'll explore the `UnderflowException` in more detail, starting with where it sits in the larger [PHP Exception Hierarchy](https://airbrake.io/blog/php-exception-handling/the-php-exception-class-hierarchy).  We'll also examine a fully functional PHP code sample illustrating the basic process of determining how accurate your own PHP installation is when it comes to decimal `scale`, and how to use that information to throw `UnderflowExceptions` where appropriate.  Let's get started!
+Throughout this article we'll examine the `IntlException` by first looking at where it resides in the overall [PHP Exception Hierarchy](https://airbrake.io/blog/php-exception-handling/the-php-exception-class-hierarchy).  We'll also explore some fully functional code samples that will illustrate how many of the common `Intl` classes can be used, and how doing so may cause `IntlExceptions` to be thrown, so let's get started!
 
 ## The Technical Rundown
 
@@ -10,8 +10,7 @@ All PHP errors implement the [`Throwable`](https://airbrake.io/blog/php-exceptio
 
 - [`Throwable`](https://airbrake.io/blog/php-exception-handling/the-php-exception-class-hierarchy)
     - [`Exception`](http://php.net/manual/en/class.exception.php)
-        - [`RuntimeException`](http://php.net/manual/en/class.runtimeexception.php)
-            - `UnderflowException`
+        - `IntlException`
 
 ## Full Code Sample
 
@@ -20,111 +19,169 @@ Below is the full code sample we’ll be using in this article.  Feel free to us
 ```php
 <?php
 
-include("D:\work\Airbrake.io\lib\php\Logging.php");
+include("d:\work\Airbrake.io\lib\php\Logging.php");
 
 function executeExamples()
 {
-    Logging::LineSeparator("FIND MAXIMUM SCALE ACCURACY");
-    Logging::Log(getScaleAccuracy(true));
+    Logging::LineSeparator('FORMAT DATE');
+    formatDate(new DateTime());
+    Logging::LineSeparator('FORMAT INVALID DATE');
+    formatDate(null);
 
-    Logging::LineSeparator("NO SCALE");
-    addNumbers(123, 24478);
+    Logging::LineSeparator('FORMAT NUMBER');
+    formatNumber(123.456);
+    Logging::LineSeparator('FORMAT INVALID NUMBER');
+    formatNumber(123.456, 'en_US', 24601);
 
-    Logging::LineSeparator("SCALE: 1");
-    addNumbers(123.4, 24477.6);
+    Logging::LineSeparator('FORMAT CURRENCY');
+    formatCurrency(123.456);
+    Logging::LineSeparator('FORMAT INVALID CURRENCY');
+    formatCurrency(123.456, 'ABCDE');
 
-    Logging::LineSeparator("SCALE: 2");
-    addNumbers(123.45, 24477.55);
-
-    Logging::LineSeparator("SCALE: 3");
-    addNumbers(123.456, 24477.544);
-
-    Logging::LineSeparator("SCALE: 4");
-    addNumbers(123.4567, 24477.5433);
+    Logging::LineSeparator('FORMAT MESSAGE');
+    formatMessage(array('This is a message!'));
+    //formatMessage(null);
+    Logging::LineSeparator('FORMAT INVALID MESSAGE');
+    //formatMessage(null);
+    formatMessage(array('This is a message!'), 'en_US', null);
 }
 
 /**
- * Adds two numbers together.
+ * Format currency value.
  *
- * @param int|float|string $a First number to add.
- * @param int|float|string $b Second number to add.
- * @return mixed Result of summing $a and $b.
+ * @param mixed $value Currency value.
+ * @param null|string $currency Currency type.
+ * @param null|string $locale Locale.
+ * @param int|null $style Number formatter style.
  */
-function addNumbers($a, $b) {
+function formatCurrency($value,
+                        ?string $currency = 'USD',
+                        ?string $locale = 'en_US',
+                        ?int $style = NumberFormatter::CURRENCY)
+{
     try {
-        $maximumScale = getScaleAccuracy();
-        if (getScale($a) > $maximumScale) {
-            throw new UnderflowException("Scale of $a exceeds maximum accurate scale of $maximumScale.");
-        } elseif (getScale($b) > $maximumScale) {
-            throw new UnderflowException("Scale of $b exceeds maximum accurate scale of $maximumScale.");
-        }
-        $sum = $a + $b;
-        Logging::Log("$a + $b == $sum");
-        return $sum;
-    } catch (UnderflowException $exception) {
-        // Output expected UnderflowException.
+        $formatter = new NumberFormatter($locale, $style);
+        // Attempt format.
+        Logging::Log($formatter->formatCurrency($value, $currency));
+        // Manually throw exception, if necessary.
+        throwFormatterException($formatter);
+    } catch (IntlException $exception) {
+        // Output expected IntlExceptions.
         Logging::Log($exception);
-    } catch (Exception $exception) {
-        // Output unexpected Exceptions.
-        Logging::Log($exception, false);
+    } catch (Error | Exception $error) {
+        // Output unexpected Errors and Exceptions.
+        Logging::Log($error, false);
     }
-    return null;
 }
 
 /**
- * Gets the scale of the passed float/decimal.
+ * Format date value.
  *
- * @param int|float|string $number The number to retrieve scale of.
- * @return int Scale of passed $number.
+ * @param mixed $value Date value.
+ * @param null|string $locale Locale.
+ * @param null|string $timezone Timezone.
+ * @param int|null $dateType Date type.
+ * @param int|null $timeType Time type.
+ * @param int|null $calendarType Calendar type.
  */
-function getScale($number) {
-    return strlen(strstr($number, '.')) - 1;
+function formatDate($value,
+                    ?string $locale = 'en_US',
+                    ?string $timezone = 'America/Los_Angeles',
+                    ?int $dateType = IntlDateFormatter::FULL,
+                    ?int $timeType = IntlDateFormatter::FULL,
+                    ?int $calendarType = IntlDateFormatter::GREGORIAN)
+{
+    try {
+        $formatter = new IntlDateFormatter($locale, $dateType, $timeType, $timezone, $calendarType);
+        // Attempt format.
+        Logging::Log($formatter->format($value));
+        // Manually throw exception, if necessary.
+        throwFormatterException($formatter);
+    } catch (IntlException $exception) {
+        // Output expected IntlExceptions.
+        Logging::Log($exception);
+    } catch (Error | Exception $error) {
+        // Output unexpected Errors and Exceptions.
+        Logging::Log($error, false);
+    }
 }
 
 /**
- * Gets the maximum scale (number of places after decimal)
- * in which current PHP engine is accurate with floating points.
+ * Format message value.
  *
- * @param bool $debugOutput Determine if debug output should be included.
- * @return int Maximum scale of accuracy.
+ * @param array $value Message value.
+ * @param null|string $locale Locale.
+ * @param null|string $pattern Message formatting pattern.
  */
-function getScaleAccuracy($debugOutput = false) {
-    $scale = 1;
-    while (true) {
-        // Check if scale is accurate.
-        if (!isScaleAccurate($scale, $debugOutput)) {
-            return $scale - 1;
+function formatMessage(array $value, ?string $locale = 'en_US', ?string $pattern = '{0}') {
+    try {
+        $formatter = new MessageFormatter($locale, $pattern);
+        // Attempt format.
+        Logging::Log($formatter->format($value));
+        // Manually throw exception, if necessary.
+        throwFormatterException($formatter);
+    } catch (IntlException $exception) {
+        // Output expected IntlExceptions.
+        Logging::Log($exception);
+    } catch (Error | Exception $error) {
+        // Output unexpected Errors and Exceptions.
+        Logging::Log($error, false);
+    }
+}
+
+/**
+ * Format number value.
+ *
+ * @param mixed $value Number value.
+ * @param null|string $locale Locale.
+ * @param int|null $style Number formatter style.
+ */
+function formatNumber($value, ?string $locale = 'en_US', ?int $style = NumberFormatter::DECIMAL) {
+    try {
+        $formatter = new NumberFormatter($locale, $style);
+        // Attempt format.
+        Logging::Log($formatter->format($value));
+        // Manually throw exception, if necessary.
+        throwFormatterException($formatter);
+    } catch (IntlException $exception) {
+        // Output expected IntlExceptions.
+        Logging::Log($exception);
+    } catch (Error | Exception $error) {
+        // Output unexpected Errors and Exceptions.
+        Logging::Log($error, false);
+    }
+}
+
+/**
+ * Determine if passed object is valid formatter instance.
+ *
+ * @param object $formatter Formatter to check.
+ * @return bool
+ */
+function isFormatter($formatter) {
+    foreach (array('IntlDateFormatter', 'MessageFormatter', 'NumberFormatter') as $class) {
+        if ($formatter instanceof $class) return true;
+    }
+}
+
+/**
+ * Throws a new IntlException, if intl.use_exceptions setting
+ * disabled, passed formatter is valid type, and error was produced.
+ *
+ * @param object $formatter Formatter to retrieve error from.
+ * @throws IntlException
+ */
+function throwFormatterException($formatter) {
+    // Ensure object is valid formatter.
+    if (!isFormatter($formatter)) return;
+    // Confirm that use_exceptions setting is disabled.
+    if (ini_get('intl.use_exceptions') == 0) {
+        $errorCode = $formatter->getErrorCode();
+        // Check for failure.
+        if (intl_is_failure($errorCode)) {
+            Logging::Log("Formatter failed with error code: {$errorCode}.  Throwing exception...");
+            throw new IntlException($formatter->getErrorMessage(), $errorCode);
         }
-        $scale++;
-    }
-}
-
-/**
- * Determine if passed $scale value is accurate.
- *
- * @param int $scale Scale value to check.
- * @param bool $debugOutput Determine if debug output should be included.
- * @return bool Indicates if passed $scale is accurate.
- */
-function isScaleAccurate($scale, $debugOutput = false) {
-    // Create float (0.999...n) to n scale places.
-    $string = '0.' . str_repeat('9', $scale);
-    // Convert to float.
-    $float = (float) $string;
-    // Get result.
-    $result = (1 - $float);
-    // Determine if result is in the form of 0.00...1,
-    // which indicates an accurate decimal value.
-    if (substr($result, 0, 1) == "0") {
-        if ($debugOutput) Logging::Log("Float scale to ($scale) places is accurate.");
-        if ($debugOutput) Logging::Log("1 - $float == $result");
-        return true;
-    } else {
-        // If converted to floating point, the form
-        // is 9.99...8E-n, which indicates an inaccuracy.
-        if ($debugOutput) Logging::Log("Float scale of ($scale) places is inaccurate.");
-        if ($debugOutput) Logging::Log("1 - $float == $result");
-        return false;
     }
 }
 
@@ -236,178 +293,331 @@ class Logging {
 
 ## When Should You Use It?
 
-As mentioned in the introduction, [`arithmetic underflow`](https://en.wikipedia.org/wiki/Arithmetic_underflow) indicates that the result of a calculation is a smaller absolute value than the system can accurately store.  This can be for a variety of reasons, but typically `underflow` occurs when performing operations with large `decimal` numbers.  The [`precision`](https://docs.microsoft.com/en-us/sql/t-sql/data-types/precision-scale-and-length-transact-sql) of such a number indicates the total number of digits (i.e. `length`), while the `scale` indicates the number of digits following the decimal point.  For example, `24.601` has a `precision` of `5` and a `scale` of `3`.
+As mentioned, the purpose of the `Intl` class in PHP is to make it easy to work with values that are typically troublesome to convert to the appropriate locale-based format.  As a simple example, the United States uses a period (`.`) as a decimal separator (e.g. `123.456`), while France uses a comma (`,`) decimal separator (e.g. `123,456`).  It would be a monumental task to code localization handling for every project, so the `Intl` class, using the `ICU` library, standardizes localization techniques and makes it relatively easy to format number, date, and string values into the multitude of localized contexts you might need.
 
-Most programming languages, operating systems, CPUs, and so forth have a maximum amount of memory that can be devoted to storing a single value.  Thus, there must be a limit to the total accuracy (`precision` and/or `scale`) that can be stored for a decimal.  When the calculating engine cannot hold a `decimal` value that exceeds those limits, that number is typically converted to a `floating point` value.  This conversion is where problems can arise, which may lead to `UnderflowExceptions` in the case of PHP.  As we'll see in the example code in just a moment, PHP can only represent decimal values with a relatively small `scale` limit, and once that `scale` value is exceeded (i.e. the absolute value is too infinitesimal), PHP represents the value with a _slightly_ inaccurate `floating point` representation.  
+However, as with most API functions, the `Intl` class can sometimes run into problems, which can manifest themselves into thrown `IntlExceptions`.  Since the `Intl` class is a built-in PHP `extension`, the first thing you'll need to do is make sure the extension is enabled in your own `php.ini` file.  Typically, this will involve opening your `php.ini` file, searching for `php_intl`, and uncommenting the appropriate line, like so:
 
-These imprecise numeric values are usually insignificant, but in the case of strict application domains, such as banking or security, it can be _critical_ that there is _no_ chance for data loss or inaccuracy when handling particularly big or small numbers.
+```
+; ...
 
-To illustrate these situations we start with the `isScaleAccurate($scale, $debugOutput = false)` function:
+extension=php_intl.dll
 
-```php
-/**
- * Determine if passed $scale value is accurate.
- *
- * @param int $scale Scale value to check.
- * @param bool $debugOutput Determine if debug output should be included.
- * @return bool Indicates if passed $scale is accurate.
- */
-function isScaleAccurate($scale, $debugOutput = false) {
-    // Create float (0.999...n) to n scale places.
-    $string = '0.' . str_repeat('9', $scale);
-    // Convert to float.
-    $float = (float) $string;
-    // Get result.
-    $result = (1 - $float);
-    // Determine if result is in the form of 0.00...1,
-    // which indicates an accurate decimal value.
-    if (substr($result, 0, 1) == "0") {
-        if ($debugOutput) Logging::Log("Float scale to ($scale) places is accurate.");
-        if ($debugOutput) Logging::Log("1 - $float == $result");
-        return true;
-    } else {
-        // If converted to floating point, the form
-        // is 9.99...8E-n, which indicates an inaccuracy.
-        if ($debugOutput) Logging::Log("Float scale of ($scale) places is inaccurate.");
-        if ($debugOutput) Logging::Log("1 - $float == $result");
-        return false;
-    }
-}
+; ...
 ```
 
-This function creates a string in the form of `0.999...n` with a total `scale` equal to the passed `$scale` parameter, then converts that value to a `float`.  By subtracting that value from `1`, an _accurate_ `$result` would be a decimal in the form of `0.000...1`.  However, PHP cannot handle decimals with very large `scales`, so if the `$result` is converted to a `float` it will be in the form of `9.999...8E-n`.  No matter the actual floating point value, such conversion always indicates a slight loss in accuracy compared to the aforementioned decimal form.  Therefore, we can check the form of the `$result` to see if there is accuracy loss or not, given the passed `$scale` parameter.
-
-We make use of the `isScaleAccurate($scale, $debugOutput = false)` function inside `getScaleAccuracy($debugOutput = false)`:
+Now, to test these classes out we're going to manipulate some common types of values, including currencies, dates, numbers, and strings.  To accomplish this we're using the built-in formatter classes including [`IntlDateFormatter`](http://php.net/manual/en/class.intldateformatter.php), [`NumberFormatter`](http://php.net/manual/en/class.numberformatter.php), and [`MessageFormatter`](http://php.net/manual/en/class.messageformatter.php).  Let's begin with a date via our `formatDate(...)` function:
 
 ```php
 /**
- * Gets the maximum scale (number of places after decimal)
- * in which current PHP engine is accurate with floating points.
+ * Format date value.
  *
- * @param bool $debugOutput Determine if debug output should be included.
- * @return int Maximum scale of accuracy.
+ * @param mixed $value Date value.
+ * @param null|string $locale Locale.
+ * @param null|string $timezone Timezone.
+ * @param int|null $dateType Date type.
+ * @param int|null $timeType Time type.
+ * @param int|null $calendarType Calendar type.
  */
-function getScaleAccuracy($debugOutput = false) {
-    $scale = 1;
-    while (true) {
-        // Check if scale is accurate.
-        if (!isScaleAccurate($scale, $debugOutput)) {
-            return $scale - 1;
-        }
-        $scale++;
-    }
-}
-```
-
-This function retrieves the highest `scale` value that remains accurate within the current PHP engine.  With this maximum `scale` value in hand, we can use it to properly throw an `UnderflowException` throughout our custom code, wherever appropriate.  For example, here we have the `addNumbers($a, $b)` function, that adds two numbers:
-
-```php
-/**
- * Adds two numbers together.
- *
- * @param int|float|string $a First number to add.
- * @param int|float|string $b Second number to add.
- * @return mixed Result of summing $a and $b.
- */
-function addNumbers($a, $b) {
+function formatDate($value,
+                    ?string $locale = 'en_US',
+                    ?string $timezone = 'America/Los_Angeles',
+                    ?int $dateType = IntlDateFormatter::FULL,
+                    ?int $timeType = IntlDateFormatter::FULL,
+                    ?int $calendarType = IntlDateFormatter::GREGORIAN)
+{
     try {
-        $maximumScale = getScaleAccuracy();
-        if (getScale($a) > $maximumScale) {
-            throw new UnderflowException("Scale of $a exceeds maximum accurate scale of $maximumScale.");
-        } elseif (getScale($b) > $maximumScale) {
-            throw new UnderflowException("Scale of $b exceeds maximum accurate scale of $maximumScale.");
-        }
-        $sum = $a + $b;
-        Logging::Log("$a + $b == $sum");
-        return $sum;
-    } catch (UnderflowException $exception) {
-        // Output expected UnderflowException.
+        $formatter = new IntlDateFormatter($locale, $dateType, $timeType, $timezone, $calendarType);
+        // Attempt format.
+        Logging::Log($formatter->format($value));
+        // Manually throw exception, if necessary.
+        throwFormatterException($formatter);
+    } catch (IntlException $exception) {
+        // Output expected IntlExceptions.
         Logging::Log($exception);
-    } catch (Exception $exception) {
-        // Output unexpected Exceptions.
-        Logging::Log($exception, false);
+    } catch (Error | Exception $error) {
+        // Output unexpected Errors and Exceptions.
+        Logging::Log($error, false);
     }
-    return null;
-}
-
-/**
- * Gets the scale of the passed float/decimal.
- *
- * @param int|float|string $number The number to retrieve scale of.
- * @return int Scale of passed $number.
- */
-function getScale($number) {
-    return strlen(strstr($number, '.')) - 1;
 }
 ```
 
-It's critical that our `addNumbers($a, $b)` function only produces the precisely accurate results.  Thus, we use the `getScale($number)` helper function, along with `getScaleAccuracy()`, to determine if the two passed `$a` and `$b` parameters contain a `scale` value that exceeds the maximum `scale` accuracy our current PHP engine can handle.  If so, we throw a new `UnderflowException` indicating as much, otherwise we perform the calculation and output the result to the log.
+As you can see, this function primarily acts as a small wrapper for the `IntlDateFormatter` class constructor method, accepting a number of arguments and passing those parameters to the `IntlDateFormatter` constructor.  We then call the `$formatter->format($value)` method with our passed `$value` parameter as an argument, which actually attempts to perform the format based on all the arguments used during construction.  We log the result to the console.
 
-To test this out we start by calling `getScaleAccuracy($debugOutput = false)` to display the `scale` accuracy output of the current PHP engine:
+Now, you'll notice a call to the `throwFormatterException($exception)` function at the end of the `try` block, which is particularly important.  Since the `Intl` classes are from an extension, if these methods or classes have an issue they default to issuing a basic `E_WARNING` message, but otherwise try to use the default settings and locale to process the formatted value, so execution can continue.  To force these classes to actually throw a catchable `IntlException` you'll need to explicitly enable the `intl.use_exceptions` setting in the `php.ini` file.  If this setting is disabled (which is the default value), only warnings will be generated.  _However_, the `Intl` class provides a number of helper functions to check if a given formatter instance caused an error, even if it wasn't an explicitly thrown/caught `IntlException` instance.  To illustrate, let's finally take a look at the aforementioned `throwFormatterException($exception)` method:
+
+```php
+/**
+ * Throws a new IntlException, if intl.use_exceptions setting
+ * disabled, passed formatter is valid type, and error was produced.
+ *
+ * @param object $formatter Formatter to retrieve error from.
+ * @throws IntlException
+ */
+function throwFormatterException($formatter) {
+    // Ensure object is valid formatter.
+    if (!isFormatter($formatter)) return;
+    // Confirm that use_exceptions setting is disabled.
+    if (ini_get('intl.use_exceptions') == 0) {
+        $errorCode = $formatter->getErrorCode();
+        // Check for failure.
+        if (intl_is_failure($errorCode)) {
+            Logging::Log("Formatter failed with error code: {$errorCode}.  Throwing exception...");
+            throw new IntlException($formatter->getErrorMessage(), $errorCode);
+        }
+    }
+}
+
+/**
+ * Determine if passed object is valid formatter instance.
+ *
+ * @param object $formatter Formatter to check.
+ * @return bool
+ */
+function isFormatter($formatter) {
+    foreach (array('IntlDateFormatter', 'MessageFormatter', 'NumberFormatter') as $class) {
+        if ($formatter instanceof $class) return true;
+    }
+}
+```
+
+The purpose of this function is to determine if the passed `$formatter` object is actually a proper `Formatter` class type and, if so, determine if the `intl.use_exceptions` `php.ini` setting is disabled (the default setting).  If `intl.use_exceptions` is disabled, we then check if the passed `$formatter` actually produced an error of some sort, which is determined by passing the `$formatter->getErrorCode()` method result to the [`intl_is_failure()`](http://php.net/manual/en/function.intl-is-failure.php) function.  This function returns a boolean indicating if the passed error code indicates an error or not.  If a failure is detected, we output the error code to the log and then _manually_ throw our own `IntlException` with the appropriate message and error code values passed in.
+
+With this knowledge in hand, we can test out our `formatDate(...)`:
 
 ```php
 function executeExamples()
 {
-    Logging::LineSeparator("FIND MAXIMUM SCALE ACCURACY");
-    Logging::Log(getScaleAccuracy(true));
+    $number = 1234.567;
+    $message = 'This is a message!';
+
+    Logging::LineSeparator('FORMAT DATE');
+    formatDate(new DateTime());
+    Logging::LineSeparator('FORMAT INVALID DATE');
+    formatDate(null);
 
     // ...
 }
 ```
 
+Here we're first calling `formatDate(...)` with the current date and time, then calling it a second time with a `null` date value specified.  Here we see the output of these calls:
+
 ```
------ FIND MAXIMUM SCALE ACCURACY ------
-Float scale to (1) places is accurate.
-1 - 0.9 == 0.1
-Float scale to (2) places is accurate.
-1 - 0.99 == 0.01
-Float scale to (3) places is accurate.
-1 - 0.999 == 0.001
-Float scale of (4) places is inaccurate.
-1 - 0.9999 == 9.9999999999989E-5
-3
+------------- FORMAT DATE --------------
+Monday, October 23, 2017 at 11:10:34 AM Pacific Daylight Time
+--------- FORMAT INVALID DATE ----------
+Formatter failed with error code: 1.  Throwing exception...
+[EXPECTED] IntlException: datefmt_format: invalid PHP type for date: U_ILLEGAL_ARGUMENT_ERROR in D:\work\Airbrake.io\Exceptions\PHP\Exception\IntlException\code.php on line 169
 ```
 
-As we can see from the output, my current PHP maxes out at a `scale` value of `3`, after which it produces inaccurate `floating point` values.  Thus, we'll test the `addNumbers($a, $b)` function by passing in a series of increasingly-precise decimals:
+Unsurprisingly, the first call works fine and outputs our date and time.  Meanwhile, the second call shows that execution called the `format(...)` method, but didn't throw an error since `intl.use_exceptions` is disabled by default.  However, we passed the formatter to `throwFormatterException($formatter)` and this determined that the formatter _did_ actually run into trouble, so we output the error code and manually threw an `IntlException` with the actual error message.  In this case, we can see that the `Intl` library calls the `datefmt_format(...)` function behind the scenes, which received an invalid data type for the date since we passed `null` in this second call.  Cool!
 
+Next up, let's look at our `formatNumber(...)` function:
 
 ```php
-Logging::LineSeparator("NO SCALE");
-addNumbers(123, 24478);
-
-Logging::LineSeparator("SCALE: 1");
-addNumbers(123.4, 24477.6);
-
-Logging::LineSeparator("SCALE: 2");
-addNumbers(123.45, 24477.55);
-
-Logging::LineSeparator("SCALE: 3");
-addNumbers(123.456, 24477.544);
-
-Logging::LineSeparator("SCALE: 4");
-addNumbers(123.4567, 24477.5433);
+/**
+ * Format number value.
+ *
+ * @param mixed $value Number value.
+ * @param null|string $locale Locale.
+ * @param int|null $style Number formatter style.
+ */
+function formatNumber($value, ?string $locale = 'en_US', ?int $style = NumberFormatter::DECIMAL) {
+    try {
+        $formatter = new NumberFormatter($locale, $style);
+        // Attempt format.
+        Logging::Log($formatter->format($value));
+        // Manually throw exception, if necessary.
+        throwFormatterException($formatter);
+    } catch (IntlException $exception) {
+        // Output expected IntlExceptions.
+        Logging::Log($exception);
+    } catch (Error | Exception $error) {
+        // Output unexpected Errors and Exceptions.
+        Logging::Log($error, false);
+    }
+}
 ```
 
-Executing the above tests produces the following output:
+The format and execution of this function is the same as we saw in `formatDate(...)`, so we won't explain anything.  Instead, let's test it out:
 
-```
---------------- NO SCALE ---------------
-123 + 24478 == 24601
-
---------------- SCALE: 1 ---------------
-123.4 + 24477.6 == 24601
-
---------------- SCALE: 2 ---------------
-123.45 + 24477.55 == 24601
-
---------------- SCALE: 3 ---------------
-123.456 + 24477.544 == 24601
-
---------------- SCALE: 4 ---------------
-[EXPECTED] UnderflowException: Scale of 123.4567 exceeds maximum accurate scale of 3. in D:\work\Airbrake.io\Exceptions\PHP\Exception\RuntimeException\UnderflowException\code.php on line 92
+```php
+Logging::LineSeparator('FORMAT NUMBER (en_US)');
+formatNumber($number);
+Logging::LineSeparator('FORMAT NUMBER (fr_FR)');
+formatNumber($number, 'fr_FR');
+Logging::LineSeparator('FORMAT NUMBER (de_CH)');
+formatNumber($number, 'de_CH');
+Logging::LineSeparator('FORMAT INVALID NUMBER');
+formatNumber($number, 'en_US', 24601);
 ```
 
-As expected, we're able to perform totally accurate calculations up until we exceed a `scale` maximum of `3`.  Trying to use values with `scale` of `4+` produces an `UnderflowException`, indicating the issue to the user.
+Here's the output we produce from these four calls:
+
+```
+-------- FORMAT NUMBER (en_US) ---------
+1,234.567
+-------- FORMAT NUMBER (fr_FR) ---------
+1 234,567
+-------- FORMAT NUMBER (de_CH) ---------
+1'234.567
+-------- FORMAT INVALID NUMBER ---------
+[EXPECTED] IntlException: Constructor failed in D:\work\Airbrake.io\Exceptions\PHP\Exception\IntlException\code.php on line 127
+```
+
+As previously mentioned, by using the `ICU` library we're able to automatically convert our value of `1234.567` to the appropriate formats based on the `locale` value we pass to each call.  France uses the [`SI`](https://en.wikipedia.org/wiki/International_System_of_Units) format, while Switzerland uses apostrophes as thousands separators and periods for a decimal separator.  In our last call we passed an invalid `$style` argument value to the underlying `NumberFormatter` constructor, so a legit `IntlException` is thrown and caught.
+
+Now we have the `formatCurrency(...)` method, which does just what `formatNumber(...)` did, except ideally for currencies:
+
+```php
+/**
+ * Format currency value.
+ *
+ * @param mixed $value Currency value.
+ * @param null|string $currency Currency type.
+ * @param null|string $locale Locale.
+ * @param int|null $style Number formatter style.
+ */
+function formatCurrency($value,
+                        ?string $currency = 'USD',
+                        ?string $locale = 'en_US',
+                        ?int $style = NumberFormatter::CURRENCY)
+{
+    try {
+        $formatter = new NumberFormatter($locale, $style);
+        // Attempt format.
+        Logging::Log($formatter->formatCurrency($value, $currency));
+        // Manually throw exception, if necessary.
+        throwFormatterException($formatter);
+    } catch (IntlException $exception) {
+        // Output expected IntlExceptions.
+        Logging::Log($exception);
+    } catch (Error | Exception $error) {
+        // Output unexpected Errors and Exceptions.
+        Logging::Log($error, false);
+    }
+}
+```
+
+Let's test it out:
+
+```php
+Logging::LineSeparator('FORMAT CURRENCY');
+formatCurrency($number);
+Logging::LineSeparator('FORMAT INVALID CURRENCY');
+formatCurrency($number, 'ABCDE');
+```
+
+Here's the output:
+
+```
+----------- FORMAT CURRENCY ------------
+$1,234.57
+------- FORMAT INVALID CURRENCY --------
+Formatter failed with error code: 1.  Throwing exception...
+[EXPECTED] IntlException: Number formatting failed: U_ILLEGAL_ARGUMENT_ERROR in D:\work\Airbrake.io\Exceptions\PHP\Exception\IntlException\code.php on line 169
+```
+
+Again, the first call works as expected, while the second produces an uncaught error, so we manually throw an `IntlException`.
+
+Finally, let's look at formatting messages via `formatMessage(...)`:
+
+```php
+/**
+ * Format message value.
+ *
+ * @param array $value Message value.
+ * @param null|string $locale Locale.
+ * @param null|string $pattern Message formatting pattern.
+ */
+function formatMessage(array $value, ?string $locale = 'en_US', ?string $pattern = '{0}') {
+    try {
+        $formatter = new MessageFormatter($locale, $pattern);
+        // Attempt format.
+        Logging::Log($formatter->format($value));
+        // Manually throw exception, if necessary.
+        throwFormatterException($formatter);
+    } catch (IntlException $exception) {
+        // Output expected IntlExceptions.
+        Logging::Log($exception);
+    } catch (Error | Exception $error) {
+        // Output unexpected Errors and Exceptions.
+        Logging::Log($error, false);
+    }
+}
+```
+
+And our test code:
+
+```php
+Logging::LineSeparator('FORMAT MESSAGE');
+formatMessage(array($message));
+Logging::LineSeparator('FORMAT INVALID MESSAGE');
+formatMessage(array($message), 'en_US', null);
+```
+
+Produces this output:
+
+```
+------------ FORMAT MESSAGE ------------
+This is a message!
+-------- FORMAT INVALID MESSAGE --------
+[EXPECTED] IntlException: Constructor failed in D:\work\Airbrake.io\Exceptions\PHP\Exception\IntlException\code.php on line 104
+```
+
+Since our `$pattern` argument was set to `null`, we again throw an `IntlException` in the second call.
+
+---
+
+As mentioned, the `php.ini` setting of `intl.use_exceptions` is disabled by default, but let's try enabling it and executing these tests again to see how things change:
+
+```
+[intl]
+;intl.default_locale =
+; This directive allows you to produce PHP errors when some error
+; happens within intl functions. The value is the level of the error produced.
+; Default is 0, which does not produce any errors.
+;intl.error_level = E_WARNING
+intl.use_exceptions = 1
+```
+
+Our expectation is, now that `intl.use_exceptions` is enabled, any problems that a `Formatter` instance experiences during constructor or when calling `format(...)` should result in an explicit `IntlException` being thrown.  Therefore, subsequent calls to our backup `throwFormatterException($exception)` function will be skipped entirely, since these invocations appear _after_ the formatter does its work.
+
+Since all the valid calls we made during our tests will still perform as expected, we'll skip over those and only execute the "INVALID" tests a second time:
+
+```php
+function executeInvalidTests() {
+    $number = 1234.567;
+    $message = 'This is a message!';
+
+    Logging::LineSeparator('FORMAT INVALID DATE');
+    formatDate(null);
+
+    Logging::LineSeparator('FORMAT INVALID NUMBER');
+    formatNumber($number, 'en_US', 24601);
+
+    Logging::LineSeparator('FORMAT INVALID CURRENCY');
+    formatCurrency($number, 'ABCDE');
+
+    Logging::LineSeparator('FORMAT INVALID MESSAGE');
+    formatMessage(array($message), 'en_US', null);
+}
+```
+
+Performing these same invalid calls produces the following output now, confirming that each problematic call explicitly created and threw `IntlException`, as expected:
+
+```
+--------- FORMAT INVALID DATE ----------
+[EXPECTED] IntlException: datefmt_format: invalid PHP type for date in D:\work\Airbrake.io\Exceptions\PHP\Exception\IntlException\code.php on line 100
+
+-------- FORMAT INVALID NUMBER ---------
+[EXPECTED] IntlException: numfmt_create: number formatter creation failed in D:\work\Airbrake.io\Exceptions\PHP\Exception\IntlException\code.php on line 144
+
+------- FORMAT INVALID CURRENCY --------
+[EXPECTED] IntlException: Number formatting failed in D:\work\Airbrake.io\Exceptions\PHP\Exception\IntlException\code.php on line 68
+
+-------- FORMAT INVALID MESSAGE --------
+[EXPECTED] IntlException: msgfmt_create: message formatter creation failed in D:\work\Airbrake.io\Exceptions\PHP\Exception\IntlException\code.php on line 121
+```
 
 Check out the <a class="js-cta-utm" href="https://airbrake.io/languages/php_bug_tracker?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-php">Airbrake-PHP library</a>, designed to quickly and easily integrate into any PHP project, giving you and your team access to real-time error monitoring and reporting throughout your application's entire life cycle.  With automatic, instantaneous error and exception notifications at your fingertips, you'll be constantly aware of your application's health, including any issues that may arise.  Best of all, with Airbrake's robust web dashboard cataloging every error that occurs, you and your team can immediately dive into the exact details of what went wrong, making it easy to quickly recognize and resolve problems.
 
@@ -415,7 +625,8 @@ Check out the <a class="js-cta-utm" href="https://airbrake.io/languages/php_bug_
 
 __META DESCRIPTION__
 
-A close look at the PHP UnderflowException class, including code samples showing how to maintain complete accuracy with decimals and floating points.
+A close look at the PHP IntlException class, including code samples illustrating how to work with Intl formatters for dates, strings, and numbers.
+
 ---
 
 __SOURCES__
