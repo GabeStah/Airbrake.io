@@ -17,24 +17,24 @@ To bring these two concepts together PHP 7 introduces the new `Throwable` interf
         - [ClosedGeneratorException](https://airbrake.io/blog/php-exception-handling/closedgeneratorexception)
         - [DOMException](https://airbrake.io/blog/php-exception-handling/domexception)
         - [ErrorException](https://airbrake.io/blog/php-exception-handling/errorexception)
-        - IntlException
+        - [IntlException](https://airbrake.io/blog/php-exception-handling/intlexception)
         - LogicException
             - [BadFunctionCallException](https://airbrake.io/blog/php-exception-handling/badmethodcallexception)
                 - [BadMethodCallException](https://airbrake.io/blog/php-exception-handling/badmethodcallexception)
             - [DomainException](https://airbrake.io/blog/php-exception-handling/domainexception)
             - [InvalidArgumentException](https://airbrake.io/blog/php-exception-handling/invalidargumentexception-2)
-            - LengthException
-            - OutOfRangeException
-        - PharException
-        - ReflectionException
-            - RuntimeException
+            - [LengthException](https://airbrake.io/blog/php-exception-handling/lengthexception)
+            - [OutOfRangeException](https://airbrake.io/blog/php-exception-handling/outofrangeexception)
+        - [PharException](https://airbrake.io/blog/php-exception-handling/pharexception)
+        - [ReflectionException](https://airbrake.io/blog/php-exception-handling/reflectionexception)        
+        - RuntimeException
             - mysqli_sql_exception
-            - OutOfBoundsException
-            - OverflowException
-            - PDOException
-            - RangeException
-            - UnderflowException
-            - UnexpectedValueException
+            - [OutOfBoundsException](https://airbrake.io/blog/php-exception-handling/outofboundsexception)
+            - [OverflowException](https://airbrake.io/blog/php-exception-handling/overflowexception)
+            - [PDOException](https://airbrake.io/blog/php-exception-handling/pdoexception)
+            - [RangeException](https://airbrake.io/blog/php-exception-handling/rangeexception)
+            - [UnderflowException](https://airbrake.io/blog/php-exception-handling/underflowexception)
+            - [UnexpectedValueException](https://airbrake.io/blog/php-exception-handling/unexpectedvalueexception-2)
 
 Below we'll briefly discuss each top-level exception type, providing a rough overview, which we'll expand upon in much more detail throughout further articles.
 
