@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.annotation.*;
 import io.airbrake.utility.Logging;
 
+import java.text.DateFormat;
 import java.util.Date;
 
 /**
@@ -120,12 +121,16 @@ public class Book
     public Date getPublishedAt() { return publishedAt; }
 
     /**
-     * Get a formatted tagline with author, title, and page count.
+     * Get a formatted tagline with author, title, page count, and publication date.
      *
      * @return Formatted tagline.
      */
     public String getTagline() {
-        return String.format("'%s' by %s is %d pages.", this.title, this.author, this.pageCount);
+        return String.format("'%s' by %s is %d pages, published %s.",
+                getTitle(),
+                getAuthor(),
+                getPageCount(),
+                DateFormat.getDateInstance().format(getPublishedAt()));
     }
 
     /**
@@ -202,13 +207,22 @@ public class Book
     }
 
     /**
-     * Output
+     * Output to JSON string.
      *
      * @return
      * @throws JsonProcessingException
      */
     public String toJsonString() throws JsonProcessingException {
         return new ObjectMapper().writeValueAsString(this);
+    }
+
+    /**
+     * Get string representation of Book.
+     *
+     * @return String representation.
+     */
+    public String toString() {
+        return getTagline();
     }
 
     /**
