@@ -17,8 +17,8 @@ As mentioned, every possible built-in exception class extends directly (or subcl
             - BootstrapMethodError
             - ClassCircularityError
             - ClassFormatError
-                - UnsupportedClassVersionError
-            - ExceptionInInitializerError
+                - [UnsupportedClassVersionError](https://airbrake.io/blog/java-exception-handling/unsupportedclassversionerror)
+            - [ExceptionInInitializerError](https://airbrake.io/blog/java-exception-handling/exceptionininitializererror)
             - IncompatibleClassChangeError
                 - AbstractMethodError
                 - IllegalAccessError
@@ -26,34 +26,41 @@ As mentioned, every possible built-in exception class extends directly (or subcl
                 - NoSuchFieldError
                 - NoSuchMethodError
             - [NoClassDefFoundError](https://airbrake.io/blog/java-exception-handling/noclassdeffounderror)
-            - UnsatisfiedLinkError
+            - [UnsatisfiedLinkError](https://airbrake.io/blog/java-exception-handling/unsatisfiedlinkerror)
             - VerifyError
         - ThreadDeath
         - VirtualMachineError
             - InternalError
-            - OutOfMemoryError
-            - StackOverflowError
+            - [OutOfMemoryError](https://airbrake.io/blog/java-exception-handling/outofmemoryerror)
+            - [StackOverflowError](https://airbrake.io/blog/java-exception-handling/stackoverflowerror)
             - UnknownError
     - Exception
         - CloneNotSupportedException
         - InterruptedException
+        - IOException
+            - [FileNotFoundException](https://airbrake.io/blog/java-exception-handling/filenotfoundexception)
+            - SocketException
+                - [ConnectException](https://airbrake.io/blog/java-exception-handling/connectexception)
+            - [UnknownHostException](https://airbrake.io/blog/java-exception-handling/unknownhostexception)
         - ReflectiveOperationException
-            - ClassNotFoundException
+            - [ClassNotFoundException](https://airbrake.io/blog/java-exception-handling/classnotfoundexception)
             - IllegalAccessException
             - InstantiationException
+            - [InvocationTargetException](https://airbrake.io/blog/java-exception-handling/invocationtargetexception)
             - NoSuchFieldException
-            - NoSuchMethodException
+            - [NoSuchMethodException](https://airbrake.io/blog/java-exception-handling/nosuchmethoderror)
         - RuntimeException
             - ArithmeticException
             - ArrayStoreException
-            - ClassCastException
+            - [ClassCastException](https://airbrake.io/blog/java-exception-handling/classcastexception)
+            - [ConcurrentModificationException](https://airbrake.io/blog/java-exception-handling/concurrentmodificationexception)
             - EnumConstantNotPresentException
             - [IllegalArgumentException](https://airbrake.io/blog/java-exception-handling/illegalargumentexception)
                 - IllegalThreadStateException
-                - NumberFormatException
+                - [NumberFormatException](https://airbrake.io/blog/java-exception-handling/numberformatexception)
             - IllegalMonitorStateException
-            - IllegalStateException
-            - IndexOutOfBoundsException
+            - [IllegalStateException](https://airbrake.io/blog/java-exception-handling/illegalstateexception)
+            - [IndexOutOfBoundsException](https://airbrake.io/blog/java-exception-handling/indexoutofboundsexception)
                 - [ArrayIndexOutOfBoundsException](https://airbrake.io/blog/java-exception-handling/arrayindexoutofboundsexception)
                 - StringIndexOutOfBoundsException
             - NegativeArraySizeException
