@@ -2,7 +2,7 @@
 
 The Python exception class hierarchy consists of a few dozen different exceptions spread across a handful of important base class types.  As with most programming languages, errors occur within a Python application when something unexpected goes wrong.  Anything from improper arithmetic and running out of memory to invalid file references and unicode formatting errors may be raised by Python under certain circumstances.
 
-Most of the errors we'll explore in this series are considered `exceptions`, which indicate that these are `non-fatal` errors.  While a `fatal` error will halt execution of the current application, all non-fatal exceptions allow execution to continue.  This allows our code to explicitly catch or `rescue` the exception that has been raised and programmatically react to it in an appropriate manner.
+Most of the errors we'll explore in this series are considered `exceptions`, which indicate that these are `non-fatal` errors.  While a `fatal` error will halt execution of the current application, all non-fatal exceptions allow execution to continue.  This allows our code to explicitly catch or `rescue` the raised exception and programmatically react to it in an appropriate manner.
 
 Let's start by looking at the full Python exception class hierarchy, as seen below:
 
@@ -71,7 +71,7 @@ Let's start by looking at the full Python exception class hierarchy, as seen bel
     - KeyboardInterrupt
     - SystemExit
 
-As we publish future, exception-specific articles in this series we'll update the full list above to relevant tutorial and article links for each exception, so this post can act as a go-to resource for Python exception handling tips.
+As we publish future exception-specific articles in this series we'll update the full list above to relevant tutorial and article links for each exception, so this post can act as a go-to resource for Python exception handling tips.
 
 ## Major Exception Types Overview
 
