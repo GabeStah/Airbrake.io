@@ -116,6 +116,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Data.EntityCommand
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.ComponentModel.InvalidAsynchronousStateException", "Airbrake.ComponentModel.InvalidAsynchronousStateException\Airbrake.ComponentModel.InvalidAsynchronousStateException.csproj", "{6624BE07-1C96-47EF-BBE6-F0D4B56E970A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airbrake.Data.SqlTypes.SqlTypeException", "Airbrake.Data.SqlTypes.SqlTypeException\Airbrake.Data.SqlTypes.SqlTypeException.csproj", "{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -660,6 +662,18 @@ Global
 		{6624BE07-1C96-47EF-BBE6-F0D4B56E970A}.Release|x64.Build.0 = Release|Any CPU
 		{6624BE07-1C96-47EF-BBE6-F0D4B56E970A}.Release|x86.ActiveCfg = Release|Any CPU
 		{6624BE07-1C96-47EF-BBE6-F0D4B56E970A}.Release|x86.Build.0 = Release|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Debug|x64.Build.0 = Debug|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Debug|x86.Build.0 = Debug|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Release|x64.ActiveCfg = Release|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Release|x64.Build.0 = Release|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Release|x86.ActiveCfg = Release|Any CPU
+		{B08009A4-1B75-4CE6-86EF-F4D26170BB2E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
