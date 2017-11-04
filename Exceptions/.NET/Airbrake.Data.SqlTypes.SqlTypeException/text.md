@@ -1,10 +1,8 @@
-TODO: Replace `sql` with `SqlTypeException`
-
 # .NET Exceptions - System.Data.SqlTypes.SqlTypeException
 
-Fast approaching the conclusion of our current [__.NET Exception Handling__](https://airbrake.io/blog/dotnet-exception-handling/exception-class-hierarchy) series, today we'll be looking into the **System.Data.SqlTypes.SqlTypeException**.  The appearance of an `sql` is the result of something going wrong while using the [`System.Data.SqlTypes`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqltypes?view=netframework-4.7.1) namespace classes.
+Fast approaching the conclusion of our current [__.NET Exception Handling__](https://airbrake.io/blog/dotnet-exception-handling/exception-class-hierarchy) series, today we'll be looking into the **System.Data.SqlTypes.SqlTypeException**.  The appearance of an `SqlTypeException` is the result of something going wrong while using the [`System.Data.SqlTypes`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqltypes?view=netframework-4.7.1) namespace classes.
 
-In this article we'll examine the `sql` by seeing where it resides in the overall .NET exception hierarchy.  We'll then look at a fully functional C# code sample that will illustrate one specific technique for connecting to an ADO.NET data source, performing queries, and how we could encounter `sqls` under certain circumstances, particularly when dealing with abnormal or difficult to manage data types.  Let's get to it!
+In this article we'll examine the `SqlTypeException` by seeing where it resides in the overall .NET exception hierarchy.  We'll then look at a fully functional C# code sample that will illustrate one specific technique for connecting to an ADO.NET data source, performing queries, and how we could encounter `SqlTypeExceptions` under certain circumstances, particularly when dealing with abnormal or difficult to manage data types.  Let's get to it!
 
 ## The Technical Rundown
 
@@ -13,477 +11,399 @@ All .NET exceptions are derived classes of the [`System.Exception`](https://airb
 - [`System.Object`](https://docs.microsoft.com/en-us/dotnet/api/system.object)
     - [`System.Exception`](https://docs.microsoft.com/en-us/dotnet/api/system.exception)
         - [`System.SystemException`](https://docs.microsoft.com/en-us/dotnet/api/system.systemexception)
-            - `sql`
+            - `SqlTypeException`
 
 ## Full Code Sample
 
 Below is the full code sample we'll be using in this article.  It can be copied and pasted if you'd like to play with the code yourself and see how everything works.
 
-
-
 ```cs
 using System;
-using System.Windows.Forms;
-
-namespace Airbrake.ComponentModel.InvalidAsynchronousStateException
-{
-    static class Program
-    {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            // Instantiate DualThreadTester.
-            new DualThreadTester();
-
-            // Create form.
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        }
-    }
-}
-```
-
-```cs
-using System;
-using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using Utility;
 
-namespace Airbrake.ComponentModel.InvalidAsynchronousStateException
+namespace Airbrake.Data.SqlTypes.SqlTypeException
 {
-    internal class DualThreadTester
+    internal class Program
     {
-        private Form _backgroundForm;
+        private const string ConnectionString = @"Data Source=I7\SQLEXPRESS;Initial Catalog=pubs;Integrated Security=True";
 
-        public DualThreadTester()
+        private enum SqlCommandExecutionType
         {
-            // Create foreground and background threads.
-            var foreground = new Thread(IterationTest)
-            {
-                Name = "Foreground",
-                IsBackground = false
-            };
-            var background = new Thread(IterationTest)
-            {
-                Name = "Background",
-                IsBackground = true
-            };
+            NonQuery,
+            Reader,
+            Scalar,
+            XmlReader
+        }
 
-            // Start both threads nearly simultaneously.
-            foreground.Start();
-            background.Start();
+        private static void Main()
+        {
+            Logging.LineSeparator("INSERT VALID, PROPER DATE");
+            ExecuteQuery(GetQueryStringFromBook(
+                new Book("Magician", "Raymond E. Feist", 681, new DateTime(1982, 10, 1))
+            ));
+
+            Logging.LineSeparator("GET DATA");
+            ExecuteQuery("SELECT * FROM dbo.Book;", SqlCommandExecutionType.Reader);
+            
+            Logging.LineSeparator("INSERT INVALID DATE");
+            ExecuteQuery(GetQueryStringFromBook(
+                new Book("Silverthorn", "Raymond E. Feist", 432, new DateTime(1750, 1, 1))
+            ));
+
+            Logging.LineSeparator("INSERT INVALID, CONVERTED DATE");
+            ExecuteQuery(GetQueryStringFromBook(
+                new Book("A Darkness At Sethanon", "Raymond E. Feist", 527, new DateTime(1750, 1, 1)), true)
+            );
         }
 
         /// <summary>
-        /// Delegate to use with Background thread.
+        /// Executes the passed query string, using the passed SqlCommandExecutionType.
         /// </summary>
-        /// <param name="message">Message to be output to log.</param>
-        public delegate void BackgroundThreadDelegate(string message);
-
-        /// <summary>
-        /// Output passed message to log.
-        /// </summary>
-        /// <param name="message">Message to output.</param>
-        public void BackgroundThreadDelegateMethod(string message)
+        /// <param name="query">Query string to execute.</param>
+        /// <param name="type">SqlCommandExecutionType to use, if applicable.</param>
+        private static void ExecuteQuery(string query, SqlCommandExecutionType type = SqlCommandExecutionType.NonQuery)
         {
-            Logging.Log(message);
+            // Instantiate connection in using block to properly close afterward.
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                // Instantiate a command.
+                var command = new SqlCommand(query, connection);
+ 
+                try
+                {
+                    connection.Open();
+                    // If no command text, return.
+                    if (command.CommandText == "") return;
+
+                    // Check passed execution type.
+                    switch (type)
+                    {
+                        case SqlCommandExecutionType.NonQuery:
+                            command.ExecuteNonQuery();
+                            break;
+                        case SqlCommandExecutionType.Reader:
+                            var reader = command.ExecuteReader();
+                            while (reader.Read())
+                            {
+                                var data = new object[reader.FieldCount - 1];
+                                reader.GetValues(data);
+                                Logging.Log(data);
+                            }
+                            reader.Close();
+                            break;
+                        case SqlCommandExecutionType.Scalar:
+                            command.ExecuteScalar();
+                            break;
+                        case SqlCommandExecutionType.XmlReader:
+                            var xmlReader = command.ExecuteXmlReader();
+                            while (xmlReader.Read())
+                            {
+                                Logging.Log(xmlReader);
+                            }
+                            xmlReader.Close();
+                            break;
+                        default:
+                            command.ExecuteNonQuery();
+                            break;
+                    }
+                }
+                catch (System.Data.SqlTypes.SqlTypeException exception)
+                {
+                    // Output expected SqlTypeExceptions.
+                    Logging.Log(exception);
+                }
+                catch (SqlException exception)
+                {
+                    // Output unexpected SqlExceptions.
+                    Logging.Log(exception, false);
+                }
+                catch (Exception exception)
+                {
+                    // Output unexpected Exceptions.
+                    Logging.Log(exception, false);
+                }
+            }
         }
 
         /// <summary>
-        /// Performs basic iteration test for currently active thread.
+        /// Create a query string from passed Book.
         /// </summary>
-        public void IterationTest()
+        /// <param name="book">Book from which to create query string.</param>
+        /// <param name="shouldChangeDateType">Determines if date values should be converted to compatible type.</param>
+        /// <returns>Query string.</returns>
+        private static string GetQueryStringFromBook(IBook book, bool shouldChangeDateType = false)
         {
             try
             {
-                // Check if current thread is background.
-                if (Thread.CurrentThread.IsBackground)
+                if (shouldChangeDateType)
                 {
-                    // Create and show BackgroundForm.
-                    _backgroundForm = new BackgroundForm();
-                    _backgroundForm.Show();
+                    return "INSERT INTO dbo.Book (Title, Author, PageCount, PublicationDate) " +
+                           $"VALUES ('{book.Title}', '{book.Author}', '{book.PageCount}', '{new SqlDateTime(book.PublicationDate.Value)}');";
                 }
-                // Loop a few times.
-                for (var count = 0; count < 10; count++)
-                {
-                    // Check if thread is foreground.
-                    if (!Thread.CurrentThread.IsBackground)
-                    {
-                        // Confirm BackgroundForm exists.
-                        if (_backgroundForm != null)
-                        {
-                            // Confirm that invocation is required.
-                            if (_backgroundForm.InvokeRequired)
-                            {
-                                // Invoke BackgroundThreadDelegateMethod with current count argument.
-                                _backgroundForm.Invoke(new BackgroundThreadDelegate(BackgroundThreadDelegateMethod),
-                                    count);
-                            }
-                            else
-                            {
-                                // If no invocation required, directly set color.
-                                _backgroundForm.BackColor = Color.Red;
-                            }
-                        }
-                    }
-                    Logging.Log($"{Thread.CurrentThread.Name} thread count: {count}");
-                    Thread.Sleep(250);
-                }
-                Logging.Log($"{Thread.CurrentThread.Name} finished.");
+                return "INSERT INTO dbo.Book (Title, Author, PageCount, PublicationDate) " +
+                       $"VALUES ('{book.Title}', '{book.Author}', '{book.PageCount}', '{book.PublicationDate}');";
             }
-            catch (System.ComponentModel.InvalidAsynchronousStateException exception)
+            catch (System.Data.SqlTypes.SqlTypeException exception)
             {
-                // Output expected InvalidAsynchronousStateExceptions.
+                // Output expected SqlTypeExceptions.
                 Logging.Log(exception);
+            }
+            catch (SqlException exception)
+            {
+                // Output unexpected SqlExceptions.
+                Logging.Log(exception, false);
             }
             catch (Exception exception)
             {
                 // Output unexpected Exceptions.
                 Logging.Log(exception, false);
             }
+            return null;
         }
     }
 }
 ```
 
-```cs
-// <Utility/>Logging.cs
-using System;
-using System.Diagnostics;
-using System.Xml.Serialization;
+This code sample also uses the [`Book.cs`](https://github.com/GabeStah/Airbrake.io/blob/master/lib/csharp/Utility/Utility/Book.cs) class, the full code of which can be [seen here via GitHub](https://github.com/GabeStah/Airbrake.io/blob/master/lib/csharp/Utility/Utility/Book.cs).
 
-namespace Utility
-{
-    /// <summary>
-    /// Houses all logging methods for various debug outputs.
-    /// </summary>
-    public static class Logging
-    {
-        private const char SeparatorCharacterDefault = '-';
-        private const int SeparatorLengthDefault = 40;
-
-        /// <summary>
-        /// Determines type of output to be generated.
-        /// </summary>
-        public enum OutputType
-        {
-            /// <summary>
-            /// Default output.
-            /// </summary>
-            Default,
-            /// <summary>
-            /// Output includes timestamp prefix.
-            /// </summary>
-            Timestamp
-        }
-
-        /// <summary>
-        /// Outputs to <see cref="Debug.WriteLine(String)"/>.
-        /// </summary>
-        /// <param name="value">Value to be output to log.</param>
-        /// <param name="outputType">Output type.</param>
-        public static void Log(string value, OutputType outputType = OutputType.Default)
-        {
-            Output(value, outputType);
-        }
-
-        /// <summary>
-        /// Outputs to <see cref="Debug.WriteLine(String)"/>.
-        /// </summary>
-        /// <param name="value">Value to be output to log.</param>
-        /// <param name="arg0"></param>
-        public static void Log(string value, object arg0)
-        {
-            Debug.WriteLine(value, arg0);
-        }
-
-        /// <summary>
-        /// Outputs to <see cref="Debug.WriteLine(String)"/>.
-        /// </summary>
-        /// <param name="value">Value to be output to log.</param>
-        /// <param name="arg0"></param>
-        /// <param name="arg1"></param>
-        public static void Log(string value, object arg0, object arg1)
-        {
-            Debug.WriteLine(value, arg0, arg1);
-        }
-
-        /// <summary>
-        /// Outputs to <see cref="Debug.WriteLine(String)"/>.
-        /// </summary>
-        /// <param name="value">Value to be output to log.</param>
-        /// <param name="arg0"></param>
-        /// <param name="arg1"></param>
-        /// <param name="arg2"></param>
-        public static void Log(string value, object arg0, object arg1, object arg2)
-        {
-            Debug.WriteLine(value, arg0, arg1, arg2);
-        }
-
-        /// <summary>
-        /// When <see cref="Exception"/> parameter is passed, modifies the output to indicate
-        /// if <see cref="Exception"/> was expected, based on passed in `expected` parameter.
-        /// <para>Outputs the full <see cref="Exception"/> type and message.</para>
-        /// </summary>
-        /// <param name="exception">The <see cref="Exception"/> to output.</param>
-        /// <param name="expected">Boolean indicating if <see cref="Exception"/> was expected.</param>
-        /// <param name="outputType">Output type.</param>
-        public static void Log(Exception exception, bool expected = true, OutputType outputType = OutputType.Default)
-        {
-            var value = $"[{(expected ? "EXPECTED" : "UNEXPECTED")}] {exception}: {exception.Message}";
-
-            Output(value, outputType);
-        }
-
-        private static void Output(string value, OutputType outputType = OutputType.Default)
-        {
-            Debug.WriteLine(outputType == OutputType.Timestamp
-                ? $"[{StopwatchProxy.Instance.Stopwatch.Elapsed}] {value}"
-                : value);
-        }
-
-        /// <summary>
-        /// Outputs to <see cref="Debug.WriteLine(Object)"/>.
-        /// 
-        /// ObjectDumper: http://stackoverflow.com/questions/852181/c-printing-all-properties-of-an-object&amp;lt;/cref
-        /// </summary>
-        /// <param name="value">Value to be output to log.</param>
-        /// <param name="outputType">Output type.</param>
-        public static void Log(object value, OutputType outputType = OutputType.Default)
-        {
-            if (value is IXmlSerializable)
-            {
-                Debug.WriteLine(value);
-            }
-            else
-            {
-                Debug.WriteLine(outputType == OutputType.Timestamp
-                    ? $"[{StopwatchProxy.Instance.Stopwatch.Elapsed}] {ObjectDumper.Dump(value)}"
-                    : ObjectDumper.Dump(value));
-            }
-        }
-
-        /// <summary>
-        /// Outputs a dashed line separator to <see cref="Debug.WriteLine(String)"/>.
-        /// </summary>
-        /// <param name="length">Total separator length.</param>
-        /// <param name="char">Separator character.</param>
-        public static void LineSeparator(int length = SeparatorLengthDefault, char @char = SeparatorCharacterDefault)
-        {
-            Debug.WriteLine(new string(@char, length));
-        }
-
-        /// <summary>
-        /// Outputs a dashed line separator to <see cref="Debug.WriteLine(String)"/>,
-        /// with inserted text centered in the middle.
-        /// </summary>
-        /// <param name="insert">Inserted text to be centered.</param>
-        /// <param name="length">Total separator length.</param>
-        /// <param name="char">Separator character.</param>
-        public static void LineSeparator(string insert, int length = SeparatorLengthDefault, char @char = SeparatorCharacterDefault)
-        {
-            // Default output to insert.
-            var output = insert;
-
-            if (insert.Length < length)
-            {
-                // Update length based on insert length, less a space for margin.
-                length -= insert.Length + 2;
-                // Halve the length and floor left side.
-                var left = (int) Math.Floor((decimal) (length / 2));
-                var right = left;
-                // If odd number, add dropped remainder to right side.
-                if (length % 2 != 0) right += 1;
-
-                // Surround insert with separators.
-                output = $"{new string(@char, left)} {insert} {new string(@char, right)}";
-            }
-            
-            // Output.
-            Debug.WriteLine(output);
-        }
-    }
-}
-```
+This code sample also uses the [`Logging.cs`](https://github.com/GabeStah/Airbrake.io/blob/master/lib/csharp/Utility/Utility/Logging.cs) helper class, the full code of which can be [seen here via GitHub](https://github.com/GabeStah/Airbrake.io/blob/master/lib/csharp/Utility/Utility/Logging.cs).
 
 ## When Should You Use It?
 
-As mentioned, the appearance of an `InvalidAsynchronousStateException` indicates a problem with threading within your application.  Usually, it indicates that an operation was attempted within a thread that no longer exists.  Since multi-threading is such a broad and complex topic, it's well beyond the scope of this tiny article, so we'll just cover the basics in our own code example.  Just keep in mind that this technique is by no means representative of the _only_ way to accomplish multi-threading.
-
-For our example we're creating a `Windows Form Application` (i.e. an application with user interface elements, as opposed to the normal console-based applications we usually create).  There's no need to include all the code, but here we can see that our main `Program.Main()` method includes a call to our custom `DualThreadTester()` class:
+Since an `SqlTypeException` only appears when dealing with [`System.Data.SqlTypes`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqltypes?view=netframework-4.7.1) namespaced classes, let's start at a more basic level with a simple SQL database connection and query.  Our `Program` class has a property and an enumeration to start things off, which we'll use in a moment to simplify our connection and query methods:
 
 ```cs
-using System;
-using System.Windows.Forms;
-
-namespace Airbrake.ComponentModel.InvalidAsynchronousStateException
+internal class Program
 {
-    static class Program
-    {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            // Instantiate DualThreadTester.
-            new DualThreadTester();
+    private const string ConnectionString = @"Data Source=I7\SQLEXPRESS;Initial Catalog=pubs;Integrated Security=True";
 
-            // Create form.
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        }
+    private enum SqlCommandExecutionType
+    {
+        NonQuery,
+        Reader,
+        Scalar,
+        XmlReader
     }
+
+    // ...
 }
 ```
 
-The `DuelThreadTester` class is intended to create a new foreground and background thread, and perform some basic iteration a few times a second with output.  In addition, we want to create a new UI element (a `background Form`, in this case), and be able to perform an `InvalidAsynchronousStateExceptionocation` within this UI control to invoke a specific method.  This will make more sense in code, so let's start with the structure, including our single `_backgroundForm` property, along with the `BackgroundThreadDelegate(string message)` delegate, and the `BackgroundThreadDelegateMethod(string message)` method:
-
-```cs
-using System;
-using System.Drawing;
-using System.Threading;
-using System.Windows.Forms;
-using Utility;
-
-namespace Airbrake.ComponentModel.InvalidAsynchronousStateException
-{
-    internal class DualThreadTester
-    {
-        private Form _backgroundForm;
-
-        /// <summary>
-        /// Delegate to use with Background thread.
-        /// </summary>
-        /// <param name="message">Message to be output to log.</param>
-        public delegate void BackgroundThreadDelegate(string message);
-
-        /// <summary>
-        /// Output passed message to log.
-        /// </summary>
-        /// <param name="message">Message to output.</param>
-        public void BackgroundThreadDelegateMethod(string message)
-        {
-            Logging.Log(message);
-        }
-    }
-}
-```
-
-We'll be `InvalidAsynchronousStateExceptionoking` this delegate and method from our `_backgroundForm` control, so it's important we establish these first.
-
-Next comes the primary looping method of `IterationTest()`:
+Our primary query logic takes place in the `ExecuteQuery(string query, SqlCommandExecutionType type = SqlCommandExecutionType.NonQuery)` method:
 
 ```cs
 /// <summary>
-/// Performs basic iteration test for currently active thread.
+/// Executes the passed query string, using the passed SqlCommandExecutionType.
 /// </summary>
-public void IterationTest()
+/// <param name="query">Query string to execute.</param>
+/// <param name="type">SqlCommandExecutionType to use, if applicable.</param>
+private static void ExecuteQuery(string query, SqlCommandExecutionType type = SqlCommandExecutionType.NonQuery)
+{
+    // Instantiate connection in using block to properly close afterward.
+    using (var connection = new SqlConnection(ConnectionString))
+    {
+        // Instantiate a command.
+        var command = new SqlCommand(query, connection);
+
+        try
+        {
+            connection.Open();
+            // If no command text, return.
+            if (command.CommandText == "") return;
+
+            // Check passed execution type.
+            switch (type)
+            {
+                case SqlCommandExecutionType.NonQuery:
+                    command.ExecuteNonQuery();
+                    break;
+                case SqlCommandExecutionType.Reader:
+                    var reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var data = new object[reader.FieldCount - 1];
+                        reader.GetValues(data);
+                        Logging.Log(data);
+                    }
+                    reader.Close();
+                    break;
+                case SqlCommandExecutionType.Scalar:
+                    command.ExecuteScalar();
+                    break;
+                case SqlCommandExecutionType.XmlReader:
+                    var xmlReader = command.ExecuteXmlReader();
+                    while (xmlReader.Read())
+                    {
+                        Logging.Log(xmlReader);
+                    }
+                    xmlReader.Close();
+                    break;
+                default:
+                    command.ExecuteNonQuery();
+                    break;
+            }
+        }
+        catch (System.Data.SqlTypes.SqlTypeException exception)
+        {
+            // Output expected SqlTypeExceptions.
+            Logging.Log(exception);
+        }
+        catch (SqlException exception)
+        {
+            // Output unexpected SqlExceptions.
+            Logging.Log(exception, false);
+        }
+        catch (Exception exception)
+        {
+            // Output unexpected Exceptions.
+            Logging.Log(exception, false);
+        }
+    }
+}
+```
+
+This method starts by establishing a connection to the local `ConnectionString` property, which, in this case, is connecting to a local `Sql Express` instance (but would work with any valid connection string).  By establishing the connection within a `using` block we ensure that the connection closes itself once this code block has completed execution.
+
+We use the connection and passed `query` string to create a new `SqlCommand` instance, then attempt to `Open()` the connection within our `try-catch` block.  We ensure that the `CommandText` property isn't empty, since this can occur if we get exceptions elsewhere in the code that might prevent the `SqlCommand` from being properly formed.
+
+Finally, we perform a `switch` check for the passed `SqlCommandExecutionType type` parameter to determine how we need to process this particular `query` string.  For stuff like `INSERT` or `DELETE` commands we'd typically use `ExecuteNonQuery()`, while reading via `SELECT` is often going to use `ExecuteReader()`.  This basic structure can obviously be expanded a great deal to properly handle different types of incoming data structures, but it'll serve our basic purposes here.  In the event we're executing a query with an output, we use the `Logging.Log(...)` method to output the information to the log.
+
+We're making use of our `Book` class here to have a simple data structure we can try to insert into our database.  I've already created the `Book` database table via this SQL query:
+
+```sql
+CREATE TABLE [dbo].[Book] (
+    [Id]              INT         IDENTITY (1, 1) NOT NULL,
+    [Title]           NCHAR (100) NOT NULL,
+    [Author]          NCHAR (100) NOT NULL,
+    [PageCount]       INT         NULL,
+    [PublicationDate] DATETIME    NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+```
+
+With this basic data structure and the properties of our `Book` class we can create the `GetQueryFromBook(IBook book, bool shouldChangeDataType = false)` method:
+
+```cs
+/// <summary>
+/// Create a query string from passed Book.
+/// </summary>
+/// <param name="book">Book from which to create query string.</param>
+/// <param name="shouldChangeDateType">Determines if date values should be converted to compatible type.</param>
+/// <returns>Query string.</returns>
+private static string GetQueryStringFromBook(IBook book, bool shouldChangeDateType = false)
 {
     try
     {
-        // Check if current thread is background.
-        if (Thread.CurrentThread.IsBackground)
+        if (shouldChangeDateType)
         {
-            // Create and show BackgroundForm.
-            _backgroundForm = new BackgroundForm();
-            _backgroundForm.Show();
+            return "INSERT INTO dbo.Book (Title, Author, PageCount, PublicationDate) " +
+                    $"VALUES ('{book.Title}', '{book.Author}', '{book.PageCount}', '{new SqlDateTime(book.PublicationDate.Value)}');";
         }
-        // Loop a few times.
-        for (var count = 0; count < 10; count++)
-        {
-            // Check if thread is foreground.
-            if (!Thread.CurrentThread.IsBackground)
-            {
-                // Confirm BackgroundForm exists.
-                if (_backgroundForm != null)
-                {
-                    // Confirm that invocation is required.
-                    if (_backgroundForm.InvokeRequired)
-                    {
-                        // Invoke BackgroundThreadDelegateMethod with current count argument.
-                        _backgroundForm.Invoke(new BackgroundThreadDelegate(BackgroundThreadDelegateMethod),
-                            count);
-                    }
-                    else
-                    {
-                        // If no invocation required, directly set color.
-                        _backgroundForm.BackColor = Color.Red;
-                    }
-                }
-            }
-            Logging.Log($"{Thread.CurrentThread.Name} thread count: {count}");
-            Thread.Sleep(250);
-        }
-        Logging.Log($"{Thread.CurrentThread.Name} finished.");
+        return "INSERT INTO dbo.Book (Title, Author, PageCount, PublicationDate) " +
+                $"VALUES ('{book.Title}', '{book.Author}', '{book.PageCount}', '{book.PublicationDate}');";
     }
-    catch (System.ComponentModel.InvalidAsynchronousStateException exception)
+    catch (System.Data.SqlTypes.SqlTypeException exception)
     {
-        // Output expected InvalidAsynchronousStateExceptions.
+        // Output expected SqlTypeExceptions.
         Logging.Log(exception);
+    }
+    catch (SqlException exception)
+    {
+        // Output unexpected SqlExceptions.
+        Logging.Log(exception, false);
     }
     catch (Exception exception)
     {
         // Output unexpected Exceptions.
         Logging.Log(exception, false);
     }
+    return null;
 }
 ```
 
-Since this method is used by both our `foreground` and `background` threads, we start by checking if the current thread is background, in which case we instantiate a new `BackgroundForm` control and `Show()` it.
+This method attempts to create a simple `INSERT` query string from the passed `IBook book` parameter object.  There's not much logic here, save for the `bool shouldChangeDataType` parameter value, which determines if we should attempt to change the data type of our `DateTime` parameter before inserting it into our query string.  We'll see what this does in a moment.
 
-From there, we perform a simple iterative loop 10 times.  During each loop, since our `foreground` thread will execute slightly before our `background` thread (in most cases), we check if `_backgroundForm` exists within the `foreground` thread iteration.  If it exists, we use the [thread safe method](https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls) of calling an `InvalidAsynchronousStateExceptionoke()` method on our `_backgroundForm` control.  The `InvalidAsynchronousStateExceptionokeRequired` property simply checks if the current thread differs from the thread that created the `_backgroundForm` control.  If so (which is always the case here), we explicitly call `_backgroundForm.Invoke(...)` and use our `BackgroundThreadDelegate` delegate to create a simple output message.  If `InvalidAsynchronousStateExceptionokeRequired` is false, we can just directly change the control (in this case, by changing the background color to red).
-
-Regardless of which thread is iterating, we output the thread name and the current iteration count to the log, then pause for a quarter of a second before repeating.  Once all iterations complete, we output that the thread has finished iteration.
-
-Overall, it's not too complicated, so let's create our actual threads in the `DualThreadTester` constructor:
+To test everything out we'll start simple by creating a new `Book` instance, retrieving an `INSERT` query string from this new `Book's` properties, and then executing the query via the `ExecuteQuery(...)` method.  Just to confirm things work properly, we'll try a simple `SELECT` query to follow our insertion, to see if our `Book` was actually added to the database:
 
 ```cs
-public DualThreadTester()
+private static void Main()
 {
-    // Create foreground and background threads.
-    var foreground = new Thread(IterationTest)
-    {
-        Name = "Foreground",
-        IsBackground = false
-    };
-    var background = new Thread(IterationTest)
-    {
-        Name = "Background",
-        IsBackground = true
-    };
+    Logging.LineSeparator("INSERT VALID, PROPER DATE");
+    ExecuteQuery(GetQueryStringFromBook(
+        new Book("Magician", "Raymond E. Feist", 681, new DateTime(1982, 10, 1))
+    ));
 
-    // Start both threads nearly simultaneously.
-    foreground.Start();
-    background.Start();
+    Logging.LineSeparator("GET DATA");
+    ExecuteQuery("SELECT * FROM dbo.Book;", SqlCommandExecutionType.Reader);
+
+    // ..
+    
 }
 ```
 
-As the comments explain, we're simply instantiating two new threads, naming them and setting the appropriate `IsBackground` property, then starting them up.  This will cause both threads to begin execution of the `IterationTest` method.  Let's execute this code and see what happens.
+Executing the code above works as expected and produces the following output:
 
 ```
-Foreground thread count: 0
-Background thread count: 0
-Background thread count: 1
-Background thread count: 2
-Background thread count: 3
-Background thread count: 4
-Background thread count: 5
-Background thread count: 6
-Background thread count: 7
-Background thread count: 8
-Background thread count: 9
-Background finished.
-[EXPECTED] System.ComponentModel.InvalidAsynchronousStateException: An error occurred invoking the method.  The destination thread no longer exists.
+------ INSERT VALID, PROPER DATE -------
+--------------- GET DATA ---------------
+31
+"Magician                                                                                            "
+"Raymond E. Feist                                                                                    "
+681
 ```
 
-There we go.  As we can see from the output, our `foreground` thread only began a single iteration, then reached the `_backgroundForm.Invoke(new BackgroundThreadDelegate(BackgroundThreadDelegateMethod),count);` statement, which blocks the `foreground` thread from executing until this invocation can be executed.  Thus, `foreground` waited the 2.5 seconds until the `background` thread finished its iterations, then the `_backgroundForm.Invoke(...)` method call was executed.  However, as indicated by the `InvalidAsynchronousStateException` we see, this operation could no longer complete because the `background` thread closed itself out once it finished its iterations.
+You'll have to pardon the odd string formatting in the output.  Since `ExecuteQuery(...)` doesn't optimize the output, and merely pushes all column values into an `object[]` array, we get some strange formatting.  But, the look doesn't matter.  What matters is we've confirmed our `INSERT` worked and our `Book` was properly added to the database!
+
+However, let's try another `Book` insertion with a slightly invalid `DateTime` of `January 1st, 1750`:
+
+```cs
+Logging.LineSeparator("INSERT INVALID DATE");
+ExecuteQuery(GetQueryStringFromBook(
+    new Book("Silverthorn", "Raymond E. Feist", 432, new DateTime(1750, 1, 1))
+));
+```
+
+Executing these lines produces an unexpected `SqlException` (not to be confused with an `SqlTypeException`):
+
+```
+--------- INSERT INVALID DATE ----------
+[UNEXPECTED] System.Data.SqlClient.SqlException (0x80131904): The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+```
+
+As the error message indicates, the problem here is that our code has attempted to convert a `varchar` to a `datetime` type that is **out of range** of expected values.  In other words, our `PublicationDate` property of `January 1st, 1750` is being converted to a valid format (i.e. `1/1/1750 12:00:00 AM`).  However, the SQL column type of [`DATETIME`](https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetime-transact-sql), which is what the `dbo.Book.PublicationDate` column is set to, can only accept date values of `January 1, 1753, through December 31, 9999`.  Since the year `1750` is before this period, we get the `SqlException` seen above.
+
+There are a few solutions to this issue.  The first (and arguably best) option is to simply **avoid using `DATETIME` column types in SQL tables.**  `DATETIME` is a bit outdated, and should be replaced with the [`DATETIME2`](https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetime2-transact-sql) SQL column type, which was designed to be both backward compatible with all previous `DATETIME` values, while also giving a bigger date range of `January 1,1 CE through December 31, 9999 CE`.  Thus, if our `dbo.Book.PublicationDate` column was a `DATETIME2` type, we'd be fine.
+
+However, since changing database columns is dangerous and not always feasible for existing data sets, another alternative solution introduced in .NET is the aforementioned [`System.Data.SqlTypes`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqltypes?view=netframework-4.7.1) classes.  These SQL-specific data types are explicitly designed to mirror the functionality of SQL column types in your database.  Thus, if your .NET class objects use [`SqlDateTime`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqltypes.sqldatetime?view=netframework-4.7.1) instead of the normal `DateTime` type, this will ensure that you cannot create a date within an object that isn't compatible with your SQL database.
+
+To illustrate this, here we're creating another `Book` and generating an `INSERT` query:
+
+```cs
+Logging.LineSeparator("INSERT INVALID, CONVERTED DATE");
+ExecuteQuery(GetQueryStringFromBook(
+    new Book("A Darkness At Sethanon", "Raymond E. Feist", 527, new DateTime(1750, 1, 1)), true)
+);
+```
+
+The second `true` argument passed to `GetQueryStringFromBook(...)` will return this generated query string:
+
+```cs
+return "INSERT INTO dbo.Book (Title, Author, PageCount, PublicationDate) " +
+        $"VALUES ('{book.Title}', '{book.Author}', '{book.PageCount}', '{new SqlDateTime(book.PublicationDate.Value)}');";
+```
+
+As you can see, this explicitly creates a new `SqlDateTime` instance with the value of `book.PublicationDate.Value`.
+
+Executing this code produces the following output:
+
+```
+---- INSERT INVALID, CONVERTED DATE ----
+[EXPECTED] System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+```
+
+Now we're actually getting an `SqlTypeException`, rather than the `SqlException` we saw above.  This error message is much more explicit, informing us that `SqlDateTime` cannot accept a date value outside of the specified range.  If we were to refactor our `Book` class we could change the `PublicationDate` type to `SqlDateTime`, which would prevent this issue from coming up again since we'd be unable to use invalid date values.
 
 To get the most out of your own applications and to fully manage any and all .NET Exceptions, check out the <a class="js-cta-utm" href="https://airbrake.io/languages/net_bug_tracker?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-net">Airbrake .NET Bug Handler</a>, offering real-time alerts and instantaneous insight into what went wrong with your .NET code, along with built-in support for a variety of popular development integrations including: JIRA, GitHub, Bitbucket, and much more.
 
@@ -491,4 +411,4 @@ To get the most out of your own applications and to fully manage any and all .NE
 
 __META DESCRIPTION__
 
-A close look at the System.ComponentModel.InvalidAsynchronousStateException in .NET, including a simple multi-threaded code example.
+A close look at the System.Data.SqlTypes.SqlTypeException in .NET, including a basic code sample to perform SQL queries using abnormal dates.

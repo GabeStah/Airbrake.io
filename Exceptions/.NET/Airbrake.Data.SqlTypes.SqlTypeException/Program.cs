@@ -112,7 +112,7 @@ namespace Airbrake.Data.SqlTypes.SqlTypeException
         /// </summary>
         /// <param name="book">Book from which to create query string.</param>
         /// <param name="shouldChangeDateType">Determines if date values should be converted to compatible type.</param>
-        /// <returns></returns>
+        /// <returns>Query string.</returns>
         private static string GetQueryStringFromBook(IBook book, bool shouldChangeDateType = false)
         {
             try
