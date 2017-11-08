@@ -6,10 +6,10 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
 
 ### Python
 
-- [ ] BaseException
-    - [ ] Exception
-        - [ ] ArithmeticError
-            - [ ] FloatingPointError
+- [x] BaseException
+    - [x] Exception
+        - [x] ArithmeticError
+            - [x] FloatingPointError
             - [ ] OverflowError
             - [ ] ZeroDivisionError
         - [ ] AssertionError

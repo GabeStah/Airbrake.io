@@ -1,7 +1,7 @@
 class Meta:
     def __init__(self):
         try:
-            raise Arith
+            raise ArithmeticError
         except Exception as err:
             thing = type(err)
             print(f'Class: {thing.__name__}, Base: {thing.__bases__[0].__name__}')
