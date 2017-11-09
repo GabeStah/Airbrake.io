@@ -233,7 +233,7 @@ Check out <a class="js-cta-utm" href="https://airbrake.io/account/new?utm_source
 
 __META DESCRIPTION__
 
-A brief look at the FloatingPointError in Python, including functional code samples discussion and showing how such errors can be raised.
+A brief look at the FloatingPointError in Python, including functional code samples discussing and showing how such errors can be raised.
 
 ---
 
