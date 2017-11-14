@@ -15,7 +15,6 @@ Getting started with rapid application development generally follows a cyclical 
 3. __Rapid Construction__: Once basic user and system design has begun, the construction phase is where most of the actual application coding, testing, and integration takes place.  Along with `User Design`, the `Rapid Construction` phase is repeated as often as necessary, as new components are required or alterations are made to meet the needs of the project.
 4. __Cutover__: The final `Cutover` (or `Transition`) stage allows the development team time to move components to a live production environment, where any necessary full-scale testing or team training can take place.
 
-
 ## User Interfacing, Early and Often
 
 In the slow, methodical software development methods of olde, receiving useful and concrete user feedback has been inherently difficult, costly, and time consuming.  Long meetings and phone calls, and even longer design docs, were a necessary evil to lay out even the most basic concrete plans of proper software design.  With typical waterfall methods, rudimentary user feedback was often many months if not years in the future, after all planning and most development had taken place.
