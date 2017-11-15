@@ -4,12 +4,11 @@ import traceback
 
 
 class Logging:
-
     separator_character_default = '-'
     separator_length_default = 40
 
     @classmethod
-    def __output(cls, *args, sep: str=' ', end: str='\n', file=None):
+    def __output(cls, *args, sep: str = ' ', end: str = '\n', file=None):
         """Prints the passed value(s) to the console.
 
         :param args: Values to output.
@@ -21,7 +20,8 @@ class Logging:
         print(*args, sep=sep, end=end, file=file)
 
     @classmethod
-    def line_separator(cls, value: str, length: int=separator_length_default, char: str=separator_character_default):
+    def line_separator(cls, value: str = None, length: int = separator_length_default,
+                       char: str = separator_character_default):
         """Print a line separator with inserted text centered in the middle.
 
         :param value: Inserted text to be centered.
@@ -30,7 +30,10 @@ class Logging:
         """
         output = value
 
-        if len(value) < length:
+        # If no value passed, output separator of length.
+        if value == None or len(value) == 0:
+            output = f'{char * length}'
+        elif len(value) < length:
             #   Update length based on insert length, less a space for margin.
             length -= len(value) + 2
             #   Halve the length and floor left side.
@@ -40,13 +43,13 @@ class Logging:
             if length % 2 != 0:
                 right += 1
 
-            #   Surround insert with separators.
+            # Surround insert with separators.
             output = f'{char * left} {value} {char * right}'
 
         cls.__output(output)
 
     @classmethod
-    def log(cls, *args, sep: str=' ', end: str='\n', file=None):
+    def log(cls, *args, sep: str = ' ', end: str = '\n', file=None):
         """Prints the passed value(s) to the console.
 
         :param args: Values to output.
@@ -57,7 +60,7 @@ class Logging:
         cls.__output(*args, sep=sep, end=end, file=file)
 
     @classmethod
-    def log_exception(cls, exception: BaseException, expected: bool=True):
+    def log_exception(cls, exception: BaseException, expected: bool = True):
         """Prints the passed BaseException to the console, including traceback.
 
         :param exception: The BaseException to output.
