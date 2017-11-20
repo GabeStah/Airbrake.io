@@ -20,7 +20,7 @@ In the most mission-critical cases, information confidentiality is a matter of l
 
 When you heard that Jennifer had told your secret to others, you may have started to notice a few minor modifications to the content of that secret.  A name was slightly changed and the details were a bit jumbled, which means that the `integrity` of the original information had been lost.
 
-In devops, loss of integrity can occur when data is accessible over an insecure network, or is improperly handled (whether said mishandling was intentional or not).  As you might imagine, data integrity is particularly crucial when even _slight_ alterations to said data could cause catastrophic results, such as financial services or medical prescriptions. 
+In DevOps, loss of integrity can occur when data is accessible over an insecure network, or is improperly handled (whether said mishandling was intentional or not).  As you might imagine, data integrity is particularly crucial when even _slight_ alterations to said data could cause catastrophic results, such as financial services or medical prescriptions. 
 
 ### Availability
 
@@ -36,13 +36,13 @@ When Jennifer returns to school she seems to have spent her time away coming up 
 
 Just as Jennifer first needed to authenticate kids to determine which are authorized to proceed, the same security measures should always be taken and used together in application security to determine if a user is who they say they are, and whether that should allow them access to the requested information.  If a user finds a way to fake their authentication credentials, they can gain access to information that should normally be out of their reach.  Likewise, if authorization can be bypassed, it doesn't matter who (or what role) the system authenticates that user to be.
 
-### Nonrepudiation
+### Non-Repudiation
 
 In your class, your friend Jennifer decides to get systematic with her secret dispersal techniques.  She starts scratching out little "contracts" on perforated notebook pages, in her writing and with her name on them, stating that she has told your secret to the specific kid standing in front of her.  She then requires this kid to sign the contract _before_ any information will be divulged.  At the end of the day as you're going home, you see Jennifer carrying a big old wad of these contracts, tightly folded up and clutched in her fiendish little mitts.
 
-As it turns out, Jennifer has created her own little form of `nonrepudiation`.  This term simply means that there is some form of proof of a transaction taking place, such that neither party within the transaction can later refute that the transaction took place.  In Jennifer's case, her little signed contracts are a grade school version of this concept, showing that both she and the other kid she told your secret to agreed to this illicit exchange of information.
+As it turns out, Jennifer has created her own little form of `non-repudation`.  This term simply means that there is some form of proof of a transaction taking place, such that neither party within the transaction can later refute that the transaction took place.  In Jennifer's case, her little signed contracts are a grade school version of this concept, showing that both she and the other kid she told your secret to agreed to this illicit exchange of information.
 
-In information security it is crucial to create some form of nonrepudiation within your application.  Whether through logs or historical transaction records, it's important that each transaction be explicitly tracked and marked in some way, so neither the sender nor the recipient can claim that they did not send nor receive the transaction in question.
+In information security it is crucial to create some form of non-repudation within your application.  Whether through logs or historical transaction records, it's important that each transaction be explicitly tracked and marked in some way, so neither the sender nor the recipient can claim that they did not send nor receive the transaction in question.
 
 ## Security Testing Best Practices
 
