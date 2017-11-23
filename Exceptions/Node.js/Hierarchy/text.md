@@ -254,7 +254,7 @@ There are far too many possible `System Error` codes that can occur, but feel fr
 
 That's just a small taste of overall Node.js error class hierarchy.  Stay tuned for more in-depth articles examining each of these error in greater detail, and be sure to check out Airbrake's robust <a class="js-cta-utm" href="https://airbrake.io/languages/nodejs-error-monitoring?utm_source=blog&utm_medium=end-post&utm_campaign=airbrake-node-error-hierarchy">error monitoring software</a>, which provides real-time error monitoring and automatic exception reporting for all your development projects.  Airbrake's state of the art web dashboard ensures you receive round-the-clock status updates on your application's health and error rates.  No matter what you're working on, Airbrake easily integrates with all the most popular languages and frameworks.  Plus, Airbrake makes it easy to customize exception parameters, while giving you complete control of the active error filter system, so you only gather the errors that matter most.
 
-Check out <a class="js-cta-utm" href="https://airbrake.io/languages/nodejs-error-monitoring?utm_source=blog&utm_medium=end-post&utm_campaign=airbrake-node-error-hierarch">Airbrake's error monitoring software</a> today and see for yourself why so many of the world's best engineering teams use Airbrake to revolutionize their exception handling practices!
+Check out <a class="js-cta-utm" href="https://airbrake.io/languages/nodejs-error-monitoring?utm_source=blog&utm_medium=end-post&utm_campaign=airbrake-node-error-hierarchy">Airbrake's error monitoring software</a> today and see for yourself why so many of the world's best engineering teams use Airbrake to revolutionize their exception handling practices!
 
 ---
 
@@ -266,4 +266,4 @@ A brief overview of the Node.js error class hierarchy, including a quick look at
 
 __SOURCES__
 
-- https://docs.python.org/3/library/exceptions.html
+- https://nodejs.org/api/errors.html
