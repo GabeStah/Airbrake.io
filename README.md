@@ -12,7 +12,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
             - [x] FloatingPointError
             - [x] OverflowError
             - [x] ZeroDivisionError
-        - [ ] AssertionError
+        - [x] AssertionError
         - [ ] AttributeError
         - [ ] BufferError
         - [ ] EOFError
