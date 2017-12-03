@@ -1,11 +1,13 @@
 // Book.java
 package io.airbrake;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.annotation.*;
 import io.airbrake.utility.Logging;
 
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.util.Date;
 
@@ -204,6 +206,20 @@ public class Book
      */
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    /**
+     * Get the filename formatted version of this Book.
+     *
+     * @return Filename.
+     */
+    String toFilename() {
+        try {
+            return java.net.URLEncoder.encode(String.format("%s-%s", getTitle(), getAuthor()).toLowerCase(), "UTF-8");
+        } catch (UnsupportedEncodingException exception) {
+            Logging.log(exception);
+        }
+        return null;
     }
 
     /**
