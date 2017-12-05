@@ -46,7 +46,7 @@ Continuous delivery is less of a practice and more of a concept; the idea that y
 
 Lastly, continuous deployment is the culmination of these continuous practices and is where the actual deployment of releases or patches take place and are available for wider use (staging, production, etc).  Some organizations choose to streamline these processes so much that they are deploying new, updated builds to the production environment on a daily basis.
 
-## Error Monitoring Software
+## Integrate Error Monitoring Software
 
 Automated exception tracking and reporting tools, like <a class="js-cta-utm" href="https://airbrake.io/account/new?utm_source=blog&utm_medium=end-post&utm_campaign=airbrake-how-to-reduce-production-defects">Airbrake</a>, ensure that your team is immediately aware of exceptions the moment they occur.  Airbrake's powerful <a class="js-cta-utm" href="https://airbrake.io/account/new?utm_source=blog&utm_medium=end-post&utm_campaign=airbrake-how-to-reduce-production-defects">error monitoring software</a> guarantees that your team won't need to worry about losing track of that rare production defect that slips through the cracks.  Airbrake provides real-time error monitoring and automatic exception reporting for all your development projects.  Airbrake's state of the art web dashboard ensures you receive round-the-clock status updates on your application's health and error rates.  No matter what you're working on, Airbrake easily integrates with all the most popular languages and frameworks.  Plus, Airbrake makes it easy to customize defect parameters, while giving you complete control of the active error filter system, so you only gather the errors that matter most.
 
