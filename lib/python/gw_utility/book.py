@@ -11,7 +11,10 @@ class Book:
         """Determines if passed object is equivalent to current object."""
         return self.__dict__ == other.__dict__
 
-    def __init__(self, title: str = None, author: str = None, page_count: int = None,
+    def __init__(self,
+                 title: str = None,
+                 author: str = None,
+                 page_count: int = None,
                  publication_date: datetime.date = None):
         """Initializes Book instance.
 
@@ -24,6 +27,16 @@ class Book:
         self.page_count = page_count
         self.publication_date = publication_date
         self.title = title
+
+    def __getattr__(self, name: str):
+        """Returns the attribute matching passed name."""
+        # Get internal dict value matching name.
+        value = self.__dict__.get(name)
+        if not value:
+            # Raise AttributeError if attribute value not found.
+            raise AttributeError(f'{self.__class__.__name__}.{name} is invalid.')
+        # Return attribute value.
+        return value
 
     def __len__(self):
         """Returns the length of title."""
