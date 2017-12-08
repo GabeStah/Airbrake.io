@@ -1,0 +1,11 @@
+{
+  "name": "gw-utility",
+  "version": "1.0.0",
+  "description": "Helper functions for debugging and logging.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabe Wyatt <gabe@gabewyatt.com> (http://gabewyatt.com)",
+  "license": "ISC"
+}

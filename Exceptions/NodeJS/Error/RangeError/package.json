@@ -1,0 +1,14 @@
+{
+  "name": "rangeerror",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabe Wyatt <gabe@gabewyatt.com> (http://gabewyatt.com)",
+  "license": "ISC",
+  "dependencies": {
+    "gw-logging": "file:d:/work/Airbrake.io/lib/node/gw-logging"
+  }
+}
