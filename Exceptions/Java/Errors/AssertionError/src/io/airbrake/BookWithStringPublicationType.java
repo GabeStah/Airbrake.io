@@ -6,7 +6,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.airbrake.utility.Logging;
 
-import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.util.Date;
@@ -15,20 +14,20 @@ import java.util.Date;
  * Simple example class to store book instances.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Book
+public class BookWithStringPublicationType
 {
     private String author;
     private String title;
     private Integer pageCount;
     private Date publishedAt;
-    private PublicationType publicationType = PublicationType.DIGITAL;
+    private String publicationType = "DIGITAL";
 
     private static final Integer maximumPageCount = 4000;
 
     /**
      * Constructs an empty book.
      */
-    public Book() { }
+    public BookWithStringPublicationType() { }
 
     /**
      * Constructs a basic book.
@@ -36,7 +35,7 @@ public class Book
      * @param title Book title.
      * @param author Book author.
      */
-    public Book(String title, String author) {
+    public BookWithStringPublicationType(String title, String author) {
         setAuthor(author);
         setTitle(title);
     }
@@ -48,7 +47,7 @@ public class Book
      * @param author Book author.
      * @param pageCount Book page count.
      */
-    public Book(String title, String author, Integer pageCount) {
+    public BookWithStringPublicationType(String title, String author, Integer pageCount) {
         setAuthor(author);
         setPageCount(pageCount);
         setTitle(title);
@@ -61,7 +60,7 @@ public class Book
      * @param author Book author.
      * @param pageCount Book page count.
      */
-    public Book(String title, String author, Integer pageCount, Date publishedAt) {
+    public BookWithStringPublicationType(String title, String author, Integer pageCount, Date publishedAt) {
         setAuthor(author);
         setPageCount(pageCount);
         setTitle(title);
@@ -75,7 +74,7 @@ public class Book
      * @param author Book author.
      * @param pageCount Book page count.
      */
-    public Book(String title, String author, Integer pageCount, Date publishedAt, PublicationType publicationType) {
+    public BookWithStringPublicationType(String title, String author, Integer pageCount, Date publishedAt, String publicationType) {
         setAuthor(author);
         setPageCount(pageCount);
         setTitle(title);
@@ -106,7 +105,7 @@ public class Book
      *
      * @return Publication type.
      */
-    public PublicationType getPublicationType() { return publicationType; }
+    public String getPublicationType() { return publicationType; }
 
     /**
      * Get published date of book.
@@ -182,7 +181,19 @@ public class Book
      *
      * @param type Publication type.
      */
-    public void setPublicationType(PublicationType type) { this.publicationType = type; }
+    void setPublicationType(String type) {
+        switch(type) {
+            case "DIGITAL":
+                this.publicationType = type;
+                break;
+            case "PAPERBACK":
+                this.publicationType = type;
+                break;
+            // Default assertion should never execute; otherwise, code is improper.
+            default:
+                assert false : String.format("PublicationType of [%s] is unacceptable.", type);
+        }
+    }
 
     /**
      * Set published date of book.
