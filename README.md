@@ -176,7 +176,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
             - [x] ZeroDivisionError
         - [x] AssertionError
         - [x] AttributeError
-        - [ ] BufferError
+        - [x] BufferError
         - [ ] EOFError
         - [ ] ImportError
             - [ ] ModuleNotFoundError
