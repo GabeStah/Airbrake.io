@@ -181,7 +181,7 @@ function logValue(value) {
 
 ## When Should You Use It?
 
-As outlines in the introduction, a `RangeError` is intended to indicate when a passed function argument falls outside the bounds of allowed values, whether numeric or not within a set.  To illustrate this in our code example we're performing a simple client/server connection test using the [`net`](https://nodejs.org/api/net.html) module, which provides an API for asynchronous networking functionality.  Thus, our `app.js` begins by requiring the `net` module, along with our custom `gw-logging` module seen above, to help us simplify API calls for logging exceptions and other information to the console:
+As outlined in the introduction, a `RangeError` is intended to indicate when a passed function argument falls outside the bounds of allowed values, whether numeric or not within a set.  To illustrate this in our code example we're performing a simple client/server connection test using the [`net`](https://nodejs.org/api/net.html) module, which provides an API for asynchronous networking functionality.  Thus, our `app.js` begins by requiring the `net` module, along with our custom `gw-logging` module seen above, to help us simplify API calls for logging exceptions and other information to the console:
 
 ```js
 const net = require('net');

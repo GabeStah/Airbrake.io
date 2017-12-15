@@ -69,7 +69,7 @@ public class Book
     }
 
     /**
-     * Constructs a basic book, with page count.
+     * Constructs a basic book, with page count, publication date, and publication type.
      *
      * @param title Book title.
      * @param author Book author.

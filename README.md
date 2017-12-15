@@ -9,7 +9,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
 - [x] Class: Error
     - [x] Class: AssertionError
     - [x] Class: RangeError
-    - [ ] Class: ReferenceError
+    - [x] Class: ReferenceError
     - [ ] Class: SyntaxError
     - [ ] Class: TypeError
     - [ ] Class: System Error
