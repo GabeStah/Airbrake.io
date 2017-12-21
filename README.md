@@ -208,7 +208,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
             - [ ] RecursionError
         - [ ] StopIteration
         - [ ] StopAsyncIteration            
-        - [ ] SyntaxError
+        - [x] SyntaxError
             - [ ] IndentationError
                 - [ ] TabError
         - [ ] SystemError
