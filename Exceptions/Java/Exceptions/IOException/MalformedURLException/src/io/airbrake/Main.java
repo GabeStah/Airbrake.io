@@ -1,6 +1,6 @@
 package io.airbrake;
 
-        import io.airbrake.utility.Logging;
+import io.airbrake.utility.Logging;
 
 public class Main {
     public static void main(String[] args) {
