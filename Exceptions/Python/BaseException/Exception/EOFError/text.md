@@ -232,7 +232,7 @@ if __name__ == "__main__":
 
 ```
 
-Running this and entering `The Stand` for a title immediately raises a `SyntaxError`, with an underlying `EOFError`:
+Running this and entering `The Stand` for a title immediately raises a [SyntaxError](https://airbrake.io/blog/python-exception-handling/python-syntaxerror), with an underlying `EOFError`:
 
 ```
 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 20:25:58) [MSC v.1500 64 bit (AMD64)]
