@@ -177,7 +177,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
         - [x] AssertionError
         - [x] AttributeError
         - [x] BufferError
-        - [ ] EOFError
+        - [x] EOFError
         - [ ] ImportError
             - [ ] ModuleNotFoundError
         - [ ] LookupError

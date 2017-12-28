@@ -1,0 +1,22 @@
+Metadata-Version: 1.2
+Name: gw-utility
+Version: 1.0.1.dev1
+Summary: A handful of utility classes for Python development.
+Home-page: https://github.com/GabeStah/Airbrake.io
+Author: Gabe Wyatt
+Author-email: gabe@gabewyatt.com
+License: MIT
+Description: # gw_utility
+        
+        This is the readme for the `gw_utility` package. 
+Keywords: helper utility development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: ~=3.3
