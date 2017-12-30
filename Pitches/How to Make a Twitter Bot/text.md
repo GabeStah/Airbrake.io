@@ -333,7 +333,7 @@ Gathered 'Techniques for Preventing Software Bugs' published Tue Dec 26 2017 14:
 
 Awesome!  Everything works as intended.  We parsed the `Atom` feed from Wordpress to capture the latest articles, then selected a random article and tweeted the title and the URL on our Twitter Bot account, [AirbrakeArticle](https://twitter.com/AirbrakeArticle/status/946896220181561344).
 
-We now have the basic structure of our application up and running, so next week we'll refine it and make it better suited to the real-world by implementing real-time error monitoring via Airbrake's NodeJS package.  We'll also ensure our Twitter bot application can run automatically and serverlessly by using AWS Lambda.  Stay tuned!
+We now have the basic structure of our application up and running, so next week we'll refine it and make it better suited to the real-world by implementing real-time error monitoring via <a class="js-cta-utm" href="https://airbrake.io/languages/nodejs-error-monitoring?utm_source=blog&utm_medium=end-post&utm_campaign=airbrake-serverless-twitter-bot">Airbrake's NodeJS</a> package.  We'll also ensure our Twitter bot application can run automatically and serverlessly by using AWS Lambda.  Stay tuned!
 
 ---
 
