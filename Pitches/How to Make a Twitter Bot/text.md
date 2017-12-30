@@ -1,4 +1,10 @@
-# How to Make a Serverless Twitter Bot with Airbrake Error Monitoring and AWS Lambda
+# How to Make a Serverless Twitter Bot with Airbrake and AWS Lambda - Part 1
+
+Over the next week we'll be learning how to create a fully-automated NodeJS Twitter bot with real-time error monitoring capabilities via Airbrake.  Our Twitter bot will be capable of performing just about any task you can imagine, and it will do so serverlessly, by making use of the power of AWS Lambda functions.  Let's get right into it!
+
+## Creating a Project
+
+The first thing to do is decide where you want to create your project.  I'll be keeping things simple by naming my project `twitter-bot`.  As is commonly the case, we also want to use source control management, so I'll be using Git locally and uploading to GitHub as a remote repo:
 
 ```bash
 ~/work$ mkdir twitter-bot
@@ -43,7 +49,7 @@ About to write to /home/gabe/work/twitter-bot/package.json:
 Is this ok? (yes) 
 ```
 
-We'll be using the [`twitter`](https://www.npmjs.com/package/twitter) NPM package, so we'll install that (along with its own dependents):
+We'll be using the [`twitter`](https://www.npmjs.com/package/twitter) NPM package to simplify communicating with the Twitter API, so let's install that (along with its own dependents):
 
 ```bash
 npm install twitter --save
@@ -54,13 +60,15 @@ npm WARN twitter-bot@1.0.0 No repository field.
 added 54 packages in 1.217s
 ```
 
+## Working with Secret API Credentials
+
 As with most Git repositories, there are some files or filetypes we don't want to expose to the public, so we'll add a [`.gitignore`](https://git-scm.com/docs/gitignore) file to the `twitter-bot` project directory.  __Note: I am using VS Code and WebStorm to develop this project, so the `code` command can be replaced with whatever command you use to open your favorite text editor.__
 
 ```bash
 $ code .gitignore
 ```
 
-We'll need to get some authentication API keys from Twitter to be authorized to performated automated tweets and other functionality, but some of this information should be kept private.  We'll be storing these Twitter API keys in the `twitter-api-credentials.js` file, so let's add that explicit file to the `.gitignore` file before we add some secret keys and accidentally commit them to the Git repository:
+We'll need to get some authentication API keys from Twitter, which provide authorization to perform automated tweets and other functionality, and some of this information should be kept private.  We'll be storing these Twitter API keys in the `twitter-api-credentials.js` file, so let's add that explicit file to the `.gitignore` immediately, before we accidentally add some secret keys and commit them to the Git repository:
 
 ```
 ### .gitignore ###
@@ -68,7 +76,7 @@ We'll need to get some authentication API keys from Twitter to be authorized to 
 twitter-api-credentials.js
 ```
 
-Now, let's double-check that we've setup everything correctly and that our secrets won't be committed by creating the `twitter-api-credentials.js` file and adding some irrelevant text to it.  Here we're using the `>>` Unix command to append the text `12345` to the `twitter-api-credentials.js` file, then outputting the contents of the file using the `cat` command:
+Now, let's double-check that we've setup everything correctly and that our secrets won't be unintentionally committed.  We'll start by creating the `twitter-api-credentials.js` file and adding some irrelevant text to it.  Here we're using the `>>` Unix command to append the text `12345` to the `twitter-api-credentials.js` file, then outputting the contents of the file using the `cat` command:
 
 ```bash
 $ touch twitter-api-credentials.js
@@ -77,7 +85,7 @@ $ cat twitter-api-credentials.js
 12345
 ```
 
-Our credentials file is created, so now we should double-check that `.gitignore` is working correctly and won't add `twitter-api-credentials.js` to the repository.  A simple `git status` command should do the trick and show what untracked files are waitined to be added:
+Our credentials file is created, so now we should double-check that `.gitignore` is working correctly and won't add `twitter-api-credentials.js` to the repository.  A simple `git status` command should do the trick and show what untracked files are waiting to be added:
 
 ```bash
 $ git status
@@ -97,7 +105,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-That looks great, since everything except the ignored `twitter-api-credentials.js` is listed there.  Let's get into the smart habit of commiting changes to Git by making our initial commit:
+That looks great, since everything except the ignored `twitter-api-credentials.js` is listed there.  Let's get into the smart habit of committing changes to Git by making our initial commit right now:
 
 ```bash
 $ git add .
@@ -108,7 +116,7 @@ $ git commit -am "Initial commit."
 ...
 ```
 
-We'll also be storing this project on a remote, public [GitHub repository](https://github.com/GabeStah/twitter-bot), so I need to set the origin and use the `git push` command to ensure our changes are uploaded:
+We'll also be storing this project on a remote, public [GitHub repository](https://github.com/GabeStah/twitter-bot), so we need to set the origin and use the `git push` command to ensure our changes are uploaded:
 
 ```bash
 $ git remote add origin git@github.com:GabeStah/twitter-bot.git
@@ -124,15 +132,15 @@ To https://github.com/GabeStah/twitter-bot.git
 Branch master set up to track remote branch master from origin.
 ```
 
-Now we need to actually obtain some Twitter API credentials, so we start by logging into our Twitter account and then visiting [https://apps.twitter.com/](https://apps.twitter.com/).  Here, click `Create New App` then fill out the form as you see fit.  For this example we'll use the following:
+Now we need to actually obtain some Twitter API credentials, so we start by logging into our Twitter account and then visiting [https://apps.twitter.com/](https://apps.twitter.com/).  Click `Create New App` then fill out the form as you see fit.  For this example we'll use the following:
 
 - `Name`: AirbrakeArticles
 - `Description`: Tweeting random Airbrake.io articles!
 - `Website`: https://github.com/GabeStah/twitter-bot
 
-Agree to the agreement then create your app!
+Agree to the terms of use, then create your app!
 
-Next, we need to create and copy the API keys to the `twitter-api-credentials.js` file for use in our project.  Click on the `Keys and Access Tokens` tab at the top, then click `Create my access token` at the bottom.  Per the [Twitter NPM](https://www.npmjs.com/package/twitter) documentation we need the `consumer_key`, `consumer_secret`, `access_token_key`, and `access_token_secret` values from Twitter.  Open the `twitter-api-credentials.js` and paste the following template into it:
+Next, we need to create and copy the API keys into the `twitter-api-credentials.js` file for use in our project.  Click on the `Keys and Access Tokens` tab at the top, then click `Create my access token` at the bottom.  Per the [Twitter NPM](https://www.npmjs.com/package/twitter) documentation we need the `consumer_key`, `consumer_secret`, `access_token_key`, and `access_token_secret` values from Twitter.  Open the `twitter-api-credentials.js` and paste the following template into it:
 
 ```js
 // twitter-api-credentials.js
@@ -144,7 +152,7 @@ module.exports = {
 };
 ```
 
-Now, copy and paste each value from the Twitter App page into the appropriate field and save the file, which now has all the secret keys necessary to connect to and use Twitter programatically.
+Now, copy and paste each value from the Twitter App page into the appropriate field and save the file, which now has all the secret keys necessary to connect to and use Twitter programmatically.
 
 At this point we can actually begin creating our application logic by first testing that our Twitter API connection works.  Start by creating the base application file for your Node project.  The default is usually `index.js`:
 
@@ -152,7 +160,7 @@ At this point we can actually begin creating our application logic by first test
 $ code index.js
 ```
 
-We'll start by requiring the `twitter-api-credentials.js` file that exports our credentials, along with the `twitter` NPM module.  We'll then instantiate a new `Twitter` object and pass the credentials to it, which will perform authentication and authorization for us while using the `Twitter` object:
+We'll start by requiring the `twitter-api-credentials.js` file that exports our credentials, along with the `twitter` NPM module.  We'll then instantiate a new `Twitter` object and pass the credentials to it, which will perform authentication and authorization for us while working with the Twitter API:
 
 ```js
 // index.js
@@ -163,9 +171,9 @@ const Twitter = require('twitter');
 let twitter = new Twitter(twitter_credentials);
 ```
 
-So, everything is ready to go, but how do we actually _use_ the `twitter` module?  It primarily provides convenience methods for sending `GET` and `POST` HTTP method requests to the [Twitter API](https://developer.twitter.com/en/docs).  For example, if we want to post a tweet we need to send a `POST` request to the `statuses/update` API endpoint, as shown in the [official documentation](https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update).  The API accepts a number of required (and optional) parameters to be included with the request.
+Everything is ready to go, but how do we actually _use_ the `twitter` module?  It primarily provides convenience methods for sending `GET` and `POST` HTTP method requests to the [Twitter API](https://developer.twitter.com/en/docs).  For example, if we want to post a tweet we need to send a `POST` request to the `statuses/update` API endpoint, as shown in the [official documentation](https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update).  The API accepts a number of required (and optional) parameters to be included with the request.
 
-To illustrate we'll perform a simple test tweet of `"Am I a robot?"` from our bot account.  Add the following to `index.js`:
+To illustrate, let's perform a simple test tweet of `"Am I a robot?"` from our bot account.  Add the following to `index.js`:
 
 ```js
 // Perform a test tweet.
@@ -187,7 +195,7 @@ twitter.post(
 );
 ```
 
-Now, to test that everything works just run your Node application.  If all was setup correctly you'll see the output in the console log to confirm it works, as can refresh your Twitter account page to see the new [`"Am I a robot?"` tweet](https://twitter.com/AirbrakeArticle/status/946880037424209921):
+Now, to test that everything works just run your Node application.  If all was setup correctly you'll see the output in the console log to confirm it works.  You can also refresh your Twitter account page to see the new [`"Am I a robot?"` tweet](https://twitter.com/AirbrakeArticle/status/946880037424209921):
 
 ```bash
 $ node index.js
@@ -199,9 +207,9 @@ $ node index.js
   ...
 ```
 
-## Customizing the Bot
+## Customizing Our Bot
 
-Alright, we've got a working bot, but right now it only does exactly what we tell it.  Let's improve things by customizing it a bit and getting it to do something more interesting.  For this example, we'll use our `AirbrakeArticle` Twitter bot account to tweet out random `Airbrake.io` articles that have been published in the past.  There are many ways to accomplish this, but we'll start with the easiest technique.  Since `https://airbrake.io/blog` uses Wordpress, we can access the `RSS` or `Atom` feed by appending `/feed` or `/feed/atom` to the base URL.  For example, opening [https://airbrake.io/blog/feed/atom](https://airbrake.io/blog/feed/atom) will provides the `Atom` feed of the most recent articles.  Unfortunately, this doesn't give us programmatic access to _historical_ data, since RSS feeds are limited to only the most recent information, but it's a good starting point.
+Alright, we've got a working bot, but right now it only does exactly what we tell it.  Let's improve things by customizing it a bit and getting it to do something more interesting.  For this example, we'll use our `AirbrakeArticle` Twitter bot account to tweet out random `Airbrake.io` articles that have been published in the past.  There are many ways to accomplish this, but we'll start with the easiest technique.  Since `https://airbrake.io/blog` uses Wordpress, we can access the `RSS` or `Atom` feed by appending `/feed` or `/feed/atom` to the base URL, respectively.  For example, opening [https://airbrake.io/blog/feed/atom](https://airbrake.io/blog/feed/atom) provides the `Atom` feed of the most recent articles.  Unfortunately, this doesn't give us programmatic access to _historical_ data, since RSS feeds are limited to only the most recent information, but it's a good starting point.
 
 There's little reason to reinvent the wheel, so we'll be using the [feedparser](https://www.npmjs.com/package/feedparser) NPM module to simplify the process of retrieving the latest Airbrake article feed.  The use of the `--save` flag within the `npm install` command forces the package being installed to be automatically added to the `package.json` `dependencies` field, so we don't have to manually add it ourselves:
 
@@ -325,7 +333,7 @@ Gathered 'Techniques for Preventing Software Bugs' published Tue Dec 26 2017 14:
 
 Awesome!  Everything works as intended.  We parsed the `Atom` feed from Wordpress to capture the latest articles, then selected a random article and tweeted the title and the URL on our Twitter Bot account, [AirbrakeArticle](https://twitter.com/AirbrakeArticle/status/946896220181561344).
 
-We now have the basic structure of our application up and running, so next week we'll refine it and make it more real-world ready by implementing realtime error monitoring via Airbrake's NodeJS package, then we'll ensure this entire application can run automatically and serverlessly by using AWS Lambda.  Stay tuned!
+We now have the basic structure of our application up and running, so next week we'll refine it and make it better suited to the real-world by implementing real-time error monitoring via Airbrake's NodeJS package.  We'll also ensure our Twitter bot application can run automatically and serverlessly by using AWS Lambda.  Stay tuned!
 
 ---
 
