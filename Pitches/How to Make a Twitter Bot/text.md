@@ -1,6 +1,6 @@
-# How to Make a Serverless Twitter Bot with Airbrake and AWS Lambda - Part 1
+# Create a Serverless Twitter Bot with Airbrake and AWS Lambda - Part 1
 
-Over the next week we'll be learning how to create a fully-automated NodeJS Twitter bot with real-time error monitoring capabilities via Airbrake.  Our Twitter bot will be capable of performing just about any task you can imagine, and it will do so serverlessly, by making use of the power of AWS Lambda functions.  Let's get right into it!
+Over the next week we'll be learning how to create a fully-automated, NodeJS, serverless Twitter bot with real-time error monitoring capabilities via Airbrake.  Our Twitter bot will be capable of performing just about any task you can imagine, and it will do so serverlessly, by making use of the power of AWS Lambda functions.  Let's get right into it!
 
 ## Creating a Project
 
