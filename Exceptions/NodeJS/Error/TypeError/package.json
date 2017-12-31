@@ -1,0 +1,15 @@
+{
+  "name": "typeerror",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabe Wyatt <gabe@gabewyatt.com> (http://gabewyatt.com)",
+  "license": "ISC",
+  "dependencies": {
+    "book": "file:d:/work/Airbrake.io/lib/node/book",
+    "logging": "file:d:/work/Airbrake.io/lib/node/logging"
+  }
+}

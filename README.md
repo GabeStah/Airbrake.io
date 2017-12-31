@@ -11,7 +11,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] Class: RangeError
     - [x] Class: ReferenceError
     - [x] Class: SyntaxError
-    - [ ] Class: TypeError
+    - [x] Class: TypeError
     - [ ] Class: System Error
 
 - Node.js Error Codes
