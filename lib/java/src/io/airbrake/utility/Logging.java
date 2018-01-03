@@ -1,6 +1,7 @@
 // Logging.java
 package io.airbrake.utility;
 
+import java.sql.Timestamp;
 import java.util.Arrays;
 
 import org.apache.commons.lang3.ClassUtils;
@@ -59,6 +60,22 @@ public class Logging {
     {
         if (value == null) return;
         System.out.println(value);
+    }
+
+    /**
+     * Outputs any kind of String, with prefixed timestamp.
+     *
+     * @param value String to be output.
+     * @param includeTimestamp Indicates if timestamp should be included.
+     */
+    public static void log(String value, boolean includeTimestamp)
+    {
+        if (value == null) return;
+        if (includeTimestamp) {
+            System.out.println(String.format("[%s] %s", new Timestamp(System.currentTimeMillis()), value));
+        } else {
+            log(value);
+        }
     }
 
     /**
