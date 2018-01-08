@@ -12,10 +12,10 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] Class: ReferenceError
     - [x] Class: SyntaxError
     - [x] Class: TypeError
-    - [ ] Class: System Error
+    - [x] Class: System Error
 
 - Node.js Error Codes
-    - [ ] ERR_ARG_NOT_ITERABLE
+    - [x] ERR_ARG_NOT_ITERABLE
     - [ ] ERR_ASSERTION
     - [ ] ERR_ASYNC_CALLBACK
     - [ ] ERR_ASYNC_TYPE

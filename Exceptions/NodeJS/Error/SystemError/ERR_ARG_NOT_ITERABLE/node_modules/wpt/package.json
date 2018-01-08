@@ -1,0 +1,11 @@
+{
+  "name": "wpt",
+  "version": "1.0.1",
+  "description": "Local export of Node WPT testing module (see: https://github.com/nodejs/node/blob/master/test/common/wpt.js &  https://github.com/w3c/testharness.js/blob/master/testharness.js).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabe Wyatt <gabe@gabewyatt.com> (http://gabewyatt.com)",
+  "license": "ISC"
+}
