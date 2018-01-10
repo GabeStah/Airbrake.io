@@ -10,7 +10,7 @@ Most Node.js errors inherit from the [`Error`](https://nodejs.org/api/errors.htm
 
 - [`Error`](https://nodejs.org/api/errors.html#errors_class_error)
     - [`SystemError`](https://nodejs.org/dist/latest-v8.x/docs/api/errors.html#errors_system_errors)
-      `ERR_ARG_NOT_ITERABLE`
+      - `ERR_ARG_NOT_ITERABLE`
 
 ## Full Code Sample
 
