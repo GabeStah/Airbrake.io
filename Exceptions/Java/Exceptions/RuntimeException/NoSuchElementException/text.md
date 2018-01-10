@@ -1,4 +1,9 @@
-# Java Exception Handling - NoSuchElementException
+---
+categories: [Java exception handling]
+date: 2018-01-10
+published: true
+title: Java Exception Handling - NoSuchElementException
+---
 
 Our journey continues through our in-depth [__Java Exception Handling__](https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy) series as, today, we dig into the depths of the **NoSuchElementException**.  As the name suggests, a `NoSuchElementException` is thrown when trying to access an invalid element using a few built-in methods from the [`Enumeration`](https://docs.oracle.com/javase/8/docs/api/java/util/Enumeration.html#nextElement--) and [`Iterator`](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html#next--) classes.
 
