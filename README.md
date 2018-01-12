@@ -180,8 +180,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
         - [x] EOFError
         - [x] ImportError
             - [x] ModuleNotFoundError
-        - [ ] LookupError
-            - [ ] IndexError
+        - [x] LookupError
+            - [x] IndexError
             - [ ] KeyError
         - [ ] MemoryError
         - [ ] NameError
