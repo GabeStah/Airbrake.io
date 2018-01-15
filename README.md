@@ -16,8 +16,8 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
 
 - Node.js Error Codes
     - [x] ERR_ARG_NOT_ITERABLE
-    - [ ] ERR_ASSERTION
-    - [ ] ERR_ASYNC_CALLBACK
+    - [x] ERR_ASSERTION
+    - [x] ERR_ASYNC_CALLBACK
     - [ ] ERR_ASYNC_TYPE
     - [ ] ERR_BUFFER_OUT_OF_BOUNDS
     - [ ] ERR_BUFFER_TOO_LARGE

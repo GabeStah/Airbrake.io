@@ -1,4 +1,9 @@
-# Node.js Error Handling - ERR_ARG_NOT_ITERABLE
+---
+categories: [Python Exception Handling]
+date: 2018-01-12
+published: true
+title: Node.js Error Handling - ERR_ARG_NOT_ITERABLE
+---
 
 Making our way through our in-depth [**Node.js Error Handling**](https://airbrake.io/blog/nodejs-error-handling/nodejs-error-class-hierarchy) series, today we'll be going over the first of the various `System Errors` that can be thrown in Node, **ERR_ARG_NOT_ITERABLE**.  Node throws a `System Error` when an exception occurs within the program's runtime environment and are typically an indication that there was an operational problem within the application.  In the case of the `ERR_ARG_NOT_ITERABLE` error, the its appearance indicates that a Node.js API method or function expected an iterable argument, but the actual value passed was not an iterable.
 
