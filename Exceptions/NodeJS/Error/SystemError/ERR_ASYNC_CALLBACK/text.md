@@ -1,5 +1,5 @@
 ---
-categories: [Python Exception Handling]
+categories: [NodeJS Error Handling]
 date: 2018-01-15
 published: true
 title: Node.js Error Handling - ERR_ASYNC_CALLBACK

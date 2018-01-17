@@ -46,4 +46,5 @@ class Book:
     def __str__(self):
         """Returns a formatted string representation of Book."""
         date = '' if self.publication_date is None else f', published on {self.publication_date.__format__("%B %d, %Y")}'
-        return f'\'{self.title}\' by {self.author} at {self.page_count} pages{date}.'
+        pages = '' if self.page_count is None else f' at {self.page_count} pages'
+        return f'\'{self.title}\' by {self.author}{pages}{date}.'

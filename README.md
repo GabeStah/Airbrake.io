@@ -182,7 +182,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
             - [x] ModuleNotFoundError
         - [x] LookupError
             - [x] IndexError
-            - [ ] KeyError
+            - [x] KeyError
         - [ ] MemoryError
         - [ ] NameError
             - [ ] UnboundLocalError
