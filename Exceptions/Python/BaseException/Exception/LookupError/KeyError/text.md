@@ -46,8 +46,8 @@ def main():
         log_dict(series, True)
 
         # Output book in series that doesn't exist.
-        Logging.line_separator('books[len(books) + 1]')
-        Logging.log(f'books[{len(series) + 1}]: {series[len(series) + 1]}')
+        Logging.line_separator('series[len(series) + 1]')
+        Logging.log(f'series[{len(series) + 1}]: {series[len(series) + 1]}')
     except KeyError as error:
         # Output expected KeyErrors.
         Logging.log_exception(error)
