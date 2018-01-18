@@ -2,7 +2,7 @@
 categories: [HTTP Errors]
 date: 2018-01-18
 published: true
-title: 405 Method Not Allowed: What It Is and How to Fix It
+title: "405 Method Not Allowed: What It Is and How to Fix It"
 ---
 
 The **405 Method Not Allowed** is an [`HTTP response status code`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) indicating that the specified request [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) was received and recognized by the server, but the server has rejected that particular method for the requested resource.  This message is distinctly different from the [`404 Not Found`](https://airbrake.io/blog/http-errors/404-not-found-error) code that we [looked at a while back](https://airbrake.io/blog/http-errors/404-not-found-error).  A `404 Not Found` error indicates that the requested resource could not be found, and is often the result of an incorrect URL, or trying to access a resource for which the client has inadequate permissions.  Conversely, a `405` code response confirms that the requested resource is valid and exists, _but_ the client has used an unacceptable HTTP method during the request.
