@@ -7,13 +7,13 @@ title: "APM: What You Need to Know"
 
 Application performance management (`APM`) is the practice of monitoring and managing the performance, availability, and capability of modern software applications.  `APM` doesn't have an explicit, dictionary definition, but is rather an industry-created term that encompasses nearly everything to do with monitoring and managing code, application performance, transaction times, and end user experience.
 
-The overall goal if application performance monitoring is to detect, diagnose, and assist in resolving complicated application performance problems, in order to maintain a pre-determined "minimal level of service."  Of course, every organization and application will have a different definition of what that minimal level of service can be.  However, by following a basic set of overall application performance monitoring principles, a team and project of virtually any size should be able to implement a workable and beneficial monitoring solution.
+The overall goal if application performance management is to detect, diagnose, and assist in resolving complicated application performance problems, in order to maintain a pre-determined "minimal level of service."  Of course, every organization and application will have a different definition of what that minimal level of service can be.  However, by following a basic set of overall application performance management principles, a team and project of virtually any size should be able to implement a workable and beneficial monitoring solution.
 
-In this article we'll explore the basic principles of application monitoring management, along with a handful of the best tools and techniques for implementing these principles into your own project.  Let's take a look!
+In this article we'll explore the basic principles of application performance management, along with a handful of the best tools and techniques for implementing these principles into your own project.  Let's take a look!
 
 ## Application Monitoring Management Principles
 
-In late 2016 [Gartner Research](https://www.gartner.com), one of the world's leading technology research groups, proposed the latest iteration of their [APM Conceptual Framework](https://www.gartner.com/doc/3551918) specification, which proposes five fundamental application performance monitoring principles.  By working to implement and abide by these principles, most APM models should be stable enough to provide ample coverage against all potential pitfalls.
+In late 2016 [Gartner Research](https://www.gartner.com), one of the world's leading technology research groups, proposed the latest iteration of their [APM Conceptual Framework](https://www.gartner.com/doc/3551918) specification, which proposes five fundamental application performance management principles.  By working to implement and abide by these principles, most APM models should be stable enough to provide ample coverage against all potential pitfalls.
 
 ### End User Experiences
 
@@ -46,7 +46,7 @@ Through the use of explicit agents and tools, your monitoring solution should be
 
 ### Analytics and Reporting
 
-The final and perhaps most important component of a successful application performance monitoring model is adequate and robust analytics reporting.  This involves first determining what common set of metrics should be collected and reported within the application, or even for each individual component of said application.  From there, you'll need to establish a standardized view for how the data should be presented, so everyone on the team is on the same page when viewing or discussing said data.
+The final and perhaps most important component of a successful application performance management model is adequate and robust analytics reporting.  This involves first determining what common set of metrics should be collected and reported within the application, or even for each individual component of said application.  From there, you'll need to establish a standardized view for how the data should be presented, so everyone on the team is on the same page when viewing or discussing said data.
 
 In most cases, it is better to have _too much_ source data than not enough -- collect as much raw data as possible, and from there you and your team can decide what useful insights can be pulled from that dataset to actually create useful reports and analytics.
 
@@ -54,7 +54,7 @@ In most cases, it is better to have _too much_ source data than not enough -- co
 
 Creating insightful, useful, and visually appealing APM reports can be a massive challenge unto itself.  Not only are there a million ways to approach the actual gathering of raw data, but combining data into a useful collection that can provide actionable feedback is a major undertaking.
 
-Thankfully, many different tools exist to aid your team with application perform monitoring implementations.  In general these fall into a few broad categories of tools, including tools aimed at helping developers with actual code creation, tools aimed at helping administrators handle server infrastructure management, and tools aimed at helping _everyone_ monitor the results of a production application.
+Thankfully, many different tools exist to aid your team with application perform management implementations.  In general these fall into a few broad categories of tools, including tools aimed at helping developers with actual code creation, tools aimed at helping administrators handle server infrastructure management, and tools aimed at helping _everyone_ monitor the results of a production application.
 
 ### Code Profilers
 
@@ -82,7 +82,7 @@ Once your application is actually up and running an application monitoring tool 
 
 __META DESCRIPTION__
 
-An examination of what you need to know to implement proper application performance monitoring practices and principles in your own software projects.
+An examination of what you need to know to implement proper application performance management practices and principles in your own software projects.
 
 ---
 
