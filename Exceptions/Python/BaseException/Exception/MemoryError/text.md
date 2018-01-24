@@ -245,7 +245,7 @@ Check out <a class="js-cta-utm" href="https://airbrake.io/account/new?utm_source
 
 __META DESCRIPTION__
 
-A deep look at the MemoryError in Python, with code samples illustrating how different Python versions may experience MemoryErrors.
+A deep look at the MemoryError in Python, with code samples illustrating how different Python versions may handle MemoryErrors differently.
 
 ---
 
