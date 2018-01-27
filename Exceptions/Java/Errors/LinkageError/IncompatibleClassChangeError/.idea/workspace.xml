@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e5ad7083-793d-49d4-98bf-19a7206614ed" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/io/airbrake/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/io/airbrake/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="81" lean-forward="true" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/io/airbrake/BaseBook.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="8" selection-end-column="32" />
+              <folding>
+                <element signature="e#1384#1385#0" expanded="true" />
+                <element signature="e#1413#1414#0" expanded="true" />
+                <element signature="e#1531#1532#0" expanded="true" />
+                <element signature="e#1563#1564#0" expanded="true" />
+                <element signature="e#1688#1689#0" expanded="true" />
+                <element signature="e#1722#1723#0" expanded="true" />
+                <element signature="e#1832#1833#0" expanded="true" />
+                <element signature="e#1860#1861#0" expanded="true" />
+                <element signature="e#1988#1989#0" expanded="true" />
+                <element signature="e#2024#2025#0" expanded="true" />
+                <element signature="e#2165#2166#0" expanded="true" />
+                <element signature="e#2207#2208#0" expanded="true" />
+                <element signature="e#2355#2356#0" expanded="true" />
+                <element signature="e#2401#2402#0" expanded="true" />
+                <element signature="e#2519#2520#0" expanded="true" />
+                <element signature="e#2553#2554#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaperbackBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/io/airbrake/PaperbackBook.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#175#176#0" expanded="true" />
+                <element signature="e#211#212#0" expanded="true" />
+                <element signature="e#287#288#0" expanded="true" />
+                <element signature="e#334#335#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/io/airbrake/Publication.java" />
+        <option value="$PROJECT_DIR$/src/io/airbrake/PaperbackBook.java" />
+        <option value="$PROJECT_DIR$/text.md" />
+        <option value="$PROJECT_DIR$/src/io/airbrake/Test.java" />
+        <option value="$PROJECT_DIR$/src/io/airbrake/BaseBook.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1928" />
+    <option name="y" value="116" />
+    <option name="width" value="2576" />
+    <option name="height" value="1456" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="IncompatibleClassChangeError" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IncompatibleClassChangeError" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../lib/java/src/lib.iml" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.airbrake" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\Airbrake.io\Exceptions\Java\Errors\LinkageError\IncompatibleClassChangeError" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="io.airbrake.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="IncompatibleClassChangeError" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e5ad7083-793d-49d4-98bf-19a7206614ed" name="Default" comment="" />
+      <created>1517010958160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1517010958160</updated>
+      <workItem from="1517010959856" duration="4180000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4180000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1928" y="116" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/io/airbrake/AbstractBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/airbrake/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="561">
+            <caret line="35" column="44" lean-forward="true" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+            <folding>
+              <marker date="1517015125727" expanded="false" signature="2015:2080" ph="..." />
+              <marker date="1517015125727" expanded="true" signature="2146:2289" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="2333:2919" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="2963:3550" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="3645:3718" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="3757:3845" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="3902:3986" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="4028:4183" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="4223:4289" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="4327:4406" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="4456:4548" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="4614:4705" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="4763:4834" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="4921:4965" ph="..." />
+              <marker date="1517015125727" expanded="true" signature="5261:5305" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="5332:5335" ph="{}" />
+              <marker date="1517015125727" expanded="true" signature="5341:5457" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="5511:5571" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="5577:5751" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="5824:5916" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="5922:6096" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="6187:6316" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="6322:6536" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="6660:6834" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="6840:6913" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="6943:6954" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="6968:6974" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="6980:7056" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="7090:7101" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="7118:7124" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="7130:7218" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="7267:7294" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="7300:7384" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="7418:7441" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="7447:7602" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="7634:7921" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="7927:7993" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="8022:8033" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="8046:8052" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="8058:8162" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="8218:8728" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="8734:8813" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="8854:8865" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="8886:8892" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="8898:8983" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="9064:9306" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="9312:9404" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="9462:9494" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="9500:9591" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="9640:9651" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="9682:9688" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="9694:9765" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="9804:9815" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="9834:9840" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="9846:9944" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="9973:9984" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="10004:10010" ph=" }" />
+              <marker date="1517015125727" expanded="false" signature="11807:11851" ph="..." />
+              <marker date="1517015125727" expanded="true" signature="12147:12191" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="12218:12221" ph="{}" />
+              <marker date="1517015125727" expanded="true" signature="12227:12343" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="12397:12457" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="12463:12637" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="12710:12802" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="12808:12982" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="13073:13202" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="13208:13422" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="13546:13720" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="13726:13799" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="13829:13840" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="13854:13860" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="13866:13942" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="13976:13987" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="14004:14010" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="14016:14104" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="14153:14180" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="14186:14270" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="14304:14327" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="14333:14488" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="14520:14807" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="14813:14879" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="14908:14919" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="14932:14938" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="14944:15048" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="15104:15614" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="15620:15699" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="15740:15751" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="15772:15778" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="15784:15869" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="15950:16192" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="16198:16290" ph="/**...*/" />
+              <marker date="1517015125727" expanded="true" signature="16348:16380" ph="{...}" />
+              <marker date="1517015125727" expanded="true" signature="16386:16477" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="16526:16537" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="16568:16574" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="16580:16651" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="16690:16701" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="16720:16726" ph=" }" />
+              <marker date="1517015125727" expanded="true" signature="16732:16830" ph="/**...*/" />
+              <marker date="1517015125727" expanded="false" signature="16859:16870" ph=" { " />
+              <marker date="1517015125727" expanded="false" signature="16890:16896" ph=" }" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/airbrake/PaperbackBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#175#176#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/airbrake/BaseBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#1384#1385#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1563#1564#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+            <element signature="e#1722#1723#0" expanded="true" />
+            <element signature="e#1832#1833#0" expanded="true" />
+            <element signature="e#1860#1861#0" expanded="true" />
+            <element signature="e#1988#1989#0" expanded="true" />
+            <element signature="e#2024#2025#0" expanded="true" />
+            <element signature="e#2165#2166#0" expanded="true" />
+            <element signature="e#2207#2208#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
+            <element signature="e#2401#2402#0" expanded="true" />
+            <element signature="e#2519#2520#0" expanded="true" />
+            <element signature="e#2553#2554#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/airbrake/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="81" lean-forward="true" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>IncompatibleClassChangeError</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

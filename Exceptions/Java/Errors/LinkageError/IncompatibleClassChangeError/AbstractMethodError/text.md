@@ -640,7 +640,7 @@ If we compile _just_ this `Publication` class, but not also the inherited `Abstr
 
 ```
 ----- TEST B -----
-[EXPECTED] java.lang.AbstractMethodError: io.airbrake.Publication.getDetails()Ljava/lang/String;
+[EXPECTED] java.lang.AbstractMethodError: io.airbrake.BaseBook.getDetails()Ljava/lang/String;
 ```
 
 The <a class="js-cta-utm" href="https://airbrake.io/languages/java_bug_tracker?utm_source=blog&amp;utm_medium=end-post&amp;utm_campaign=airbrake-java">Airbrake-Java library</a> provides real-time error monitoring and automatic exception reporting for all your Java-based projects.  Tight integration with Airbrake's state of the art web dashboard ensures that `Airbrake-Java` gives you round-the-clock status updates on your application's health and error rates.  `Airbrake-Java` easily integrates with all the latest Java frameworks and platforms like `Spring`, `Maven`, `log4j`, `Struts`, `Kotlin`, `Grails`, `Groovy`, and many more.  Plus, `Airbrake-Java` allows you to easily customize exception parameters and gives you full, configurable filter capabilities so you only gather the errors that matter most.
