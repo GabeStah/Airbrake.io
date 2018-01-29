@@ -1,0 +1,14 @@
+{
+  "name": "book",
+  "version": "1.0.0",
+  "description": "Book class.",
+  "main": "book.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabe Wyatt <gabe@gabewyatt.com> (http://gabewyatt.com)",
+  "license": "ISC",
+  "dependencies": {
+    "enum": "~2.4.0"
+  }
+}

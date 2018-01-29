@@ -19,7 +19,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] ERR_ASSERTION
     - [x] ERR_ASYNC_CALLBACK
     - [x] ERR_ASYNC_TYPE
-    - [ ] ERR_BUFFER_OUT_OF_BOUNDS
+    - [x] ERR_BUFFER_OUT_OF_BOUNDS
     - [ ] ERR_BUFFER_TOO_LARGE
     - [ ] ERR_CHILD_CLOSED_BEFORE_REPLY
     - [ ] ERR_CONSOLE_WRITABLE_STREAM
