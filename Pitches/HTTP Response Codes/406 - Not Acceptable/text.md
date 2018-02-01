@@ -1,6 +1,6 @@
 ---
 categories: [HTTP Errors]
-date: 2018-01-35
+date: 2018-01-25
 published: true
 title: "406 Not Acceptable: What It Is and How to Fix It"
 ---
