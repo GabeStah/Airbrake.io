@@ -13,10 +13,10 @@ In this article we'll explore the `InputMismatchException` in more detail by fir
 
 All Java errors implement the [`java.lang.Throwable`](https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy) interface, or are extended from another inherited class therein.  The full exception hierarchy of this error is:
 
-- [`java.lang.Object`](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
+- [`java.lang.Object`](https://docs.oracle.com/javase/9/docs/api/java/lang/Object.html)
     - [`java.lang.Throwable`](https://airbrake.io/blog/java-exception-handling/the-java-exception-class-hierarchy)
-        - [`java.lang.Error`](https://docs.oracle.com/javase/8/docs/api/java/lang/Error.html)
-            - [`java.lang.RuntimeError`](https://docs.oracle.com/javase/9/docs/api/java/lang/RuntimeException.html)
+        - [`java.lang.Exception`](https://docs.oracle.com/javase/9/docs/api/java/lang/Exception.html)
+            - [`java.lang.RuntimeException`](https://docs.oracle.com/javase/9/docs/api/java/lang/RuntimeException.html)
                 - [`java.util.NoSuchElementException`](https://docs.oracle.com/javase/9/docs/api/java/util/NoSuchElementException.html)
                     - `InputMismatchException`
 
