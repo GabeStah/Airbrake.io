@@ -1,0 +1,19 @@
+{
+  "name": "ERR_BUFFER_TOO_LARGE",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabe Wyatt <gabe@gabewyatt.com> (http://gabewyatt.com)",
+  "license": "ISC",
+  "dependencies": {
+    "book": "file:d:/work/Airbrake.io/lib/node/book",
+    "common": "file:d:/work/Airbrake.io/lib/node/common",
+    "logging": "file:d:/work/Airbrake.io/lib/node/logging",
+    "on-async-hook": "^1.0.0",
+    "utp-native": "^1.6.2",
+    "wpt": "file:d:/work/Airbrake.io/lib/node/wpt"
+  }
+}
