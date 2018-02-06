@@ -1,5 +1,5 @@
 ---
-categories: [Testing]
+categories: ["What Is", Testing]
 date: 2018-02-06
 published: true
 title: "Regression Testing: What It Is and How to Use It"
