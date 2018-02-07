@@ -185,7 +185,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
             - [x] KeyError
         - [x] MemoryError
         - [x] NameError
-            - [ ] UnboundLocalError
+            - [x] UnboundLocalError
         - [ ] OSError
             - [ ] BlockingIOError
             - [ ] ChildProcessError
