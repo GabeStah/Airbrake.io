@@ -1,24 +1,7 @@
 /**
  * index.js
  */
-const { kMaxLength } = require('buffer');
 const logging = require('logging');
-
-const { execFile } = require('child_process');
-const childProcess = require('child_process');
-
-(function() {
-  let oldSpawn = childProcess.spawn;
-
-  function mySpawn() {
-    console.log('spawn called');
-    console.log(arguments);
-    let result = oldSpawn.apply(this, arguments);
-    return result;
-  }
-  childProcess.spawn = mySpawn;
-})();
-
 
 //
 // const assert = require('assert');
@@ -36,12 +19,14 @@ const childProcess = require('child_process');
 // }
 
 function executeTests () {
-  test();
-  test2();
+  //test();
+  //test2();
+  //test3();
+  test4();
 }
 
 function test () {
-
+  const { execFile } = require('child_process');
   const child = execFile('node', ['--version'], (error, stdout, stderr) => {
     if (error) {
       throw error;
@@ -54,6 +39,7 @@ function test2 () {
   try {
     const { spawn } = require('child_process');
     const ls = spawn('ls', ['-lh', '/usr']);
+    //ls.kill('SIGHUP');
     //const ls = spawn('dir');
 
     ls.stdout.on('data', (data) => {
@@ -76,6 +62,68 @@ function test2 () {
       logging.log(e, false);
     }
   }
+}
+
+function test3 () {
+    try {
+        const { spawn } = require('child_process');
+        const grep = spawn('grep', ['ssh']);
+
+
+        grep.on('close', (code, signal) => {
+            console.log(
+                `child process terminated due to receipt of signal ${signal}`);
+        });
+
+// Send SIGHUP to process
+        grep.kill('SIGHUP');
+    } catch (e) {
+        if (e instanceof Error && e.code === 'ERR_CHILD_CLOSED_BEFORE_REPLY') {
+            // Output expected ERR_CHILD_CLOSED_BEFORE_REPLY RangeErrors.
+            logging.log(e);
+        } else {
+            // Output unexpected Errors.
+            logging.log(e, false);
+        }
+    }
+}
+
+function test4 () {
+    try {
+        const net = require('net');
+
+        let server = net.createServer(function (socket) {
+            socket.write('Echo server\r\n');
+            socket.pipe(socket);
+        });
+
+        server.listen(1337, '127.0.0.1');
+        server.close();
+
+        let client = new net.Socket();
+        //client.destroy();
+        client.connect(1337, '127.0.0.1', function() {
+            console.log('Connected');
+            client.write('Hello, server! Love, Client.');
+        });
+
+        client.on('data', function(data) {
+            console.log('Received: ' + data);
+            client.destroy(); // kill client after server's response
+        });
+
+        client.on('close', function() {
+            console.log('Connection closed');
+        });
+    } catch (e) {
+        if (e instanceof Error && e.code === 'ERR_CHILD_CLOSED_BEFORE_REPLY') {
+            // Output expected ERR_CHILD_CLOSED_BEFORE_REPLY RangeErrors.
+            logging.log(e);
+        } else {
+            // Output unexpected Errors.
+            logging.log(e, false);
+        }
+    }
 }
 
 /**
