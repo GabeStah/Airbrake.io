@@ -9,9 +9,11 @@
   "author": "Gabe Wyatt <gabe@gabewyatt.com> (http://gabewyatt.com)",
   "license": "ISC",
   "dependencies": {
-    "book": "~/work/Airbrake.io/lib/node/book",
-    "common": "~/work/Airbrake.io/lib/node/common",
-    "logging": "~/work/Airbrake.io/lib/node/logging",
-    "wpt": "~/work/Airbrake.io/lib/node/wpt"
+    "book": "file:d:/work/Airbrake.io/lib/node/book",
+    "common": "file:d:/work/Airbrake.io/lib/node/common",
+    "logging": "file:d:/work/Airbrake.io/lib/node/logging",
+    "on-async-hook": "^1.0.0",
+    "utp-native": "^1.6.2",
+    "wpt": "file:d:/work/Airbrake.io/lib/node/wpt"
   }
 }

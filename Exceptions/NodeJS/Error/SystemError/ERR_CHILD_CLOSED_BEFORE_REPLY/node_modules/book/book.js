@@ -14,15 +14,15 @@ let PublicationType = new Enum(['Digital', 'Paperback', 'Hardcover']);
  * @param title Book title.
  * @param author Book author.
  * @param pageCount Book page count.
- * @param publishedAt Book publication date.
+ * @param publicationDate Book publication date.
  * @param publicationType Book publication type.
  * @constructor
  */
-function Book (title, author, pageCount, publishedAt = null, publicationType = PublicationType.Digital) {
+function Book (title, author, pageCount, publicationDate = null, publicationType = PublicationType.Digital) {
   this.setAuthor(author);
   this.setPageCount(pageCount);
+  this.setPublicationDate(publicationDate);
   this.setPublicationType(publicationType);
-  this.setPublishedAt(publishedAt);
   this.setTitle(title);
 }
 
@@ -45,6 +45,15 @@ Book.prototype.getPageCount = function () {
 };
 
 /**
+ * Get publication date of book.
+ *
+ * @returns {*} Publication date.
+ */
+Book.prototype.getPublicationDate = function () {
+  return this.publicationDate;
+};
+
+/**
  * Get publication type of book.
  *
  * @returns {*} Publication type.
@@ -54,21 +63,12 @@ Book.prototype.getPublicationType = function () {
 };
 
 /**
- * Get publication date of book.
- *
- * @returns {*} Publication date.
- */
-Book.prototype.getPublishedAt = function () {
-  return this.publishedAt;
-};
-
-/**
  * Get a formatted tagline with author, title, page count, publication date, and publication type.
  *
  * @returns {string} Formatted tagline.
  */
 Book.prototype.getTagline = function() {
-  return `'${this.getTitle()}' by ${this.getAuthor()} is ${this.getPageCount()} pages, published ${this.getPublishedAt()} as ${this.getPublicationType().key} type.`
+  return `'${this.getTitle()}' by ${this.getAuthor()} is ${this.getPageCount()} pages, published ${this.getPublicationDate()} as ${this.getPublicationType().key} type.`
 };
 
 /**
@@ -105,24 +105,24 @@ Book.prototype.setPageCount = function (value) {
 };
 
 /**
+ * Set publication date of book.
+ *
+ * @param value Publication date.
+ */
+Book.prototype.setPublicationDate = function (value) {
+  if (value && !(value instanceof Date)) {
+    throw new TypeError(`'setPublicationDate' value of (${value}) must be an instance of Date, not ${typeof value}.`);
+  }
+  this.publicationDate = value;
+};
+
+/**
  * Set publication type of book.
  *
  * @param value Publication type.
  */
 Book.prototype.setPublicationType = function (value) {
   this.publicationType = value;
-};
-
-/**
- * Set publication date of book.
- *
- * @param value Publication date.
- */
-Book.prototype.setPublishedAt = function (value) {
-  if (!(value instanceof Date)) {
-    throw new TypeError(`'PublishedAt' value of (${value}) must be an instance of Date, not ${typeof value}.`);
-  }
-  this.publishedAt = value;
 };
 
 /**

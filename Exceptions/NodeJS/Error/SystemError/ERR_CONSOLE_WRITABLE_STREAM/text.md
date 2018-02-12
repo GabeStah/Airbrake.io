@@ -1,13 +1,18 @@
 ---
-categories: [NodeJS Error Handling]
+categories: 
+  - NodeJS Error Handling
 date: 2018-02-12
+description: "A deep dive into the ERR_CONSOLE_WRITABLE_STREAM TypeError in Node.js, with sample code illustrating how to use the Console class API."
 published: true
-title: "Node.js Error Handling - ERR_CONSOLE_WRITABLE_STREAM"
+sources:
+  - https://nodejs.org/api/errors.html
+  - https://github.com/nodejs/
+title: "Node.js Error Handling - ERR_CONSOLE_WRITABLE_STREAM"  
 ---
 
-There are many possible errors in Node.js, so today we'll continue our detailed [**Node.js Error Handling**](https://airbrake.io/blog/nodejs-error-handling/nodejs-error-class-hierarchy) series by looking at one of the assorted `System Errors` Node produces, **ERR_BUFFER_TOO_LARGE**.  Node throws a `System Error` when an exception occurs within the program's runtime environment, and such errors are typically an indication that there was an operational problem within the application.  An `ERR_BUFFER_TOO_LARGE` error indicates that an attempt was made to instantiate or allocate a [`Buffer`](https://nodejs.org/api/buffer.html) object of a size exceeding the current maximum (typically `2,147,483,647`, or the maximum size of a 32-bit signed binary integer).
+Making our way through our in-depth [**Node.js Error Handling**](https://airbrake.io/blog/nodejs-error-handling/nodejs-error-class-hierarchy) series, today we'll be diving into the **ERR_CONSOLE_WRITABLE_STREAM** error, which is one of the many `System Errors` Node produces.  Node throws `System Errors` when an exception occurs within the application's runtime environment and such errors typically indicate that there was an operational problem within the program.  An `ERR_CONSOLE_WRITABLE_STREAM` error indicates that an attempt was made to create a new [`Console`](https://nodejs.org/api/console.html) API class without passing a valid `stdout` stream into which to place any created output.
 
-In today's article examine the `ERR_BUFFER_TOO_LARGE` system error by looking at where it resides in the overall [Node.js Error Class Hierarchy](https://airbrake.io/blog/nodejs-error-handling/nodejs-error-class-hierarchy).  We'll also look at some functional code samples illustrating how direct `Buffer` object manipulation doesn't allow method calls that _may_ directly throw `ERR_BUFFER_TOO_LARGE` errors.  Instead, certain modules (like [`zlib`](https://nodejs.org/api/zlib.html)) _can_ potentially generate such errors in extreme circumstances.  Let's dig in!
+Throughout this article we'll explore the `ERR_CONSOLE_WRITABLE_STREAM` error in a bit more detail, starting with where it resides in the overall [Node.js Error Class Hierarchy](https://airbrake.io/blog/nodejs-error-handling/nodejs-error-class-hierarchy).  We'll also look at some functional code samples illustrating how the [`Console`](https://nodejs.org/api/console.html) class can be used to generate stream outputs, and how improper use of this class can potentially lead to `ERR_CONSOLE_WRITABLE_STREAM` errors in your own applications.  Let's get going!
 
 ## The Technical Rundown
 
@@ -15,7 +20,7 @@ Most Node.js errors inherit from the [`Error`](https://nodejs.org/api/errors.htm
 
 - [`Error`](https://nodejs.org/api/errors.html#errors_class_error)
     - [`SystemError`](https://nodejs.org/dist/latest-v8.x/docs/api/errors.html#errors_system_errors)
-      - `ERR_BUFFER_TOO_LARGE`
+      - `ERR_CONSOLE_WRITABLE_STREAM`
 
 ## Full Code Sample
 
@@ -25,43 +30,64 @@ Below is the full code sample we'll be using in this article.  It can be copied 
 /**
  * index.js
  */
-const { kMaxLength } = require('buffer');
+const Book = require('book');
+const { Console } = require('console');
+const fs = require('fs');
 const logging = require('logging');
 
 function executeTests () {
-  logging.lineSeparator(`instantiateBuffer(1)`, 60);
-  instantiateBuffer(1)
+  // Create new Book instance.
+  let bookA = new Book('The Name of the Wind', 'Patrick Rothfuss', 662, new Date(2007, 2, 27));
+  logging.lineSeparator('BOOK A', 60);
+  logging.log(bookA.toString());
 
-  logging.lineSeparator(`instantiateBuffer(kMaxLength)`, 60);
-  instantiateBuffer(kMaxLength)
+  // Output Book A to stream.
+  outputBookToStream(bookA, fs.createWriteStream('books.json'));
 
-  logging.lineSeparator(`instantiateBuffer(kMaxLength + 1)`, 60);
-  instantiateBuffer(kMaxLength + 1);
+  let bookB = new Book('The Wise Man\'s Fear', 'Patrick Rothfuss', 994, new Date(2011, 2, 1));
+  logging.lineSeparator('BOOK B', 60);
+  logging.log(bookB.toString());
 
-  logging.lineSeparator(`allocateBuffer(1)`, 60);
-  allocateBuffer(1);
+  // Output Book B to stream.
+  outputBookToStream(bookB, fs.createWriteStream('books.json'));
 
-  logging.lineSeparator(`allocateBuffer(kMaxLength)`, 60);
-  allocateBuffer(kMaxLength);
+  // Add both Books to new stream in order to properly format JSON.
+  logging.lineSeparator('ADDING BOOKS A & B SIMULTANEOUSLY', 60);
+  addValueToStream(JSON.stringify([
+    bookA,
+    bookB
+  ]), fs.createWriteStream('books.json'));
 
-  logging.lineSeparator(`allocateBuffer(kMaxLength + 1)`, 60);
-  allocateBuffer(kMaxLength + 1);
+  // Create Book C instance.
+  let bookC = new Book('Doors of Stone', 'Patrick Rothfuss', 0);
+  logging.lineSeparator('BOOK C', 60);
+  logging.log(bookC.toString());
+
+  // Output Book C to null stream.
+  outputBookToStream(bookC);
 }
 
 /**
- * Allocates a new Buffer of size `size`.
+ * Adds passed value to passed writeStream by creating new Console instance.
  *
- * @param size Size of Buffer to allocate.
- * @returns {Buffer} Allocated Buffer.
+ * @param value Value to be added.
+ * @param writeStream (Optional) Write stream to add value to.
+ * @param errorStream (Optional) Error stream to output errors to.
  */
-function allocateBuffer (size) {
+function addValueToStream (value, writeStream = null, errorStream = null) {
   try {
-    let buffer = Buffer.alloc(size);
-    logging.log(`Successfully allocated new Buffer(${size}).`);
-    return buffer;
+    // Get console instance using passed streams.
+    let streamConsole = getConsole(writeStream, errorStream);
+    if (!streamConsole) return;
+
+    // Log passed value to stream.
+    streamConsole.log(value);
+
+    // Confirm value addition.
+    logging.log(`Successfully added ${value} to stream.`);
   } catch (e) {
-    if (e instanceof RangeError && e.code === 'ERR_BUFFER_TOO_LARGE') {
-      // Output expected ERR_BUFFER_TOO_LARGE RangeErrors.
+    if (e instanceof TypeError && e.code === 'ERR_CONSOLE_WRITABLE_STREAM') {
+      // Output expected ERR_CONSOLE_WRITABLE_STREAM TypeErrors.
       logging.log(e);
     } else {
       // Output unexpected Errors.
@@ -71,19 +97,22 @@ function allocateBuffer (size) {
 }
 
 /**
- * Instantiates a new Buffer of size `size`.
+ * Instantiates a new Console using passed Writables.
  *
- * @param size Size of Buffer to instantiate.
- * @returns {Buffer} Instantiated Buffer.
+ * @param {Writable} stdout (Optional) Writable to be written to.
+ * @param {Writable} stderr (Optional) Writable for error to be written to.
+ * @returns {Console.Console} Console instance.
  */
-function instantiateBuffer (size) {
+function getConsole (stdout = null, stderr = null) {
   try {
-    let buffer = new Buffer(size);
-    logging.log(`Successfully instantiated new Buffer(${size}).`);
-    return buffer;
+    if (!stderr) {
+      stderr = stdout;
+    }
+
+    return new Console(stdout, stderr);
   } catch (e) {
-    if (e instanceof RangeError && e.code === 'ERR_BUFFER_TOO_LARGE') {
-      // Output expected ERR_BUFFER_TOO_LARGE RangeErrors.
+    if (e instanceof TypeError && e.code === 'ERR_CONSOLE_WRITABLE_STREAM') {
+      // Output expected ERR_CONSOLE_WRITABLE_STREAM TypeErrors.
       logging.log(e);
     } else {
       // Output unexpected Errors.
@@ -91,7 +120,181 @@ function instantiateBuffer (size) {
     }
   }
 }
+
+/**
+ * Converts passed Book to JSON and outputs it to passed stream via Console.
+ *
+ * @param book Book to be added.
+ * @param stream Stream into which Book should be output.
+ */
+function outputBookToStream (book, stream = null) {
+  // Convert book to JSON.
+  let json = JSON.stringify(book);
+  logging.lineSeparator('BOOK TO JSON', 60);
+  logging.log(json);
+
+  // Output JSON to stream.
+  addValueToStream(json, stream);
+}
+
 executeTests();
+```
+
+```js
+// Book module - Book.js
+let Enum = require('enum');
+
+/**
+ * Publication types enumeration.
+ *
+ * @type {*|Enum} Publication types.
+ */
+let PublicationType = new Enum(['Digital', 'Paperback', 'Hardcover']);
+
+/**
+ * Constructs a basic book, with page count, publication date, and publication type.
+ *
+ * @param title Book title.
+ * @param author Book author.
+ * @param pageCount Book page count.
+ * @param publicationDate Book publication date.
+ * @param publicationType Book publication type.
+ * @constructor
+ */
+function Book (title, author, pageCount, publicationDate = null, publicationType = PublicationType.Digital) {
+  this.setAuthor(author);
+  this.setPageCount(pageCount);
+  this.setPublicationDate(publicationDate);
+  this.setPublicationType(publicationType);
+  this.setTitle(title);
+}
+
+/**
+ * Get author of book.
+ *
+ * @returns {*} Author name.
+ */
+Book.prototype.getAuthor = function () {
+  return this.author;
+};
+
+/**
+ * Get page count of book.
+ *
+ * @returns {*} Page count.
+ */
+Book.prototype.getPageCount = function () {
+  return this.pageCount;
+};
+
+/**
+ * Get publication date of book.
+ *
+ * @returns {*} Publication date.
+ */
+Book.prototype.getPublicationDate = function () {
+  return this.publicationDate;
+};
+
+/**
+ * Get publication type of book.
+ *
+ * @returns {*} Publication type.
+ */
+Book.prototype.getPublicationType = function () {
+  return this.publicationType;
+};
+
+/**
+ * Get a formatted tagline with author, title, page count, publication date, and publication type.
+ *
+ * @returns {string} Formatted tagline.
+ */
+Book.prototype.getTagline = function() {
+  return `'${this.getTitle()}' by ${this.getAuthor()} is ${this.getPageCount()} pages, published ${this.getPublicationDate()} as ${this.getPublicationType().key} type.`
+};
+
+/**
+ * Get title of book.
+ *
+ * @returns {*} Book title.
+ */
+Book.prototype.getTitle = function () {
+  return this.title;
+};
+
+/**
+ * Set author of book.
+ *
+ * @param value Author.
+ */
+Book.prototype.setAuthor = function (value) {
+  if (typeof value !== 'string') {
+    throw new TypeError(`'Author' value of (${value}) must be a string, not ${typeof value}.`);
+  }
+  this.author = value;
+};
+
+/**
+ * Set page count of book.
+ *
+ * @param value Page count.
+ */
+Book.prototype.setPageCount = function (value) {
+  if (typeof value !== 'number') {
+    throw new TypeError(`'PageCount' value of (${value}) must be a number, not ${typeof value}.`);
+  }
+  this.pageCount = value;
+};
+
+/**
+ * Set publication date of book.
+ *
+ * @param value Publication date.
+ */
+Book.prototype.setPublicationDate = function (value) {
+  if (value && !(value instanceof Date)) {
+    throw new TypeError(`'setPublicationDate' value of (${value}) must be an instance of Date, not ${typeof value}.`);
+  }
+  this.publicationDate = value;
+};
+
+/**
+ * Set publication type of book.
+ *
+ * @param value Publication type.
+ */
+Book.prototype.setPublicationType = function (value) {
+  this.publicationType = value;
+};
+
+/**
+ * Set title of book.
+ *
+ * @param value Title.
+ */
+Book.prototype.setTitle = function (value) {
+  if (typeof value !== 'string') {
+    throw new TypeError(`'Title' value of (${value}) must be a string, not ${typeof value}.`);
+  }
+  this.title = value;
+};
+
+/**
+ * Get string representation of book.
+ *
+ * @returns {string} String representation.
+ */
+Book.prototype.toString = function () {
+  return this.getTagline();
+};
+
+/**
+ * Exports Book class.
+ *
+ * @type {Book} Book constructor.
+ */
+module.exports = Book;
 ```
 
 ```js
@@ -220,27 +423,26 @@ function logValue(value, synchronous = false) {
 
 ## When Should You Use It?
 
-As we discussed in our [`ERR_BUFFER_OUT_OF_BOUNDS`](https://airbrake.io/blog/nodejs-error-handling/err_buffer_out_of_bounds) article last week, the [`Buffer`](https://nodejs.org/api/buffer.html) class was added to early versions of Node.js provide simple means of reading and manipulating streams of binary data.  More recently, [JavaScript ES6 (ECMAScript 2015)](https://airbrake.io/blog/javascript/es6-javascript-whats-new-1) introduced the [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) object to handle binary data buffers.  Therefore, modern Node.js versions have adapted the [`Buffer`](https://nodejs.org/api/buffer.html) class to focus on implementing a more optimized [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) API.
-
-In modern Node.js versions the `Buffer` class constructor [has been deprecated](https://github.com/nodejs/node/blob/master/lib/buffer.js#L149-L159), so the process of actually creating buffers would ideally use the `Buffer.from()`, `Buffer.alloc()`, and other similar methods.  For our example code we'll use both techniques, starting with a direct instantiation using the deprecated `new Buffer(...)`  constructor, and afterward we'll also use the `Buffer.alloc()` method.
-
-Our first test method is `instantiateBuffer(size)`, which uses the deprecated `new Buffer(size)` constructor to instantiate a new buffer object:
+Let's jump right into our sample code to understand what might cause an unexpected `ERR_CONSOLE_WRITABLE_STREAM` error.  Our first helper function, `getConsole(strout, stderr)`, is used to merely create a new `Console` class instance by passing along the provided `stdout` and `stderr` parameters:
 
 ```js
 /**
- * Instantiates a new Buffer of size `size`.
+ * Instantiates a new Console using passed Writables.
  *
- * @param size Size of Buffer to instantiate.
- * @returns {Buffer} Instantiated Buffer.
+ * @param {Writable} stdout (Optional) Writable to be written to.
+ * @param {Writable} stderr (Optional) Writable for error to be written to.
+ * @returns {Console.Console} Console instance.
  */
-function instantiateBuffer (size) {
+function getConsole (stdout = null, stderr = null) {
   try {
-    let buffer = new Buffer(size);
-    logging.log(`Successfully instantiated new Buffer(${size}).`);
-    return buffer;
+    if (!stderr) {
+      stderr = stdout;
+    }
+
+    return new Console(stdout, stderr);
   } catch (e) {
-    if (e instanceof RangeError && e.code === 'ERR_BUFFER_TOO_LARGE') {
-      // Output expected ERR_BUFFER_TOO_LARGE RangeErrors.
+    if (e instanceof TypeError && e.code === 'ERR_CONSOLE_WRITABLE_STREAM') {
+      // Output expected ERR_CONSOLE_WRITABLE_STREAM TypeErrors.
       logging.log(e);
     } else {
       // Output unexpected Errors.
@@ -250,67 +452,30 @@ function instantiateBuffer (size) {
 }
 ```
 
-We'll test out creating three different buffer sizes, `1`, `kMaxLength`, and `kMaxLength + 1`:
-
-```js
-const { kMaxLength } = require('buffer');
-
-function executeTests () {
-  logging.lineSeparator(`instantiateBuffer(1)`, 60);
-  instantiateBuffer(1)
-
-  logging.lineSeparator(`instantiateBuffer(kMaxLength)`, 60);
-  instantiateBuffer(kMaxLength)
-
-  logging.lineSeparator(`instantiateBuffer(kMaxLength + 1)`, 60);
-  instantiateBuffer(kMaxLength + 1);
-
-  // ...
-}
-```
-
-`kMaxLength` is exported from `buffer`, which is actually imported from `process.binding('buffer')` and represents the maximum size of a 32-bit signed integer (`2,147,483,647`), which is typically used in Node to limit the sizes of many objects, including buffers.  Executing these three different size tests produces the following output:
-
-```
------------------- instantiateBuffer(1) ------------------
-Successfully instantiated new Buffer(1).
-
-------------- instantiateBuffer(kMaxLength) --------------
-Successfully instantiated new Buffer(2147483647).
-
------------ instantiateBuffer(kMaxLength + 1) ------------
-[INEXPLICIT] RangeError [ERR_INVALID_OPT_VALUE]: The value "2147483648" is invalid for option "size"
-    at Function.alloc (buffer.js:257:3)
-    at new Buffer (buffer.js:168:19)
-    at instantiateBuffer (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_BUFFER_TOO_LARGE\index.js:57:18)
-    at executeTests (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_BUFFER_TOO_LARGE\index.js:15:3)
-    at Object.<anonymous> (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_BUFFER_TOO_LARGE\index.js:70:1)
-    at Module._compile (module.js:657:14)
-    at Object.Module._extensions..js (module.js:671:10)
-    at Module.load (module.js:573:32)
-    at tryModuleLoad (module.js:513:12)
-    at Function.Module._load (module.js:505:3)
-```
-
-As you can see, even though the direct `new Buffer(...)` constructor is deprecated it still functions and allows us to create buffer objects of size `1` and `kMaxLength`.  However, a size of `kMaxLength + 1` produces an error, but, surprisingly, it's an `ERR_INVALID_OPT_VALUE` rather than an `ERR_BUFFER_TOO_LARGE`.
-
-Let's try allocation rather than direct instantiation:
+With `getConsole(...)` setup we then have the `addValueToStream(value, writeStream, errorStream)` function, which does what the name suggests and generates a new `Console` instance, into which we insert the passed `value` parameter:
 
 ```js
 /**
- * Allocates a new Buffer of size `size`.
+ * Adds passed value to passed writeStream by creating new Console instance.
  *
- * @param size Size of Buffer to allocate.
- * @returns {Buffer} Allocated Buffer.
+ * @param value Value to be added.
+ * @param writeStream (Optional) Write stream to add value to.
+ * @param errorStream (Optional) Error stream to output errors to.
  */
-function allocateBuffer (size) {
+function addValueToStream (value, writeStream = null, errorStream = null) {
   try {
-    let buffer = Buffer.alloc(size);
-    logging.log(`Successfully allocated new Buffer(${size}).`);
-    return buffer;
+    // Get console instance using passed streams.
+    let streamConsole = getConsole(writeStream, errorStream);
+    if (!streamConsole) return;
+
+    // Log passed value to stream.
+    streamConsole.log(value);
+
+    // Confirm value addition.
+    logging.log(`Successfully added ${value} to stream.`);
   } catch (e) {
-    if (e instanceof RangeError && e.code === 'ERR_BUFFER_TOO_LARGE') {
-      // Output expected ERR_BUFFER_TOO_LARGE RangeErrors.
+    if (e instanceof TypeError && e.code === 'ERR_CONSOLE_WRITABLE_STREAM') {
+      // Output expected ERR_CONSOLE_WRITABLE_STREAM TypeErrors.
       logging.log(e);
     } else {
       // Output unexpected Errors.
@@ -320,106 +485,131 @@ function allocateBuffer (size) {
 }
 ```
 
-Our `allocateBuffer(size)` method performs really the same process as `instantiateBuffer(size)`, but through the `Buffer.alloc(size)` method instead of `new Buffer(size)`.  Once again, we'll test it using the same trio of size allocations:
+To make our sample code a bit more realistic we're going to create some `Book` class instances, convert those to `JSON` strings, then add those strings to a new file via the `fs.createWriteStream(...)` method.  The `outputBookToStream(book, stream)` function performs the stringification of the passed `book` value and passes the `JSON` string along to the `addValueToStream(value, writeStream, errorStream)` function:
 
 ```js
-logging.lineSeparator(`allocateBuffer(1)`, 60);
-allocateBuffer(1);
+/**
+ * Converts passed Book to JSON and outputs it to passed stream via Console.
+ *
+ * @param book Book to be added.
+ * @param stream Stream into which Book should be output.
+ */
+function outputBookToStream (book, stream = null) {
+  // Convert book to JSON.
+  let json = JSON.stringify(book);
+  logging.lineSeparator('BOOK TO JSON', 60);
+  logging.log(json);
 
-logging.lineSeparator(`allocateBuffer(kMaxLength)`, 60);
-allocateBuffer(kMaxLength);
-
-logging.lineSeparator(`allocateBuffer(kMaxLength + 1)`, 60);
-allocateBuffer(kMaxLength + 1);
+  // Output JSON to stream.
+  addValueToStream(json, stream);
+}
 ```
 
-Executing these tests produces nearly identical output as our direct instantiation test:
+Alright!  We're all set, so let's test this out by creating our first `Book` instance, which we'll then add to the newly-created write stream targeting the local `books.json` file:
+
+```js
+// Create new Book instance.
+let bookA = new Book('The Name of the Wind', 'Patrick Rothfuss', 662, new Date(2007, 2, 27));
+logging.lineSeparator('BOOK A', 60);
+logging.log(bookA.toString());
+
+// Output Book A to stream.
+outputBookToStream(bookA, fs.createWriteStream('books.json'));
+```
+
+Executing this test code produces the following output:
 
 ```
-------------------- allocateBuffer(1) --------------------
-Successfully allocated new Buffer(1).
+------------------------- BOOK A -------------------------
+'The Name of the Wind' by Patrick Rothfuss is 662 pages, published Tue Mar 27 2007 00:00:00 GMT-0700 (Pacific Daylight Time) as Digital type.
+---------------------- BOOK TO JSON ----------------------
+{"author":"Patrick Rothfuss","pageCount":662,"publicationDate":"2007-03-27T07:00:00.000Z","publicationType":"Digital","title":"The Name of the Wind"}
+Successfully added {"author":"Patrick Rothfuss","pageCount":662,"publicationDate":"2007-03-27T07:00:00.000Z","publicationType":"Digital","title":"The Name of the Wind"} to stream.
+```
 
---------------- allocateBuffer(kMaxLength) ---------------
-Successfully allocated new Buffer(2147483647).
+And, sure enough, the contents of `books.json` now contains the `JSON` we generated:
 
-------------- allocateBuffer(kMaxLength + 1) -------------
-[INEXPLICIT] RangeError [ERR_INVALID_OPT_VALUE]: The value "2147483648" is invalid for option "size"
-    at Function.alloc (buffer.js:257:3)
-    at allocateBuffer (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_BUFFER_TOO_LARGE\index.js:35:25)
-    at executeTests (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_BUFFER_TOO_LARGE\index.js:24:3)
-    at Object.<anonymous> (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_BUFFER_TOO_LARGE\index.js:70:1)
+```json
+{
+  "author": "Patrick Rothfuss",
+  "pageCount": 662,
+  "publicationDate": "2007-03-27T07:00:00.000Z",
+  "publicationType": "Digital",
+  "title": "The Name of the Wind"
+}
+```
+
+We'll create a second, slightly different `Book` instance and combine both into an array before converting to `JSON`, since adding multiple objects one at a time to the `books.json` file doesn't actually create valid `JSON`:
+
+```js
+let bookB = new Book('The Wise Man\'s Fear', 'Patrick Rothfuss', 994, new Date(2011, 2, 1));
+logging.lineSeparator('BOOK B', 60);
+logging.log(bookB.toString());
+
+// Output Book B to stream.
+outputBookToStream(bookB, fs.createWriteStream('books.json'));
+
+// Add both Books to new stream in order to properly format JSON.
+logging.lineSeparator('ADDING BOOKS A & B SIMULTANEOUSLY', 60);
+addValueToStream(JSON.stringify([
+  bookA,
+  bookB
+]), fs.createWriteStream('books.json'));
+```
+
+Our new `books.json` file now contains a collection of both `Books`:
+
+```json
+[
+  {
+    "author": "Patrick Rothfuss",
+    "pageCount": 662,
+    "publicationDate": "2007-03-27T07:00:00.000Z",
+    "publicationType": "Digital",
+    "title": "The Name of the Wind"
+  },
+  {
+    "author": "Patrick Rothfuss",
+    "pageCount": 994,
+    "publicationDate": "2011-03-01T08:00:00.000Z",
+    "publicationType": "Digital",
+    "title": "The Wise Man's Fear"
+  }
+]
+```
+
+As you can see, we're explicitly creating and passing a `writeStream` value by calling `fs.createWriteStream('books.json')`.  However, let's do one more test and see what happens if we neglect to pass a valid `Writable` stream object:
+
+```js
+// Create Book C instance.
+let bookC = new Book('Doors of Stone', 'Patrick Rothfuss', 0);
+logging.lineSeparator('BOOK C', 60);
+logging.log(bookC.toString());
+
+// Output Book C to null stream.
+outputBookToStream(bookC);
+```
+
+As I'm sure you guessed might happen, failing to pass a valid stream up the stack (and, therefore, to the `Console` constructor) throws an `ERR_CONSOLE_WRITABLE_STREAM` `TypeError`:
+
+```
+------------------------- BOOK C -------------------------
+'Doors of Stone' by Patrick Rothfuss is 0 pages, published null as Digital type.
+---------------------- BOOK TO JSON ----------------------
+{"author":"Patrick Rothfuss","pageCount":0,"publicationDate":null,"publicationType":"Digital","title":"Doors of Stone"}
+[EXPLICIT] TypeError [ERR_CONSOLE_WRITABLE_STREAM]: Console expects a writable stream instance for stdout
+    at new Console (console.js:38:11)
+    at getConsole (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_CONSOLE_WRITABLE_STREAM\index.js:83:12)
+    at addValueToStream (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_CONSOLE_WRITABLE_STREAM\index.js:51:25)
+    at outputBookToStream (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_CONSOLE_WRITABLE_STREAM\index.js:108:3)
+    at executeTests (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_CONSOLE_WRITABLE_STREAM\index.js:38:3)
+    at Object.<anonymous> (D:\work\Airbrake.io\Exceptions\NodeJS\Error\SystemError\ERR_CONSOLE_WRITABLE_STREAM\index.js:111:1)
     at Module._compile (module.js:657:14)
     at Object.Module._extensions..js (module.js:671:10)
     at Module.load (module.js:573:32)
     at tryModuleLoad (module.js:513:12)
-    at Function.Module._load (module.js:505:3)
-    at Function.Module.runMain (module.js:701:10)
 ```
-
-Hmm, yet another `ERR_INVALID_OPT_VALUE`.  We can actually see why these behave so similarly by digging into the Node [`buffer.js`](https://github.com/nodejs/node/blob/master/lib/buffer.js) module code.  First, we can see inside the direct `new Buffer(...)` constructor that, if the first argument is a `number`, it simply passes execution to the `Buffer.alloc(...)` method on our behalf:
-
-```js
-function Buffer(arg, encodingOrOffset, length) {
-  doFlaggedDeprecation();
-  // Common case.
-  if (typeof arg === 'number') {
-    if (typeof encodingOrOffset === 'string') {
-      throw new errors.TypeError(
-        'ERR_INVALID_ARG_TYPE', 'string', 'string', arg
-      );
-    }
-    return Buffer.alloc(arg);
-  }
-  return Buffer.from(arg, encodingOrOffset, length);
-}
-```
-
-The `Buffer.alloc(...)` method (along with nearly every other Buffer method in the module) starts by invoking the `assertSize(size)` method:
-
-```js
-Buffer.alloc = function alloc(size, fill, encoding) {
-  assertSize(size);
-
-  // ...
-}
-```
-
-Inside `assertSize(size)` we see the final statement that our tests were hitting to throw the `ERR_INVALID_OPT_VALUE`:
-
-```js
-function assertSize(size) {
-  let err = null;
-
-  if (typeof size !== 'number') {
-    err = new errors.TypeError('ERR_INVALID_ARG_TYPE', 'size', 'number', size);
-  } else if (size < 0) {
-    err = new errors.RangeError('ERR_INVALID_OPT_VALUE', 'size', size);
-  } else if (size > kMaxLength) {
-    err = new errors.RangeError('ERR_INVALID_OPT_VALUE', 'size', size);
-  }
-
-  if (err) {
-    Error.captureStackTrace(err, assertSize);
-    throw err;
-  }
-}
-```
-
-As you can see, the `Buffer` module actually performs checks against the `kMaxLength` value for all Buffer size allocations _before_ it actually creates any buffers or does any processing.  Therefore, as previously mentioned, it is impossible to throw an `ERR_BUFFER_TOO_LARGE` error directly from using the `Buffer` module.  However, it should be noted that some other Node modules _may_ be capable of producing `ERR_BUFFER_TOO_LARGE` errors under certain circumstances.  At present, the only library that can throw such errors in [`zlib`](https://github.com/nodejs/node/blob/master/lib/zlib.js#L496).
 
 Airbrake's robust <a class="js-cta-utm" href="https://airbrake.io/account/new?utm_source=blog&utm_medium=end-post&utm_campaign=airbrake-nodejs-error-handling">error monitoring software</a> provides real-time error monitoring and automatic error reporting for all your development projects.  Airbrake's state of the art web dashboard ensures you receive round-the-clock status updates on your application's health and error rates.  No matter what you're working on, Airbrake easily integrates with all the most popular languages and frameworks.  Plus, Airbrake makes it easy to customize error parameters, while giving you complete control of the active error filter system, so you only gather the errors that matter most.
 
 Check out <a class="js-cta-utm" href="https://airbrake.io/account/new?utm_source=blog&utm_medium=end-post&utm_campaign=airbrake-nodejs-error-handling">Airbrake's error monitoring software</a> today and see for yourself why so many of the world's best engineering teams use Airbrake to revolutionize their exception handling practices!
-
----
-
-__META DESCRIPTION__
-
-A look at the ERR_BUFFER_TOO_LARGE RangeError in Node.js, with sample code showing the similarities between instantiating and allocating Buffers.
-
----
-
-__SOURCES__
-
-- https://nodejs.org/api/errors.html
-- https://github.com/nodejs/
