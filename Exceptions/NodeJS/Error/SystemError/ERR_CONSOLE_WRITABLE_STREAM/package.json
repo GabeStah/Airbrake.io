@@ -1,0 +1,17 @@
+{
+  "name": "ERR_CONSOLE_WRITABLE_STREAM",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabe Wyatt <gabe@gabewyatt.com> (http://gabewyatt.com)",
+  "license": "ISC",
+  "dependencies": {
+    "book": "~/work/Airbrake.io/lib/node/book",
+    "common": "~/work/Airbrake.io/lib/node/common",
+    "logging": "~/work/Airbrake.io/lib/node/logging",
+    "wpt": "~/work/Airbrake.io/lib/node/wpt"
+  }
+}
