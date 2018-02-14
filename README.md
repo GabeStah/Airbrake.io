@@ -22,7 +22,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [x] ERR_BUFFER_OUT_OF_BOUNDS
     - [x] ERR_BUFFER_TOO_LARGE
     - [x] ERR_CHILD_CLOSED_BEFORE_REPLY
-    - [ ] ERR_CONSOLE_WRITABLE_STREAM
+    - [x] ERR_CONSOLE_WRITABLE_STREAM
     - [ ] ERR_CPU_USAGE
     - [ ] ERR_CRYPTO_ECDH_INVALID_FORMAT
     - [ ] ERR_CRYPTO_ENGINE_UNKNOWN
@@ -35,7 +35,7 @@ Assorted projects for [`Airbrake.io`](https://airbrake.io/).
     - [ ] ERR_CRYPTO_SIGN_KEY_REQUIRED
     - [ ] ERR_CRYPTO_TIMING_SAFE_EQUAL_LENGTH
     - [ ] ERR_DNS_SET_SERVERS_FAILED
-    - [ ] ERR_ENCODING_INVALID_ENCODED_DATA
+    - [x] ERR_ENCODING_INVALID_ENCODED_DATA
     - [ ] ERR_ENCODING_NOT_SUPPORTED
     - [ ] ERR_FALSY_VALUE_REJECTION
     - [ ] ERR_HTTP_HEADERS_SENT
