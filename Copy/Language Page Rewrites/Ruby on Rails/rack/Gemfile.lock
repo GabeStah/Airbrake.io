@@ -6,7 +6,7 @@ GEM
     airbrake-ruby (2.1.0)
     daemons (1.2.4)
     eventmachine (1.2.3)
-    rack (2.0.1)
+    rack (2.0.8)
     thin (1.7.0)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
