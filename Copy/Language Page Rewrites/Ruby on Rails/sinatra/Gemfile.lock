@@ -6,7 +6,7 @@ GEM
     airbrake-ruby (2.1.0)
     daemons (1.2.4)
     eventmachine (1.2.3)
-    rack (1.6.5)
+    rack (1.6.13)
     rack-protection (1.5.3)
       rack
     sinatra (1.4.8)
@@ -23,7 +23,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  airbrake
+  airbrake (~> 6.0)
   sinatra
   thin
 
